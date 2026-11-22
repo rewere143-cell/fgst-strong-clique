@@ -1,0 +1,10 @@
+{
+  "mode": "bound",
+  "raw_bound": "1208365735801/1000000000000",
+  "correction": "971419793521/12250000000000000000000",
+  "rational_bound": "14802480264533669793521/12250000000000000000000",
+  "decimal_bound": 1.2083657358802995,
+  "coefficient_rows": 7692,
+  "negative_rows": 412,
+  "rigorous_infeasible": false
+}

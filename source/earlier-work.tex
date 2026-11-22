@@ -1,0 +1,168 @@
+\section{Comparison with Earlier Work}\label{sec:earlier-work}
+
+\subsection{Earlier Work}
+
+Let $H$ consist of the edges of a nonempty strong clique in $G$ and
+their endpoints. Write $\Delta=\Delta(G)$ and $h=\Delta(H)$. Fix an
+edge $xy$ of $H$. Every edge of $H$ meets $X=N_G(x)\cup N_G(y)$.
+Indeed, $x,y\in X$, and any edge disjoint from $xy$ must have an
+endpoint adjacent to $x$ or $y$. Thus $|E(H)|\leq |X|h\leq2\Delta h$.
+Faudree, Gy\'arf\'as, Schelp and Tuza~\cite{FGST1990} asked what
+would happen if this count came arbitrarily close to $2\Delta^2$.
+The set $X$ would have close to $2\Delta$ vertices, and most of them
+would have close to $\Delta$ edges of $H$ leading outside $X$, since
+an edge inside $X$ is counted at both ends. Consider two such edges
+$zu,z'u'$ with distinct $z,z'\in X$ and distinct $u,u'\notin X$.
+If none of $zz',zu',z'u$ is present, then $uu'$ must be present.
+The authors count these required edges at the outside neighbors of
+a fixed $z$, together with the edges from those neighbors back to
+$X$. The two counts exceed the available degree when
+$|E(H)|>(2-\varepsilon)\Delta^2$ for sufficiently small absolute
+$\varepsilon>0$. Hence $|E(H)|\leq(2-\varepsilon)\Delta^2$.
+
+For simple graphs, \'{S}leszy\'{n}ska-Nowak~\cite{SleszynskaNowak2016}
+used all the edges at a vertex $v$ with $d_H(v)=h$. At most $\Delta h$
+edges of $H$ meet $N_G(v)$. Let $F$ consist of the remaining edges.
+For every $a\in N_H(v)$, the set $N_G(a)\cap V(F)$ covers $E(F)$,
+since each edge of $F$ must be joined to $va$ and neither endpoint is
+adjacent to $v$. A vertex belonging to $j$ of these covers already
+has $j$ neighbors outside $V(F)$ and hence has degree at most
+$\Delta-j$ in $F$. When $h\geq\frac{3}{4}\Delta$, her count using
+these covers gives $|E(F)|\leq\Delta^2-\frac{1}{2}\Delta h$.
+Adding the edges meeting $N_G(v)$ gives
+$|E(H)|\leq\Delta^2+\frac{1}{2}\Delta h\leq\frac{3}{2}\Delta^2$.
+For smaller $h$, the bound $|E(H)|\leq2\Delta h$ already suffices.
+
+Faron and Postle~\cite{FaronPostle2019} kept track of the degree sum
+at the two ends of each edge of $H$. Write $\sigma=\sigma_G(H)$ for
+the largest of these sums, with both degrees measured in $G$.
+They chose $x$ of maximum degree in $H$ and, among its neighbors
+in $H$, chose $y$ of largest degree in $H$. Their double counting
+argument starts by summing the degrees in $H$ of the vertices in
+$N_G(x)\cup N_G(y)$ and subtracting the edges counted twice.
+For the second count, consider the edges from outside this union to
+vertices adjacent to $x$ but not $y$, and those to vertices adjacent
+to $y$ but not $x$. Each set forms a
+smaller bipartite subgraph of $H$. In the first subgraph neither
+endpoint of an edge is adjacent to $y$. For that edge to have a
+joining edge to every edge of $H$ at $y$, each neighbor of $y$ in
+$H$ must be adjacent to one of its endpoints. Those neighbors lie outside
+the subgraph, so restricting $G$ to the vertices of this subgraph
+lowers the endpoint degree sum by at least $d_H(y)$. The second
+subgraph gives the corresponding decrease of at least $d_H(x)$.
+
+Combining the two counts, Faron and Postle showed that an estimate
+with coefficient $\beta\in[\frac{1}{4},\frac{1}{3}]$ for smaller
+bipartite subgraphs of $H$ gives the estimate
+$|E(H)|\leq\frac{1+\beta}{4}\sigma^2$ for general $H$.
+Here the bipartite estimate is $|E(H')|\leq\beta\sigma_{G'}(H')^2$,
+where $H'$ is the smaller bipartite subgraph and $G'=G[V(H')]$.
+The edges of $H'$ still form a strong clique in $G'$ because all
+their endpoints are retained. At $\beta=\frac{1}{3}$, the coefficient
+$\frac{1+\beta}{4}$ is again $\frac{1}{3}$, so induction on $|E(H)|$
+gives $|E(H)|\leq\frac{1}{3}\sigma^2\leq\frac{4}{3}\Delta^2$.
+
+Kumar, Mohar and Pragada~\cite{KumarMoharPragada2026} improved the
+bipartite estimate in this reduction. Suppose that $H$ is bipartite.
+Choose $v$ with $d_H(v)=h$, put $A=N_H(v)$ and let
+$B=V(H)\setminus N_G[v]$. For an edge $xy$ of $H[B]$, every
+$a\in A$ must be adjacent to $x$ or $y$, since $va$ and $xy$ need
+a joining edge. Thus $d_{G[B]}(x)+d_{G[B]}(y)\leq\sigma-h$,
+and induction bounds $|E(H[B])|$ by $\beta(\sigma-h)^2$.
+The same edges from $A$ to $B$ also enter the count at $A$.
+Those outside $H$ use degree at $A$ without contributing to $|E(H)|$.
+The authors subtract these edges when counting the edges of $H$
+meeting $N_G[v]$. Combining this count with the induction bound
+reduces the estimate to an inequality in $h/\sigma$, which they
+verify for $\beta=\frac{620}{1987}$. The reduction above and
+$\sigma\leq2\Delta$ then give
+$|E(H)|\leq(1+\beta)\Delta^2=\frac{2607}{1987}\Delta^2$.
+
+A different question is when a five-cycle must occur and what its
+vertices tell us about the rest of the graph. Chung, Gy\'arf\'as,
+Tuza and Trotter~\cite{CGTT1990} considered simple graphs in which
+the entire edge set is a strong clique. After deleting isolated
+vertices, such a graph has no induced subgraph consisting of two
+disjoint edges. In the triangle-free, nonbipartite case, a shortest
+odd cycle must have length five, since a longer induced cycle contains
+two edges with no joining edge. Every vertex has exactly two neighbors
+on the five-cycle. Vertices with the same two neighbors form one of
+five independent sets. Every edge between successive sets is present,
+so if their sizes in cyclic
+order are $a_0,\ldots,a_4$, then the edge count is
+$\sum_{i=0}^4 a_i a_{i+1}$ and $a_{i-1}+a_{i+1}\leq\Delta$ for
+each $i$, with indices modulo five. Maximizing this sum gives
+$f(\Delta)$. In the bipartite case each part contains a vertex
+adjacent to the whole other part, so there are at most $\Delta^2$
+edges. If there is a triangle, they find a maximum clique such that
+every vertex outside it has a neighbor in it. Grouping the outside
+vertices according to their neighbors in this clique and counting
+the edges gives fewer than $f(\Delta)$ edges.
+
+Cames van Batenburg, Kang and Pirot~\cite{CamesKangPirot2020}
+allowed $H$ to be a proper submultigraph and assumed that $G$ has
+no five-cycle. Again take $v$ with $d_H(v)=h$. Consider an edge
+$xy$ of $H$ with both ends outside $N_G[v]$. Each $a\in N_H(v)$
+must be adjacent to $x$ or $y$. If distinct $a,b\in N_H(v)$
+were adjacent to $x$ and $y$, respectively, then $vaxybv$ would
+be a five-cycle. Thus, when $|N_H(v)|\geq2$, one endpoint of $xy$
+is adjacent to every vertex of $N_H(v)$. The authors count the
+edges at these endpoints, then subtract the degree already used by
+their neighbors in $N_H(v)$ when counting the remaining clique edges.
+Together with the case $|N_H(v)|=1$, this gives
+$|E(H)|\leq h(\sigma-h)\leq\frac{1}{4}\sigma^2\leq\Delta^2$.
+Consequently a larger strong clique forces some five-cycle in $G$.
+For our argument we need an induced five-cycle in the simple support
+of $G$ with an edge of $H$ on each of its five pairs of endpoints.
+
+\subsection{Highlights of the Proof}\label{subsec:method-highlights}
+
+The main idea is to use the structure of a counterexample at odd
+maximum degree to derive an inequality on edge multiplicities that
+contradicts the weighted flag inequalities. Suppose that $G$ has odd
+maximum degree $D$ and contains a strong clique of $m=f(D)+1$ marked edges.
+For $D\geq9$, \textbf{Lemma~\ref{lem:counterexample-cycle}} gives an
+induced five-cycle in the simple support of $G$. Each edge of the cycle
+has the same endpoints as a marked edge of $G$. This allows us to
+use the five sets suggested by the blow-ups of $C_5$ in the work
+of Chung, Gy\'arf\'as, Tuza and Trotter~\cite{CGTT1990}, even when
+the host has unmarked edges and parallel edges.
+
+For each such cycle $C$, let $U_0,\ldots,U_4$ be the sets defined
+in \textbf{Subsection~\ref{subsec:odd-sketch}}. All edges between
+$U_i$ and $U_{i+1}$ are present in the simple support, with indices
+taken modulo five. Thus at the $i$th cycle vertex at least
+$|U_{i-1}|+|U_{i+1}|$ of its incident edges are already accounted for.
+Summing over the five vertices leaves at most
+$R(C)=5D-2\sum_{i=0}^4|U_i|$ further incidences.
+When $D\geq11$, counting the marked edges in and outside these
+sets shows that $R(C)\leq\frac{D+1}{2}$ would give $m\leq f(D)$.
+Consequently $R(C)>\frac{D+1}{2}$ on every such cycle of a
+counterexample. This use of restrictions on small induced subgraphs
+to sharpen a flag bound is related to the stability arguments of
+Pikhurko, Slia\v{c}an and Tyros~\cite{PikhurkoSliacanTyros2019}.
+
+Let $s$ be the number of distinct pairs of vertices joined by
+marked edges. Summing the lower bound on $R(C)$ over the cycles
+and substituting it into the flag inequalities for the simple
+support gives an upper bound on $s$. For example, for odd
+$D\geq15$ we obtain
+\[
+  \frac{s}{D^2}\leq 1.221800627
+  <\frac{11}{9}\leq\frac{m}{D^2}.
+\]
+Once one marked edge has been counted on each of the $s$ pairs,
+the other $m-s$ marked edges are parallel copies. An upper bound
+on $s$ is therefore a lower bound on the fraction $\frac{m-s}{m}$
+of such copies. At $D=15$, for instance, the degree estimates give
+$R(C)\geq11$ on every induced red five-cycle. Using this bound in the
+inequalities for the simple support, and counting the extra copies at
+their endpoints, gives $0.007\leq\frac{m-s}{m}\leq0.365$
+in \textbf{Section~\ref{sec:exact}}.
+With these restrictions, the weighted flag inequalities in the
+$D=15$ row of \textbf{Table~\ref{tab:multi-odd}} give
+$\frac{m}{D^2}<0.827$. Yet $m=f(15)+1=275$ requires
+$\frac{m}{D^2}=\frac{11}{9}$. The other rows give the contradiction
+for the remaining odd $D\geq9$.
+
+

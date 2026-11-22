@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "verifiers/check_certificate.py", line 173, in <module>
+    result = verify(args.certificate)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "verifiers/check_certificate.py", line 144, in verify
+    require(Fraction(raw, denominator) == Fraction(5, 4), "Raw dual bound differs from 5/4")
+  File "verifiers/check_certificate.py", line 21, in require
+    raise ValueError(message)
+ValueError: Raw dual bound differs from 5/4

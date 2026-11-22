@@ -1,0 +1,32 @@
+[
+  {
+    "mutation": "negative_weight",
+    "rejected": true,
+    "diagnostic": "FAIL: negative rank-one weight"
+  },
+  {
+    "mutation": "wrong_denominator",
+    "rejected": true,
+    "diagnostic": "FAIL: invalid denominator relation"
+  },
+  {
+    "mutation": "lambda_perturbation",
+    "rejected": true,
+    "diagnostic": "FAIL: raw value is not 5/4"
+  },
+  {
+    "mutation": "overflow_vector",
+    "rejected": true,
+    "diagnostic": "FAIL: int128 multiplication overflow"
+  },
+  {
+    "mutation": "wrong_vector_length",
+    "rejected": true,
+    "diagnostic": "FAIL: factor vector size"
+  },
+  {
+    "mutation": "nonzero_correction",
+    "rejected": true,
+    "diagnostic": "FAIL: nonzero correction claimed"
+  }
+]

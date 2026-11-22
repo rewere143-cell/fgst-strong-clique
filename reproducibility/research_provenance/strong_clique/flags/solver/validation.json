@@ -1,0 +1,520 @@
+{
+  "pass": true,
+  "tests": [
+    {
+      "test": "genuine_3x3_not_pairwise_SOC",
+      "expected_objective": 3.0,
+      "info": {
+        "pobj": 3.0000000003086607,
+        "dobj": 2.9999999948907115,
+        "res_pri": 5.229133098469756e-10,
+        "res_dual": 8.515481441993757e-10,
+        "res_infeas": 1.0,
+        "res_unbdd": null,
+        "rel_gap": 7.739927434440235e-10,
+        "setup_time_ms": 0.084536,
+        "solve_time_ms": 0.368757,
+        "linsys_time_ms": 0.007483,
+        "allocated_memory": 0.0,
+        "iter": 4,
+        "status_val": 1,
+        "cg_total_iters": 5,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 9.86014603299168e-10,
+        "dual_residual_inf": 1.7030963306297053e-09,
+        "primal_objective": 3.00000000030866,
+        "dual_objective": 2.999999994890711,
+        "absolute_gap": 5.417949200392513e-09,
+        "complementarity": -1.7829929752647586e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          -1.7829917542400153e-09
+        ],
+        "psd_dual_min_eigenvalues": [
+          -2.0532413820456106e-16
+        ]
+      }
+    },
+    {
+      "test": "asymmetric_4x4_order_and_scaling",
+      "expected_objective": 4.1061701059430495,
+      "info": {
+        "pobj": 4.106170108510975,
+        "dobj": 4.1061701047422625,
+        "res_pri": 5.146757498383242e-10,
+        "res_dual": 1.4621730297371896e-10,
+        "res_infeas": 1.43871832941027,
+        "res_unbdd": null,
+        "rel_gap": 4.0909392901065617e-10,
+        "setup_time_ms": 0.016564,
+        "solve_time_ms": 0.253491,
+        "linsys_time_ms": 0.043431000000000004,
+        "allocated_memory": 0.0,
+        "iter": 10,
+        "status_val": 1,
+        "cg_total_iters": 7,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 1.5637189321182632e-09,
+        "dual_residual_inf": 2.9243452104310563e-10,
+        "primal_objective": 4.106170108510976,
+        "dual_objective": 4.106170104742263,
+        "absolute_gap": 3.7687124532226335e-09,
+        "complementarity": 1.1553540479656227e-10,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          1.1553529157165662e-10
+        ],
+        "psd_dual_min_eigenvalues": [
+          -4.773855493479588e-17
+        ]
+      }
+    },
+    {
+      "test": "warm_start_same_problem",
+      "expected_objective": 4.1061701059430495,
+      "info": {
+        "pobj": 4.106170107035543,
+        "dobj": 4.106170101186161,
+        "res_pri": 1.554699840212055e-10,
+        "res_dual": 5.792366585022904e-10,
+        "res_infeas": 1.4387183294102692,
+        "res_unbdd": null,
+        "rel_gap": 6.34950652218886e-10,
+        "setup_time_ms": 0.016552,
+        "solve_time_ms": 0.031418,
+        "linsys_time_ms": 0.0016910000000000002,
+        "allocated_memory": 0.0,
+        "iter": 0,
+        "status_val": 1,
+        "cg_total_iters": 1,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 6.566960308873604e-10,
+        "dual_residual_inf": 1.1584733172753658e-09,
+        "primal_objective": 4.106170107035543,
+        "dual_objective": 4.10617010118616,
+        "absolute_gap": 5.849382311851059e-09,
+        "complementarity": 8.189034047887387e-10,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          8.189033007333843e-10
+        ],
+        "psd_dual_min_eigenvalues": [
+          -5.032051396976799e-17
+        ]
+      }
+    },
+    {
+      "test": "unaccelerated_scs_path",
+      "expected_objective": 4.1061701059430495,
+      "info": {
+        "pobj": 4.106170120109387,
+        "dobj": 4.10617003651775,
+        "res_pri": 2.6659952749901572e-09,
+        "res_dual": 8.453777812086873e-09,
+        "res_infeas": 1.4387183294102694,
+        "res_unbdd": null,
+        "rel_gap": 9.073876485502322e-09,
+        "setup_time_ms": 0.008817,
+        "solve_time_ms": 1.592455,
+        "linsys_time_ms": -1.0,
+        "allocated_memory": 0.0,
+        "iter": 90,
+        "status_val": 1,
+        "cg_total_iters": -1,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 9.707472603537326e-09,
+        "dual_residual_inf": 1.6907555688838727e-08,
+        "primal_objective": 4.106170120109388,
+        "dual_objective": 4.10617003651775,
+        "absolute_gap": 8.359163761184618e-08,
+        "complementarity": 6.767328279778229e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          6.767329462353779e-09
+        ],
+        "psd_dual_min_eigenvalues": [
+          -1.8172031493584294e-16
+        ]
+      }
+    },
+    {
+      "test": "without_normalization",
+      "expected_objective": 4.1061701059430495,
+      "info": {
+        "pobj": 4.10617011155981,
+        "dobj": 4.106170112299648,
+        "res_pri": 4.317004877794357e-10,
+        "res_dual": 7.740301463640689e-10,
+        "res_infeas": 1.4387183294102692,
+        "res_unbdd": null,
+        "rel_gap": 8.030949734567423e-11,
+        "setup_time_ms": 0.011167,
+        "solve_time_ms": 0.691244,
+        "linsys_time_ms": 0.018234999999999998,
+        "allocated_memory": 0.0,
+        "iter": 20,
+        "status_val": 1,
+        "cg_total_iters": 25,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 2.039345581295038e-09,
+        "dual_residual_inf": 1.548060568623555e-09,
+        "primal_objective": 4.10617011155981,
+        "dual_objective": 4.106170112299648,
+        "absolute_gap": 7.398384127554891e-10,
+        "complementarity": 5.2901813673601814e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          5.2901811952345765e-09
+        ],
+        "psd_dual_min_eigenvalues": [
+          -4.0236093483487425e-17
+        ]
+      }
+    },
+    {
+      "test": "equalities_nonnegative_multiple_PSD",
+      "expected_objective": 6.0,
+      "info": {
+        "pobj": 5.999999997726805,
+        "dobj": 5.999999992798077,
+        "res_pri": 8.006008075765184e-10,
+        "res_dual": 5.699498932666068e-10,
+        "res_infeas": 1.03949774207527,
+        "res_unbdd": null,
+        "rel_gap": 3.7913289629437903e-10,
+        "setup_time_ms": 0.024426,
+        "solve_time_ms": 0.486047,
+        "linsys_time_ms": 0.030904999999999995,
+        "allocated_memory": 0.0,
+        "iter": 14,
+        "status_val": 1,
+        "cg_total_iters": 30,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 2.6107138673125974e-09,
+        "dual_residual_inf": 1.0966569874426568e-09,
+        "primal_objective": 5.999999997726804,
+        "dual_objective": 5.999999992798077,
+        "absolute_gap": 4.928726760056179e-09,
+        "complementarity": 1.977326968827242e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": 2.000000000000004,
+        "nonnegative_dual_min": 0.0,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          1.977326746782637e-09,
+          1.8938298878464142
+        ],
+        "psd_dual_min_eigenvalues": [
+          -2.780550400800811e-17,
+          0.0
+        ]
+      }
+    },
+    {
+      "test": "random_spectral_epigraph_3",
+      "expected_objective": 3.2475419150773313,
+      "info": {
+        "pobj": 3.2475419150773375,
+        "dobj": 3.247541918927706,
+        "res_pri": 4.70110484877615e-10,
+        "res_dual": 5.92813738003173e-10,
+        "res_infeas": 1.1797608909592532,
+        "res_unbdd": null,
+        "rel_gap": 5.137191996487551e-10,
+        "setup_time_ms": 0.023267,
+        "solve_time_ms": 0.276915,
+        "linsys_time_ms": 0.009021,
+        "allocated_memory": 0.0,
+        "iter": 10,
+        "status_val": 1,
+        "cg_total_iters": 9,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 1.4245895574305223e-09,
+        "dual_residual_inf": 1.1856273740562528e-09,
+        "primal_objective": 3.247541915077337,
+        "dual_objective": 3.247541918927706,
+        "absolute_gap": 3.850368912594604e-09,
+        "complementarity": 2.2712616236356483e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          2.271262379237423e-09
+        ],
+        "psd_dual_min_eigenvalues": [
+          -5.665912299528206e-17
+        ]
+      }
+    },
+    {
+      "test": "random_spectral_epigraph_5",
+      "expected_objective": 3.262402517029462,
+      "info": {
+        "pobj": 3.262402517027376,
+        "dobj": 3.2624025171928657,
+        "res_pri": 1.4500296739164548e-11,
+        "res_dual": 2.5043286917847e-11,
+        "res_infeas": 1.2890562413430078,
+        "res_unbdd": null,
+        "rel_gap": 2.199257566116791e-11,
+        "setup_time_ms": 0.020877,
+        "solve_time_ms": 1.525449,
+        "linsys_time_ms": 0.050092,
+        "allocated_memory": 0.0,
+        "iter": 41,
+        "status_val": 1,
+        "cg_total_iters": 48,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 3.0359048608374906e-11,
+        "dual_residual_inf": 5.008660153293931e-11,
+        "primal_objective": 3.262402517027375,
+        "dual_objective": 3.2624025171928657,
+        "absolute_gap": 1.6549073222904553e-10,
+        "complementarity": 7.29634115086244e-11,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          7.296407816987744e-11
+        ],
+        "psd_dual_min_eigenvalues": [
+          -8.347266924173979e-17
+        ]
+      }
+    },
+    {
+      "test": "random_spectral_epigraph_8",
+      "expected_objective": 3.0961857375551993,
+      "info": {
+        "pobj": 3.0961857327951843,
+        "dobj": 3.096185733943692,
+        "res_pri": 4.3917826711412744e-11,
+        "res_dual": 5.832186810227516e-10,
+        "res_infeas": 1.7440394315706507,
+        "res_unbdd": null,
+        "rel_gap": 1.5968412040846247e-10,
+        "setup_time_ms": 0.018695,
+        "solve_time_ms": 0.920114,
+        "linsys_time_ms": 0.030145,
+        "allocated_memory": 0.0,
+        "iter": 15,
+        "status_val": 1,
+        "cg_total_iters": 13,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 1.5381607099129724e-10,
+        "dual_residual_inf": 1.166437169075607e-09,
+        "primal_objective": 3.0961857327951847,
+        "dual_objective": 3.096185733943692,
+        "absolute_gap": 1.1485070672279107e-09,
+        "complementarity": -5.041082289559662e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          -5.04108373880573e-09
+        ],
+        "psd_dual_min_eigenvalues": [
+          -5.843502860875319e-17
+        ]
+      }
+    },
+    {
+      "test": "random_spectral_epigraph_12",
+      "expected_objective": 4.2181876881167035,
+      "info": {
+        "pobj": 4.218187686776723,
+        "dobj": 4.2181876866822785,
+        "res_pri": 9.31757652169838e-11,
+        "res_dual": 1.7002838764404772e-10,
+        "res_infeas": 1.9085964407702272,
+        "res_unbdd": null,
+        "rel_gap": 1.0008551856091884e-11,
+        "setup_time_ms": 0.0192,
+        "solve_time_ms": 0.47593,
+        "linsys_time_ms": 0.028260999999999994,
+        "allocated_memory": 0.0,
+        "iter": 11,
+        "status_val": 1,
+        "cg_total_iters": 10,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 3.214674082485658e-10,
+        "dual_residual_inf": 3.400567605282845e-10,
+        "primal_objective": 4.218187686776723,
+        "dual_objective": 4.21818768668228,
+        "absolute_gap": 9.444267590197342e-11,
+        "complementarity": -1.0471381358767296e-09,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": null,
+        "nonnegative_dual_min": null,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [
+          -1.0471356738550059e-09
+        ],
+        "psd_dual_min_eigenvalues": [
+          -4.7112818835735247e-17
+        ]
+      }
+    },
+    {
+      "test": "simple_LP",
+      "expected_objective": 2.0,
+      "info": {
+        "pobj": 2.0000000000000004,
+        "dobj": 2.0000000000000004,
+        "res_pri": 8.55077407878558e-17,
+        "res_dual": 6.413080559089186e-17,
+        "res_infeas": 1.0,
+        "res_unbdd": null,
+        "rel_gap": 0.0,
+        "setup_time_ms": 0.012541,
+        "solve_time_ms": 0.025754,
+        "linsys_time_ms": 0.002433,
+        "allocated_memory": 0.0,
+        "iter": 3,
+        "status_val": 1,
+        "cg_total_iters": 3,
+        "status": "Solved",
+        "return_code": 1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "checks": {
+        "primal_residual_inf": 4.440892098500626e-16,
+        "dual_residual_inf": 2.220446049250313e-16,
+        "primal_objective": 2.0000000000000004,
+        "dual_objective": 2.0000000000000004,
+        "absolute_gap": 0.0,
+        "complementarity": 0.0,
+        "zero_slack_max_abs": 0.0,
+        "nonnegative_slack_min": 0.0,
+        "nonnegative_dual_min": 1.0000000000000002,
+        "soc_primal_margins": [],
+        "soc_dual_margins": [],
+        "psd_primal_min_eigenvalues": [],
+        "psd_dual_min_eigenvalues": []
+      }
+    },
+    {
+      "test": "infeasible_and_unbounded_status",
+      "infeasible": {
+        "pobj": null,
+        "dobj": null,
+        "res_pri": null,
+        "res_dual": null,
+        "res_infeas": 1.7669422124947784e-16,
+        "res_unbdd": null,
+        "rel_gap": null,
+        "setup_time_ms": 0.124211,
+        "solve_time_ms": 0.075875,
+        "linsys_time_ms": 0.004966999999999999,
+        "allocated_memory": 0.0,
+        "iter": 5,
+        "status_val": -2,
+        "cg_total_iters": 6,
+        "status": "Infeasible",
+        "return_code": -2,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      },
+      "unbounded": {
+        "pobj": null,
+        "dobj": null,
+        "res_pri": null,
+        "res_dual": null,
+        "res_infeas": null,
+        "res_unbdd": 0.0,
+        "rel_gap": null,
+        "setup_time_ms": 0.013611,
+        "solve_time_ms": 0.006075,
+        "linsys_time_ms": 0.001358,
+        "allocated_memory": 0.0,
+        "iter": 0,
+        "status_val": -1,
+        "cg_total_iters": 1,
+        "status": "Unbounded",
+        "return_code": -1,
+        "solver": "CasADi-bundled SuperSCS",
+        "version": "1.3.3"
+      }
+    }
+  ],
+  "description": "Known analytic/eigenvalue optima; no second SDP solver used."
+}

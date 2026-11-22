@@ -1,0 +1,306 @@
+\subsection{Weighted Flag Certificates}\label{app:multi-certificates}
+
+We use the coordinates and weighted moment matrices defined in
+\textbf{Subsection~\ref{sec:weighted-counts}}.
+
+\subsubsection{Bounds in the Simple Support}\label{app:multi-projection}
+
+Complete the simple support to a $D$-regular simple graph using
+blue edges. This preserves the induced cycles with all five edges red
+and the parts $U_i$ of each such cycle. With normalization $2sD^{n-2}$,
+let $q_C$ and $L_R$ be as in \textbf{Appendix~\ref{app:cycle-estimates}}. Thus $L_R$
+weights each ordered cycle by $\frac{R}{D}$, where $R=5D-2|B|$. If
+$R\ge\alpha D$ for every such cycle, then $L_R\ge\alpha q_C$. The four
+simple certificate inequalities used here are
+\begin{equation}\label{eq:support-projection-four}
+\begin{aligned}
+ S-0.99999q_C
+   &\le \frac{5}{4}-\frac{0.99999}{8}+2\cdot10^{-9},\\
+ S+0.5682L_R
+   &\le \frac{5}{4}+10^{-9},\\
+ S+0.4897(L_R-0.32q_C)
+   &\le \frac{5}{4}-\frac{0.4897\cdot0.32}{8}+2\cdot10^{-9},\\
+ S+0.45119\left(L_R-\frac{q_C}{2}\right)
+   &\le \frac{5}{4}-\frac{0.45119}{16}+2\cdot10^{-9}.
+\end{aligned}
+\end{equation}
+Each displayed coefficient is rounded down from the corresponding
+rational simple certificate in the reproduction guide. If the
+quantity multiplied by that coefficient is nonnegative after
+moving the constant term to the left, rounding down preserves the
+inequality. If that quantity is negative, the rounded inequality
+follows from $S\le\frac{5}{4}$.
+
+Substitute $L_R\ge\alpha q_C$ into each inequality. Then $S$ is
+bounded by the minimum of five affine functions of $q_C$. The
+maximum of this minimum over $q_C\ge0$ is attained at zero or at a
+nonnegative intersection of two of the lines, since the line from
+the second displayed inequality has negative slope for $\alpha>0$.
+The program evaluates these intersections as rationals. It may
+also use the independent support bounds $S\le\frac{32}{27}$,
+$\frac{145}{121}$ or $\frac{204}{169}$ for $D=9,11,13$, respectively.
+To express these inequalities in the weighted model, multiply them
+by $1-e=\frac{s}{m}$. This changes the normalization of the cycle
+count and its $R$-weighted sum from $2sD^{n-2}$ to $2mD^{n-2}$.
+The cycles and their values of $R$ are the same in either completion.
+The resulting bound $S\le S_{\max}$ gives $e\ge1-\frac{S_{\max}}{M}$.
+
+\subsubsection{Degree Constraints at Complete Red Subgraphs}
+
+Let $K$ be the vertex set of a red $K_k$ in the weighted host.
+For each vertex $v$ put $a_v=|N_{G_{\rm s}}(v)\cap K|$ and let
+$h_v$ and $d_{\rm blue}(v)$ count the marked and the unmarked edges
+incident with $v$, respectively. Let $m_K$ count the marked edges with
+both endpoints in $K$, with multiplicity, and put
+$J_K=\sum_{v\in K}j_v$. For any marked
+edge, the union of its endpoints' neighborhoods in $K$ meets
+every edge of the red clique. In particular, its endpoint
+$a$-values sum to at least $k-1$. They sum to at least $k$ if
+one endpoint belongs to $K$, and to $2(k-1)$ if both do. Hence
+\[
+ (k-1)m+\sum_{v\in K}h_v+(k-3)m_K
+ \le\sum_v a_vh_v
+ \le D(kD-J_K)-\sum_{v\in K}d_{\rm blue}(v).
+\]
+For the last inequality, use
+$h_v=D-d_{\rm blue}(v)$ and
+$a_vd_{\rm blue}(v)\ge |N_{\rm blue}(v)\cap K|$.
+It follows that
+\[
+ (k-1)m\le kD(D-1)-DJ_K-(k-3)m_K.
+\]
+For $k=5$, the right side is at most $5D(D-1)-20$. This
+excludes a red $K_5$ both for $M\ge\frac{5}{4}$ and for the odd
+counterexample in \eqref{eq:multi-mass}. When $D\le23$ in
+the odd reduction, Appendix~\ref{app:multi-no-k4} excludes
+a red $K_4$ as well. The resulting forbidden patterns have
+zero coordinates. Red triangles may occur.
+
+These exclusions also give inequalities on common red neighborhoods.
+For example, if there is no red $K_4$, the red neighborhood of a
+vertex contains no red triangle. For any nonnegative weights $w_x$
+on that neighborhood,
+\[
+ 2\sum_{xy\text{ ordered red edge}}w_xw_y
+ \le \left(\sum_x w_x\right)^2.
+\]
+To see this, move the combined weight of two nonadjacent vertices
+onto the one with greater weighted neighbor sum. The edge sum does
+not decrease, and iterating reduces the support of the weights to
+a clique of size at most two. The inequality then follows from
+$4w_xw_y\le(w_x+w_y)^2$. The weighted calculation uses
+$w_x=1,b_{vx},1+b_{vx}$ for a red neighborhood rooted at $v$.
+The square on the right includes two choices of the same vertex.
+
+\subsubsection{Additional Linear Inequalities and Exact Duals}
+
+Fix a red pair $xy$. Let $U=N_{G_{\rm s}}(x)\setminus N_{G_{\rm s}}(y)$
+and let $W$ be the vertices adjacent to neither $x$ nor $y$. In the
+host induced on $U\cup W$, mark only the previously marked edges
+between $U$ and $W$. Edges within a part can still join endpoints of
+these marked edges. For each marked edge $uv$ between $U$ and $W$, and
+each red neighbor $z$ of $y$, the strong clique condition for $uv$
+and $yz$ forces $uz$ or $vz$ to be a host edge. If $uv$ meets $y$,
+the edge $yz$ itself gives the adjacency. All such vertices $z$ lie
+outside $U\cup W$. Hence the Ore-degree $\sigma$ of the bipartite
+marked subgraph in this induced host is at most $2D$ minus the
+number of red neighbors of $y$.
+
+We use three bounds with this Ore-degree. The total number of marked
+edges is at most $\frac{2973}{10000}\sigma^2$, by the companion proof
+on witness deficits and neighborhood differences. Its last step is the
+rational interval check in \textbf{Appendix~\ref{app:ore-replay}}. The base copies
+form a strong clique in the simple support, where the Ore-degree can
+only decrease, so the simple rational Ore bound gives at most
+$\frac{273323}{10^6}\sigma^2$ base copies. The bound
+$\frac{1}{4}\sigma^2$ on the extra copies comes from reserving the base
+copies as witnesses, as proved in the companion note on that bound.
+The proofs of the triangle and five-cycle inequalities and of the
+other constraints for bounded degree are indexed in
+\path{reproducibility/multigraph/REPLAY.md}.
+
+A pointwise inequality at a fixed root gives a linear inequality for
+the weighted counts. Multiply by the product of the extra multiplicities
+on the specified forest edges of the type and sum over all maps of
+the type. Local degree terms and counts of
+individual neighbors use one more position. Quadratic terms and
+counts of an additional edge use two. At $D=9$, for example, the
+external neighborhood union at a double pair has size $13$ or
+$14$. In a flag extension for the entire neighborhood union, the
+images of the two root positions are also valid choices. Thus the
+corresponding interval is $[15,16]$. At $D=13$ and $15$ we also
+enumerate the possible integer counts of outside vertices adjacent
+to two or three vertices of a red triangle, together with the
+degree and multiplicity losses at its vertices. In the host on the
+marked endpoints before regularization, let $E$ be the sum of the
+degree deficits and extra marked degrees at the triangle. Let $t$
+count outside vertices with at least two distinct triangle neighbors,
+and $q$ those with three. The number of vertices with a triangle
+neighbor, including the roots, is $N_+=3(D-1)-E-t-q$. A marked edge
+meeting a vertex without a triangle neighbor has its other endpoint
+among the $t$ vertices. Thus the number $m_{\rm out}$ of those edges
+is at most $(D-2)t-q$. The marked degree sum at the $N_+$ vertices
+is $2m-m_{\rm out}$, so
+\[
+ DE+2t+(D+1)q\le 3D(D-1)-2m.
+\]
+The generator uses this inequality, degree bounds at the outside
+vertices with a unique triangle neighbor, and the finite root-pair
+bounds. Filling unused degree with blue edges can only decrease $E$
+and preserves $t,q$. The supporting planes of the downward closure
+in $E$ of the finite outer bound give linear inequalities in the
+rooted counts. They are generated in integer arithmetic by
+\path{finite_triangle_profiles.py}. When summing extensions for
+$t$, the three maps of the fourth position to a root are subtracted.
+
+Write $AX=(1,0,\ldots,0)^{\mathsf T}$ for the degree and sampling
+equations, $NX\le0$ for the linear inequalities, and $G_i(X)\succeq0$
+for the matrix inequalities. A stored bound consists of a vector
+$\lambda$, a nonnegative vector $\rho$, and matrices $P_i$
+given as nonnegative sums of rational rank-one outer products.
+Let $G_i^*$ be the adjoint defined by
+$(G_i^*(P_i))^{\mathsf T}X=\tr(P_iG_i(X))$. For each feasible $X$,
+\[
+ \left(A^{\mathsf T}\lambda+N^{\mathsf T}\rho
+        -\sum_iG_i^*(P_i)\right)^{\mathsf T}X
+ \le\lambda_0 .
+\]
+Let $r$ be the coefficient vector on the left minus the coefficient
+vector of $M$. If $0\le X_j\le U_j$ for each coordinate $j$, then
+$M\le\lambda_0+\sum_{j:r_j<0}(-r_j)U_j$. For a coordinate $X(P,T)$,
+an upper bound is
+$\frac{1-e}{|\operatorname{Aut}(P,T)|}$ for $T=\varnothing$ and
+$\frac{e}{|\operatorname{Aut}(P,T)|}$ otherwise. To obtain it, start at
+a red edge, in $T$ if $T$ is nonempty, and extend along a
+spanning tree containing $T$. Each new position contributes at
+most $D$ in support count or extra multiplicity. The replayers
+also use bounds on sums of coordinates of equal order and
+equal forest size, obtained by counting all labeled spanning
+trees containing the specified red root. Positive residuals
+can be dropped since the coordinates are nonnegative. The
+total compensation is bounded at the endpoints of the allowed
+interval for $e$. For an infeasibility certificate, the objective
+is zero and the compensated right side is negative.
+
+\subsubsection{Verification of the Quadratic and Odd-Degree Bounds}
+
+The five-position certificates first give $M<1.28746$ and
+$e<\frac{421}{2000}$ when $M>\frac{5}{4}$. The
+certificate at $M\ge\frac{4967}{4000}$ gives the second claim of
+\textbf{Lemma~\ref{prop:multi-uniform}}. Under the assumption $M>\frac{5}{4}$,
+the strengthened five-position certificate
+\path{direct_half_scs.json} improves the mass bound to $1.28492$.
+In the six-position chain, the successive lower ends of the
+assumed mass intervals are $1.283$, $1.279$, $1.274$, $1.268$
+and $\frac{5}{4}$. Put $r=\frac{R}{D}$, $j=\frac{\sum_i j_{c_i}}{D}$ and
+$g=M-\frac{5}{4}$. The count in \textbf{Appendix~\ref{app:multi-structure}} gives
+$r>\frac{1}{2}$ when $g>0$. For $\frac{1}{2}<r\le1$, substituting
+$K\le R-\sum_i j_{c_i}$ in \eqref{eq:multi-rough-discharge}
+gives $2g\le r(r-\frac{1}{2})-rj$.
+Dropping the nonnegative loss term in \eqref{eq:multi-joint}
+gives the stronger bound
+\[
+ 2g\le \frac{1+r}{2+r}r\left(r-\frac{1}{2}\right)-\frac{1+r^2}{2+r}j .
+\]
+The replay uses the relevant inequality with $j\ge0$ and the
+current lower bound on $M$ to obtain a lower bound on $r$. All
+chosen lower bounds are at most one, so a cycle with $r>1$
+satisfies them as well. The simple support bound then supplies
+the lower end of the interval for $e$. The replay verifies the
+exact comparisons between consecutive intervals. In the last
+interval the dual gives
+\[
+ M\le\frac{124968062205915704703985647}
+               {100000000000000000000000000}<\frac{5}{4}.
+\]
+This contradicts the assumed strict violation and proves
+\textbf{Lemma~\ref{prop:multi-uniform}}.
+
+\begin{lemma}\label{lem:multi-even-equality}
+Suppose the host has positive even maximum degree $D$ and the
+number of marked copies is $\frac{5D^2}{4}$. The host induced by
+the marked endpoints is a blow-up of $C_5$ with all five parts of
+size $\frac{D}{2}$. Every edge of that blow-up is single and marked.
+\end{lemma}
+
+\begin{proof}
+The five-position multiplicity bound applies at $M=\frac{5}{4}$ and
+gives $e<0.2105$. If every induced red five-cycle had
+$\frac{R}{D}\ge\frac{1}{2}$, the support bound in
+\textbf{Appendix~\ref{app:multi-projection}} would give $S\le1.22181$ and
+hence $e>0.0225$. These bounds satisfy the hypotheses of the last
+six-position certificate, whose upper bound is strictly less than
+$\frac{5}{4}$. Thus there is a cycle with $R<\frac{D}{2}$.
+
+Apply the redistribution leading to \eqref{eq:multi-rough-discharge}
+at this cycle. For every outside vertex $x$ with $k_x>0$, its
+resulting contribution is strictly less than $\frac{k_xD}{2}$.
+For $k_x=1$, a vertex either keeps at most $R-2$ or sends half of
+its marked degree and has a blue anchor edge. For $k_x=2$, there
+is a blue anchor edge and no incoming transfer. For $k_x=3$ with
+a marked neighbor of signature size zero, the incoming transfer
+is at most $\max\{\frac{D+R}{4},R\}<\frac{D}{2}$. Without such a
+neighbor, it is at most $\frac{D-3}{2}$, since the three anchor
+adjacencies use degree units inside the core. For $k_x\ge4$,
+the transfer is at most $D-k_x$ and its own contribution is
+at most $D$. Vertices of signature size zero retain no positive
+contribution. Since $K\le R$, the presence of an outside vertex
+of positive signature size would give $2m<D|B|+\frac{DK}{2}
+\le\frac{5D^2}{2}$ by \eqref{eq:multi-core-cut}.
+
+Hence $K=0$. Now $2m\le D|B|=\frac{D(5D-R)}{2}$, so $R=0$.
+By \eqref{eq:multi-core-identities}, the five part sizes are
+$\frac{D}{2}$. For a vertex of $U_i$, the neighbors in
+$U_{i-1}\cup U_{i+1}$ already use all $D$ degree units. There are
+$\frac{5D^2}{4}$ edges on these pairs. Any marked copy outside
+$B$ would require an outside vertex of positive signature size.
+Thus all edges in the blow-up are marked, and $B$ contains every
+marked endpoint.
+\end{proof}
+
+We next verify the bound used to force an induced red five-cycle in
+\textbf{Lemma~\ref{lem:counterexample-cycle}}. For $m,D>0$ we claim that
+\begin{equation}\label{eq:absence-red-cycle}
+ q_C=0 \quad\Longrightarrow\quad M<\frac{98}{81}.
+\end{equation}
+Suppose that $q_C=0$ and $M\geq\frac{98}{81}$. The uniform bounds for
+the multigraph and its simple support give $M,S\leq\frac54$.
+If $b=0$ then $e=0$. If $b>0$, \textbf{Lemma~\ref{lem:multi-extra}}
+gives $e\leq1-\frac{M}{2}$. Thus in either case
+\[
+ \frac{98}{81}\leq M\leq\frac{12883}{10000},
+ \qquad 0\leq e\leq\frac{32}{81}.
+\]
+These are the intervals used in the stored calculation.
+
+Let $P$ be the five-position pattern with five red cycle edges and
+color $0$ on all other pairs. A color-preserving map of $P$ is
+injective. Adjacent positions must have distinct images, and any
+two nonadjacent positions are distinguished by a third position
+adjacent to exactly one of them. Hence $q_C=0$ excludes every such map. It follows from
+the definition of $X(P,T)$ in
+\textbf{Subsection~\ref{sec:weighted-counts}} that $X(P,T)=0$ for
+each forest $T\subseteq E(P)$ used in the calculation, including
+$T=\varnothing$. Since the coordinates are nonnegative, the verifier
+imposes all these equations by summing the distinct coordinates
+$X(P,T)$ and requiring this sum to be at most zero.
+
+Together with this inequality, the five-position calculation uses
+the weighted degree and flag constraints, the simple-support bound,
+the first inequality in \eqref{eq:support-projection-four}, and the
+rooted five-cycle bounds indexed in \path{PROOF_NOTES.md}.
+The rational coefficients in \path{absence_c5_mass_98_81.json}
+give the bound below after the correction for negative residual
+coefficients described above.
+\[
+ M\leq\frac{14802480264533669793521}{12250000000000000000000}
+   <\frac{98}{81}.
+\]
+This contradicts the assumed range of $M$ and proves
+\eqref{eq:absence-red-cycle}. The replay command is given in
+\textbf{Appendix~\ref{app:multi-reproduction}}.
+
+For the eleven rows of \textbf{Table~\ref{tab:multi-odd}}, the replay
+rebuilds the linear systems and checks their projection inputs,
+multipliers and residual bounds in rational arithmetic.
+\textbf{Appendix~\ref{app:multi-reproduction}} lists the inputs and commands.

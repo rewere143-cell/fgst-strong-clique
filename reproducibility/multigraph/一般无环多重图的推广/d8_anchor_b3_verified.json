@@ -1,0 +1,692 @@
+{
+  "verified": true,
+  "bundles": 3,
+  "cases": 36,
+  "additions": 2435052,
+  "instances": [
+    {
+      "name": "s00004",
+      "slack": [
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 4592,
+        "deleted": 147
+      },
+      "cnf_sha256": "4e8b00e70fdf55a628cb8a4191c902096a285760201f62eae09f3671dd55d707",
+      "lrat_sha256": "70c32a9d1444cf4f65d081e3a1fa47e1083c39676e30790676c5bbbbb809e66e"
+    },
+    {
+      "name": "s00013",
+      "slack": [
+        0,
+        0,
+        0,
+        1,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 7527,
+        "deleted": 217
+      },
+      "cnf_sha256": "d76c30191e71f372673e7039216dca3b7ecb7fd014006e13be5cb62a9bfdec1b",
+      "lrat_sha256": "c4d79d53bbbef0508f4e202c11378b98a9b77c6f2e118456208db7b316a53a3f"
+    },
+    {
+      "name": "s00022",
+      "slack": [
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 7431,
+        "deleted": 217
+      },
+      "cnf_sha256": "6fcfee88408ee77e391db9d4323e89d282c89f0fad3a871a0546793b9d57f5ef",
+      "lrat_sha256": "6496a8cbd8d1306027d202f1f0e1ac5347c72b9bfe8e41c51674059b2a35ba1a"
+    },
+    {
+      "name": "s00103",
+      "slack": [
+        0,
+        0,
+        1,
+        0,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 10986,
+        "deleted": 6308
+      },
+      "cnf_sha256": "09da22fa8e9bc4700b350a1581584aa98f6c33a4d5d0fd7729e08ae4e8e106e7",
+      "lrat_sha256": "99bc2aa37a3a7ebd1f6c0d098afd318ceeed7ff0dd2dc478af2fed85d5d5a1b1"
+    },
+    {
+      "name": "s00112",
+      "slack": [
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 15389,
+        "deleted": 7235
+      },
+      "cnf_sha256": "c9471c2996887cc7993d5046ee55bfcc758897d8bf1034b06e4f3c825a44c9a4",
+      "lrat_sha256": "f23d574ee662f44cab1be0c7284fe5a2f56ecbe22fcf296ffb4ab0fdfe1c5a95"
+    },
+    {
+      "name": "s00121",
+      "slack": [
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 11965,
+        "deleted": 6455
+      },
+      "cnf_sha256": "9dcd11595fdc3e473572141a5fe30f7e319b64cba3d74c906eccca28c5617dc2",
+      "lrat_sha256": "c6a50519438b9bb0d8b7b768985ed0fc034ac0a572bb1acf3fd159513f720137"
+    },
+    {
+      "name": "s00202",
+      "slack": [
+        0,
+        0,
+        2,
+        0,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 19562,
+        "deleted": 6232
+      },
+      "cnf_sha256": "f023c947bc58a84c9b0716c25c1ab74d6104adeee8c370eecd5afcff863b53a4",
+      "lrat_sha256": "834987cc400aa68c04f222679541bc41b834c1461532d5a210675f7a225caa37"
+    },
+    {
+      "name": "s01012",
+      "slack": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 21662,
+        "deleted": 2734
+      },
+      "cnf_sha256": "4aeee440bd50b9a5c4da7355d6436d640d142a12f84cec39c11e4ee807cf4847",
+      "lrat_sha256": "1cb35dbf8cc82a204ae3a1aa0dcc902cbd3eaafdb68aa65f4228bb7488b5dfea"
+    },
+    {
+      "name": "s01102",
+      "slack": [
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 8634,
+        "deleted": 3104
+      },
+      "cnf_sha256": "fc8877274e386c19b4af3b29ee3f00f90c05a78571d563b81fa846eb6319806f",
+      "lrat_sha256": "af5c0118552d76c01841174bd61153cbba8f3e26bf3f410526fed0084db100ee"
+    },
+    {
+      "name": "s01111",
+      "slack": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 13446,
+        "deleted": 3274
+      },
+      "cnf_sha256": "d962d5934e449f65a449efdd640c7eb580ae1e97e25a9727396e7762587fdfbd",
+      "lrat_sha256": "c6fe785286b75862932ecdb49f652c42890c665fc93810665cfeda038f5381c4"
+    },
+    {
+      "name": "s00006",
+      "slack": [
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 11861,
+        "deleted": 462
+      },
+      "cnf_sha256": "1cdefe2ba572f595a66aedce3cea0535155b8f90cea639e0a381a039dca23704",
+      "lrat_sha256": "91b613c0e2410392a095bc55c7b04d2400f7c74ef94b948ec8edef33f0eb4706"
+    },
+    {
+      "name": "s00015",
+      "slack": [
+        0,
+        0,
+        0,
+        1,
+        5
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 14451,
+        "deleted": 534
+      },
+      "cnf_sha256": "7b0255a09c8f4a570fab11918416e9cdce376bf1e8e959aa299910ffee38b690",
+      "lrat_sha256": "66dfc77bad6fd68ac6610fa304093b3528610d186ec9812632a2b1ff9013f1cd"
+    },
+    {
+      "name": "s00024",
+      "slack": [
+        0,
+        0,
+        0,
+        2,
+        4
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 14450,
+        "deleted": 534
+      },
+      "cnf_sha256": "55ef363a0f50aa3fecda1a27a8bd205dcfd0d36b848bc97a327a2c822ff749f1",
+      "lrat_sha256": "9c689076bb70b6d44198b0ed55d55f1db6db020c9cc02fe6c601b1838910919e"
+    },
+    {
+      "name": "s00033",
+      "slack": [
+        0,
+        0,
+        0,
+        3,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 14403,
+        "deleted": 534
+      },
+      "cnf_sha256": "f4796dac1d5d7b57b7612cf441c3bf55fc090501fa2b17527100f2653ca2745f",
+      "lrat_sha256": "23f4f604d4a5a182bc1600af16544bc5f7d8a73178c48e4b56a1d0f6836fba28"
+    },
+    {
+      "name": "s00105",
+      "slack": [
+        0,
+        0,
+        1,
+        0,
+        5
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 40001,
+        "deleted": 22383
+      },
+      "cnf_sha256": "3adc450a3b8669d552e545e815699a10bfa4b6e50f8225bfa1887a92dbc36352",
+      "lrat_sha256": "1eb57b38d4baf998371a43b18100cd9d893685ced210ed6fad073c299f386e08"
+    },
+    {
+      "name": "s00114",
+      "slack": [
+        0,
+        0,
+        1,
+        1,
+        4
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 24131,
+        "deleted": 22348
+      },
+      "cnf_sha256": "40440666c174d3342d3cc2046ac3243304c5fdbde69e2f283676349407252983",
+      "lrat_sha256": "af0bac07070f31ec54c1c372da1acfe6e76320770cda8ff29dc805f3c3d95af0"
+    },
+    {
+      "name": "s00123",
+      "slack": [
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 25440,
+        "deleted": 20351
+      },
+      "cnf_sha256": "b08bab26e2e3bfca6daf88702c7fb10347394bd78b16eb84fb199bd82ef9e3e5",
+      "lrat_sha256": "7f43a47929ed5c0d8adff89885bca344ac89d919ef10331a3d45220aa44ad449"
+    },
+    {
+      "name": "s00132",
+      "slack": [
+        0,
+        0,
+        1,
+        3,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 27814,
+        "deleted": 18705
+      },
+      "cnf_sha256": "9de1f18063a5674fa8f0927bd8211b28ab75ee99988cf802c0a854a2b831e21e",
+      "lrat_sha256": "829d05c131eaf2c1ed15ffe4bf607977681eb640204d581ea5c556df911eeda7"
+    },
+    {
+      "name": "s00141",
+      "slack": [
+        0,
+        0,
+        1,
+        4,
+        1
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 32067,
+        "deleted": 17359
+      },
+      "cnf_sha256": "95e7b499d1ca4441ac00d82abf8b86e9f4745cba9e834d8add5bfbe332182e8f",
+      "lrat_sha256": "f1d99d9d81454b09752c959d98cfc0aea6dd405fdf86e0da593c8e43bd89cd5c"
+    },
+    {
+      "name": "s00204",
+      "slack": [
+        0,
+        0,
+        2,
+        0,
+        4
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 84556,
+        "deleted": 216746
+      },
+      "cnf_sha256": "9d8e522a09d49bdb0c4c3037057615921f129f5c52d5c5955df72fe4137e6b36",
+      "lrat_sha256": "3801959d6c1dfcde024f3f500fdb785f13a7048b97aa334da67d3b4f889c17f0"
+    },
+    {
+      "name": "s00213",
+      "slack": [
+        0,
+        0,
+        2,
+        1,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 21914,
+        "deleted": 22042
+      },
+      "cnf_sha256": "bb8f289c340ddb815934c6496022b33bde393b80fff913927226272967617ec1",
+      "lrat_sha256": "bffafceb06109bda775f1e6a56e6f387a683a6f2ae05878595555707a817c2f6"
+    },
+    {
+      "name": "s00222",
+      "slack": [
+        0,
+        0,
+        2,
+        2,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 49812,
+        "deleted": 20201
+      },
+      "cnf_sha256": "8bed0c3f5a15b915eccd96f80163096b283f8ff679d85695937ab9f7f9539857",
+      "lrat_sha256": "0e4a0eb47a129fd55915a203620d64a799359e87833e70a755bc165f0d0eecce"
+    },
+    {
+      "name": "s00303",
+      "slack": [
+        0,
+        0,
+        3,
+        0,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 75185,
+        "deleted": 213889
+      },
+      "cnf_sha256": "5b7399ff482fcb5e33a9a8b905780201dda4c92e13ce4ed14fc63a13c992bdd4",
+      "lrat_sha256": "d35b41e6fbf1dcdb5688bf5e0ac0201f47181da558759a3cd68aa09769c15801"
+    },
+    {
+      "name": "s01014",
+      "slack": [
+        0,
+        1,
+        0,
+        1,
+        4
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 50668,
+        "deleted": 100600
+      },
+      "cnf_sha256": "f4c69ee3c1487c6d040717ea886985ff122b2b518703e51f820f6450117c1e9e",
+      "lrat_sha256": "8e2f46ea0326974b3e20796200523728435322642b19c60dcc28536ea7ba7b7f"
+    },
+    {
+      "name": "s01023",
+      "slack": [
+        0,
+        1,
+        0,
+        2,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 29084,
+        "deleted": 3869
+      },
+      "cnf_sha256": "fecc0dc6ef58c54e31d476d282d7eb1c495e16682569d8709ab53e4a8d7506ee",
+      "lrat_sha256": "20fff595efe776af1a563071974780e6e9191b14748f264598d5b6780621aa3c"
+    },
+    {
+      "name": "s01104",
+      "slack": [
+        0,
+        1,
+        1,
+        0,
+        4
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 127215,
+        "deleted": 326636
+      },
+      "cnf_sha256": "eebfa63697f4cac646125076dd62be3adb6b58f1333fd0c238261c5fec751df1",
+      "lrat_sha256": "96ae769bc1cc4a5678977a1dea8c74e1ad883b06d9578a978eb91828d6c97b38"
+    },
+    {
+      "name": "s01113",
+      "slack": [
+        0,
+        1,
+        1,
+        1,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 131533,
+        "deleted": 201273
+      },
+      "cnf_sha256": "e6c4b75667f194ef47d621410a90351b685ee46528db7af9e44d630f133368e2",
+      "lrat_sha256": "8a541ad79c08e8492e7e1b19989280f01c510a9e5b4e7769ed30c49cf1f44d65"
+    },
+    {
+      "name": "s01122",
+      "slack": [
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 69649,
+        "deleted": 208466
+      },
+      "cnf_sha256": "4f8954db5eb0fa8576188cd863d461d29849de775f6b2490f33cb7bf7efc744d",
+      "lrat_sha256": "2b6c4027133044a8dc82d3a7942ec3c1210fe04f7f9d1842c3bcde6d70a7791c"
+    },
+    {
+      "name": "s01131",
+      "slack": [
+        0,
+        1,
+        1,
+        3,
+        1
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 82152,
+        "deleted": 151846
+      },
+      "cnf_sha256": "aaec47f4351ce8550116b9706908950e9a1e4d56c569d261b97b8ad3dc4f6bd0",
+      "lrat_sha256": "71ed79e368b3e0e0f3242cf1cda566d2de972773c1710f444b72f34dec67d683"
+    },
+    {
+      "name": "s01203",
+      "slack": [
+        0,
+        1,
+        2,
+        0,
+        3
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 169780,
+        "deleted": 511898
+      },
+      "cnf_sha256": "4e05348d692a0744c7b189cfce5a4b7c06df0a9a4e1eb362973222026bb881a1",
+      "lrat_sha256": "f3bae31750c22ea608dd19715daa0900bdeec6498c5b24a2471726030e3e8b3f"
+    },
+    {
+      "name": "s01212",
+      "slack": [
+        0,
+        1,
+        2,
+        1,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 84062,
+        "deleted": 207966
+      },
+      "cnf_sha256": "4a39f5b9c8b05530c8bae1ad5df5a58ac063d55e3779e9bcdcdb1510b5774cdf",
+      "lrat_sha256": "0e013a899ec5d789e3e9c83e8c141e2a3f96639786ccb3bfa3b341e2f1e9b490"
+    },
+    {
+      "name": "s01221",
+      "slack": [
+        0,
+        1,
+        2,
+        2,
+        1
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 61842,
+        "deleted": 170097
+      },
+      "cnf_sha256": "0867dd1e18ee82cf088574fd63e0c0007e48ff37fe7ec37af8bf1d1c400dc0ea",
+      "lrat_sha256": "cc5414c4815a20ced1e80677a22a17f9a72454db8c0b5b21da09158b352388c0"
+    },
+    {
+      "name": "s01302",
+      "slack": [
+        0,
+        1,
+        3,
+        0,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 96910,
+        "deleted": 171073
+      },
+      "cnf_sha256": "5afa16db38e5e4b0e1534576c841dac2ea34edbb3f0f388894e4a802d610c7aa",
+      "lrat_sha256": "9f6da69052d8a845853a1adb631eda0dc564cc17025a4255748454d130ef9d85"
+    },
+    {
+      "name": "s02022",
+      "slack": [
+        0,
+        2,
+        0,
+        2,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 251826,
+        "deleted": 580980
+      },
+      "cnf_sha256": "17c33d679b345861099953c1ee73164064d31ebcd72865185305880ce4409260",
+      "lrat_sha256": "a5ecf93d50a06762f4c314f94a91a267b644502c344937c9095b2163393eb81f"
+    },
+    {
+      "name": "s02112",
+      "slack": [
+        0,
+        2,
+        1,
+        1,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 336119,
+        "deleted": 695121
+      },
+      "cnf_sha256": "0217f899b187dfb1af54cecf3991e78a9a597cd92e3172360237feaddaf7adfe",
+      "lrat_sha256": "5c4dba5e66c8cf4aa6e40a573cce6e3f249c73d03ca907ed2f415bd561c4d2e4"
+    },
+    {
+      "name": "s11112",
+      "slack": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "bundles": 3,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 386933,
+        "deleted": 677268
+      },
+      "cnf_sha256": "afcb2723c8461cde66b48efddfd189b844e31f3db2cdb0f0af80132de780cec2",
+      "lrat_sha256": "5000830a4a22b4ef005058d436b853f601981652c8ca5270da460059d5445e2b"
+    }
+  ]
+}

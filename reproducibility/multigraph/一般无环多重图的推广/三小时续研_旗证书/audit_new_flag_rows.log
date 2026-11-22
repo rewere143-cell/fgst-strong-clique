@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "cases": [
+    {
+      "vertices": 6,
+      "D": 12,
+      "m": 33,
+      "turan_rows": 206,
+      "clique_rows": 14,
+      "triangle_rows": 15
+    },
+    {
+      "vertices": 6,
+      "D": 13,
+      "m": 23,
+      "turan_rows": 206,
+      "clique_rows": 14,
+      "triangle_rows": 15
+    },
+    {
+      "vertices": 5,
+      "D": 6,
+      "m": 12,
+      "turan_rows": 206,
+      "clique_rows": 14,
+      "triangle_rows": 15
+    }
+  ]
+}

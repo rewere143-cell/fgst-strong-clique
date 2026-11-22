@@ -1,0 +1,1 @@
+{"name": "q9c_l40_r40", "code": 20, "result": "VERIFIED_UNSAT", "replay_stdout": "{\"added\":39937,\"deleted\":72407}\n", "replay_stderr": "", "cnf_sha256": "893d21d5a6503c48f0659a6f55728da3cfcf4c276d7d927c2c40c9492d63228e", "lrat_sha256": "e702760dfe4eac67f6be67c64200d20c24098a9b496811993074dd9a31ad6b86"}

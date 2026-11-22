@@ -1,0 +1,28 @@
+{
+  "name": "s02203",
+  "settings": {
+    "slack": [
+      0,
+      2,
+      2,
+      0,
+      3
+    ],
+    "bundles": 0,
+    "min_order": 24,
+    "max_order": null,
+    "strengthen": true,
+    "capacity_cuts": true
+  },
+  "result": "VERIFIED_UNSAT",
+  "code": 20,
+  "limit": null,
+  "variables": 101343,
+  "clauses": 609619,
+  "replay": {
+    "added": 88411,
+    "deleted": 82969
+  },
+  "cnf_sha256": "1bc8d1b4db82d589efee7a08fc60079b6842f906d36d00f0062a9acd5400e629",
+  "lrat_sha256": "07f335b7ad075bbad4f046261bff66c484b52e1c71aea4eff20a8695e7073d79"
+}

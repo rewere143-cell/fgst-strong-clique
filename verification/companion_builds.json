@@ -1,0 +1,19 @@
+{
+  "main": {
+    "file": "fgst_conjecture.pdf",
+    "pages": 25,
+    "sha256": "334187f87dba41125c62c798281eb2c08460c0800cb55ef023b6f9e70d0e38d8"
+  },
+  "supplementary": {
+    "file": "supplementary.pdf",
+    "pages": 36,
+    "sha256": "1390893a1678d9957ca9c75af39139e2f406ec7bbdf79fd0ab60e6b1e23d6c8d"
+  },
+  "main_without_appendix": {
+    "file": "fgst_conjecture_without_appendix.pdf",
+    "pages": 25,
+    "sha256": "b78a522000274f007151cdc830e2ede1f172498c12d45dcc066268a665368c56"
+  },
+  "externalDestinationsChecked": 19,
+  "mainLabelsImportedBySupplement": 22
+}

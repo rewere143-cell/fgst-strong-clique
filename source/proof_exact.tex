@@ -1,0 +1,230 @@
+\section{Proof of the Bound \texorpdfstring{$\Delta^2+\lfloor\frac{\Delta}{2}\rfloor^2$}{Delta squared plus floor(Delta/2) squared}}\label{sec:exact}\label{sec:multi-odd}
+
+Put $D=\Delta(G)$. If $D$ is even, then $f(D)=\frac{5}{4}D^2$, so
+\textbf{Lemma~\ref{prop:multi-uniform}} gives the asserted bound,
+including $D=0$. To set up the proof for odd $D\geq3$, suppose that
+$G$ has a strong clique with more than $f(D)$ edges. Mark
+exactly $m=f(D)+1$ of these edges and restrict $G$ to their endpoints.
+For two disjoint marked edges, both endpoints of any edge joining them
+are retained. Hence the marked edges still form a strong clique.
+Retain all marked edges. For each pair of adjacent vertices joined by
+no marked edge, retain one unmarked edge. Discard the other unmarked
+edges. The resulting multigraph has degree bound $D$ and induces the
+same adjacencies on the marked endpoints.
+
+As in \textbf{Subsection~\ref{sec:weighted-counts}}, let $s$ be the
+number of distinct pairs of endpoints of marked edges and put $b=m-s$. Write
+$S=\frac{s}{D^2}$, $M=\frac{m}{D^2}$, and $e=\frac{b}{m}$, so
+$S=M(1-e)$. Since $f(D)=\frac{5D^2-2D+1}{4}$ for odd $D$, our
+choice of $m$ gives
+\begin{equation}\label{eq:multi-mass}
+ M=\frac{5}{4}-\frac{1}{2D}+\frac{5}{4D^2}.
+\end{equation}
+Let $G_{\rm s}$ denote the simple support. Color an edge of $G_{\rm s}$
+red if its endpoints are joined by a marked edge.
+
+\subsection{Excluding Counterexamples for \texorpdfstring{$\Delta\geq9$}{Delta >= 9}}\label{subsec:exact-large-degree}
+
+Assume that $D\geq9$ is odd. We first show that a counterexample
+has two parallel marked edges and that $G_{\rm s}$ contains an
+induced five-cycle with all five edges red. Degree counts around
+these cycles then restrict the possible values of $e$. On the
+resulting interval, the weighted flag inequalities contradict
+\eqref{eq:multi-mass}.
+
+For each induced red five-cycle $c_0c_1c_2c_3c_4c_0$ in $G_{\rm s}$,
+take indices modulo five. For each $i$, let $U_i$
+consist of the vertices whose neighbors on the cycle are exactly
+$c_{i-1},c_{i+1}$, with both adjacencies red. In particular $c_i\in U_i$.
+If $x\in U_i$ and $y\in U_{i+1}$, then the disjoint red edges
+$xc_{i-1}$ and $yc_{i+2}$ must have a joining edge. The definitions
+of the two sets exclude $xc_{i+2}$ and $yc_{i-1}$, and the cycle
+has no chord $c_{i-1}c_{i+2}$. Hence $xy\in E(G_{\rm s})$.
+Set
+\[
+ B=\bigcup_{i=0}^4 U_i,\qquad
+ s_i=D-|U_{i-1}|-|U_{i+1}|,\qquad
+ R=\sum_{i=0}^4s_i=5D-2|B|.
+\]
+At $c_i$ the adjacencies to $U_{i-1}\cup U_{i+1}$ use at least
+$|U_{i-1}|+|U_{i+1}|$ of its degree, so $s_i\geq0$. Since $D$ is
+odd, $R=5D-2|B|$ is odd.
+
+Let $q_C$ be the normalized count of ordered induced five-cycles
+with all five edges red in the simple support, using $2sD^3$ as the
+denominator. Let $L_R$ be the sum of $\frac{R}{D}$ over these ordered cycles,
+divided by the same denominator. The simple support can be completed
+to a $D$-regular simple graph as in~\cite[Section~G.1]{FGSTSupplement}.
+The old vertices
+induce their original graph, and no added edge is red. Thus the
+cycles under consideration and the sets $U_i$ of each such cycle
+are preserved. The simple graph inequalities for $S,q_C,L_R$
+in~\cite[(G.1)]{FGSTSupplement} apply. If $R\geq\alpha D$ on
+every induced red five-cycle, then $L_R\geq\alpha q_C$ by summing
+over the cycles.
+
+\begin{lemma}\label{lem:extra-copy-required}\label{lem:counterexample-cycle}
+Suppose that $D\geq9$ is odd and that $m=f(D)+1$ marked edges form
+a strong clique. Then $b>0$ and $q_C>0$.
+\end{lemma}
+
+\begin{proof}
+For $D\geq9$, the value of $M$ in \eqref{eq:multi-mass} satisfies
+\[
+ M-\frac{98}{81}=\frac{(D-9)(13D-45)}{324D^2}\geq0.
+\]
+If $q_C=0$, the bound in~\cite[(G.2)]{FGSTSupplement} gives
+$M<\frac{98}{81}$. Thus $q_C>0$.
+
+At $D=9$, suppose $b=0$. The $m$ marked edges then lie
+on $m$ distinct pairs in the simple support. They form a strong
+clique there, so \textbf{Lemma~D.1} of the supplement~\cite{FGSTSupplement}
+gives $m\leq f(D)$, contrary to $m=f(D)+1$.
+
+For odd $D\geq11$, the degree estimates
+in~\cite[Section~E.4]{FGSTSupplement} give $R>\frac{D+1}{2}$ on every
+induced red five-cycle. These estimates count marked incidences in
+the reduced multigraph and apply for every $b\geq0$. In particular,
+$L_R\geq\frac{q_C}{2}$. The last inequality
+in~\cite[(G.1)]{FGSTSupplement} now gives
+\[
+ S\leq\frac{5}{4}-\frac{0.45119}{16}+2\cdot10^{-9}
+   =1.221800627.
+\]
+For $D\geq15$ we have $M\geq\frac{11}{9}$, since
+$M-\frac{11}{9}=\frac{(D-15)(D-3)}{36D^2}$ by
+\eqref{eq:multi-mass}. Consequently $S<M$ and $b>0$.
+
+For $D=11$, the degree count in~\cite[Section~E.5]{FGSTSupplement}
+also excludes $R=7$, so every induced red five-cycle has $R\geq9$.
+For $D=13$, the strict inequality $R>7$ and the odd parity of $R$
+give the same lower bound. Thus $L_R\geq\frac{9}{D}q_C$ in both
+cases. Put $a=0.99999$, $c=0.5682\cdot\frac{9}{D}$ and
+$\varepsilon=10^{-9}$. The first two inequalities
+in~\cite[(G.1)]{FGSTSupplement} give
+\[
+ S\leq\frac{5}{4}-\frac{a}{8}+2\varepsilon+a q_C,
+ \qquad
+ S\leq\frac{5}{4}+\varepsilon-c q_C .
+\]
+Multiply the first inequality by $c$ and the second by $a$.
+Adding cancels $q_C$ and gives
+\[
+ S\leq\frac{5}{4}-\frac{ac}{8(a+c)}
+             +\frac{(2c+a)\varepsilon}{a+c}.
+\]
+At $D=11$ this upper bound is less than $\frac{1211}{1000}$, whereas
+$M=\frac{147}{121}$. At $D=13$ it is less than $\frac{1215}{1000}$,
+whereas $M=\frac{206}{169}$. In both cases $S<M$, as required.
+\end{proof}
+
+By \textbf{Lemma~\ref{lem:counterexample-cycle}}, we may choose two
+parallel marked edges, and the simple support contains an induced red
+five-cycle. For every such cycle the calculation
+in~\cite[Section~E.5]{FGSTSupplement} gives $R\geq9$ if
+$D=11$ and $R\geq11$ if $D\in\{13,15\}$. The degree count at the
+endpoints of two parallel marked edges
+in~\cite[Section~F.2]{FGSTSupplement} gives $R\geq11$ at $D=9$.
+For odd $D\geq11$, the inequality $R>\frac{D+1}{2}$ together with the
+odd parity of $R$ gives
+\begin{equation}\label{eq:multi-slack}
+ R\geq
+ \begin{cases}
+ \frac{D+5}{2} & \text{if }D\equiv1\pmod4,\\
+ \frac{D+3}{2} & \text{if }D\equiv3\pmod4.
+ \end{cases}
+\end{equation}
+
+Let $[M_-,M_+]$ and $[e_-,e_+]$ be the ranges for $M$ and $e$
+in \textbf{Table~\ref{tab:multi-odd}}, respectively. The fourth
+column is the lower bound $\alpha$ on $\frac{R}{D}$ for every induced
+red five-cycle. In the last column we round the verified upper bounds
+upwards to short rationals. The last certificate gives
+infeasibility directly. The exact fractions and row counts are in the
+companion record \texttt{parity\_family\_replayed.json}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Odd $D$ & $[M_-,M_+]$ & $[e_-,e_+]$ & $\alpha$ & Verified conclusion\\
+\midrule
+$9$        & $[1.209,1.210]$  & $[0.020,0.180]$   & $1.222$ & $M<-1.973$\\
+$11$       & $[1.2148,1.215]$ & $[0.0135,0.360]$  & $0.818$ & $M<0.785$\\
+$13$       & $[1.2185,1.219]$ & $[0.009,0.362]$   & $0.846$ & $M<0.573$\\
+$15$       & $[1.222,1.223]$  & $[0.007,0.365]$   & $0.733$ & $M<0.827$\\
+$17$       & $[1.2249,1.225]$ & $[0.006,0.368]$   & $0.647$ & $M<0.631$\\
+$19$       & $[1.227,1.228]$  & $[0.006,0.370]$   & $0.578$ & $M<0.910$\\
+$21$--$23$ & $[1.2249,1.231]$ & $[0.004,0.372]$   & $0.565$ & $M<1.227683$\\
+$25$--$37$ & $[1.232,1.238]$  & $[0.009,0.384]$   & $0.542$ & $M<0.177$\\
+$39$--$47$ & $[1.238,1.240]$  & $[0.0134,0.382]$  & $0.531$ & $M<-0.676$\\
+$49$--$57$ & $[1.240,1.242]$  & $[0.0082,0.380]$  & $\frac{1}{3}$ & $M<0.292$\\
+$\ge59$    & $[1.24175,1.25]$ & $[0.005,0.250]$   & $0.228$ & infeasible\\
+\bottomrule
+\end{tabular}
+\caption{Parameter intervals and verified bounds for odd $D$. All decimal entries denote rational numbers.}
+\label{tab:multi-odd}
+\end{table}
+
+The quantity in \eqref{eq:multi-mass} is increasing for $D\ge5$ and is
+less than $\frac{5}{4}$. Evaluating it at the endpoints of each degree
+range gives the corresponding bounds on $M$.
+For $D=9$ we have $2\le b\le17$ by~\cite[Section~F.2]{FGSTSupplement}, so
+$e\in[\frac{2}{98},\frac{17}{98}]$ and $S\le\frac{32}{27}$. For $D=11,13$,
+the reduction in~\cite[Section~E.5]{FGSTSupplement} excludes $b=1$. Thus $S$ is at most
+$\frac{145}{121}$ and $\frac{204}{169}$, respectively, giving the required lower
+bounds on $e$. In the remaining rows the simple projection bound
+$S\le S_{\max}$ obtained from $\alpha$
+in~\cite[Section~G.1]{FGSTSupplement} gives $e\ge1-\frac{S_{\max}}{M}$. For an
+interval ending at $D_+$, recall that $j_v$ counts the extra marked
+copies incident with $v$ and put $A=\frac{\sum_v j_v^2}{2bD}$.
+\textbf{Lemma~\ref{lem:multi-extra}} gives
+\[
+ A\le A_+:=\frac{2-M_--D_+^{-2}}{2+D_+^{-1}}.
+\]
+We use $e\le1-\frac{M_-}{2}$ or
+$e\le\frac{2A_+(1-A_+)-\frac{A_+}{D_+}}{M_-}$ when the latter is smaller.
+The function $A\mapsto 2A(1-A)-\frac{A}{D_+}$ is increasing for
+$0\le A\le A_+$ in these intervals.
+For $D\ge59$ we use \textbf{Lemma~\ref{prop:multi-uniform}} to bound $e$.
+The rational replay checks these interval comparisons.
+
+The finite-degree constraints for $D\le23$ also use the exclusion of
+a red $K_4$ proved in~\cite[Section~F.3]{FGSTSupplement} and, for specific $D$,
+the rooted triangle and repeated-pair restrictions
+in~\cite[Section~G]{FGSTSupplement}.
+For each row in Table~\ref{tab:multi-odd}, the weighted graph counts must
+satisfy the degree equations, the positive semidefinite constraints,
+and the inequalities for that row. The verified rational linear
+combination of these constraints gives the conclusion in the last
+column, as detailed in~\cite[Section~G.4]{FGSTSupplement}. For the row $21$--$23$, for instance, the
+upper bound $1.227683$ is strictly smaller than $\frac{542}{441}$, the lower
+bound from \eqref{eq:multi-mass}. On every other finite degree
+interval in the table, the verified upper bound also lies below
+the least value of $M$ given by \eqref{eq:multi-mass}. For
+$D\geq59$, the last certificate rules out every set of counts
+satisfying the constraints.
+
+\subsection{The Cases \texorpdfstring{$\Delta<9$}{Delta < 9}}\label{subsec:exact-small-degree}
+
+The remaining odd values of $D$ are $1,3,5,7$. If $D=1$, each
+component has at most one edge, so $\omega(L(G)^2)\leq1=f(1)$.
+Suppose that $D\in\{3,5,7\}$ and that $m=f(D)+1$ marked edges form
+a strong clique. If $b=0$, these edges give $m$ distinct edges in
+the simple support $G_{\rm s}$. They still form a strong clique
+because any two disjoint marked edges have endpoints joined by an
+edge of $G$, and those endpoints are also adjacent in $G_{\rm s}$. Since
+$\Delta(G_{\rm s})\leq D$, \textbf{Lemma~D.1} of the supplement~\cite{FGSTSupplement}
+gives $m\leq f(D)$, a contradiction. Thus two of the marked edges
+are parallel. The reductions in~\cite[Section~F.1]{FGSTSupplement} exclude
+a strong clique of size $f(D)+1$ containing such a pair for each of
+$D=3,5,7$.
+
+\begin{lateproof}{\textbf{Theorem~\ref{thm:multigraph}}}
+For even $D$, the result follows from \textbf{Lemma~\ref{prop:multi-uniform}}.
+\textbf{Subsection~\ref{subsec:exact-large-degree}} excludes a
+counterexample for every odd $D\geq9$, and
+\textbf{Subsection~\ref{subsec:exact-small-degree}} proves the bound
+for each smaller odd $D$.
+\end{lateproof}

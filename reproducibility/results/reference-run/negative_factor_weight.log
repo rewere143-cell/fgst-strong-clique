@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "verifiers/check_certificate.py", line 173, in <module>
+    result = verify(args.certificate)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "verifiers/check_certificate.py", line 87, in verify
+    require(weight >= 0, "Negative rank-one weight")
+  File "verifiers/check_certificate.py", line 21, in require
+    raise ValueError(message)
+ValueError: Negative rank-one weight

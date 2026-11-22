@@ -1,0 +1,21 @@
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=289/500, support=121851/100000, M=[1227/1000,307/250], e=[3/500,37/100], scale=883440000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 967 extra columns
+{
+  "arithmetic": {
+    "sums": 481,
+    "products": 1003,
+    "largest_bound": 688375034496000000
+  },
+  "result": {
+    "mode": "bound",
+    "raw_bound": "181904288189/200000000000",
+    "correction": "1014527330622524630303827/1380375000000000000000000000000",
+    "rational_bound": "1255481673571784997524630303827/1380375000000000000000000000000",
+    "decimal_bound": 0.9095221759100136,
+    "coefficient_rows": 30641,
+    "negative_rows": 29,
+    "rigorous_infeasible": false
+  }
+}

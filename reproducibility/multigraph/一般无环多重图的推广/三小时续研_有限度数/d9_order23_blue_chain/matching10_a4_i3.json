@@ -1,0 +1,13 @@
+{
+  "name": "matching10_a4_i3",
+  "variables": 78531,
+  "clauses": 249571,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "9c7e9ee83eba9953ad414b4f34968a53aaa9f58814396d086e8ab3edc2db44a4",
+  "lrat_sha256": "64e072cf72fccd4e5de871a96a8327eaabccdd4dcff9e7218479132634c57e76",
+  "replay": {
+    "added": 15938,
+    "deleted": 11048
+  }
+}

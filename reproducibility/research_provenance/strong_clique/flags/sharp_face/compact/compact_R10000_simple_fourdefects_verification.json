@@ -1,0 +1,10 @@
+{
+  "arithmetic_verified": true,
+  "explicit_rank_one_PSD_factors_verified": true,
+  "bound": "5/4",
+  "bound_decimal": 1.25,
+  "below_2607_over_1987": true,
+  "seconds": 6.538536787033081,
+  "all_factor_kernels_exact": true,
+  "factor_count": 4110
+}

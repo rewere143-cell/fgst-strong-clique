@@ -1,0 +1,15 @@
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "5/4", "minimum_slack": "1/2", "support_upper_rounded": "122181/100000", "e_low": "9/400", "equalities": 1256, "inequalities": 4004, "coordinates": 31073, "psd_blocks": 86, "scale": 2160000000000}
+{"excluded_zero_columns": 30308, "remaining": 765}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "5/4", "minimum_slack": "1/2", "support_upper_rounded": "122181/100000", "e_low": "9/400", "equalities": 1256, "inequalities": 4004, "coordinates": 31073, "psd_blocks": 86, "scale": 2160000000000}
+{
+  "original": "-1599998858685779046239/1600000000000000000000",
+  "mass_error": "164251965058340782476531/1000000000000000000000000000000000000000000000000",
+  "blue_columns": 30281,
+  "blue_coefficient": "118087612981024345847580239/8000000000000000000",
+  "blue_error": "118087612981024345847580239/500000000000000000000000000000",
+  "maximum_tolerated_fraction": "999999286678611903899374835748034941659217523469/236175225962048691695160478000000000000000000000000000000",
+  "approximate_maximum": 4.234141335549322e-09,
+  "final_right": "-999763111452649855207679675270034941659217523469/1000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,1 @@
+{"name": "q9a_l4_r4", "code": 20, "result": "VERIFIED_UNSAT", "replay_stdout": "{\"added\":16541,\"deleted\":21604}\n", "replay_stderr": "", "cnf_sha256": "441850913a9a8811bad4889a2f27a551ad9c0e16d835bd4fbb9ac1012ad0ac8e", "lrat_sha256": "f28cf65bae7b627b5787f57c6b6b24cfe45fe6f4b1ee23ac958535655e5e8223"}

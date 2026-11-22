@@ -1,0 +1,2029 @@
+\documentclass[preprint,11pt,numbers]{elsarticle-arxiv}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath,amsthm,mathtools}
+\usepackage{booktabs,enumitem,indentfirst,etoolbox,url}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\tikzset{
+  graph vertex/.style={circle,fill=black,inner sep=1.7pt},
+  marked edge/.style={draw=blue!65!black,line width=1.05pt},
+  unmarked edge/.style={draw=black!65,line width=0.65pt}
+}
+\usepackage[hidelinks]{hyperref}
+\ifdefined\pdfgentounicode
+  \InputIfFileExists{glyphtounicode.tex}{}{}
+  \pdfgentounicode=1
+\fi
+\pdfstringdefDisableCommands{\def\corref#1{}\def\fnref#1{}}
+\setcitestyle{square,comma}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\DeclareMathOperator{\tr}{tr}
+\newenvironment{lateproof}[1]{\begin{proof}[Proof of #1]}{\end{proof}}
+\newcommand{\papertitle}{The Proof of the Faudree--Gy\'arf\'as--Schelp--Tuza Conjecture}
+\hypersetup{pdftitle={\papertitle},pdfauthor={Zhijun Lu, Chengshuo Qiao, Qirui Ying, Huimin Song}}
+\setlist[enumerate]{itemsep=3pt,topsep=5pt,parsep=0pt,listparindent=1.5em}
+\setlength{\emergencystretch}{2em}
+\setlength{\parindent}{1.5em}
+\setcounter{tocdepth}{2}
+\patchcmd{\abstract}
+  {\par\medskip\noindent\unskip\ignorespaces}
+  {\par\medskip\ignorespaces}
+  {}{\PackageError{manuscript}{Could not apply abstract indentation}{}}
+
+\begin{document}
+\bibliographystyle{alpha}
+\begin{frontmatter}
+\title{\textbf{\Large\papertitle}}
+\author[1]{Zhijun Lu\fnref{equalcontrib}}
+\author[1]{Chengshuo Qiao\fnref{equalcontrib}}
+\author[1]{Qirui Ying\fnref{equalcontrib}}
+\author[1]{Huimin Song\corref{cor1}}
+\fntext[equalcontrib]{Zhijun Lu, Chengshuo Qiao and Qirui Ying contributed equally to this work.}
+\cortext[cor1]{Corresponding author. \textit{E-mail address:}
+\url{hmsong@sdu.edu.cn} (H.Song).}
+\affiliation[1]{organization={School of Mathematics and Statistics},
+ addressline={Shandong University},city={Weihai},postcode={264209},
+ state={Shandong},country={China}}
+
+\begin{abstract}
+In 1990, Faudree, Gy\'arf\'as, Schelp and Tuza proposed a relaxation
+of the strong edge-coloring conjecture. They conjectured that every
+finite loopless multigraph $G$ satisfies
+$\omega(L(G)^2)\leq\Delta^2+\lfloor\frac{\Delta}{2}\rfloor^2$, where
+$\Delta=\Delta(G)$ is the maximum degree, $L(G)$ is the line graph
+of $G$, and $\omega$ is the clique number. In this paper, we prove this conjecture. We first use the flag algebra
+method to show that $\omega(L(G)^2)\leq\frac{5}{4}\Delta^2$ for every
+finite loopless multigraph $G$. This settles the even-degree case.
+For odd $\Delta\geq 9$, we show that if
+$\omega(L(G)^2)>\Delta^2+\lfloor\frac{\Delta}{2}\rfloor^2$,
+then $L(G)^2$ has a clique exceeding this bound whose vertices
+correspond to a set of edges of $G$ that includes both a pair of
+parallel edges and five edges forming an induced five-cycle in the
+underlying simple graph of $G$. Counting around such cycles gives a
+bound that contradicts the weighted flag inequalities. The remaining
+small degrees are handled separately, thereby completing the proof.
+\end{abstract}
+\begin{keyword}
+\textit{Squares of line graphs \sep clique number \sep flag algebras}
+\end{keyword}
+\end{frontmatter}
+
+\thispagestyle{plain}
+\tableofcontents
+\section{Introduction}\label{sec:intro}
+
+\subsection{Preliminaries}\label{sec:prelim}
+
+All graphs are finite and simple unless stated otherwise. In a loopless
+multigraph, parallel edges are distinct and contribute to degrees with
+multiplicity. For a graph $G$, write $V(G)$, $E(G)$ and $\Delta(G)$ for
+its vertex set, edge set and maximum degree. For $v\in V(G)$, let
+$N_G(v)$ be its set of neighbors and let $d_G(v)$ be its degree.
+For $X\subseteq V(G)$, write $G[X]$ for the subgraph induced by $X$ and
+$d_G(v,X)$ for the number of edges from $v$ to $X$. Let $N_G[v]=N_G(v)\cup\{v\}$.
+%We take $\Delta(G)=0$ for a graph with no vertices. We use $\Delta$ for the maximum degree of a fixed graph and $D$ when retaining the original degree bound after restricting the graph. 
+A graph is
+$d$-regular if all its vertices have degree $d$. An ordered edge is an
+edge together with an ordering of its endpoints.
+Write $C_n$ for the cycle on $n\geq 3$ vertices, $K_n$ for the complete
+graph on $n$ vertices, and $K_{a,b}$ for the complete bipartite graph with
+parts of sizes $a$ and $b$.
+
+A vertex cover of $G$ is a set meeting every edge, and $\tau(G)$ is
+the minimum size of a vertex cover. An independent set is a set of
+pairwise nonadjacent vertices. For a subgraph $H$ of $G$ with at least
+one edge, its Ore-degree in $G$ is
+$\max_{uv\in E(H)}(d_G(u)+d_G(v))$~\cite{FaronPostle2019}.
+We put $x_+=\max\{x,0\}$ for real $x$.
+
+The \emph{underlying simple graph} of a loopless multigraph $G$, also
+called its \emph{simple support}, has vertex set $V(G)$ and one edge
+$uv$ for each pair of distinct vertices $u,v$ joined by an edge of $G$.
+The line graph $L(G)$ has
+one vertex for each edge of $G$, with two distinct edges adjacent
+precisely when they share an endpoint in $G$. For a graph $H$,
+its square $H^2$ has vertex set $V(H)$, with two distinct vertices
+adjacent precisely when $H$ contains a path of length at most two
+between them. We write $\omega(H)$ for the maximum size of a clique in
+$H$, that is, a set of pairwise adjacent vertices. A set
+$S\subseteq E(G)$ is a \emph{strong clique} in $G$ if it is a clique
+in $L(G)^2$.
+%Equivalently, any two distinct edges of $S$ share an endpoint or have endpoints joined by an edge of $G$.
+
+For a positive integer $k$, write $[k]=\{1,\ldots,k\}$. A proper vertex
+$k$-coloring of $H$ is a map $V(H)\to[k]$ assigning distinct colors to
+adjacent vertices. The chromatic number $\chi(H)$ is the least $k$ for
+which $H$ admits such a coloring, with $\chi(H)=0$ when $V(H)$ is empty.
+A proper vertex coloring of $L(G)^2$ gives a \emph{strong edge
+coloring} of $G$. The minimum number of colors in such a coloring is
+the \emph{strong chromatic index} $\chi(L(G)^2)$.
+
+A real symmetric matrix $M$ is positive semidefinite, written
+$M\succeq0$, if $x^{\mathsf T}Mx\geq0$ for every real column vector
+$x$ of the appropriate size. The trace $\tr(M)$ of a square matrix
+$M$ is the sum of its diagonal entries.
+
+\subsection{Background and Main Result}\label{sec:background}
+
+In 1985, at a seminar in Prague, Erd\H{o}s and Ne\v{s}et\v{r}il asked
+how large the strong chromatic index can be for a graph of given
+maximum degree~\cite{FGST1989,ErdosNesetril1989}. Erd\H{o}s~\cite{Erdos1988}
+stated their conjecture with the bound $\frac{5}{4}\Delta(G)^2$.
+Faudree, Schelp, Gy\'arf\'as and Tuza~\cite{FGST1990} formulated a
+version for loopless multigraphs that gives a sharper bound for odd
+maximum degree. For a nonnegative integer $d$, let
+$f(d)=d^2+\lfloor\frac{d}{2}\rfloor^2$. Thus $f(d)=\frac{5d^2}{4}$
+when $d$ is even and $f(d)=\frac{5d^2-2d+1}{4}$ when $d$ is odd.
+
+\begin{conjecture}[\cite{FGST1990}]
+\label{conj:strong-edge-coloring}
+Every finite loopless multigraph $G$ satisfies
+$\chi(L(G)^2)\leq f(\Delta(G))$.
+\end{conjecture}
+
+Faudree, Gy\'arf\'as, Schelp and Tuza also asked how large a set of edges
+forced to have distinct colors can be. Hence, they proposed the following
+relaxation of \textbf{Conjecture~\ref{conj:strong-edge-coloring}}.
+
+\begin{conjecture}[\cite{FGST1990}]\label{conj:fgst}
+Every finite loopless multigraph $G$ satisfies
+$\omega(L(G)^2)\leq f(\Delta(G))$.
+\end{conjecture}
+
+In this paper, we prove \textbf{Conjecture~\ref{conj:fgst}}.
+
+\begin{theorem}\label{thm:multigraph}
+Every finite loopless multigraph $G$ satisfies
+$\omega(L(G)^2)\leq f(\Delta(G))$.
+\end{theorem}
+
+Blow-ups of a five-cycle attain the bound. Let $C_5=v_0v_1v_2v_3v_4v_0$. Replace each $v_i$ by an independent set $V_i$ and add every edge between $V_i$ and $V_{i+1}$, with indices taken modulo five. It is easy to see that the entire edge set of the blow-up is a strong clique. Taking $|V_i|=t$ for each $i$ gives
+maximum degree $2t$ and $5t^2=f(2t)$ edges, as illustrated for
+$t=2$ in Figure~\ref{fig:blowup}. Taking $|V_2|=|V_3|=r+1$ and
+$|V_0|=|V_1|=|V_4|=r$ gives maximum degree $2r+1$ and
+$5r^2+4r+1=f(2r+1)$ edges, as required.
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[scale=0.9,every node/.style={font=\small}]
+\foreach \i in {0,...,4}
+  \coordinate (v\i) at ({90+72*\i}:1.16);
+\foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}
+  \draw[unmarked edge] (v\i)--(v\j);
+\foreach \i in {0,...,4}
+  \node[graph vertex] at (v\i) {};
+\node at (0,-2.08) {$C_5$};
+
+\begin{scope}[xshift=5.45cm]
+\foreach \i in {0,...,4}{
+  \pgfmathsetmacro{\angle}{90+72*\i}
+  \coordinate (a\i) at (\angle:1.18);
+  \coordinate (b\i) at (\angle:1.76);
+  \coordinate (part\i) at (\angle:1.47);
+  \begin{scope}[shift={(part\i)},rotate=\angle]
+    \draw[draw=black!45,fill=black!7] (0,0)
+      ellipse[x radius=.42,y radius=.17];
+  \end{scope}
+}
+\foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}{
+  \draw[marked edge] (a\i)--(a\j) (a\i)--(b\j)
+    (b\i)--(a\j) (b\i)--(b\j);
+}
+\foreach \i in {0,...,4}{
+  \node[graph vertex] at (a\i) {};
+  \node[graph vertex] at (b\i) {};
+}
+\node at (0,-2.08) {$t=2$};
+\end{scope}
+\end{tikzpicture}
+\caption{The cycle $C_5$ and its blow-up with two vertices per part.}
+\label{fig:blowup}
+\end{figure}
+
+The proof is computer-assisted. We verify the flag inequalities used
+in Sections~\ref{sec:uniform} and~\ref{sec:exact} by checking rational
+certificates in exact arithmetic. For several small values of $\Delta$,
+we derive necessary conditions for a strong clique to have more than
+$f(\Delta)$ edges. In some cases, we enumerate the possible configurations
+and verify that none can contain such a clique. In the other cases, we
+encode the necessary conditions in Boolean formulas and verify that
+none of these formulas has a satisfying assignment. The detailed
+counts and case analyses appear in the accompanying \emph{Supplementary
+Proofs}~\cite{FGSTSupplement}. Section~B of the supplement gives the
+commands for reproducing the calculations from the input data,
+certificates and verification programs provided with the supplement.
+\section{A Sketch of the Proof}\label{sec:overview}
+
+We first use flag algebras to prove the bound $\frac{5}{4}\Delta(G)^2$
+for $\omega(L(G)^2)$ in simple graphs. By counting parallel edges
+with their multiplicities, we extend the bound to loopless multigraphs.
+This settles the even-degree case.
+For odd $\Delta=\Delta(G)\geq 9$, we show that if
+$\omega(L(G)^2)>\Delta^2+\lfloor\frac{\Delta}{2}\rfloor^2$,
+then $L(G)^2$ has a clique exceeding this bound whose vertices
+correspond to a set of edges of $G$ that includes both a pair of
+parallel edges and five edges forming an induced five-cycle in the
+underlying simple graph of $G$. Counting around such cycles gives a
+bound that contradicts the weighted flag inequalities. We handle the remaining small odd degrees separately,
+thereby completing the proof.
+
+\subsection{The Classical Flag Algebra Method}\label{subsec:flag-algebra}
+
+Let $G$ be a graph. For a graph $H$ with $|V(H)|\leq |V(G)|$,
+choose a subset $U\subseteq V(G)$ of size $|V(H)|$ uniformly at
+random. The \emph{induced subgraph density} of $H$ in $G$ is the
+probability that $G[U]$ is isomorphic to $H$. A \emph{type}
+$\sigma$ is a graph with a distinct label on each vertex.
+A \emph{$\sigma$-flag} is a partially labeled graph whose labeled
+vertices induce $\sigma$ with the same labels. When the type
+$\sigma$ is clear from the context, we call a $\sigma$-flag
+simply a flag. Two flags are considered the same if there is an
+isomorphism between them that preserves the labels. Fix a
+labeled induced copy of $\sigma$ in $G$. For a $\sigma$-flag $F$
+with $|V(F)|\leq |V(G)|$, choose uniformly at random a set of
+$|V(F)|-|V(\sigma)|$ vertices outside this copy. The \emph{flag
+density} of $F$ in $G$ is the probability that the chosen vertices
+together with the fixed vertices induce a copy of $F$ with the
+labels preserved. Fix a type $\sigma$. Let $\mathcal F^\sigma$
+be the set of $\sigma$-flags, and let $\mathcal F^\sigma_n$ be
+the set of $\sigma$-flags on $n$ vertices. Consider formal sums
+$\sum_{J\in\mathcal F^\sigma}a_JJ$ with real coefficients, only
+finitely many of which are nonzero. We add two such sums by
+adding their coefficients at each flag $J$. Multiplication by
+a scalar $\lambda$ sends each coefficient $a_J$ to $\lambda a_J$.
+With these operations, it is easy to see that the formal sums
+form a real vector space with basis $\mathcal F^\sigma$. We
+denote this space by $\mathbb R\mathcal F^\sigma$.
+
+For flags $F$ and $J$ with $|V(F)|\leq |V(J)|$, write $p(F;J)$
+for the flag density of $F$ in $J$. We use $p(F;G)$ in the same
+sense when the labeled copy of $\sigma$ in $G$ has been fixed.
+For each flag $F$ and each
+integer $n\geq |V(F)|$, form the vector
+\[
+  F-\sum_{J\in\mathcal F^\sigma_n}p(F;J)J.
+\]
+Let $\mathcal K^\sigma$ be the subspace of
+$\mathbb R\mathcal F^\sigma$ spanned by these vectors as $F$
+and $n$ vary. Put
+$\mathcal A^\sigma=\mathbb R\mathcal F^\sigma/\mathcal K^\sigma$.
+Two formal sums represent the same element of $\mathcal A^\sigma$
+if their difference lies in $\mathcal K^\sigma$.
+
+To define multiplication, let $F_1$ and $F_2$ be flags with
+$r_1$ and $r_2$ unlabeled vertices, respectively. Put
+$n=|V(\sigma)|+r_1+r_2$. For each $J\in\mathcal F^\sigma_n$,
+choose $r_1$ of its unlabeled vertices uniformly at random
+and put the remaining $r_2$ in the second group. Each group,
+together with the labeled vertices of $J$, induces a flag.
+Let $p(F_1,F_2;J)$ be the probability that the chosen group
+gives $F_1$ and the remaining group gives $F_2$. The product
+$F_1\cdot F_2$ is the element of $\mathcal A^\sigma$ represented by
+\[
+  \sum_{J\in\mathcal F^\sigma_n}p(F_1,F_2;J)J.
+\]
+To multiply two formal sums $\sum_i a_iF_i$ and $\sum_j b_jH_j$,
+take the flag product $F_i\cdot H_j$ for each pair of terms, one
+from each sum. Multiply each such product by the corresponding
+coefficient $a_ib_j$ and add the results. Thus
+\[
+  \left(\sum_i a_iF_i\right)\cdot\left(\sum_j b_jH_j\right)
+  =\sum_{i,j}a_ib_j(F_i\cdot H_j).
+\]
+Razborov showed that the product is well defined on the quotient
+$\mathcal A^\sigma$~\cite{Razborov2007}. With this product,
+$\mathcal A^\sigma$ is the \emph{flag algebra of type $\sigma$}.
+
+Razborov's flag algebra method uses products of flag densities
+to derive inequalities among induced subgraph
+densities~\cite{Razborov2007,CarliSilvaOliveiraSato2016}.
+Let $F_1$ and $F_2$ be $\sigma$-flags with $r_1$ and $r_2$
+unlabeled vertices, respectively. Fix a labeled induced copy
+of $\sigma$ in $G$, and suppose that the number of vertices
+outside this copy is at least $\max\{1,r_1+r_2\}$. Choose
+$r_1+r_2$ of these vertices uniformly at random. Together with
+the labeled vertices, they induce a flag $J$. Choose $r_1$ of
+the sampled vertices uniformly at random for the first group
+and put the remaining $r_2$ in the second group. Given $J$,
+the probability that the two groups, each taken together with
+the labeled vertices, induce $F_1$ and $F_2$, respectively, is
+$p(F_1,F_2;J)$. Since the probability of obtaining $J$ at the
+first step is $p(J;G)$, the probability of obtaining both
+$F_1$ and $F_2$ is
+\[
+  \sum_{J\in\mathcal F^\sigma_{|V(\sigma)|+r_1+r_2}}
+  p(J;G)\,p(F_1,F_2;J).
+\]
+Now let $W$ be the set of vertices of $G$ outside the fixed labeled
+copy of $\sigma$. Choose one of the $r_1$-element subsets of $W$
+uniformly at random and call it $U_1$. Independently of this
+choice, choose one of the $r_2$-element subsets of the same set
+$W$ uniformly at random and call it $U_2$. Let $A$ be the event
+that, for each $i\in\{1,2\}$, the subgraph induced by $U_i$ and
+the labeled vertices gives the flag $F_i$. By independence,
+$\Pr(A)=p(F_1;G)p(F_2;G)$.
+
+Let $B$ be the event that $U_1\cap U_2=\varnothing$. By
+independence and symmetry, conditional on $B$, all ordered
+pairs $(S_1,S_2)$ of disjoint subsets of $W$ with $|S_1|=r_1$
+and $|S_2|=r_2$ are equally likely. To count these pairs, choose
+the union $S_1\cup S_2$ and then choose $S_1$ within it. There
+are $\binom{|W|}{r_1+r_2}$ choices for the union and
+$\binom{r_1+r_2}{r_1}$ choices for $S_1$ within each union.
+Thus each pair has conditional probability
+$\frac{1}{\binom{|W|}{r_1+r_2}\binom{r_1+r_2}{r_1}}$.
+
+When the union is sampled first, each ordered pair $(S_1,S_2)$
+of disjoint subsets of $W$ with $|S_1|=r_1$ and $|S_2|=r_2$
+has probability
+$\frac{1}{\binom{|W|}{r_1+r_2}\binom{r_1+r_2}{r_1}}$.
+Under independent sampling, this is also the conditional
+probability of $(U_1,U_2)=(S_1,S_2)$ given $B$. The two sampling
+rules therefore give the same probability that the first set
+and the second set, each together with the labeled vertices,
+induce $F_1$ and $F_2$, respectively. For the experiment that
+samples the union first, we computed this probability by
+conditioning on the flag $J$ induced by the union and the
+labeled vertices. Thus
+\[
+  \Pr(A\mid B)
+  =\sum_{J\in\mathcal F^\sigma_{|V(\sigma)|+r_1+r_2}}
+    p(J;G)\,p(F_1,F_2;J).
+\]
+
+It remains to compare $\Pr(A\mid B)$ with the probability $\Pr(A)$
+under independent sampling. Since
+$\Pr(A)=\Pr(A\mid B)\Pr(B)+\Pr(A\cap B^c)$, their difference is
+bounded in absolute value by $\Pr(B^c)$. To bound $\Pr(B^c)$,
+fix the outcome of $U_1$. The set $U_2$ is still a uniform
+$r_2$-element subset of $W$, so each vertex of $U_1$ belongs
+to $U_2$ with probability $\frac{r_2}{|W|}$. The event $B^c$
+occurs if at least one of the $r_1$ vertices of $U_1$ belongs
+to $U_2$. The union bound over the vertices of $U_1$ gives
+$\Pr(B^c)\leq\frac{r_1r_2}{|W|}$, since the bound holds for every
+choice of $U_1$. Since $\Pr(A)=p(F_1;G)p(F_2;G)$ and
+$|W|=|V(G)|-|V(\sigma)|$, we have
+\begin{equation}\label{eq:flag-product-estimate}
+  \left|
+    p(F_1;G)p(F_2;G)
+    -\sum_{J\in\mathcal F^\sigma_{|V(\sigma)|+r_1+r_2}}
+        p(F_1,F_2;J)p(J;G)
+  \right|
+  \leq \frac{r_1r_2}{|V(G)|-|V(\sigma)|}.
+\end{equation}
+
+Fix a list of $\sigma$-flags $F_1,\ldots,F_t$ and a real
+symmetric positive semidefinite $t\times t$ matrix $Q=(Q_{ij})$.
+For each $i$, let $r_i=|V(F_i)|-|V(\sigma)|$. Take $G$ large
+enough for \eqref{eq:flag-product-estimate} to apply to every
+pair $F_i,F_j$, and assume $|V(G)|\geq 2|V(\sigma)|$. Let
+$\theta$ be an injective assignment of the labels of $\sigma$
+to vertices of $G$ such that the assigned vertices, with
+their labels, induce $\sigma$. Write $p_\theta(F;G)$ for
+the density of a flag $F$ in $G$ with this assignment, and
+let $v_\theta$ be the column vector with $i$th entry
+$p_\theta(F_i;G)$. Since $Q$ is positive semidefinite,
+\[
+  0\leq v_\theta^{\mathsf T}Qv_\theta
+    =\sum_{i,j=1}^{t}Q_{ij}\,
+       p_\theta(F_i;G)p_\theta(F_j;G).
+\]
+
+For each pair $F_i,F_j$, expand the flag product $F_i\cdot F_j$
+using flags on $|V(\sigma)|+r_i+r_j$ vertices, as in the definition
+of multiplication. Multiply each expansion by $Q_{ij}$, add the
+expansions, and collect terms to obtain the formal sum
+$\sum_J c_JJ$. Thus the pair $F_i,F_j$ contributes
+$Q_{ij}p(F_i,F_j;J)$ to $c_J$ when
+$|V(J)|=|V(\sigma)|+r_i+r_j$. The coefficients $c_J$ depend only
+on the fixed flags and $Q$.
+
+By \eqref{eq:flag-product-estimate}, replacing
+$p_\theta(F_i;G)p_\theta(F_j;G)$ by the expansion of
+$F_i\cdot F_j$ with each flag replaced by its density in $G$
+has error at most $\frac{r_ir_j}{|V(G)|-|V(\sigma)|}$.
+Multiplying these bounds by $|Q_{ij}|$ and summing gives
+\[
+  \left|v_\theta^{\mathsf T}Qv_\theta
+       -\sum_J c_Jp_\theta(J;G)\right|
+  \leq
+  \frac{\sum_{i,j=1}^{t}|Q_{ij}|r_ir_j}
+       {|V(G)|-|V(\sigma)|}.
+\]
+Here and below, $J$ runs over the flags in the product
+expansions. Since $|V(G)|\geq 2|V(\sigma)|$, the right-hand
+side is at most $\frac{C}{|V(G)|}$, where
+$C=2\sum_{i,j=1}^{t}|Q_{ij}|r_ir_j$. The nonnegativity of
+$v_\theta^{\mathsf T}Qv_\theta$ now gives
+\begin{equation}\label{eq:flag-density-lower-bound}
+  \sum_J c_Jp_\theta(J;G)\geq-\frac{C}{|V(G)|}.
+\end{equation}
+
+Let $\Theta$ be the set of all injective assignments of the
+labels of $\sigma$ to vertices of $G$. For each $\theta\in\Theta$
+whose labeled vertices induce $\sigma$, use the densities
+$p_\theta(J;G)$ defined above. For every other $\theta\in\Theta$,
+put $p_\theta(J;G)=0$ for each $J$. The left-hand side of
+\eqref{eq:flag-density-lower-bound} is then zero for those
+assignments, so the inequality holds for every $\theta\in\Theta$.
+Summing \eqref{eq:flag-density-lower-bound} over $\Theta$ and
+dividing by $|\Theta|$ gives
+\begin{equation}\label{eq:averaged-flag-density-lower-bound}
+  \sum_J c_J
+    \left(\frac{1}{|\Theta|}\sum_{\theta\in\Theta}p_\theta(J;G)\right)
+  \geq -\frac{C}{|V(G)|}.
+\end{equation}
+
+Fix a flag $J$ in \eqref{eq:averaged-flag-density-lower-bound}, and
+put $k=|V(J)|$, $s=|V(\sigma)|$ and $N=|V(G)|$. Choose
+$\theta\in\Theta$ uniformly at random and then choose $k-s$ vertices
+uniformly from the vertices that received no label. Let $S$ be
+the union of the $k-s$ chosen vertices and the $s$ vertices
+assigned labels by $\theta$. The two choices give $J$ if $G[S]$ with its assigned labels is
+isomorphic to $J$. For a fixed $\theta$, the probability of
+obtaining $J$ is $p_\theta(J;G)$. This also holds
+under the zero convention when the labeled vertices do not
+induce $\sigma$. When $\theta$ is chosen uniformly from $\Theta$,
+the probability of obtaining $J$ in the two steps is
+\[
+  \frac{1}{|\Theta|}\sum_{\theta\in\Theta}p_\theta(J;G).
+\]
+We call this probability the \emph{average flag density} of $J$
+in $G$.
+
+For a fixed $k$-element set $S$ and a fixed injective assignment
+$\theta$ of the labels within $S$, the probability of obtaining
+the pair $(S,\theta)$ by assigning the labels first is
+$\frac{1}{s!\binom{N}{s}\binom{N-s}{k-s}}$. Indeed, we must first
+choose $\theta$ from the $s!\binom{N}{s}$ injective assignments
+in $G$ and then choose the $k-s$ unlabeled vertices of $S$.
+If we choose $S$ uniformly first and then choose an injective
+assignment within $S$ uniformly, the probability of the same pair
+is $\frac{1}{\binom{N}{k}s!\binom{k}{s}}$. These probabilities are
+equal by the identity
+$\binom{N}{s}\binom{N-s}{k-s}=\binom{N}{k}\binom{k}{s}$,
+so the two sampling procedures give the same distribution.
+
+Write $H_J$ for the unlabeled graph on the $k$ vertices of the
+fixed flag $J$, with the same edges as $J$. For an unlabeled
+graph $H$, write $p(H;G)$ for its induced subgraph density in $G$.
+When $S$ is chosen first, the graph on which we assign labels is
+the $k$-vertex induced subgraph $G[S]$ of the host $G$. A label
+assignment within $S$ can give the flag $J$ only when
+$G[S]\cong H_J$, an event of probability $p(H_J;G)$.
+Choose an injective assignment of the labels of $\sigma$ to
+vertices of $H_J$ uniformly at random. Let $q_\sigma(J)$ be the
+probability that this assignment gives the flag $J$. Given a set
+$S$ with $G[S]\cong H_J$, a uniform injective assignment of the
+labels within $S$ gives $J$ with probability $q_\sigma(J)$. Hence
+the average flag density of $J$ in $G$ satisfies
+\[
+  \frac{1}{|\Theta|}\sum_{\theta\in\Theta}p_\theta(J;G)
+    =q_\sigma(J)p(H_J;G).
+\]
+Substituting this average into
+\eqref{eq:averaged-flag-density-lower-bound} gives
+\begin{equation}\label{eq:flag-unlabeled-lower-bound}
+  \sum_J c_Jq_\sigma(J)p(H_J;G)
+    \geq -\frac{C}{|V(G)|}.
+\end{equation}
+
+Inequality \eqref{eq:flag-unlabeled-lower-bound} gives a lower
+bound on a linear combination of induced subgraph densities.
+Flag algebra inequalities can be used to bound the induced
+subgraph density of a fixed graph in a given graph class.
+Let $d(G)$ be the density we want to bound and let $U$ be a
+proposed upper bound. Suppose
+identities for the graph class allow us to write $U-d(G)$ as
+the left-hand side of \eqref{eq:flag-unlabeled-lower-bound}
+plus a nonnegative linear combination of subgraph densities. Then
+$U-d(G)\geq-\frac{C}{|V(G)|}$, or
+$d(G)\leq U+\frac{C}{|V(G)|}$. The error tends to zero as
+$|V(G)|$ grows. For example, when $d(G)$ is the edge density
+in a triangle-free graph, the identity $p(K_3;G)=0$ can be
+used in finding such an expression for $U-d(G)$.
+
+\subsection{The Flag Algebra Method in Our Proof}\label{subsec:adapted-flags}
+
+We adapt the local flag algebra method of Davey, Hurley, de Joannis de
+Verclos, Kang and Volec~\cite{DaveyEtAlLocal2026,DaveyEtAlStrong2026},
+who use the maximum degree to normalize counts of small graphs.
+In our problem, we wish to express the size of a given strong clique
+in terms of such counts. We mark the edges of the clique and record
+both the marked and the unmarked edges, since an unmarked edge may
+join two disjoint marked edges, as in \textbf{Figure~\ref{fig:marked-maps}}(a).
+
+Suppose first that $G$ is simple, has maximum degree $\Delta$, and
+contains a strong clique of $m>0$ edges. By
+\textbf{Lemma~\ref{lem:regularization}}, we may take $G$ to be
+$\Delta$-regular. The marked edges are the original $m$ clique edges.
+A \emph{pattern} on the positions $0,\ldots,n-1$ assigns one of the
+colors $0,1,2$ to each unordered pair of distinct positions.
+A map from these positions to $V(G)$ determines a pattern. A pair
+receives color $2$ if its images are joined by a marked edge, color
+$1$ if they are joined by an unmarked edge, and color $0$ if they
+coincide or are nonadjacent. For instance, in
+\textbf{Figure~\ref{fig:marked-maps}}(b) the two positions $0$ and
+$2$ have the same image.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node at (1.65,0.83) {(a) A joining edge};
+\node[graph vertex,label=below:$a$] (a) at (0,0) {};
+\node[graph vertex,label=below:$b$] (b) at (1.1,0) {};
+\node[graph vertex,label=below:$c$] (c) at (2.2,0) {};
+\node[graph vertex,label=below:$d$] (d) at (3.3,0) {};
+\draw[marked edge] (a)--node[above] {$2$} (b);
+\draw[unmarked edge] (b)--node[above] {$1$} (c);
+\draw[marked edge] (c)--node[above] {$2$} (d);
+
+\begin{scope}[xshift=5.2cm]
+\node at (2.48,0.83) {(b) Repeated images};
+\node[graph vertex,label=below:$0$] (p0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (p1) at (0.94,0) {};
+\node[graph vertex,label=below:$2$] (p2) at (1.88,0) {};
+\node[graph vertex,label=below:$u$] (u) at (4,0) {};
+\node[graph vertex,label=below:$v$] (v) at (4.94,0) {};
+\draw[marked edge] (p0)--node[above] {$2$} (p1);
+\draw[marked edge] (p1)--node[above] {$2$} (p2);
+\draw[-{Latex[length=2mm]},semithick] (2.42,0)--node[above] {$f$} (3.46,0);
+\draw[marked edge] (u)--node[above] {$2$} (v);
+\end{scope}
+\end{tikzpicture}
+\caption{The edge $bc$ joins the marked edges in (a).
+In (b), $f(0)=f(2)=u$ and $f(1)=v$.}
+\label{fig:marked-maps}
+\end{figure}
+
+The graph underlying a pattern $F$ has an edge for each pair of
+color $1$ or $2$. For the simple-graph calculation we use patterns
+in which this graph is connected, the edges of color $2$ form a strong
+clique in it, and the pair $\{0,1\}$ has color $2$. We call $(0,1)$
+the ordered root. Let $h_F$ be the number of maps that give exactly
+the colors of $F$. To see why we use the normalized count
+$q_F=\frac{h_F}{2m\Delta^{n-2}}$, fix a spanning tree of the underlying
+graph that contains the root edge. Choose the image of $(0,1)$
+uniformly from the $2m$ ordered marked edges. Work outwards from the
+root edge along the tree. Whenever the image of a position is known,
+choose the image of each of its children independently and uniformly
+from the $\Delta$ neighbors of that image. Each map counted by $h_F$
+occurs with probability $\frac{1}{2m\Delta^{n-2}}$. Hence $q_F$ is the
+probability that the sampled map gives the prescribed colors on
+\emph{all} pairs of positions.
+
+Fix such a pattern $T$ on $k$ positions. A flag $F$ of type $T$
+is one of the patterns just described whose restriction to its first
+$k$ positions is $T$. Given a map $f$ that gives the colors of $T$,
+let $h_F(f)$ count the maps that give the colors of $F$ and agree
+with $f$ on these $k$ positions. For a flag on $n$ positions, extend
+a spanning tree of $T$ to a spanning tree of $F$. Starting with the
+images fixed by $f$, sample the remaining $n-k$ images along the
+tree. The probability of obtaining all the colors of $F$ is now
+$\frac{h_F(f)}{\Delta^{n-k}}$. This plays the role of the flag
+density for a fixed placement of the labels in
+\textbf{Subsection~\ref{subsec:flag-algebra}}.
+
+Take flags $F_i$ and $F_j$ of type $T$, with disjoint sets of positions
+outside $T$. An extension of $f$ to $F_i$ and an extension of $f$ to
+$F_j$ together define a map on the union of their positions. Its images
+specify the colors of the remaining pairs, each with one position
+in $F_i$ outside $T$ and one in $F_j$ outside $T$. Let
+$\mathcal U_{ij}$ be the set of patterns on the union that agree with
+both flags and in which the edges of color $2$ form a strong clique.
+Every pair of extensions determines exactly one pattern in
+$\mathcal U_{ij}$. Conversely, a map giving the colors of any
+$H\in\mathcal U_{ij}$ and extending $f$ restricts to one extension
+for each flag. Therefore
+\[
+ h_{F_i}(f)h_{F_j}(f)=\sum_{H\in\mathcal U_{ij}}h_H(f).
+\]
+The identity holds even when positions outside $T$ in the two flags
+have the same image, since the map records their pair as color $0$.
+Thus the formal sum $\sum_{H\in\mathcal U_{ij}}H$ in
+\eqref{eq:colored-flag-product} gives an exact product rule for these
+counts at every $\Delta$. Freedman, Lov\'asz and Schrijver use the
+same multiplication of extension counts for partially labeled
+graphs~\cite{FreedmanLovaszSchrijver2007}.
+
+In \textbf{Figure~\ref{fig:flag-union}}, only the color of $\{2,3\}$
+remains to be determined. Let $H_a$ be the pattern with color $a$
+on that pair. All three choices are possible in the formal product.
+When $a=2$, for example, the unmarked edge on $\{0,2\}$ joins the
+two disjoint marked edges on $\{0,1\}$ and $\{2,3\}$. For these flags
+the sum consists of $H_0,H_1,H_2$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[graph vertex,label=below:$0$] (a0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (a1) at (1.9,0) {};
+\node[graph vertex,label=above:$2$] (a2) at (0,1.18) {};
+\draw[marked edge] (a0)--node[above] {$2$} (a1);
+\draw[unmarked edge] (a0)--node[left] {$1$} (a2);
+\node at (0.95,-0.65) {First flag};
+
+\begin{scope}[xshift=3.6cm]
+\node[graph vertex,label=below:$0$] (b0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (b1) at (1.9,0) {};
+\node[graph vertex,label=above:$3$] (b3) at (1.9,1.18) {};
+\draw[marked edge] (b0)--node[above] {$2$} (b1);
+\draw[unmarked edge] (b1)--node[right] {$1$} (b3);
+\node at (0.95,-0.65) {Second flag};
+\end{scope}
+
+\begin{scope}[xshift=7.45cm]
+\node[graph vertex,label=below:$0$] (c0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (c1) at (1.9,0) {};
+\node[graph vertex,label=above:$2$] (c2) at (0,1.18) {};
+\node[graph vertex,label=above:$3$] (c3) at (1.9,1.18) {};
+\draw[marked edge] (c0)--node[above] {$2$} (c1);
+\draw[unmarked edge] (c0)--node[left] {$1$} (c2);
+\draw[unmarked edge] (c1)--node[right] {$1$} (c3);
+\draw[densely dashed] (c2)--node[above] {$?$} (c3);
+\node at (0.95,-0.65) {Union};
+\end{scope}
+\end{tikzpicture}
+\caption{Two flags with common type on $\{0,1\}$. In their union,
+the dashed pair has color $0$, $1$ or $2$. Undrawn pairs have color $0$.}
+\label{fig:flag-union}
+\end{figure}
+
+The product rule gives inequalities as follows. Fix a list of flags of
+type $T$. For the $i$th flag $F_i$, on $n_i$ positions, put
+$v_i(f)=\frac{h_{F_i}(f)}{\Delta^{n_i-k}}$. Let $v(f)$ be the column
+vector with these entries. The matrix
+\[
+ \frac{1}{2m\Delta^{k-2}}\sum_f v(f)v(f)^{\mathsf T}
+\]
+is positive semidefinite, since each summand is an outer product.
+The sum ranges over the maps giving the colors of $T$. In its
+$(i,j)$ entry the product rule sums the counts of patterns
+$H\in\mathcal U_{ij}$ on $n_i+n_j-k$ positions. Each map counted by
+$h_H$ has a unique restriction to $T$, so $\sum_f h_H(f)=h_H$.
+The three factors in the denominator give
+$2m\Delta^{k-2}\Delta^{n_i-k}\Delta^{n_j-k}
+=2m\Delta^{n_i+n_j-k-2}$. Thus the entry is
+$\sum_{H\in\mathcal U_{ij}}q_H$, as in \eqref{eq:moment-expansion}.
+In the example of \textbf{Figure~\ref{fig:flag-union}} it is
+$q_{H_0}+q_{H_1}+q_{H_2}$. Consequently each quadratic form of this matrix, evaluated at a fixed
+real vector, gives a linear expression in the counts $q_H$ whose
+value is nonnegative.
+
+For a multigraph, a map into the simple support records which pairs
+of vertices are adjacent. We also have to record how many edges of
+the strong clique join each pair. Call an edge of the support
+\emph{red} if at least one marked copy joins its endpoints. For each
+red edge $uv$, distinguish one marked copy, called the \emph{base
+copy}, and let $b_{uv}$ be the number of other marked copies, called
+\emph{extra copies}. A pattern can now require an extra copy on one
+or more specified edges. If the map sends such an edge to $uv$, there
+are $b_{uv}$ choices for that copy. For a fixed map, multiplying
+these numbers counts the choices on all specified edges.
+
+For two flags with a common type, first choose the copies required
+on the type. The choices on each flag outside the type are then
+independent, so the same product rule counts pairs of extensions.
+When the type itself requires extra copies, its map $f$ contributes
+an outer product multiplied by the number of choices on the type.
+This number is nonnegative, and the resulting matrix is again positive
+semidefinite. \textbf{Subsection~\ref{sec:weighted-counts}} specifies
+the weighted counts used in the multigraph proof.
+
+\subsection{The Uniform Bound for Simple Graphs}\label{subsec:marked-edge-pairs}
+
+We now express $\frac{m}{\Delta^2}$ in terms of the counts $q_F$.
+Choose the images of $(0,1)$ and $(2,3)$ independently from the $2m$
+ordered marked edges. The two choices may give the same edge. Each
+choice determines the images of four positions and hence the colors of
+all six pairs. If the two image edges are disjoint, a joining edge
+exists because the marked edges form a strong clique. If they share
+an endpoint, a position for that endpoint is adjacent in the pattern
+to a position on the other edge. Thus the pattern is connected in
+either case. Let $\mathcal B$ consist of the connected patterns on
+these four positions whose edges of color $2$ form a strong clique
+and include $\{0,1\}$ and $\{2,3\}$. Each choice of the two ordered
+edges contributes to exactly one $h_F$ with $F\in\mathcal B$, and
+every map counted by such an $h_F$ determines the two ordered edges.
+Therefore
+\[
+ \sum_{F\in\mathcal B}h_F=(2m)^2,\qquad
+ \frac{1}{2}\sum_{F\in\mathcal B}q_F=\frac{m}{\Delta^2}.
+\]
+
+To bound this sum we use the flag inequalities from
+\textbf{Subsection~\ref{subsec:adapted-flags}} and the degree
+equations. For the latter, fix a position in a pattern and require
+one new position to map to a neighbor of its image. Every map of the
+old positions has exactly $\Delta$ extensions. Sorting these
+extensions by their pair colors gives \eqref{eq:degree-extension}
+after normalization. The calculation in
+\textbf{Subsection~\ref{sec:simple-proof}} uses the degree equations to
+express $\frac{5}{4}-\frac{1}{2}\sum_{F\in\mathcal B}q_F$ as a sum
+of nonnegative multiples of individual counts $q_F$ and of quadratic
+forms of the positive semidefinite matrices with nonnegative weights. The identity is \eqref{eq:certificate-identity},
+with rational coefficients checked in the proof of
+\textbf{Lemma~\ref{prop:checked-certificate}}. Its right-hand side
+is nonnegative. The identity for the two ordered edges now gives
+$m\leq\frac{5}{4}\Delta^2$.
+
+\subsection{From Simple Graphs to Multigraphs}\label{subsec:weighted-sketch}
+
+Let $D$ be a positive integer and let $G$ be a loopless multigraph of
+maximum degree at most $D$. Mark the $m>0$ edges of a strong clique.
+Keep the subgraph induced by their endpoints. Between vertices joined
+by marked edges, keep all the marked copies. Between any other two
+adjacent vertices, keep one unmarked edge. Thus each pair of disjoint
+marked edges still has a joining edge. Let $s$ be the number of red
+edges in the simple support and $b=m-s$ the total number of extra
+copies. The $s$ red edges form a strong clique in the simple support,
+so the simple-graph bound gives $s\leq\frac{5}{4}D^2$.
+
+The degree of a vertex in the reduced multigraph is its number of
+distinct neighbors plus the number of extra copies incident with it.
+As shown in \textbf{Subsection~\ref{sec:weighted-counts}}, we may add
+unmarked edges and vertices to make the multigraph $D$-regular while
+preserving its induced subgraph on the old vertices. Then, for each
+vertex $v$, the extension by one incident edge has exactly $D$
+choices. A neighbor $u$ joined to $v$ by an unmarked edge contributes
+one choice. A neighbor on a red edge $uv$ contributes one choice of
+the base copy and $b_{uv}$ choices of an extra copy. Counting these
+choices in the weighted patterns gives the degree equations for
+multigraphs.
+
+Choose two ordered marked copies as in the simple-graph calculation.
+There are $2s$ choices for an ordered base copy and $2b$ for an ordered
+extra copy. Thus the numbers of choices using zero, one and two extra
+copies are $(2s)^2$, $2(2s)(2b)$ and $(2b)^2$, respectively. Dividing
+each count by $4mD^2$ gives the identity
+\[
+ \frac{s^2}{mD^2}+\frac{2sb}{mD^2}+\frac{b^2}{mD^2}
+ =\frac{m}{D^2}.
+\]
+Each term on the left is a linear combination of the weighted
+pattern counts. For example, in the last term each chosen edge of
+the support contributes its number of extra copies.
+
+Write $M=\frac{m}{D^2}$, $S=\frac{s}{D^2}$ and $e=\frac{b}{m}$.
+Then $S=M(1-e)$. Suppose that $M>\frac{5}{4}$. The weighted flag
+inequalities first give upper bounds on both $M$ and $e$. Degree
+estimates on induced five-cycles of red edges, together with flag
+inequalities in the simple support, give an upper bound on $S$.
+The identity $e=1-\frac{S}{M}$ then gives a lower bound on $e$.
+With $e$ restricted to this interval, the weighted flag inequalities
+give a smaller upper bound on $M$. The successive bounds in the proof
+of \textbf{Lemma~\ref{prop:multi-uniform}} yield $M<\frac{5}{4}$,
+contradicting our assumption. This proves $m\leq\frac{5}{4}D^2$.
+For even $D$, the right-hand side is $f(D)$.
+
+\subsection{The Structure of a Counterexample}\label{subsec:odd-sketch}
+
+Let $D=\Delta(G)$ be odd. If the bound $f(D)$ fails, mark exactly
+$m=f(D)+1$ edges of a strong clique and keep the multigraph on their
+endpoints as in \textbf{Subsection~\ref{subsec:weighted-sketch}}.
+The definition of $f(D)$ gives
+\[
+ M=\frac{m}{D^2}=\frac{5}{4}-\frac{1}{2D}+\frac{5}{4D^2}.
+\]
+For $D\geq9$ this value is at least $\frac{98}{81}$, with equality
+at $D=9$. If the simple support contained no induced five-cycle with
+all five edges red, the flag inequality in~\cite[(G.2)]{FGSTSupplement} would give
+$M<\frac{98}{81}$. Thus the support contains such a cycle, as stated
+in \textbf{Lemma~\ref{lem:counterexample-cycle}}. We examine the degrees around
+each such cycle to bound $s$, the number of distinct pairs of
+endpoints of the $m$ marked edges.
+
+Fix one of these cycles, say $c_0c_1c_2c_3c_4c_0$, and take
+indices modulo five. For each $i$, let $U_i$ consist of the vertices
+whose only neighbors on the cycle are $c_{i-1}$ and $c_{i+1}$ and
+whose edges to both of these vertices are red. In particular,
+$c_i\in U_i$. Take $x\in U_0$ and $y\in U_1$. The disjoint red edges
+$xc_4$ and $yc_2$ must have a joining edge. The definitions of
+$U_0,U_1$ exclude $xc_2$ and $yc_4$, and the induced cycle has no
+edge $c_4c_2$. Thus $xy$ is an edge of the support. The same argument
+with indices shifted shows that each vertex of $U_i$ is adjacent to
+every vertex of $U_{i-1}$ and $U_{i+1}$.
+
+In particular, $c_i$ is joined to at least $|U_{i-1}|+|U_{i+1}|$
+distinct vertices in the multigraph. After counting one copy of each
+of these edges, at most $D-|U_{i-1}|-|U_{i+1}|$ more edges can be
+incident with $c_i$. The sum of these five upper bounds is
+$R=5D-2\sum_{i=0}^4|U_i|$. For odd $D\geq11$, the degree count in
+\textbf{Subsection~\ref{subsec:exact-large-degree}} shows that $R>\frac{D+1}{2}$ on
+every such cycle in a counterexample.
+
+To see how this structural restriction yields an inequality, let
+$q_C$ be the number of ordered red induced five-cycles divided by
+$2sD^3$. Here an ordered cycle has a specified starting vertex and
+direction. Let $L_R$ be the sum of $\frac{R}{D}$ over the same
+ordered cycles, divided by the same denominator. The bound on $R$
+gives $L_R\geq\frac{q_C}{2}$. One of the flag inequalities for the
+simple support in~\cite[(G.1)]{FGSTSupplement} gives
+\[
+ S+0.45119\left(L_R-\frac{q_C}{2}\right)\leq 1.221800627,
+ \qquad\text{where }S=\frac{s}{D^2}.
+\]
+Its second term on the left is nonnegative. Thus
+$S\leq1.221800627$. For odd $D\geq15$, the value of $M$ above
+satisfies $M\geq\frac{11}{9}>1.221800627$. It follows that $s<m$,
+so some pair of vertices is joined by at least two marked copies.
+Moreover, $e=1-\frac{S}{M}$ gives an explicit lower bound on the
+fraction of extra copies.
+
+For $D=11,13$, the integer $R$ is odd, and the degree estimates
+in \textbf{Subsection~\ref{subsec:exact-large-degree}} give $R\geq9$. Substituting
+$L_R\geq\frac{9}{D}q_C$ into the flag inequalities gives $S<M$
+in these two cases as well. At $D=9$, the finite simple-graph
+bound excludes $s=m$. The remaining degree estimates restrict $e$
+further. For each odd $D\geq9$ the weighted flag inequalities then
+exclude the prescribed value $M=\frac{f(D)+1}{D^2}$ throughout the
+allowed interval for $e$, as detailed in
+\textbf{Table~\ref{tab:multi-odd}}. The cases $D=1,3,5,7$ are
+settled separately in \textbf{Subsection~\ref{subsec:exact-small-degree}}. This proves
+\textbf{Theorem~\ref{thm:multigraph}}.
+\section{Comparison with Earlier Work}\label{sec:earlier-work}
+
+\subsection{Earlier Work}
+
+Let $H$ consist of the edges of a nonempty strong clique in $G$ and
+their endpoints. Write $\Delta=\Delta(G)$ and $h=\Delta(H)$. Fix an
+edge $xy$ of $H$. Every edge of $H$ meets $X=N_G(x)\cup N_G(y)$.
+Indeed, $x,y\in X$, and any edge disjoint from $xy$ must have an
+endpoint adjacent to $x$ or $y$. Thus $|E(H)|\leq |X|h\leq2\Delta h$.
+Faudree, Gy\'arf\'as, Schelp and Tuza~\cite{FGST1990} asked what
+would happen if this count came arbitrarily close to $2\Delta^2$.
+The set $X$ would have close to $2\Delta$ vertices, and most of them
+would have close to $\Delta$ edges of $H$ leading outside $X$, since
+an edge inside $X$ is counted at both ends. Consider two such edges
+$zu,z'u'$ with distinct $z,z'\in X$ and distinct $u,u'\notin X$.
+If none of $zz',zu',z'u$ is present, then $uu'$ must be present.
+The authors count these required edges at the outside neighbors of
+a fixed $z$, together with the edges from those neighbors back to
+$X$. The two counts exceed the available degree when
+$|E(H)|>(2-\varepsilon)\Delta^2$ for sufficiently small absolute
+$\varepsilon>0$. Hence $|E(H)|\leq(2-\varepsilon)\Delta^2$.
+
+For simple graphs, \'{S}leszy\'{n}ska-Nowak~\cite{SleszynskaNowak2016}
+used all the edges at a vertex $v$ with $d_H(v)=h$. At most $\Delta h$
+edges of $H$ meet $N_G(v)$. Let $F$ consist of the remaining edges.
+For every $a\in N_H(v)$, the set $N_G(a)\cap V(F)$ covers $E(F)$,
+since each edge of $F$ must be joined to $va$ and neither endpoint is
+adjacent to $v$. A vertex belonging to $j$ of these covers already
+has $j$ neighbors outside $V(F)$ and hence has degree at most
+$\Delta-j$ in $F$. When $h\geq\frac{3}{4}\Delta$, her count using
+these covers gives $|E(F)|\leq\Delta^2-\frac{1}{2}\Delta h$.
+Adding the edges meeting $N_G(v)$ gives
+$|E(H)|\leq\Delta^2+\frac{1}{2}\Delta h\leq\frac{3}{2}\Delta^2$.
+For smaller $h$, the bound $|E(H)|\leq2\Delta h$ already suffices.
+
+Faron and Postle~\cite{FaronPostle2019} kept track of the degree sum
+at the two ends of each edge of $H$. Write $\sigma=\sigma_G(H)$ for
+the largest of these sums, with both degrees measured in $G$.
+They chose $x$ of maximum degree in $H$ and, among its neighbors
+in $H$, chose $y$ of largest degree in $H$. Their double counting
+argument starts by summing the degrees in $H$ of the vertices in
+$N_G(x)\cup N_G(y)$ and subtracting the edges counted twice.
+For the second count, consider the edges from outside this union to
+vertices adjacent to $x$ but not $y$, and those to vertices adjacent
+to $y$ but not $x$. Each set forms a
+smaller bipartite subgraph of $H$. In the first subgraph neither
+endpoint of an edge is adjacent to $y$. For that edge to have a
+joining edge to every edge of $H$ at $y$, each neighbor of $y$ in
+$H$ must be adjacent to one of its endpoints. Those neighbors lie outside
+the subgraph, so restricting $G$ to the vertices of this subgraph
+lowers the endpoint degree sum by at least $d_H(y)$. The second
+subgraph gives the corresponding decrease of at least $d_H(x)$.
+
+Combining the two counts, Faron and Postle showed that an estimate
+with coefficient $\beta\in[\frac{1}{4},\frac{1}{3}]$ for smaller
+bipartite subgraphs of $H$ gives the estimate
+$|E(H)|\leq\frac{1+\beta}{4}\sigma^2$ for general $H$.
+Here the bipartite estimate is $|E(H')|\leq\beta\sigma_{G'}(H')^2$,
+where $H'$ is the smaller bipartite subgraph and $G'=G[V(H')]$.
+The edges of $H'$ still form a strong clique in $G'$ because all
+their endpoints are retained. At $\beta=\frac{1}{3}$, the coefficient
+$\frac{1+\beta}{4}$ is again $\frac{1}{3}$, so induction on $|E(H)|$
+gives $|E(H)|\leq\frac{1}{3}\sigma^2\leq\frac{4}{3}\Delta^2$.
+
+Kumar, Mohar and Pragada~\cite{KumarMoharPragada2026} improved the
+bipartite estimate in this reduction. Suppose that $H$ is bipartite.
+Choose $v$ with $d_H(v)=h$, put $A=N_H(v)$ and let
+$B=V(H)\setminus N_G[v]$. For an edge $xy$ of $H[B]$, every
+$a\in A$ must be adjacent to $x$ or $y$, since $va$ and $xy$ need
+a joining edge. Thus $d_{G[B]}(x)+d_{G[B]}(y)\leq\sigma-h$,
+and induction bounds $|E(H[B])|$ by $\beta(\sigma-h)^2$.
+The same edges from $A$ to $B$ also enter the count at $A$.
+Those outside $H$ use degree at $A$ without contributing to $|E(H)|$.
+The authors subtract these edges when counting the edges of $H$
+meeting $N_G[v]$. Combining this count with the induction bound
+reduces the estimate to an inequality in $h/\sigma$, which they
+verify for $\beta=\frac{620}{1987}$. The reduction above and
+$\sigma\leq2\Delta$ then give
+$|E(H)|\leq(1+\beta)\Delta^2=\frac{2607}{1987}\Delta^2$.
+
+A different question is when a five-cycle must occur and what its
+vertices tell us about the rest of the graph. Chung, Gy\'arf\'as,
+Tuza and Trotter~\cite{CGTT1990} considered simple graphs in which
+the entire edge set is a strong clique. After deleting isolated
+vertices, such a graph has no induced subgraph consisting of two
+disjoint edges. In the triangle-free, nonbipartite case, a shortest
+odd cycle must have length five, since a longer induced cycle contains
+two edges with no joining edge. Every vertex has exactly two neighbors
+on the five-cycle. Vertices with the same two neighbors form one of
+five independent sets. Every edge between successive sets is present,
+so if their sizes in cyclic
+order are $a_0,\ldots,a_4$, then the edge count is
+$\sum_{i=0}^4 a_i a_{i+1}$ and $a_{i-1}+a_{i+1}\leq\Delta$ for
+each $i$, with indices modulo five. Maximizing this sum gives
+$f(\Delta)$. In the bipartite case each part contains a vertex
+adjacent to the whole other part, so there are at most $\Delta^2$
+edges. If there is a triangle, they find a maximum clique such that
+every vertex outside it has a neighbor in it. Grouping the outside
+vertices according to their neighbors in this clique and counting
+the edges gives fewer than $f(\Delta)$ edges.
+
+Cames van Batenburg, Kang and Pirot~\cite{CamesKangPirot2020}
+allowed $H$ to be a proper submultigraph and assumed that $G$ has
+no five-cycle. Again take $v$ with $d_H(v)=h$. Consider an edge
+$xy$ of $H$ with both ends outside $N_G[v]$. Each $a\in N_H(v)$
+must be adjacent to $x$ or $y$. If distinct $a,b\in N_H(v)$
+were adjacent to $x$ and $y$, respectively, then $vaxybv$ would
+be a five-cycle. Thus, when $|N_H(v)|\geq2$, one endpoint of $xy$
+is adjacent to every vertex of $N_H(v)$. The authors count the
+edges at these endpoints, then subtract the degree already used by
+their neighbors in $N_H(v)$ when counting the remaining clique edges.
+Together with the case $|N_H(v)|=1$, this gives
+$|E(H)|\leq h(\sigma-h)\leq\frac{1}{4}\sigma^2\leq\Delta^2$.
+Consequently a larger strong clique forces some five-cycle in $G$.
+For our argument we need an induced five-cycle in the simple support
+of $G$ with an edge of $H$ on each of its five pairs of endpoints.
+
+\subsection{Highlights of the Proof}\label{subsec:method-highlights}
+
+The main idea is to use the structure of a counterexample at odd
+maximum degree to derive an inequality on edge multiplicities that
+contradicts the weighted flag inequalities. Suppose that $G$ has odd
+maximum degree $D$ and contains a strong clique of $m=f(D)+1$ marked edges.
+For $D\geq9$, \textbf{Lemma~\ref{lem:counterexample-cycle}} gives an
+induced five-cycle in the simple support of $G$. Each edge of the cycle
+has the same endpoints as a marked edge of $G$. This allows us to
+use the five sets suggested by the blow-ups of $C_5$ in the work
+of Chung, Gy\'arf\'as, Tuza and Trotter~\cite{CGTT1990}, even when
+the host has unmarked edges and parallel edges.
+
+For each such cycle $C$, let $U_0,\ldots,U_4$ be the sets defined
+in \textbf{Subsection~\ref{subsec:odd-sketch}}. All edges between
+$U_i$ and $U_{i+1}$ are present in the simple support, with indices
+taken modulo five. Thus at the $i$th cycle vertex at least
+$|U_{i-1}|+|U_{i+1}|$ of its incident edges are already accounted for.
+Summing over the five vertices leaves at most
+$R(C)=5D-2\sum_{i=0}^4|U_i|$ further incidences.
+When $D\geq11$, counting the marked edges in and outside these
+sets shows that $R(C)\leq\frac{D+1}{2}$ would give $m\leq f(D)$.
+Consequently $R(C)>\frac{D+1}{2}$ on every such cycle of a
+counterexample. This use of restrictions on small induced subgraphs
+to sharpen a flag bound is related to the stability arguments of
+Pikhurko, Slia\v{c}an and Tyros~\cite{PikhurkoSliacanTyros2019}.
+
+Let $s$ be the number of distinct pairs of vertices joined by
+marked edges. Summing the lower bound on $R(C)$ over the cycles
+and substituting it into the flag inequalities for the simple
+support gives an upper bound on $s$. For example, for odd
+$D\geq15$ we obtain
+\[
+  \frac{s}{D^2}\leq 1.221800627
+  <\frac{11}{9}\leq\frac{m}{D^2}.
+\]
+Once one marked edge has been counted on each of the $s$ pairs,
+the other $m-s$ marked edges are parallel copies. An upper bound
+on $s$ is therefore a lower bound on the fraction $\frac{m-s}{m}$
+of such copies. At $D=15$, for instance, the degree estimates give
+$R(C)\geq11$ on every induced red five-cycle. Using this bound in the
+inequalities for the simple support, and counting the extra copies at
+their endpoints, gives $0.007\leq\frac{m-s}{m}\leq0.365$
+in \textbf{Section~\ref{sec:exact}}.
+With these restrictions, the weighted flag inequalities in the
+$D=15$ row of \textbf{Table~\ref{tab:multi-odd}} give
+$\frac{m}{D^2}<0.827$. Yet $m=f(15)+1=275$ requires
+$\frac{m}{D^2}=\frac{11}{9}$. The other rows give the contradiction
+for the remaining odd $D\geq9$.
+\section{Auxiliary Lemmas}\label{sec:auxiliary}
+
+We use a regular supergraph to count the ways to extend a map by one
+vertex. We refine the regularization lemma of Davey et
+al.~\cite{DaveyEtAlStrong2026} for simple graphs by extending it to
+loopless multigraphs. The construction preserves the multiplicities
+of the original edges and gives every new edge multiplicity one.
+
+\begin{lemma}\label{lem:regularization}
+Let $D\geq1$ be an integer and let $G$ be a finite loopless multigraph
+with $\Delta(G)\leq D$. There is a finite $D$-regular loopless multigraph
+$\widehat G$ containing $G$ as an induced subgraph such that every
+edge of $\widehat G$ outside $G$ has multiplicity one. In particular, $\widehat G$ is simple
+if $G$ is simple.
+\end{lemma}
+
+\begin{proof}
+We must add $D-d_G(v)$ incidences at each vertex $v$. Their total
+is $D|V(G)|-2|E(G)|$. If it is odd, then $D$ is odd, so adjoining one
+isolated vertex makes the total even. Form a list containing $D-d(v)$
+occurrences of each vertex $v$ of the resulting graph, where $d(v)$ is
+its current degree. Partition the list into pairs. For a pair $(u,v)$,
+take a new copy of $K_{D+1}$, delete an edge $xy$, and add the edges
+$ux$ and $vy$. Use a different copy for each pair. This adds two
+distinct edges even when $u=v$. Both $x$ and $y$ regain degree $D$,
+and every occurrence in the list adds one incidence at the
+corresponding vertex. Thus all degrees are $D$. Each added edge has
+multiplicity one and at least one new endpoint, so the original
+vertices induce $G$.
+\end{proof}
+
+A strong clique in $G$ is also a strong clique in $\widehat G$, since
+every adjacency between endpoints of its edges is preserved. In the
+counting arguments we mark only the edges of the chosen clique, so
+all edges added in the construction are unmarked.
+
+Vector inequalities are coordinatewise. For symmetric matrices $X$
+and $Y$ of the same size, $\tr(XY)=\sum_{i,j}X_{ij}Y_{ij}$.
+
+In the simple-graph calculation we will express the size of a strong
+clique, divided by the square of the maximum degree, as a linear
+function of the pattern counts. The calculation uses a system with $N=23{,}789$ coordinates, $3{,}516$ linear equations and
+$57$ positive semidefinite matrix constraints. Write $Aq=b$ for the
+linear equations and $o^{\mathsf T}q$ for the objective, where
+$A\in\mathbb Q^{3516\times N}$, $b\in\mathbb Q^{3516}$ and
+$o\in\mathbb Q^N$. For each $\ell\in[57]$, let
+$K_\ell,D_{\ell1},\ldots,D_{\ell N}$ be symmetric rational matrices of
+the same size. The $\ell$th matrix constraint is $M_\ell(q)\succeq0$,
+where
+\begin{equation}\label{eq:intro-affine-gram}
+ M_\ell(q)=K_\ell+\sum_{j=1}^N q_jD_{\ell j}.
+\end{equation}
+The matrices and vectors are specified in~\cite[Section~A]{FGSTSupplement}.
+For a symmetric matrix
+$Q$ of the same size as $K_\ell$, define
+$D_\ell^*(Q)\in\mathbb R^N$ by
+\begin{equation}\label{eq:intro-trace-adjoint}
+ (D_\ell^*(Q))_j=\tr(QD_{\ell j})\qquad(j\in[N]).
+\end{equation}
+
+\begin{lemma}\label{prop:certificate-principle}
+Let $o\in\mathbb Q^N$ be an objective vector and
+$\lambda\in\mathbb Q^{3516}$. For each $\ell\in[57]$, let $Q_\ell$
+be a matrix of the same size as $K_\ell$ expressible as a finite
+nonnegative rational linear combination of outer products
+$ww^{\mathsf T}$ of rational vectors. Set
+\begin{align}
+ &r=A^{\mathsf T}\lambda-\sum_{\ell=1}^{57}D_\ell^*(Q_\ell)-o,
+ \label{eq:residual}\\
+ &C=b^{\mathsf T}\lambda+\sum_{\ell=1}^{57}\tr(Q_\ell K_\ell).
+ \label{eq:dual-value}
+\end{align}
+We call $r$ the residual vector. If $r\geq0$, then every $q\in\mathbb R^N$ with $q\geq0$, $Aq=b$ and
+$M_\ell(q)\succeq0$ for all $\ell\in[57]$ satisfies $o^{\mathsf T}q\leq C$.
+If $q\in[0,1]^N$ satisfies the same equations and matrix constraints,
+then $o^{\mathsf T}q\leq C-\sum_{j:r_j<0}r_j$, for any residual $r$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:intro-affine-gram} and
+\eqref{eq:intro-trace-adjoint}, each trace
+$\tr(Q_\ell M_\ell(q))$ equals
+$\tr(Q_\ell K_\ell)+D_\ell^*(Q_\ell)^{\mathsf T}q$.
+Adding the scalar product of $r$ in \eqref{eq:residual} with $q$
+cancels the terms involving $D_\ell^*(Q_\ell)$. Since $Aq=b$,
+we have $\lambda^{\mathsf T}Aq=b^{\mathsf T}\lambda$, so
+the definition of $C$ in \eqref{eq:dual-value} gives
+\begin{equation}\label{eq:certificate-identity}
+ C-o^{\mathsf T}q
+ =\sum_{\ell=1}^{57}\tr\bigl(Q_\ell M_\ell(q)\bigr)
+  +\sum_{j=1}^N r_jq_j.
+\end{equation}
+Write $Q_\ell=\sum_a\alpha_{\ell a}w_{\ell a}w_{\ell a}^{\mathsf T}$,
+where each $\alpha_{\ell a}$ is nonnegative. Then
+\[
+ \tr\bigl(Q_\ell M_\ell(q)\bigr)=
+ \sum_a\alpha_{\ell a}w_{\ell a}^{\mathsf T}M_\ell(q)w_{\ell a}\geq0
+\]
+because $M_\ell(q)$ is positive semidefinite. If $r\geq0$ and $q\geq0$,
+the second sum in \eqref{eq:certificate-identity} is nonnegative.
+For $0\leq q_j\leq1$, we have $r_jq_j\geq0$ if $r_j\geq0$ and
+$r_jq_j\geq r_j$ if $r_j<0$. Thus the second sum is at least
+$\sum_{j:r_j<0}r_j$ in that case.
+\end{proof}
+\section{Proof of the Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4}}\label{sec:uniform}
+
+Let $G$ be a finite loopless multigraph with maximum degree $\Delta$.
+We prove that $\omega(L(G)^2)\leq\frac{5}{4}\Delta^2$. We first
+prove the bound for simple graphs. To extend it to multigraphs, we
+count how many edges of a given strong clique join each pair of
+adjacent vertices.
+
+\subsection{The Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4} in Simple Graphs}
+\label{sec:simple-proof}\label{sec:finite-model}\label{sec:identities}\label{sec:finite-instance}
+\label{subsubsec:conditional-extension-counts}
+
+By \textbf{Lemma~\ref{lem:regularization}}, a nonempty strong clique
+in a simple graph of maximum degree $\Delta$ remains a strong clique
+in a $\Delta$-regular simple graph. Let $G$ be this regular graph and
+mark the set $S$ of edges in the given clique. We retain the other
+edges of $G$, which may join the endpoints of disjoint marked edges.
+The symmetric function
+$c_G\colon V(G)\times V(G)\to\{0,1,2\}$ is given by
+\[
+ c_G(u,v)=
+ \begin{cases}
+  2,&uv\in S,\\
+  1,&uv\in E(G)\setminus S,\\
+  0,&u=v\text{ or }uv\notin E(G).
+ \end{cases}
+\]
+
+\begin{defn}\label{def:patterns}
+For an integer $n\geq2$, put $P_n=\{0,\ldots,n-1\}$. A \emph{pattern}
+$F$ of order $n$ assigns a color $c_F(i,j)\in\{0,1,2\}$ to each pair
+$ij=\{i,j\}$ of distinct positions in $P_n$, with $c_F(0,1)=2$. We
+call $(0,1)$ the ordered root. The underlying graph $H$ of $F$ has
+vertex set $P_n$ and edge set consisting of the pairs of color $1$
+or $2$. We call $F$ \emph{connected} if $H$ is connected and
+\emph{admissible} if the pairs of color $2$ form a clique in $L(H)^2$.
+Equivalently, for every two disjoint pairs of color $2$, some pair
+with one position in each has color $1$ or $2$.
+Let $\mathcal F_n$ be the set of connected admissible patterns of order $n$.
+\end{defn}
+
+\begin{defn}\label{def:color-preserving-maps}
+Let $F$ be a pattern of order $n$, and let $G$ be a finite simple graph
+with marked set $S\subseteq E(G)$. A \emph{color-preserving map} from $F$
+to $G$ is a map $f\colon P_n\to V(G)$ such that
+$c_F(i,j)=c_G(f(i),f(j))$ for all distinct $i,j\in P_n$.
+For fixed $G$ and $S$, let $h_F$ be the number of color-preserving maps
+from $F$ to $G$.
+\end{defn}
+
+Distinct positions may map to the same vertex, in which case their
+pair has color $0$.
+
+\begin{lemma}\label{lem:pullback}
+Let $G$ be a finite simple graph, let $S\subseteq E(G)$ be a clique
+in $L(G)^2$, and let $n\geq 2$. Every map $f\colon P_n\to V(G)$ with
+$c_G(f(0),f(1))=2$ gives an admissible pattern $F$ by setting
+$c_F(i,j)=c_G(f(i),f(j))$ for all distinct $i,j\in P_n$.
+\end{lemma}
+
+\begin{proof}
+Consider disjoint pairs $ij$ and $k\ell$ of color $2$ in $F$. Their
+images are edges of $S$. If the image edges are disjoint, some
+endpoint of one is adjacent to an endpoint of the other since $S$
+is a clique in $L(G)^2$. The corresponding pair of positions has
+color $1$ or $2$.
+
+If the image edges have a common endpoint, we may name the positions
+so that $f(i)=f(k)$. The pair $jk$ then maps to the marked edge
+$f(j)f(i)$ and has color $2$. The same reasoning applies when the
+image edges are equal.
+\end{proof}
+
+Let $G$ be a finite simple $\Delta$-regular graph with $\Delta>0$,
+and let $S\subseteq E(G)$ be a nonempty clique in $L(G)^2$ of size $m$.
+For $F\in\mathcal F_n$, define
+\begin{equation}\label{eq:q-definition}
+ q_F=\frac{h_F}{2m\Delta^{n-2}}.
+\end{equation}
+The factor $2m$ counts the possible images of the ordered root.
+For the two-position pattern $E_\star$ with its unique pair marked,
+we have $h_{E_\star}=2m$ and hence $q_{E_\star}=1$.
+
+Two patterns $F,F'\in\mathcal F_n$ are equivalent if there is a
+permutation $\pi$ of $P_n$ with
+$c_F(i,j)=c_{F'}(\pi(i),\pi(j))$ for every pair $ij$ of distinct
+positions. The preimage of $\{0,1\}$ under $\pi$ may be any pair of
+color $2$ in $F$, with either ordering of its two positions. These
+are isomorphism classes of the colored patterns with the root allowed
+to move. We call them orbits, as in the data files.
+
+For $k\geq2$, $F\in\mathcal F_k$ and $u\in P_k$, let
+$\mathcal E(F,u)$ be the set of admissible patterns on $P_{k+1}$ whose
+restriction to $P_k$ is $F$ and whose pair $uk$ has color $1$ or $2$.
+Each such pattern is connected because its restriction to $P_k$ is
+connected and the new position $k$ is adjacent to $u$.
+
+\begin{lemma}\label{lem:coordinates}\label{lem:degree}
+Suppose that $G$ is $\Delta$-regular and that its $m>0$ marked edges
+form a strong clique. For every $k\geq2$ and $F\in\mathcal F_k$,
+$q_F\in[0,1]$ and $q_{F'}=q_F$ for every $F'$ in the orbit of $F$.
+For each $u\in P_k$,
+\begin{equation}\label{eq:degree-extension}
+ \sum_{F'\in\mathcal E(F,u)}q_{F'}=q_F.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $F$ is connected, its underlying graph has a spanning tree
+containing the root edge. Choose the image of the ordered root in
+$2m$ ways. Then assign images to the remaining positions in order of
+increasing distance from $\{0,1\}$ in the tree, so that each new
+position has a tree neighbor whose image is already chosen. The pair
+joining them has color $1$ or $2$, so the new image has at most
+$\Delta$ choices. Thus $0\leq h_F\leq 2m\Delta^{n-2}$, and
+$q_F\in[0,1]$ by \eqref{eq:q-definition}.
+
+If $\pi$ is a permutation of $P_n$ with
+$c_F(i,j)=c_{F'}(\pi(i),\pi(j))$ for all distinct $i,j$, then
+$f\mapsto f\circ\pi$ maps the color-preserving maps of $F'$ to those
+of $F$. Precomposing with $\pi^{-1}$ gives the inverse, so
+$h_F=h_{F'}$. The two counts have the same denominator in
+\eqref{eq:q-definition}, which gives $q_F=q_{F'}$.
+
+Fix a color-preserving map $f$ of $F$. The image of $k$ can be any
+of the $\Delta$ neighbors of $f(u)$, including neighbors already
+used by $f$. Each choice determines the colors of all pairs involving
+$k$ and therefore a unique extension pattern in $\mathcal E(F,u)$.
+Admissibility follows from \textbf{Lemma~\ref{lem:pullback}}.
+Conversely, a map counted by $h_{F'}$ for $F'\in\mathcal E(F,u)$
+restricts to a color-preserving map of $F$ and sends $k$ to a neighbor
+of the image of $u$. Thus
+$\sum_{F'\in\mathcal E(F,u)}h_{F'}=\Delta h_F$.
+Dividing by $2m\Delta^{k-1}$ gives \eqref{eq:degree-extension}.
+\end{proof}
+
+Index the $N=23{,}789$ relabeling orbits in
+$\bigcup_{n=3}^6\mathcal F_n$ as in~\cite[Section~A.1]{FGSTSupplement}.
+For each $j\in[N]$, set $q_j=q_F$ for any $F$ in orbit $j$.
+We treat $q_{E_\star}=1$ as a constant. When we collect the terms of a
+sum over labeled patterns by orbit, each labeled pattern contributes
+once to its orbit coordinate.
+
+The degree equations in $Aq=b$ are the identities in
+\eqref{eq:degree-extension} written in the orbit coordinates.
+In the row for $(F,u)$, each $F'\in\mathcal E(F,u)$ contributes
+one to the column indexed by its orbit. If $F=E_\star$, the right
+side of \eqref{eq:degree-extension} is $1$. Otherwise we subtract
+one from the column indexed by the orbit of $F$ and set the right
+side to $0$.
+
+The pairs $(F,u)$ used for the degree equations are specified
+in~\cite[Section~A.2]{FGSTSupplement}, with $F$ of order $2$, $3$,
+$4$ or $5$. At order $5$, we use one pattern from each orbit and
+take every position of that pattern in turn as $u$. The resulting
+$3{,}516$ equations form the system
+\begin{equation}\label{eq:linear-system}
+ Aq=b.
+\end{equation}
+For example, the first row, for $F=E_\star$ and $u=1$, is
+$q_1+q_2+q_3+2q_4+q_5=1$. The two extensions with color pairs
+$(c_{F'}(0,2),c_{F'}(1,2))=(1,2)$ and $(2,1)$ contribute to
+the same orbit, giving the coefficient of $q_4$.
+
+A \emph{type} of order $k$ is a pattern $T\in\mathcal F_k$.
+A \emph{flag of type $T$} is a pattern in $\mathcal F_n$, for some
+$n\geq k$, whose restriction to $P_k$ is $T$. The positions of the
+flag remain labeled when counting extensions. Let
+$\mathcal L=(F_1,\ldots,F_s)$ be a list of flags of type $T$ of
+orders $n_1,\ldots,n_s$, respectively. For a color-preserving map
+$f$ of $T$ into $G$ and any flag $F$ of type $T$, let $h_F(f)$ be
+the number of color-preserving maps from $F$ to $G$ that extend
+$f$. For each $i\in[s]$, put $v_i(f)=\frac{h_{F_i}(f)}{\Delta^{n_i-k}}$.
+Let $v(f)$ be the column vector with entries $v_i(f)$. Define the
+\emph{moment matrix} for $T$ and $\mathcal L$ by
+\begin{equation}\label{eq:moment-definition}
+ M(T,\mathcal L)=\frac{1}{2m\Delta^{k-2}}
+       \sum_{f:T\to G}v(f)v(f)^{\mathsf T}.
+\end{equation}
+The sum runs over all color-preserving maps of $T$ into $G$. If a
+flag $F_i$ equals $T$, then $v_i(f)=1$ for each such map.
+
+\begin{lemma}\label{lem:moment}
+For any finite list $\mathcal L$ of flags of type $T\in\mathcal F_k$,
+the moment matrix $M(T,\mathcal L)$ is positive semidefinite.
+If $n_i+n_j-k\leq6$ for all $i,j\in[s]$, each entry is a nonnegative
+integer linear combination of the coordinates of $q$ and the
+constant $q_{E_\star}=1$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:moment-definition}, for every $x\in\mathbb R^s$,
+$x^{\mathsf T}M(T,\mathcal L)x$ is the sum of the squares
+$(x^{\mathsf T}v(f))^2$ divided by $2m\Delta^{k-2}$, so it is
+nonnegative.
+
+To compute entry $(i,j)$, put $n=n_i+n_j-k$. In $P_n$, identify each position $r$ of $F_i$ with $r\in P_{n_i}$.
+Identify position $r$ of $F_j$ with $r$ if $r<k$ and with $n_i+r-k$
+otherwise. The flags agree on their intersection
+$P_k$. The unspecified pairs have one position in
+$P_{n_i}\setminus P_k$ and the other in $P_n\setminus P_{n_i}$.
+Let $\mathcal U_{ij}$ be the set of admissible completions of the
+colors of these pairs. Each completed pattern is connected because
+the flags are connected and share the type. We write the product of
+the two colored flags as the formal sum
+\begin{equation}\label{eq:colored-flag-product}
+ F_i\star_T F_j=\sum_{H\in\mathcal U_{ij}}H.
+\end{equation}
+The positions are labeled, so each admissible assignment of
+the unspecified colors contributes one summand.
+
+Fix a color-preserving map $f$ of $T$. A pair of extensions of $f$
+to $F_i$ and $F_j$ gives a unique map on $P_n$, since the extensions
+agree on $P_k$. The images of distinct positions may coincide,
+including positions from different flags. Evaluating $c_G$ on the
+images of each unspecified pair determines its color. The resulting
+pattern belongs to $\mathcal U_{ij}$ by
+\textbf{Lemma~\ref{lem:pullback}}. Conversely, a map counted by
+$h_H(f)$ for $H\in\mathcal U_{ij}$ restricts to an extension of $f$
+to each of the two flags. Counting these pairs and dividing by
+$\Delta^{(n_i-k)+(n_j-k)}=\Delta^{n-k}$ gives
+\begin{equation}\label{eq:colored-flag-evaluation}
+ v_i(f)v_j(f)=\frac{\displaystyle\sum_{H\in\mathcal U_{ij}}h_H(f)}
+                         {\Delta^{n-k}}.
+\end{equation}
+Thus the product in \eqref{eq:colored-flag-product} expresses the
+product of the two normalized extension counts exactly.
+
+Substitute \eqref{eq:colored-flag-evaluation} into
+\eqref{eq:moment-definition}. Summing $h_H(f)$ over all maps
+$f$ of $T$ gives $h_H$, since each color-preserving map of $H$
+has a unique restriction to $T$. The total power of $\Delta$ in
+the denominator is $(k-2)+(n-k)=n-2$. Hence
+\eqref{eq:q-definition} gives
+\begin{equation}\label{eq:moment-expansion}
+ \bigl(M(T,\mathcal L)\bigr)_{ij}
+ =\frac{\displaystyle\sum_{H\in\mathcal U_{ij}}h_H}{2m\Delta^{n-2}}
+ =\sum_{H\in\mathcal U_{ij}}q_H.
+\end{equation}
+For the flags in \textbf{Figure~\ref{fig:flag-union}}, let $H_a$ be
+the completion that assigns color $a$ to the pair $23$, for
+$a\in\{0,1,2\}$. All three completions are admissible. In particular,
+when $23$ has color $2$, the pairs $02$ and $13$ of color $1$ join
+the marked pairs $01$ and $23$. The product in
+\eqref{eq:colored-flag-product} is therefore $H_0+H_1+H_2$.
+Both flags occur in the list of nine flags for the marked
+two-position type in~\cite[Table~A.2]{FGSTSupplement}. Their product
+gives the entry $q_{H_0}+q_{H_1}+q_{H_2}$ of the corresponding
+moment matrix.
+
+If $n=2$, the union is $E_\star$ and contributes the constant $1$.
+If $3\leq n\leq6$, each summand contributes to the coordinate of
+its relabeling orbit.
+\end{proof}
+
+In \eqref{eq:moment-expansion}, the coefficient of an orbit coordinate
+counts the labeled completions in that orbit. If two flags differ
+only by a permutation of their positions outside the type, that
+permutation gives a bijection between their extensions of each
+type map. We therefore use one representative of each class of
+flags under permutations fixing the type positions.
+
+The system uses $57$ pairs $(T_\ell,\mathcal L_\ell)$, with types of
+order $2$, $3$ or $4$. The flag orders in
+\cite[Table~A.2]{FGSTSupplement} ensure $n_i+n_j-k\leq6$ for every
+pair of flags in the same list. For the graph counts, we set
+$M_\ell(q)=M(T_\ell,\mathcal L_\ell)$. To write these matrices as in
+\eqref{eq:intro-affine-gram}, let $(D_{\ell j})_{ab}$ count the labeled
+completions in $\mathcal U_{ab}$ that belong to orbit $j$, where
+$\mathcal U_{ab}$ is taken for the list $\mathcal L_\ell$.
+A union of order $2$ occurs only when both flags equal the type
+$E_\star$. This gives a $1$ at the first diagonal entry of $K_\ell$
+in each of the two lists with this type, and every other entry of
+every $K_\ell$ is $0$. By \textbf{Lemma~\ref{lem:moment}},
+\begin{equation}\label{eq:positive-moments}
+ M_\ell(q)\succeq0\qquad(\ell\in[57]).
+\end{equation}
+
+To express $\frac{m}{\Delta^2}$ in terms of $q$, we choose the
+images of $(0,1)$ and $(2,3)$ independently from the $2m$ ordered
+marked edges. Let $\mathcal B\subseteq\mathcal F_4$ consist of the
+patterns in which both $01$ and $23$ have color $2$. For $j\in[N]$,
+let $o_j$ be half the number of patterns in $\mathcal B$ belonging
+to orbit $j$. Then
+\begin{equation}\label{eq:objective-vector}
+ o^{\mathsf T}q=\frac{1}{2}\sum_{F\in\mathcal B}q_F.
+\end{equation}
+
+\begin{lemma}\label{lem:finite-encoding}\label{lem:objective}
+Let $G$ be a finite simple graph of maximum degree $\Delta>0$, and
+let $S\subseteq E(G)$ be a strong clique of size $m>0$. For the system
+specified in~\cite[Section~A]{FGSTSupplement}, there exists
+$q\in[0,1]^N$ such that $Aq=b$, $M_\ell(q)\succeq0$ for all
+$\ell\in[57]$, and
+\begin{equation}\label{eq:objective-value}
+ o^{\mathsf T}q=\frac{m}{\Delta^2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Apply \textbf{Lemma~\ref{lem:regularization}} to $G$ with $D=\Delta$
+and mark the $m$ edges of $S$ in the regular supergraph. Form $q$
+from the counts in \eqref{eq:q-definition}. By
+\textbf{Lemma~\ref{lem:coordinates}}, these counts lie in $[0,1]$
+and depend only on their orbits. Equations \eqref{eq:linear-system}
+and \eqref{eq:positive-moments} give $Aq=b$ and $M_\ell(q)\succeq0$
+for all $\ell\in[57]$. It remains to evaluate $o^{\mathsf T}q$.
+
+There are $(2m)^2$ choices for the two ordered marked images.
+Each choice specifies a map of the four positions and therefore
+an admissible pattern by \textbf{Lemma~\ref{lem:pullback}}.
+Admissibility guarantees a pair of color $1$ or $2$ joining the
+two marked pairs of positions. Thus the pattern is connected,
+so the choice contributes to exactly one pattern in $\mathcal B$.
+Conversely, a map counted by $h_F$ for $F\in\mathcal B$ sends both
+pairs to ordered marked edges. Hence $\sum_{F\in\mathcal B}h_F=(2m)^2$.
+Using this count in \eqref{eq:q-definition} and
+\eqref{eq:objective-vector} gives
+\[
+ o^{\mathsf T}q
+ =\frac{(2m)^2}{2\cdot2m\Delta^2}
+ =\frac{m}{\Delta^2}.
+\]
+\end{proof}
+
+It remains to bound the objective $o^{\mathsf T}q$. We give integer
+coefficients for the bound in \textbf{Lemma~\ref{prop:certificate-principle}}
+and verify them against the equations and flag products above.
+
+The file \path{reproducibility/data/compact_certificate.json} stores
+the vector $L\in\mathbb Z^{3516}$ of degree multiplier numerators.
+For each block $\ell\in[57]$, it also gives a list of pairs
+$(w_{\ell a},z_{\ell a})$ with $w_{\ell a}\in\mathbb Z_{\geq0}$ and
+$z_{\ell a}\in\mathbb Z^{s_\ell}$, where $s_\ell$ is the number of
+flags in $\mathcal L_\ell$. These pairs represent the weights
+$\frac{w_{\ell a}}{24}$ and vectors $\frac{z_{\ell a}}{10{,}000}$
+in a decomposition of $Q_\ell$. We use the common
+denominator $\Lambda=24\cdot10{,}000^2=2{,}400{,}000{,}000$ and set
+\begin{equation}\label{eq:integral-Q}
+ B_\ell=\sum_a w_{\ell a}z_{\ell a}z_{\ell a}^{\mathsf T},
+ \qquad Q_\ell=\frac{B_\ell}{\Lambda},
+ \qquad \lambda=\frac{L}{\Lambda}.
+\end{equation}
+There are $4{,}110$ pairs with positive weight across the $57$ blocks.
+The representation in \eqref{eq:integral-Q} shows that each $Q_\ell$
+is positive semidefinite.
+
+\begin{lemma}\label{prop:checked-certificate}\label{prop:quadratic-bound}\label{lem:rational-witness}
+The numerators $L$ and $B_\ell$ in \eqref{eq:integral-Q} satisfy
+\begin{align}
+ &\rho=A^{\mathsf T}L-\sum_{\ell=1}^{57}D_\ell^*(B_\ell)
+                  -\Lambda o\geq0,\label{eq:integer-residual}\\
+ &b^{\mathsf T}L+\sum_{\ell=1}^{57}\tr(B_\ell K_\ell)
+     =3{,}000{,}000{,}000=\frac{5}{4}\Lambda.
+       \label{eq:integer-constant}
+\end{align}
+Consequently, every finite simple graph $G$ satisfies
+$\omega(L(G)^2)\leq\frac{5}{4}\Delta(G)^2$.
+\end{lemma}
+
+\begin{proof}
+We verify the index tables before using them to compute
+\eqref{eq:integer-residual}. The index programs enumerate all labeled
+patterns on three through six positions with pair $01$ marked and
+test each pattern for connectivity and admissibility. For a
+representative of each stored class, the programs apply all
+permutations of the positions, retaining the relabelings with pair
+$01$ marked. The programs compare the resulting orbit with the
+patterns assigned to the class. The lower-order checker also verifies
+that every degree row specifies a connected admissible base pattern
+and a position of that pattern. For each listed type and flag order,
+the checker verifies that the flag list contains one representative
+from every orbit under permutations fixing the type positions.
+
+The program \path{check_reverse.c} starts with the stored
+coefficients and subtracts the contributions to them from
+\eqref{eq:degree-extension} and \eqref{eq:moment-expansion}. For a
+degree row $(F,u)$ with $F$ of order greater than two, it first
+adds $1$ to the coefficient of the orbit of $F$, accounting for
+$-q_F$ on the left side of the equation. It then enumerates the
+connected admissible patterns in the verified tables. A pattern
+extending $F$ at $u$ as in \eqref{eq:degree-extension} subtracts
+$1$ from the coefficient of its orbit in that row. For a moment
+entry, a pattern on three through six positions subtracts $1$
+from the coefficient of its orbit if the restrictions to the two
+position sets in the proof of \textbf{Lemma~\ref{lem:moment}} are
+the prescribed flags. There are $2{,}116{,}783$ such moment
+contributions. The program requires every updated key to be in
+the table and all remainders to be zero. This checks the
+$433{,}899$ stored degree coefficients, the $1{,}895{,}405$ stored
+moment coefficients and the zeros at all omitted keys.
+
+The program \path{check_certificate.py} checks the denominators,
+the vector lengths and the nonnegativity of the weights. It computes
+$B_\ell$ using \eqref{eq:integral-Q}. To reconstruct $o$, the program
+counts the labeled patterns of order four with pair $23$ marked and
+adds $\frac{1}{2}$ to the corresponding coordinate for each such
+pattern, as in \eqref{eq:objective-vector}. It uses integer arithmetic
+by scaling these contributions by $\Lambda$, which is even. The
+program also accounts for the constant contribution from $E_\star$.
+In each block whose type has order two, it includes the first
+diagonal entry of $B_\ell$ in \eqref{eq:integer-constant}, since
+$(K_\ell)_{11}=1$ and all other entries of $K_\ell$ are zero.
+For larger types, $K_\ell=0$.
+
+With the verified coefficients, the program evaluates every entry of
+$\rho$ and the constant in \eqref{eq:integer-constant}. Of the
+$23{,}789$ entries of $\rho$, $23{,}590$ are positive and $199$ are
+zero. The largest is $899{,}382{,}275{,}568$. The constant equals
+$3{,}000{,}000{,}000$. The commands and the corresponding reports
+are described in~\cite[Section~B]{FGSTSupplement}.
+
+
+Thus the program verifies that every entry of the residual vector
+$r=\frac{\rho}{\Lambda}$ is nonnegative and that $C=\frac{5}{4}$.
+If $G$ has an edge, let $m$ be the size of a maximum clique in $L(G)^2$.
+For the vector $q$ given by \textbf{Lemma~\ref{lem:finite-encoding}},
+\textbf{Lemma~\ref{prop:certificate-principle}} now gives
+$o^{\mathsf T}q\leq\frac{5}{4}$.
+Since $o^{\mathsf T}q=\frac{m}{\Delta(G)^2}$ by \eqref{eq:objective-value},
+we obtain $m\leq\frac{5}{4}\Delta(G)^2$.
+If $G$ has no edges, the clique number is zero.
+\end{proof}
+
+\subsection{The Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4} in Multigraphs}
+\label{sec:multigraph}\label{sec:weighted-counts}
+
+The simple support of a multigraph records every adjacency that can
+join two marked edges. To count the marked edges themselves, we must
+also record how many copies have each pair of endpoints.
+
+Let $D\geq1$ be an integer. Take a loopless multigraph $G$ with
+$\Delta(G)\leq D$ and fix a
+nonempty strong clique of size $m$ in $G$. Mark the edges of the clique
+and restrict the host to the subgraph induced by their endpoints.
+Every edge joining two disjoint marked edges has both endpoints in this
+subgraph. Keep all marked edges. Between each pair of adjacent vertices joined
+only by unmarked edges, keep one of those edges. The simple support $G_{\rm s}$ of the reduced
+host therefore retains all adjacencies needed for the marked edges to
+form a strong clique. Color an edge of $G_{\rm s}$ red if its endpoints are joined by a
+marked edge of $G$, and blue otherwise. Let $s$ be the number of red
+edges. For each red edge $uv$, choose one marked edge with endpoints
+$u,v$ as its \emph{base copy}. Call the remaining marked edges with
+these endpoints \emph{extra copies}. The red edges form a strong
+clique in $G_{\rm s}$.
+
+Put
+\[
+ b=m-s,\qquad M=\frac{m}{D^2},\qquad S=\frac{s}{D^2},
+ \qquad e=\frac{b}{m}.
+\]
+Here $M$ and $S$ are normalized clique sizes and $e$ is the fraction
+of marked edges that are extra copies. Thus $S=M(1-e)$. For each edge $uv$ of $G_{\rm s}$ let $b_{uv}$ be its
+number of extra copies, with $b_{uv}=0$ for blue edges. Write
+$d_{\rm s}(v)=d_{G_{\rm s}}(v)$ and
+$j_v=\sum_{u\in N_{G_{\rm s}}(v)}b_{uv}$.
+Then $\sum_v j_v=2b$ and $d_{\rm s}(v)+j_v\le D$.
+
+We now write $G$ for this reduced multigraph. To obtain a
+$D$-regular multigraph, apply \textbf{Lemma~\ref{lem:regularization}} and give each new edge
+color blue. The reduced host is induced in the completion, and all
+new edges have multiplicity one. Thus the red edges, their
+multiplicities and the adjacencies among their endpoints are
+unchanged. In the next counts we use the simple support of the
+completed multigraph.
+
+Use colors $0,1,2$ for a pair with equal or nonadjacent images,
+a blue edge and a red edge, respectively. Let $P$ be a connected colored pattern on $n$ positions
+with at least one red edge. As in \textbf{Definition~\ref{def:patterns}},
+any two red edges in $P$ either meet or have endpoints joined by a red
+or blue edge. In the weighted counts, $P$ has no designated root edge.
+Let $T$ be a set of red edges of $P$ that form a forest on the positions.
+Define
+\[
+ Q(P,T)=\frac{1}{2mD^{n-2}}
+       \sum_{\phi}\ \prod_{uv\in T} b_{\phi(u)\phi(v)},
+ \qquad
+ X(P,T)=\frac{Q(P,T)}{|\operatorname{Aut}(P,T)|}.
+\]
+Here $\phi$ runs over color-preserving maps of the positions of $P$
+to the simple support, and $\operatorname{Aut}(P,T)$ is the group of
+permutations of the positions that preserve the pair colors and the
+edge set $T$. As before, color $0$ permits equal images. Each edge
+of $T$ contributes its extra multiplicity, even if two edges of $T$
+have the same image, as in \textbf{Figure~\ref{fig:weighted-maps}}.
+The forest condition is imposed on the positions. We use patterns
+with $2\le n\le6$ and $|T|\le3$. Write $X$ for the vector of coordinates
+$X(P,T)$, using one representative for each isomorphism class of pairs
+$(P,T)$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[marked edge/.append style={draw=red!70!black}]
+  \node[graph vertex,label=below:$a$] (a) at (0,0) {};
+  \node[graph vertex,label=below:$b$] (b) at (1.05,0) {};
+  \node[graph vertex,label=below:$c$] (c) at (2.1,0) {};
+  \draw[marked edge] (a)--(b)--(c);
+  \node[above=6pt] at (b) {$T=\{ab,bc\}$};
+  \draw[-{Latex[length=2.2mm]}] (2.65,0)--node[above]{$\phi$}(3.65,0);
+  \node[graph vertex,label=below:$x$] (x) at (4.25,0) {};
+  \node[graph vertex,label=below:$y$] (y) at (5.55,0) {};
+  \draw[marked edge] (x)--(y);
+  \draw[marked edge] (x) to[bend left=25] (y);
+  \draw[marked edge] (x) to[bend right=25] (y);
+  \node[above=10pt] at (4.9,0) {$b_{xy}=2$};
+\end{tikzpicture}
+\caption{A weighted map with $\phi(a)=\phi(c)=x$ and $\phi(b)=y$.
+Its weight is $b_{xy}^2=4$.}
+\label{fig:weighted-maps}
+\end{figure}
+
+For the pattern $P$ consisting of a single red edge, summing over the
+$2s$ oriented red edges of the simple support gives $Q(P,\varnothing)=1-e$. Summing their extra
+multiplicities gives $Q(P,E(P))=e$, where $E(P)$ consists of the
+single red pair. Each degree identity extends a fixed pattern
+at a specified position. For a red extension, the unweighted and
+weighted counts represent one base edge and the extra copies,
+respectively. An extension to a blue neighbor counts its unique copy.
+Together the blue and red extensions account for exactly
+$D$ edge copies at the image of that position. The equations use
+those extensions whose terms all occur in the model.
+
+Choose two ordered marked edges independently, allowing the same
+copy in both choices. Classify each choice as a base or an extra
+copy. There are $(2s)^2$ ordered pairs of base copies,
+$2(2s)(2b)$ ordered pairs with one base and one extra copy, and
+$(2b)^2$ ordered pairs of extra copies. Each choice of the two
+ordered copies determines the images of four positions in the
+support. Their colors give a connected pattern because the two
+edges belong to the strong clique. The forest weights count the
+choices of an extra copy for each specified pair. As in
+\eqref{eq:objective-vector}, divide the counts by $2mD^2$ and take
+one half. The three contributions to the objective are
+\[
+ O_0=\frac{s^2}{mD^2},\qquad
+ O_1=\frac{2sb}{mD^2},\qquad
+ O_2=\frac{b^2}{mD^2}.
+\]
+Their sum is $M$ since $m=s+b$. More generally, adding an independent
+ordered marked copy to a fixed pattern gives $2M Q(P,T)$
+after normalization. Indeed, choosing the ordered copy multiplies the raw count by
+$2m$, and the two new positions contribute a factor $D^2$ in the denominator. Replacing that copy by a base
+or extra copy gives $2S Q(P,T)$ or $2Me Q(P,T)$. These formulas
+give linear bounds when $M$, $S$ and $e$ are restricted to intervals.
+For example, the bounds $e_-\le e\le e_+$ imply
+\[
+ O_2\le(e_-+e_+)\left(O_2+\frac{O_1}{2}\right)-e_-e_+M
+\]
+by expanding $M(e-e_-)(e_+-e)\ge0$.
+
+Fix a type on $k$ positions and flags extending the type. In addition
+to the colors, the type and flags specify forest edges as in $(P,T)$.
+For a type map $\phi$, let $w(\phi)$ be the product of the extra
+multiplicities on its specified forest edges. For the $i$th flag, on
+$n_i$ positions, sum over the extensions of $\phi$ to that flag. Each
+extension contributes the product of the extra multiplicities on its
+specified forest edges outside the type. Let $v_i(\phi)$ be this sum
+divided by $D^{n_i-k}$ and let $v(\phi)$ be the column vector with
+entries $v_i(\phi)$. Then
+\[
+ \frac{1}{2mD^{k-2}}\sum_\phi w(\phi)v(\phi)v(\phi)^{\mathsf T}\succeq0.
+\]
+The matrix is a sum of outer products with nonnegative coefficients
+because every extra multiplicity is a nonnegative integer. Its $(i,j)$ entry is a sum over pairs of extensions that agree on the type,
+with denominator $2mD^{n_i+n_j-k-2}$. The two extensions may use the
+same vertex outside the type. Group the pairs by the colors on the
+remaining position pairs. Each resulting pattern uses the forest
+edges in the type once, through $w(\phi)$. This writes each matrix
+entry as a linear combination of coordinates $X(P,T)$. We use flag
+lists for which these products lie in the specified pattern collection.
+The same counting identity applies to the matrices formed from local
+degrees and from counts of extensions satisfying degree constraints.
+
+\begin{lemma}\label{prop:multi-uniform}
+Every strong clique of size $m$ in a finite loopless multigraph of maximum
+degree at most $D$ satisfies $m\le\frac{5D^2}{4}$. If $m>0$, $D>0$, and
+$M\ge\frac{4967}{4000}$,
+then $e<\frac{1}{4}$.
+\end{lemma}
+
+\begin{proof}
+If $m=0$ the asserted bound holds. Otherwise $D>0$, and the
+red edges form a strong clique of size $s$ in the simple support,
+which has maximum degree at most $D$. Thus
+\textbf{Lemma~\ref{prop:quadratic-bound}} gives $S\leq\frac{5}{4}$.
+The weighted counts satisfy the degree equations and the
+positive semidefinite constraints derived from the weighted flag
+products. The rational inequalities for these counts are verified
+in~\cite[Section~G]{FGSTSupplement}. Under the assumption
+$M>\frac{5}{4}$, the five-position inequalities give
+$M<1.28746$ and $e<\frac{421}{2000}$. For each induced red five-cycle,
+the degree count in~\cite[Section~E]{FGSTSupplement}
+bounds the number of incidences left at its five vertices after
+reserving their edges to the two neighboring parts. This bound uses
+$M>\frac{5}{4}$ and applies to both parities of $D$. With the
+simple-support inequalities in~\cite[Section~G.1]{FGSTSupplement},
+it gives an upper bound on $S$. The identity $S=M(1-e)$ then bounds
+$e$ from below. Successive inequalities for the resulting ranges of
+$M$ and $e$ give
+\[
+ M\leq\frac{124968062205915704703985647}
+                 {100000000000000000000000000}<\frac{5}{4}.
+\]
+This contradicts $M>\frac{5}{4}$. The inequality for $e$ when
+$M\geq\frac{4967}{4000}$ follows from the five-position calculation
+in~\cite[Section~G.4]{FGSTSupplement}.
+\end{proof}
+
+The quadratic bound gives $m\leq f(D)$ for even $D$. For odd $D$
+we shall need one further estimate on the number of extra copies.
+
+\begin{lemma}\label{lem:multi-extra}
+Suppose $b>0$ and set $A=\frac{\sum_v j_v^2}{2bD}$. Then
+\[
+ M\le 2-\left(2+\frac{1}{D}\right)A-\frac{1}{D^2},
+ \qquad
+ Me\le 2A(1-A)-\frac{A}{D}.
+\]
+In particular, $e\le 1-\frac{M}{2}$ whenever $M\ge1$.
+\end{lemma}
+
+\begin{proof}
+Count ordered pairs $(g_1,g_2)$ of marked edges, allowing $g_1=g_2$.
+For each ordered pair of marked edges, the strong clique property gives adjacent vertices
+$u,v$ with $u$ an endpoint of $g_1$ and $v$ an endpoint of $g_2$.
+If the edges share an endpoint, there are at least two
+such ordered pairs $(u,v)$. Among the $b^2$ ordered pairs of extra copies,
+exactly $\sum_v j_v^2-\sum_{uv\in E(G_{\rm s})}b_{uv}^2$ share an
+endpoint. The second sum removes the
+double count of pairs sharing both endpoints. The result is at least
+$\frac{1}{2}\sum_v j_v^2$, since $\sum_v j_v^2\ge2\sum_{uv}b_{uv}^2$.
+Counting the ordered adjacent endpoints gives
+\[
+ b^2+\frac{1}{2}\sum_v j_v^2
+ \le 2\sum_{uv\in E(G_{\rm s})}j_uj_v
+ \le \sum_v j_v^2(D-j_v).
+\]
+The last inequality follows from $2j_uj_v\le j_u^2+j_v^2$ and
+$d_{\rm s}(v)\le D-j_v$. The quantities $\frac{j_v}{D}$ have
+weighted mean $A$ with weights $\frac{j_v}{2b}$. Expanding
+$\sum_v \frac{j_v}{2b}\bigl(\frac{j_v}{D}-A\bigr)^2\geq0$
+gives $\sum_v j_v^2(D-j_v)\le 2bD^2A(1-A)$.
+This gives the upper bound on $Me=\frac{b}{D^2}$.
+
+Let $h_v$ be the number of base copies incident to $v$. Among ordered pairs
+with the extra copy first and the base copy second, at least
+$b$ share an endpoint, since each extra copy shares its two
+endpoints with its own base copy. Using $h_v\le D-j_v$ gives
+\[
+ sb+b\le \sum_v j_v\sum_{u\in N_{G_{\rm s}}(v)} h_u
+ \le D\sum_v j_v d_{\rm s}(v)-2\sum_{uv\in E(G_{\rm s})}j_uj_v.
+\]
+Using $d_{\rm s}(v)\le D-j_v$ and the lower bound on
+$2\sum_{uv\in E(G_{\rm s})}j_uj_v$ gives
+\[
+ b(m+1)\le 2bD^2-\left(D+\frac{1}{2}\right)\sum_v j_v^2.
+\]
+Divide by $bD^2$ to obtain the first inequality. For $M\ge1$ we
+have $0\le A\le 1-\frac{M}{2}\le\frac{1}{2}$. The function $2x(1-x)$ is
+increasing on $[0,\frac{1}{2}]$, so $Me\le M(1-\frac{M}{2})$.
+\end{proof}
+\section{Proof of the Bound \texorpdfstring{$\Delta^2+\lfloor\frac{\Delta}{2}\rfloor^2$}{Delta squared plus floor(Delta/2) squared}}\label{sec:exact}\label{sec:multi-odd}
+
+Put $D=\Delta(G)$. If $D$ is even, then $f(D)=\frac{5}{4}D^2$, so
+\textbf{Lemma~\ref{prop:multi-uniform}} gives the asserted bound,
+including $D=0$. To set up the proof for odd $D\geq3$, suppose that
+$G$ has a strong clique with more than $f(D)$ edges. Mark
+exactly $m=f(D)+1$ of these edges and restrict $G$ to their endpoints.
+For two disjoint marked edges, both endpoints of any edge joining them
+are retained. Hence the marked edges still form a strong clique.
+Retain all marked edges. For each pair of adjacent vertices joined by
+no marked edge, retain one unmarked edge. Discard the other unmarked
+edges. The resulting multigraph has degree bound $D$ and induces the
+same adjacencies on the marked endpoints.
+
+As in \textbf{Subsection~\ref{sec:weighted-counts}}, let $s$ be the
+number of distinct pairs of endpoints of marked edges and put $b=m-s$. Write
+$S=\frac{s}{D^2}$, $M=\frac{m}{D^2}$, and $e=\frac{b}{m}$, so
+$S=M(1-e)$. Since $f(D)=\frac{5D^2-2D+1}{4}$ for odd $D$, our
+choice of $m$ gives
+\begin{equation}\label{eq:multi-mass}
+ M=\frac{5}{4}-\frac{1}{2D}+\frac{5}{4D^2}.
+\end{equation}
+Let $G_{\rm s}$ denote the simple support. Color an edge of $G_{\rm s}$
+red if its endpoints are joined by a marked edge.
+
+\subsection{Excluding Counterexamples for \texorpdfstring{$\Delta\geq9$}{Delta >= 9}}\label{subsec:exact-large-degree}
+
+Assume that $D\geq9$ is odd. We first show that a counterexample
+has two parallel marked edges and that $G_{\rm s}$ contains an
+induced five-cycle with all five edges red. Degree counts around
+these cycles then restrict the possible values of $e$. On the
+resulting interval, the weighted flag inequalities contradict
+\eqref{eq:multi-mass}.
+
+For each induced red five-cycle $c_0c_1c_2c_3c_4c_0$ in $G_{\rm s}$,
+take indices modulo five. For each $i$, let $U_i$
+consist of the vertices whose neighbors on the cycle are exactly
+$c_{i-1},c_{i+1}$, with both adjacencies red. In particular $c_i\in U_i$.
+If $x\in U_i$ and $y\in U_{i+1}$, then the disjoint red edges
+$xc_{i-1}$ and $yc_{i+2}$ must have a joining edge. The definitions
+of the two sets exclude $xc_{i+2}$ and $yc_{i-1}$, and the cycle
+has no chord $c_{i-1}c_{i+2}$. Hence $xy\in E(G_{\rm s})$.
+Set
+\[
+ B=\bigcup_{i=0}^4 U_i,\qquad
+ s_i=D-|U_{i-1}|-|U_{i+1}|,\qquad
+ R=\sum_{i=0}^4s_i=5D-2|B|.
+\]
+At $c_i$ the adjacencies to $U_{i-1}\cup U_{i+1}$ use at least
+$|U_{i-1}|+|U_{i+1}|$ of its degree, so $s_i\geq0$. Since $D$ is
+odd, $R=5D-2|B|$ is odd.
+
+Let $q_C$ be the normalized count of ordered induced five-cycles
+with all five edges red in the simple support, using $2sD^3$ as the
+denominator. Let $L_R$ be the sum of $\frac{R}{D}$ over these ordered cycles,
+divided by the same denominator. The simple support can be completed
+to a $D$-regular simple graph as in~\cite[Section~G.1]{FGSTSupplement}.
+The old vertices
+induce their original graph, and no added edge is red. Thus the
+cycles under consideration and the sets $U_i$ of each such cycle
+are preserved. The simple graph inequalities for $S,q_C,L_R$
+in~\cite[(G.1)]{FGSTSupplement} apply. If $R\geq\alpha D$ on
+every induced red five-cycle, then $L_R\geq\alpha q_C$ by summing
+over the cycles.
+
+\begin{lemma}\label{lem:extra-copy-required}\label{lem:counterexample-cycle}
+Suppose that $D\geq9$ is odd and that $m=f(D)+1$ marked edges form
+a strong clique. Then $b>0$ and $q_C>0$.
+\end{lemma}
+
+\begin{proof}
+For $D\geq9$, the value of $M$ in \eqref{eq:multi-mass} satisfies
+\[
+ M-\frac{98}{81}=\frac{(D-9)(13D-45)}{324D^2}\geq0.
+\]
+If $q_C=0$, the bound in~\cite[(G.2)]{FGSTSupplement} gives
+$M<\frac{98}{81}$. Thus $q_C>0$.
+
+At $D=9$, suppose $b=0$. The $m$ marked edges then lie
+on $m$ distinct pairs in the simple support. They form a strong
+clique there, so \textbf{Lemma~D.1} of the supplement~\cite{FGSTSupplement}
+gives $m\leq f(D)$, contrary to $m=f(D)+1$.
+
+For odd $D\geq11$, the degree estimates
+in~\cite[Section~E.4]{FGSTSupplement} give $R>\frac{D+1}{2}$ on every
+induced red five-cycle. These estimates count marked incidences in
+the reduced multigraph and apply for every $b\geq0$. In particular,
+$L_R\geq\frac{q_C}{2}$. The last inequality
+in~\cite[(G.1)]{FGSTSupplement} now gives
+\[
+ S\leq\frac{5}{4}-\frac{0.45119}{16}+2\cdot10^{-9}
+   =1.221800627.
+\]
+For $D\geq15$ we have $M\geq\frac{11}{9}$, since
+$M-\frac{11}{9}=\frac{(D-15)(D-3)}{36D^2}$ by
+\eqref{eq:multi-mass}. Consequently $S<M$ and $b>0$.
+
+For $D=11$, the degree count in~\cite[Section~E.5]{FGSTSupplement}
+also excludes $R=7$, so every induced red five-cycle has $R\geq9$.
+For $D=13$, the strict inequality $R>7$ and the odd parity of $R$
+give the same lower bound. Thus $L_R\geq\frac{9}{D}q_C$ in both
+cases. Put $a=0.99999$, $c=0.5682\cdot\frac{9}{D}$ and
+$\varepsilon=10^{-9}$. The first two inequalities
+in~\cite[(G.1)]{FGSTSupplement} give
+\[
+ S\leq\frac{5}{4}-\frac{a}{8}+2\varepsilon+a q_C,
+ \qquad
+ S\leq\frac{5}{4}+\varepsilon-c q_C .
+\]
+Multiply the first inequality by $c$ and the second by $a$.
+Adding cancels $q_C$ and gives
+\[
+ S\leq\frac{5}{4}-\frac{ac}{8(a+c)}
+             +\frac{(2c+a)\varepsilon}{a+c}.
+\]
+At $D=11$ this upper bound is less than $\frac{1211}{1000}$, whereas
+$M=\frac{147}{121}$. At $D=13$ it is less than $\frac{1215}{1000}$,
+whereas $M=\frac{206}{169}$. In both cases $S<M$, as required.
+\end{proof}
+
+By \textbf{Lemma~\ref{lem:counterexample-cycle}}, we may choose two
+parallel marked edges, and the simple support contains an induced red
+five-cycle. For every such cycle the calculation
+in~\cite[Section~E.5]{FGSTSupplement} gives $R\geq9$ if
+$D=11$ and $R\geq11$ if $D\in\{13,15\}$. The degree count at the
+endpoints of two parallel marked edges
+in~\cite[Section~F.2]{FGSTSupplement} gives $R\geq11$ at $D=9$.
+For odd $D\geq11$, the inequality $R>\frac{D+1}{2}$ together with the
+odd parity of $R$ gives
+\begin{equation}\label{eq:multi-slack}
+ R\geq
+ \begin{cases}
+ \frac{D+5}{2} & \text{if }D\equiv1\pmod4,\\
+ \frac{D+3}{2} & \text{if }D\equiv3\pmod4.
+ \end{cases}
+\end{equation}
+
+Let $[M_-,M_+]$ and $[e_-,e_+]$ be the ranges for $M$ and $e$
+in \textbf{Table~\ref{tab:multi-odd}}, respectively. The fourth
+column is the lower bound $\alpha$ on $\frac{R}{D}$ for every induced
+red five-cycle. In the last column we round the verified upper bounds
+upwards to short rationals. The last certificate gives
+infeasibility directly. The exact fractions and row counts are in the
+companion record \texttt{parity\_family\_replayed.json}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Odd $D$ & $[M_-,M_+]$ & $[e_-,e_+]$ & $\alpha$ & Verified conclusion\\
+\midrule
+$9$        & $[1.209,1.210]$  & $[0.020,0.180]$   & $1.222$ & $M<-1.973$\\
+$11$       & $[1.2148,1.215]$ & $[0.0135,0.360]$  & $0.818$ & $M<0.785$\\
+$13$       & $[1.2185,1.219]$ & $[0.009,0.362]$   & $0.846$ & $M<0.573$\\
+$15$       & $[1.222,1.223]$  & $[0.007,0.365]$   & $0.733$ & $M<0.827$\\
+$17$       & $[1.2249,1.225]$ & $[0.006,0.368]$   & $0.647$ & $M<0.631$\\
+$19$       & $[1.227,1.228]$  & $[0.006,0.370]$   & $0.578$ & $M<0.910$\\
+$21$--$23$ & $[1.2249,1.231]$ & $[0.004,0.372]$   & $0.565$ & $M<1.227683$\\
+$25$--$37$ & $[1.232,1.238]$  & $[0.009,0.384]$   & $0.542$ & $M<0.177$\\
+$39$--$47$ & $[1.238,1.240]$  & $[0.0134,0.382]$  & $0.531$ & $M<-0.676$\\
+$49$--$57$ & $[1.240,1.242]$  & $[0.0082,0.380]$  & $\frac{1}{3}$ & $M<0.292$\\
+$\ge59$    & $[1.24175,1.25]$ & $[0.005,0.250]$   & $0.228$ & infeasible\\
+\bottomrule
+\end{tabular}
+\caption{Parameter intervals and verified bounds for odd $D$. All decimal entries denote rational numbers.}
+\label{tab:multi-odd}
+\end{table}
+
+The quantity in \eqref{eq:multi-mass} is increasing for $D\ge5$ and is
+less than $\frac{5}{4}$. Evaluating it at the endpoints of each degree
+range gives the corresponding bounds on $M$.
+For $D=9$ we have $2\le b\le17$ by~\cite[Section~F.2]{FGSTSupplement}, so
+$e\in[\frac{2}{98},\frac{17}{98}]$ and $S\le\frac{32}{27}$. For $D=11,13$,
+the reduction in~\cite[Section~E.5]{FGSTSupplement} excludes $b=1$. Thus $S$ is at most
+$\frac{145}{121}$ and $\frac{204}{169}$, respectively, giving the required lower
+bounds on $e$. In the remaining rows the simple projection bound
+$S\le S_{\max}$ obtained from $\alpha$
+in~\cite[Section~G.1]{FGSTSupplement} gives $e\ge1-\frac{S_{\max}}{M}$. For an
+interval ending at $D_+$, recall that $j_v$ counts the extra marked
+copies incident with $v$ and put $A=\frac{\sum_v j_v^2}{2bD}$.
+\textbf{Lemma~\ref{lem:multi-extra}} gives
+\[
+ A\le A_+:=\frac{2-M_--D_+^{-2}}{2+D_+^{-1}}.
+\]
+We use $e\le1-\frac{M_-}{2}$ or
+$e\le\frac{2A_+(1-A_+)-\frac{A_+}{D_+}}{M_-}$ when the latter is smaller.
+The function $A\mapsto 2A(1-A)-\frac{A}{D_+}$ is increasing for
+$0\le A\le A_+$ in these intervals.
+For $D\ge59$ we use \textbf{Lemma~\ref{prop:multi-uniform}} to bound $e$.
+The rational replay checks these interval comparisons.
+
+The finite-degree constraints for $D\le23$ also use the exclusion of
+a red $K_4$ proved in~\cite[Section~F.3]{FGSTSupplement} and, for specific $D$,
+the rooted triangle and repeated-pair restrictions
+in~\cite[Section~G]{FGSTSupplement}.
+For each row in Table~\ref{tab:multi-odd}, the weighted graph counts must
+satisfy the degree equations, the positive semidefinite constraints,
+and the inequalities for that row. The verified rational linear
+combination of these constraints gives the conclusion in the last
+column, as detailed in~\cite[Section~G.4]{FGSTSupplement}. For the row $21$--$23$, for instance, the
+upper bound $1.227683$ is strictly smaller than $\frac{542}{441}$, the lower
+bound from \eqref{eq:multi-mass}. On every other finite degree
+interval in the table, the verified upper bound also lies below
+the least value of $M$ given by \eqref{eq:multi-mass}. For
+$D\geq59$, the last certificate rules out every set of counts
+satisfying the constraints.
+
+\subsection{The Cases \texorpdfstring{$\Delta<9$}{Delta < 9}}\label{subsec:exact-small-degree}
+
+The remaining odd values of $D$ are $1,3,5,7$. If $D=1$, each
+component has at most one edge, so $\omega(L(G)^2)\leq1=f(1)$.
+Suppose that $D\in\{3,5,7\}$ and that $m=f(D)+1$ marked edges form
+a strong clique. If $b=0$, these edges give $m$ distinct edges in
+the simple support $G_{\rm s}$. They still form a strong clique
+because any two disjoint marked edges have endpoints joined by an
+edge of $G$, and those endpoints are also adjacent in $G_{\rm s}$. Since
+$\Delta(G_{\rm s})\leq D$, \textbf{Lemma~D.1} of the supplement~\cite{FGSTSupplement}
+gives $m\leq f(D)$, a contradiction. Thus two of the marked edges
+are parallel. The reductions in~\cite[Section~F.1]{FGSTSupplement} exclude
+a strong clique of size $f(D)+1$ containing such a pair for each of
+$D=3,5,7$.
+
+\begin{lateproof}{\textbf{Theorem~\ref{thm:multigraph}}}
+For even $D$, the result follows from \textbf{Lemma~\ref{prop:multi-uniform}}.
+\textbf{Subsection~\ref{subsec:exact-large-degree}} excludes a
+counterexample for every odd $D\geq9$, and
+\textbf{Subsection~\ref{subsec:exact-small-degree}} proves the bound
+for each smaller odd $D$.
+\end{lateproof}
+\section*{Acknowledgement}
+This research was supported in part by the National Natural Science Foundation
+of China (Nos. 12471330 and 12571373) and the Youth Student Fundamental Research
+Funds of Shandong University.
+
+\section*{Declaration on the Use of Generative AI}
+We used ChatGPT to assist with the exploration of some proof strategies
+and calculations and with auxiliary tasks, including checking typographical
+and linguistic errors, improving the organization and clarity of the manuscript,
+and drawing attention to possible inconsistencies or gaps that were subsequently
+examined by the authors. The authors independently verified all statements and
+proofs and take full responsibility for the content of this paper.
+\begingroup
+\small
+\setlength{\bibsep}{3pt plus .3pt minus .3pt}
+\phantomsection
+\addcontentsline{toc}{section}{\refname}
+\bibliography{refs}
+\endgroup
+\end{document}

@@ -1,0 +1,13 @@
+{
+  "name": "path_a6",
+  "variables": 63270,
+  "clauses": 202794,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "9b18724a74ef3184f3493179ddac370fa9b6f84dadcb07e4a7f315cdf26748ba",
+  "lrat_sha256": "5644d56b1836616964573bb6cbcc186c313c064d6a26ed345d02944bbd73f44d",
+  "replay": {
+    "added": 288336,
+    "deleted": 391877
+  }
+}

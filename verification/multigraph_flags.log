@@ -1,0 +1,288 @@
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_general_bound.json
+{
+  "mode": "bound",
+  "raw_bound": "80579504087/62500000000",
+  "correction": "166498970440711/800000000000000000",
+  "rational_bound": "1031584151284040711/800000000000000000",
+  "decimal_bound": 1.289480189105051,
+  "coefficient_rows": 7692,
+  "negative_rows": 973,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_high_exclusion.json
+{
+  "mode": "infeasible",
+  "raw_bound": "-1",
+  "correction": "2402863324843/9600000000000000000",
+  "rational_bound": "-9599997597136675157/9600000000000000000",
+  "decimal_bound": -0.999999749701737,
+  "coefficient_rows": 7692,
+  "negative_rows": 71,
+  "rigorous_infeasible": true
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_upper23.json
+{
+  "mode": "infeasible",
+  "raw_bound": "-1",
+  "correction": "7116955558553/12000000000000000000",
+  "rational_bound": "-11999992883044441447/12000000000000000000",
+  "decimal_bound": -0.9999994069203701,
+  "coefficient_rows": 7692,
+  "negative_rows": 268,
+  "rigorous_infeasible": true
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_upper225.json
+{
+  "mode": "infeasible",
+  "raw_bound": "-1",
+  "correction": "85010496213299/75000000000000000000",
+  "rational_bound": "-74999914989503786701/75000000000000000000",
+  "decimal_bound": -0.9999988665267171,
+  "coefficient_rows": 7692,
+  "negative_rows": 303,
+  "rigorous_infeasible": true
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_upper21875.json
+{
+  "mode": "infeasible",
+  "raw_bound": "-1",
+  "correction": "7927264055651/6000000000000000000",
+  "rational_bound": "-5999992072735944349/6000000000000000000",
+  "decimal_bound": -0.999998678789324,
+  "coefficient_rows": 7692,
+  "negative_rows": 465,
+  "rigorous_infeasible": true
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_mide20_bound.json
+{
+  "mode": "bound",
+  "raw_bound": "251425746437/200000000000",
+  "correction": "2177143725828597/2000000000000000000",
+  "rational_bound": "2516434608095828597/2000000000000000000",
+  "decimal_bound": 1.2582173040479143,
+  "coefficient_rows": 7692,
+  "negative_rows": 1131,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_refit_upper2155.json
+{
+  "mode": "infeasible",
+  "raw_bound": "-103613813569/1000000000000",
+  "correction": "102530965255547/3000000000000000000000",
+  "rational_bound": "-310841338176034744453/3000000000000000000000",
+  "decimal_bound": -0.10361377939201158,
+  "coefficient_rows": 7692,
+  "negative_rows": 387,
+  "rigorous_infeasible": true
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_sample_2125_certificate.json
+{
+  "mode": "bound",
+  "raw_bound": "1249106291649/1000000000000",
+  "correction": "1420250979755623/30000000000000000000000000",
+  "rational_bound": "37473188750890250979755623/30000000000000000000000000",
+  "decimal_bound": 1.2491062916963418,
+  "coefficient_rows": 7692,
+  "negative_rows": 373,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_sample_21125_refit_certificate.json
+{
+  "mode": "bound",
+  "raw_bound": "49973640927/40000000000",
+  "correction": "5499281012236343/120000000000000000000000000",
+  "rational_bound": "149920922786499281012236343/120000000000000000000000000",
+  "decimal_bound": 1.2493410232208273,
+  "coefficient_rows": 7692,
+  "negative_rows": 340,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_sample_2105_local_refit_certificate.json
+{
+  "mode": "bound",
+  "raw_bound": "15624825343/12500000000",
+  "correction": "11383424596127239/150000000000000000000000000",
+  "rational_bound": "187497904127383424596127239/150000000000000000000000000",
+  "decimal_bound": 1.2499860275158894,
+  "coefficient_rows": 7692,
+  "negative_rows": 307,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_extra_refit_certificate.json
+{
+  "mode": "bound",
+  "raw_bound": "1288280810729/1000000000000",
+  "correction": "1327578271/20000000000000000000",
+  "rational_bound": "25765616215907578271/20000000000000000000",
+  "decimal_bound": 1.288280810795379,
+  "coefficient_rows": 7692,
+  "negative_rows": 430,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_extra_near_best_certificate.json
+{
+  "mode": "bound",
+  "raw_bound": "321889994869/250000000000",
+  "correction": "1593453097/48000000000000000000",
+  "rational_bound": "61802879016441453097/48000000000000000000",
+  "decimal_bound": 1.287559979509197,
+  "coefficient_rows": 7692,
+  "negative_rows": 329,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_weighted_maxdeg_mass_refit_1287.json
+{
+  "mode": "bound",
+  "raw_bound": "321864193509/250000000000",
+  "correction": "113550932539/3000000000000000000000",
+  "rational_bound": "3862370322221550932539/3000000000000000000000",
+  "decimal_bound": 1.2874567740738503,
+  "coefficient_rows": 7692,
+  "negative_rows": 306,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_support_near_best_certificate.json
+{
+  "mode": "bound",
+  "raw_bound": "321861755483/250000000000",
+  "correction": "6002857912118359/62500000000000000000000000",
+  "rational_bound": "80465438876752857912118359/62500000000000000000000000",
+  "decimal_bound": 1.2874470220280456,
+  "coefficient_rows": 7692,
+  "negative_rows": 341,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广 / multigraph_weighted_maxdeg_exact.py multigraph_weighted_maxdeg_5 multigraph_maxdeg5_sample_odd_124175_refit_certificate.json
+{
+  "mode": "infeasible",
+  "raw_bound": "-2413916487/15625000000",
+  "correction": "7466301609767539071/124175000000000000000000000000",
+  "rational_bound": "-19183877098020098390232460929/124175000000000000000000000000",
+  "decimal_bound": -0.15449065510787274,
+  "coefficient_rows": 7692,
+  "negative_rows": 369,
+  "rigorous_infeasible": true
+}
+
+一般无环多重图的推广\三小时续研_旗证书 / half_anchor_flag.py baseline_half_refit.json --replay
+{"mass_lower": "32/25", "minimum_slack": "3/5", "support_upper_rounded": "121771/100000", "scale": 540000000000, "equalities": 1226, "inequalities": 311, "coordinates": 7692, "psd_blocks": 38}
+{
+  "mode": "bound",
+  "raw_bound": "160852721337/125000000000",
+  "correction": "37842062413197517/1000000000000000000000000000",
+  "rational_bound": "1286821770733842062413197517/1000000000000000000000000000",
+  "decimal_bound": 1.286821770733842,
+  "coefficient_rows": 7692,
+  "negative_rows": 292,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广\三小时续研_旗证书 / half_anchor_flag.py direct_half_refit.json --replay
+{"mass_lower": "321/250", "minimum_slack": "382/625", "support_upper_rounded": "60859/50000", "scale": 231120000000000, "equalities": 1226, "inequalities": 312, "coordinates": 7692, "psd_blocks": 38}
+{
+  "mode": "bound",
+  "raw_bound": "1286334232319/1000000000000",
+  "correction": "85684861157214383/835937500000000000000000000",
+  "rational_bound": "1075295022414848923657214383/835937500000000000000000000",
+  "decimal_bound": 1.2863342324215015,
+  "coefficient_rows": 7692,
+  "negative_rows": 426,
+  "rigorous_infeasible": false
+}
+
+一般无环多重图的推广\三小时续研_旗证书 / verify_shadow_chain.py 
+{"mass_lower": "321/250", "minimum_slack": "382/625", "support_upper_rounded": "60859/50000", "scale": 57780000000000, "equalities": 1226, "inequalities": 312, "coordinates": 7692, "psd_blocks": 38}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "1283/1000", "minimum_slack": "1521/2500", "support_upper_rounded": "121729/100000", "e_low": "51/1000", "equalities": 1256, "inequalities": 4004, "coordinates": 31073, "psd_blocks": 86, "scale": 2771280000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1283_exclusion.json", "alpha": "1521/2500", "support_upper": "147233751237061/120952375000000", "necessary_repeat": "7948145887939/155181897125000", "final_bound": "1283/1000", "mode": "bound", "raw_bound": "637263320267/500000000000", "correction": "257656984377539985707/750000000000000000000000000", "rational_bound": "955895238057484377539985707/750000000000000000000000000", "decimal_bound": 1.2745269840766458, "coefficient_rows": 31046, "negative_rows": 1304, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "1279/1000", "minimum_slack": "3223/5000", "support_upper_rounded": "30397/25000", "e_low": "49/1000", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 2762640000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1279_exclusion.json", "alpha": "3223/5000", "support_upper": "53966075996950277/44384669750000000", "necessary_repeat": "2801916613299723/56767992610250000", "final_bound": "1279/1000", "mode": "bound", "raw_bound": "1269532335883/1000000000000", "correction": "254678170665292838183/750000000000000000000000000", "rational_bound": "952149506590420665292838183/750000000000000000000000000", "decimal_bound": 1.2695326754538943, "coefficient_rows": 31046, "negative_rows": 1445, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "637/500", "minimum_slack": "3121/5000", "support_upper_rounded": "121667/100000", "e_low": "89/2000", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 1375920000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1274_exclusion.json", "alpha": "3121/5000", "support_upper": "17844875026431293/14667052750000000", "necessary_repeat": "840950177068707/18685825203500000", "final_bound": "637/500", "mode": "bound", "raw_bound": "1262887225519/1000000000000", "correction": "397988214772383959257/1500000000000000000000000000", "rational_bound": "1894331236266714772383959257/1500000000000000000000000000", "decimal_bound": 1.2628874908444765, "coefficient_rows": 31046, "negative_rows": 1288, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "317/250", "minimum_slack": "2989/5000", "support_upper_rounded": "121771/100000", "e_low": "79/2000", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 684720000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1268_exclusion.json", "alpha": "2989/5000", "support_upper": "868463554637951/713194250000000", "necessary_repeat": "35866754362049/904330309000000", "final_bound": "317/250", "mode": "bound", "raw_bound": "39526287161/31250000000", "correction": "187567687179207238613/1500000000000000000000000000", "rational_bound": "1897261971295687179207238613/1500000000000000000000000000", "decimal_bound": 1.2648413141971249, "coefficient_rows": 31046, "negative_rows": 1337, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "5/4", "minimum_slack": "1/2", "support_upper_rounded": "122181/100000", "e_low": "9/400", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 2160000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_sharp_125_exclusion.json", "alpha": "1/2", "support_upper": "1221800627/1000000000", "necessary_repeat": "28199373/1250000000", "final_bound": "5/4", "mode": "bound", "raw_bound": "312419970929/250000000000", "correction": "73834315704703985647/100000000000000000000000000", "rational_bound": "124968062205915704703985647/100000000000000000000000000", "decimal_bound": 1.249680622059157, "coefficient_rows": 31046, "negative_rows": 1480, "rigorous_infeasible": false}
+{
+  "final_bound": "5/4",
+  "decimal": 1.25
+}
+
+一般无环多重图的推广\七小时续研_旗证书 / replay_parity_family.py 
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=611/500, support=118519/100000, M=[1209/1000,121/100], e=[1/50,9/50], scale=870480000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 13505 extra columns
+{"certificate": "d9_alpha1222_structure.json", "first": 9, "last": 9, "minimum_counterexample_mass": "98/81", "checked": {"mode": "bound", "raw_bound": "-1973919297437/1000000000000", "correction": "332961929798749333692331/544050000000000000000000000000", "rational_bound": "-1073910460808670051250666307669/544050000000000000000000000000", "decimal_bound": -1.9739186854308797, "coefficient_rows": 18103, "negative_rows": 33, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=409/500, support=23967/20000, M=[3037/2500,243/200], e=[27/2000,9/25], scale=6559920000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 967 extra columns
+{"certificate": "d11_alpha818_structure.json", "first": 11, "last": 11, "minimum_counterexample_mass": "147/121", "checked": {"mode": "bound", "raw_bound": "784845887059/1000000000000", "correction": "356247020273853193825007029/327996000000000000000000000000000", "rational_bound": "257426667818824037853193825007029/327996000000000000000000000000000", "decimal_bound": 0.7848469731912098, "coefficient_rows": 30641, "negative_rows": 75, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=423/500, support=120711/100000, M=[2437/2000,1219/1000], e=[9/1000,181/500], scale=5263920000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 4885 extra columns
+{"certificate": "d13_alpha846_profiles.json", "first": 13, "last": 13, "minimum_counterexample_mass": "206/169", "checked": {"mode": "bound", "raw_bound": "143192658367/250000000000", "correction": "41645030788101882713314999/21933000000000000000000000000000", "rational_bound": "12562619948884432101882713314999/21933000000000000000000000000000", "decimal_bound": 0.5727725322064666, "coefficient_rows": 26723, "negative_rows": 126, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=733/1000, support=6063/5000, M=[611/500,1223/1000], e=[7/1000,73/200], scale=1319760000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 2796 extra columns
+{"certificate": "d15_alpha733_profiles.json", "first": 15, "last": 15, "minimum_counterexample_mass": "11/9", "checked": {"mode": "bound", "raw_bound": "413279662047/500000000000", "correction": "458852833183160988652253/687375000000000000000000000000", "rational_bound": "568156674251946433160988652253/687375000000000000000000000000", "decimal_bound": 0.8265599916376744, "coefficient_rows": 28812, "negative_rows": 42, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=647/1000, support=60789/50000, M=[12249/10000,49/40], e=[3/500,46/125], scale=2939760000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 967 extra columns
+{"certificate": "d17_alpha647_structure.json", "first": 17, "last": 17, "minimum_counterexample_mass": "354/289", "checked": {"mode": "bound", "raw_bound": "126008488267/200000000000", "correction": "26665275990562548750326863/18373500000000000000000000000000", "rational_bound": "11576111461144613062548750326863/18373500000000000000000000000000", "decimal_bound": 0.6300438926249551, "coefficient_rows": 30641, "negative_rows": 103, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=289/500, support=121851/100000, M=[1227/1000,307/250], e=[3/500,37/100], scale=883440000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 967 extra columns
+{"certificate": "d19_alpha578_structure.json", "first": 19, "last": 19, "minimum_counterexample_mass": "443/361", "checked": {"mode": "bound", "raw_bound": "181904288189/200000000000", "correction": "1014527330622524630303827/1380375000000000000000000000000", "rational_bound": "1255481673571784997524630303827/1380375000000000000000000000000", "decimal_bound": 0.9095221759100136, "coefficient_rows": 30641, "negative_rows": 29, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=113/200, support=24381/20000, M=[12249/10000,1231/1000], e=[1/250,93/250], scale=2939760000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+Finite forbidden-pattern suppression: 967 extra columns
+{"certificate": "odd_17_23_alpha565.json", "first": 21, "last": 23, "minimum_counterexample_mass": "542/441", "checked": {"mode": "bound", "raw_bound": "1227682100513/1000000000000", "correction": "118282448887265452163/5103750000000000000000000000", "rational_bound": "6265782638775672637265452163/5103750000000000000000000000", "decimal_bound": 1.2276821236885962, "coefficient_rows": 30641, "negative_rows": 24, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=271/500, support=122001/100000, M=[154/125,619/500], e=[9/1000,48/125], scale=166320000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+{"certificate": "odd_25_37_alpha542.json", "first": 25, "last": 37, "minimum_counterexample_mass": "154/125", "checked": {"mode": "bound", "raw_bound": "44141450237/250000000000", "correction": "7076296494268891435491683/4158000000000000000000000000000", "rational_bound": "734167676638278268891435491683/4158000000000000000000000000000", "decimal_bound": 0.17656750279900874, "coefficient_rows": 31608, "negative_rows": 87, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=531/1000, support=122047/100000, M=[619/500,31/25], e=[67/5000,191/500], scale=1337040000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+{"certificate": "odd_39_47_alpha531.json", "first": 39, "last": 47, "minimum_counterexample_mass": "1883/1521", "checked": {"mode": "bound", "raw_bound": "-338267258761/500000000000", "correction": "144426537709150937023/270000000000000000000000000", "rational_bound": "-182664175304402290849062977/270000000000000000000000000", "decimal_bound": -0.6765339826088974, "coefficient_rows": 31608, "negative_rows": 34, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=1/3, support=122973/100000, M=[31/25,621/500], e=[41/5000,19/50], scale=66960000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+{"certificate": "odd_49_57_alpha_third.json", "first": 49, "last": 57, "minimum_counterexample_mass": "2978/2401", "checked": {"mode": "bound", "raw_bound": "291535466397/1000000000000", "correction": "43684260048703707532633/930000000000000000000000000", "rational_bound": "271171668009258703707532633/930000000000000000000000000", "decimal_bound": 0.291582438719633, "coefficient_rows": 31608, "negative_rows": 1196, "rigorous_infeasible": false}}
+{"variables": 31635, "rows": 3771, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23943, "anchor_good_coefficients": 1}
+alpha=57/250, support=123547/100000, M=[4967/4000,5/4], e=[1/200,1/4], scale=2682180000000000
+{"excluded_zero_columns": 27, "remaining": 31608}
+{"certificate": "odd_59_alpha228_penalty.json", "first": 59, "last": null, "minimum_counterexample_mass": "4323/3481", "checked": {"mode": "infeasible", "raw_bound": "-1000002614567/1000000000000", "correction": "109876730526401173/400000000000000000000", "rational_bound": "-399891169096273598827/400000000000000000000", "decimal_bound": -0.999727922740684, "coefficient_rows": 31608, "negative_rows": 1066, "rigorous_infeasible": true}}
+
+PASS flags

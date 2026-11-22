@@ -1,0 +1,143 @@
+\section{Introduction}\label{sec:intro}
+
+\subsection{Preliminaries}\label{sec:prelim}
+
+All graphs are finite and simple unless stated otherwise. In a loopless
+multigraph, parallel edges are distinct and contribute to degrees with
+multiplicity. For a graph $G$, write $V(G)$, $E(G)$ and $\Delta(G)$ for
+its vertex set, edge set and maximum degree. For $v\in V(G)$, let
+$N_G(v)$ be its set of neighbors and let $d_G(v)$ be its degree.
+For $X\subseteq V(G)$, write $G[X]$ for the subgraph induced by $X$ and
+$d_G(v,X)$ for the number of edges from $v$ to $X$. Let $N_G[v]=N_G(v)\cup\{v\}$.
+%We take $\Delta(G)=0$ for a graph with no vertices. We use $\Delta$ for the maximum degree of a fixed graph and $D$ when retaining the original degree bound after restricting the graph. 
+A graph is
+$d$-regular if all its vertices have degree $d$. An ordered edge is an
+edge together with an ordering of its endpoints.
+Write $C_n$ for the cycle on $n\geq 3$ vertices, $K_n$ for the complete
+graph on $n$ vertices, and $K_{a,b}$ for the complete bipartite graph with
+parts of sizes $a$ and $b$.
+
+A vertex cover of $G$ is a set meeting every edge, and $\tau(G)$ is
+the minimum size of a vertex cover. An independent set is a set of
+pairwise nonadjacent vertices. For a subgraph $H$ of $G$ with at least
+one edge, its Ore-degree in $G$ is
+$\max_{uv\in E(H)}(d_G(u)+d_G(v))$~\cite{FaronPostle2019}.
+We put $x_+=\max\{x,0\}$ for real $x$.
+
+The \emph{underlying simple graph} of a loopless multigraph $G$, also
+called its \emph{simple support}, has vertex set $V(G)$ and one edge
+$uv$ for each pair of distinct vertices $u,v$ joined by an edge of $G$.
+The line graph $L(G)$ has
+one vertex for each edge of $G$, with two distinct edges adjacent
+precisely when they share an endpoint in $G$. For a graph $H$,
+its square $H^2$ has vertex set $V(H)$, with two distinct vertices
+adjacent precisely when $H$ contains a path of length at most two
+between them. We write $\omega(H)$ for the maximum size of a clique in
+$H$, that is, a set of pairwise adjacent vertices. A set
+$S\subseteq E(G)$ is a \emph{strong clique} in $G$ if it is a clique
+in $L(G)^2$.
+%Equivalently, any two distinct edges of $S$ share an endpoint or have endpoints joined by an edge of $G$.
+
+For a positive integer $k$, write $[k]=\{1,\ldots,k\}$. A proper vertex
+$k$-coloring of $H$ is a map $V(H)\to[k]$ assigning distinct colors to
+adjacent vertices. The chromatic number $\chi(H)$ is the least $k$ for
+which $H$ admits such a coloring, with $\chi(H)=0$ when $V(H)$ is empty.
+A proper vertex coloring of $L(G)^2$ gives a \emph{strong edge
+coloring} of $G$. The minimum number of colors in such a coloring is
+the \emph{strong chromatic index} $\chi(L(G)^2)$.
+
+A real symmetric matrix $M$ is positive semidefinite, written
+$M\succeq0$, if $x^{\mathsf T}Mx\geq0$ for every real column vector
+$x$ of the appropriate size. The trace $\tr(M)$ of a square matrix
+$M$ is the sum of its diagonal entries.
+
+\subsection{Background and Main Result}\label{sec:background}
+
+In 1985, at a seminar in Prague, Erd\H{o}s and Ne\v{s}et\v{r}il asked
+how large the strong chromatic index can be for a graph of given
+maximum degree~\cite{FGST1989,ErdosNesetril1989}. Erd\H{o}s~\cite{Erdos1988}
+stated their conjecture with the bound $\frac{5}{4}\Delta(G)^2$.
+Faudree, Schelp, Gy\'arf\'as and Tuza~\cite{FGST1990} formulated a
+version for loopless multigraphs that gives a sharper bound for odd
+maximum degree. For a nonnegative integer $d$, let
+$f(d)=d^2+\lfloor\frac{d}{2}\rfloor^2$. Thus $f(d)=\frac{5d^2}{4}$
+when $d$ is even and $f(d)=\frac{5d^2-2d+1}{4}$ when $d$ is odd.
+
+\begin{conjecture}[\cite{FGST1990}]
+\label{conj:strong-edge-coloring}
+Every finite loopless multigraph $G$ satisfies
+$\chi(L(G)^2)\leq f(\Delta(G))$.
+\end{conjecture}
+
+Faudree, Gy\'arf\'as, Schelp and Tuza also asked how large a set of edges
+forced to have distinct colors can be. Hence, they proposed the following
+relaxation of \textbf{Conjecture~\ref{conj:strong-edge-coloring}}.
+
+\begin{conjecture}[\cite{FGST1990}]\label{conj:fgst}
+Every finite loopless multigraph $G$ satisfies
+$\omega(L(G)^2)\leq f(\Delta(G))$.
+\end{conjecture}
+
+In this paper, we prove \textbf{Conjecture~\ref{conj:fgst}}.
+
+\begin{theorem}\label{thm:multigraph}
+Every finite loopless multigraph $G$ satisfies
+$\omega(L(G)^2)\leq f(\Delta(G))$.
+\end{theorem}
+
+Blow-ups of a five-cycle attain the bound. Let $C_5=v_0v_1v_2v_3v_4v_0$. Replace each $v_i$ by an independent set $V_i$ and add every edge between $V_i$ and $V_{i+1}$, with indices taken modulo five. It is easy to see that the entire edge set of the blow-up is a strong clique. Taking $|V_i|=t$ for each $i$ gives
+maximum degree $2t$ and $5t^2=f(2t)$ edges, as illustrated for
+$t=2$ in Figure~\ref{fig:blowup}. Taking $|V_2|=|V_3|=r+1$ and
+$|V_0|=|V_1|=|V_4|=r$ gives maximum degree $2r+1$ and
+$5r^2+4r+1=f(2r+1)$ edges, as required.
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[scale=0.9,every node/.style={font=\small}]
+\foreach \i in {0,...,4}
+  \coordinate (v\i) at ({90+72*\i}:1.16);
+\foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}
+  \draw[unmarked edge] (v\i)--(v\j);
+\foreach \i in {0,...,4}
+  \node[graph vertex] at (v\i) {};
+\node at (0,-2.08) {$C_5$};
+
+\begin{scope}[xshift=5.45cm]
+\foreach \i in {0,...,4}{
+  \pgfmathsetmacro{\angle}{90+72*\i}
+  \coordinate (a\i) at (\angle:1.18);
+  \coordinate (b\i) at (\angle:1.76);
+  \coordinate (part\i) at (\angle:1.47);
+  \begin{scope}[shift={(part\i)},rotate=\angle]
+    \draw[draw=black!45,fill=black!7] (0,0)
+      ellipse[x radius=.42,y radius=.17];
+  \end{scope}
+}
+\foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}{
+  \draw[marked edge] (a\i)--(a\j) (a\i)--(b\j)
+    (b\i)--(a\j) (b\i)--(b\j);
+}
+\foreach \i in {0,...,4}{
+  \node[graph vertex] at (a\i) {};
+  \node[graph vertex] at (b\i) {};
+}
+\node at (0,-2.08) {$t=2$};
+\end{scope}
+\end{tikzpicture}
+\caption{The cycle $C_5$ and its blow-up with two vertices per part.}
+\label{fig:blowup}
+\end{figure}
+
+The proof is computer-assisted. We verify the flag inequalities used
+in Sections~\ref{sec:uniform} and~\ref{sec:exact} by checking rational
+certificates in exact arithmetic. For several small values of $\Delta$,
+we derive necessary conditions for a strong clique to have more than
+$f(\Delta)$ edges. In some cases, we enumerate the possible configurations
+and verify that none can contain such a clique. In the other cases, we
+encode the necessary conditions in Boolean formulas and verify that
+none of these formulas has a satisfying assignment. The detailed
+counts and case analyses appear in the accompanying \emph{Supplementary
+Proofs}~\cite{FGSTSupplement}. Section~B of the supplement gives the
+commands for reproducing the calculations from the input data,
+certificates and verification programs provided with the supplement.
+

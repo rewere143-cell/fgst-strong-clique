@@ -1,0 +1,4 @@
+{'checked': 178, 'unproved_fallbacks': 0, 'divisions': 14996, 'max_depth': 23}
+{'checked': 148, 'unproved_fallbacks': 0, 'divisions': 17349, 'max_depth': 23}
+{'checked': 148, 'unproved_fallbacks': 0, 'divisions': 18075, 'max_depth': 23}
+{'target': '1489/5000', 'proved': True, 'divisions': 14812, 'max_depth': 34}

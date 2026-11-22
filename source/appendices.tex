@@ -1,0 +1,23 @@
+\ifdefined\standalonesupplement\else
+  \section*{Appendix}
+  \addcontentsline{toc}{section}{Appendix}
+\fi
+\setcounter{subsection}{0}
+\setcounter{secnumdepth}{4}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\renewcommand{\theHsubsection}{appendix.\arabic{subsection}}
+\counterwithin*{equation}{subsection}
+\counterwithin*{theorem}{subsection}
+\counterwithin*{figure}{subsection}
+\counterwithin*{table}{subsection}
+\renewcommand{\theequation}{\thesubsection.\arabic{equation}}
+\renewcommand{\thetheorem}{\thesubsection.\arabic{theorem}}
+\renewcommand{\thefigure}{\thesubsection.\arabic{figure}}
+\renewcommand{\thetable}{\thesubsection.\arabic{table}}
+\input{Adata}
+\input{Breproduction}
+\input{cycle-estimates}
+\input{Codd-small}
+\input{Fmulti-structure}
+\input{Gmulti-finite}
+\input{Hmulti-certificates}

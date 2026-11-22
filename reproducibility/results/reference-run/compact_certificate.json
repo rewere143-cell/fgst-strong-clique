@@ -1,0 +1,28 @@
+{
+  "all_passed": true,
+  "certificate_sha256": "369542796834aa1f297dccf750f1743c8f01827d8b4ef08ef044ff474909a912",
+  "variables": 23789,
+  "degree_rows": 3516,
+  "psd_blocks": 57,
+  "positive_rank_one_factors": 4110,
+  "common_denominator": "2400000000",
+  "weight_denominator": "24",
+  "vector_denominator": "10000",
+  "raw_dual_numerator": "3000000000",
+  "exact_bound": "5/4",
+  "rounding_correction": "0",
+  "degree_nonzeros_checked": 433899,
+  "gram_nonzeros_checked": 1895405,
+  "residual_count": 23789,
+  "positive_residuals": 23590,
+  "zero_residuals": 199,
+  "negative_residuals": 0,
+  "maximum_residual_numerator": "899382275568",
+  "order_three_defect_residual_numerators": {
+    "0": "9429928",
+    "2": "71969664",
+    "3": "76401408",
+    "4": "31301352"
+  },
+  "arithmetic": "Python arbitrary precision integers and fractions; no floating-point algebra"
+}

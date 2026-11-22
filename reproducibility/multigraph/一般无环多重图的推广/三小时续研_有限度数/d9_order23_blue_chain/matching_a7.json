@@ -1,0 +1,13 @@
+{
+  "name": "matching_a7",
+  "variables": 67440,
+  "clauses": 216455,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "f81fd213a3a18980d68fbac3fa851de3c8ec91302f9ad11d1534e53a1c6b2d96",
+  "lrat_sha256": "0041acb2c2e6c06d32e8dbdab9e0f259864bb164fe963b22fbf109a60969f81a",
+  "replay": {
+    "added": 64505,
+    "deleted": 59694
+  }
+}

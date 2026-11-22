@@ -1,0 +1,63 @@
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "5/4", "minimum_slack": "99/100", "support_upper_rounded": "30107/25000", "e_low": "73/2000", "equalities": 1256, "inequalities": 4004, "coordinates": 31073, "psd_blocks": 86, "scale": 2160000000000}
+{"excluded_zero_columns": 30308, "remaining": 765}
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+WARNING: LP matrix packed vector contains 485 |value| in [3.17028e-64, 4.26071e-16] less than or equal to 1e-09: ignored
+LP has 5332 rows; 765 cols; 24492 nonzeros
+Coefficient ranges:
+  Matrix  [7e-07, 2e+02]
+  Cost    [0e+00, 0e+00]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+00, 1e+00]
+Presolving model
+907 rows, 764 cols, 24460 nonzeros 0s
+507 rows, 576 cols, 14043 nonzeros 0s
+Dependent equations search running on 120 equations with time limit of 1.50s
+Dependent equations search removed 5 rows and 77 nonzeros in 0.00s (limit = 1.50s)
+502 rows, 576 cols, 13966 nonzeros 0s
+Presolve reductions: rows 502(-4830); columns 576(-189); nonzeros 13966(-10526) 
+Solving the presolved LP
+Using dual simplex solver
+  Iteration        Objective     Infeasibilities num(sum)
+          0     2.0764656804e-08 Pr: 4(0.0309917) 0.1s
+       1159     5.3647860972e-05 0.2s
+Using dual simplex solver
+  Iteration        Objective     Infeasibilities num(sum)
+       1159     3.6553546646e-05 Pr: 67(173.138); Du: 0(4.29866e-08) 0.2s
+       1213     9.0656999405e-04 0.2s
+Model status        : Infeasible
+Simplex   iterations: 1213
+Objective value     :  0.0000000000e+00
+HiGHS run time      :          0.23
+HighsModelStatus.kInfeasible
+Solving LP to try to compute dual ray
+LP has 5332 rows; 765 cols; 24492 nonzeros
+Coefficient ranges:
+  Matrix  [7e-07, 2e+02]
+  Cost    [0e+00, 0e+00]
+  Bound   [0e+00, 0e+00]
+  RHS     [1e+00, 1e+00]
+Solving LP without presolve or useful basis
+Using dual simplex solver
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Pr: 1(0.03125) 0.2s
+       1174     2.4749229453e-05 0.5s
+
+Model status        : Infeasible
+Simplex   iterations: 1174
+Objective value     :  0.0000000000e+00
+P-D objective error :  2.4748616944e-05
+HiGHS run time      :          0.47
+Solving linear system to compute dual ray
+{"max_absolute_ray_coefficient": 3337.289031573002, "least_conic_multiplier": -9.840685487444731e-15}
+{
+  "mode": "infeasible",
+  "raw_bound": "-1",
+  "correction": "747132172447751/2000000000000000000000",
+  "rational_bound": "-1999999252867827552249/2000000000000000000000",
+  "decimal_bound": -0.9999996264339138,
+  "coefficient_rows": 765,
+  "negative_rows": 100,
+  "rigorous_infeasible": true
+}

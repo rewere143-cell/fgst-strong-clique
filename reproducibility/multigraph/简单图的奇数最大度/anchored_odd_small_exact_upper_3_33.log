@@ -1,0 +1,17 @@
+{'degree': 3, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 5, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 7, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 9, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 11, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 13, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 15, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 17, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 19, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 21, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 23, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 25, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 27, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 29, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 31, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 33, 'unresolved_shapes': 0, 'samples': []}
+{'verified': [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33], 'exact_upper_only': True, 'gamma_cycle': '99999/100000', 'gamma_anchor': '2257/4000', 'epsilon_cycle': '1/500000000', 'epsilon_anchor': '1/1000000000', 'used_relaxation': True}

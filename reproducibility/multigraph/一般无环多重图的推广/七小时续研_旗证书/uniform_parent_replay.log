@@ -1,0 +1,25 @@
+{"mass_lower": "321/250", "minimum_slack": "382/625", "support_upper_rounded": "60859/50000", "scale": 57780000000000, "equalities": 1226, "inequalities": 312, "coordinates": 7692, "psd_blocks": 38}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "1283/1000", "minimum_slack": "1521/2500", "support_upper_rounded": "121729/100000", "e_low": "51/1000", "equalities": 1256, "inequalities": 4004, "coordinates": 31073, "psd_blocks": 86, "scale": 2771280000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1283_exclusion.json", "alpha": "1521/2500", "support_upper": "147233751237061/120952375000000", "necessary_repeat": "7948145887939/155181897125000", "final_bound": "1283/1000", "mode": "bound", "raw_bound": "637263320267/500000000000", "correction": "257656984377539985707/750000000000000000000000000", "rational_bound": "955895238057484377539985707/750000000000000000000000000", "decimal_bound": 1.2745269840766458, "coefficient_rows": 31046, "negative_rows": 1304, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "1279/1000", "minimum_slack": "3223/5000", "support_upper_rounded": "30397/25000", "e_low": "49/1000", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 2762640000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1279_exclusion.json", "alpha": "3223/5000", "support_upper": "53966075996950277/44384669750000000", "necessary_repeat": "2801916613299723/56767992610250000", "final_bound": "1279/1000", "mode": "bound", "raw_bound": "1269532335883/1000000000000", "correction": "254678170665292838183/750000000000000000000000000", "rational_bound": "952149506590420665292838183/750000000000000000000000000", "decimal_bound": 1.2695326754538943, "coefficient_rows": 31046, "negative_rows": 1445, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "637/500", "minimum_slack": "3121/5000", "support_upper_rounded": "121667/100000", "e_low": "89/2000", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 1375920000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1274_exclusion.json", "alpha": "3121/5000", "support_upper": "17844875026431293/14667052750000000", "necessary_repeat": "840950177068707/18685825203500000", "final_bound": "637/500", "mode": "bound", "raw_bound": "1262887225519/1000000000000", "correction": "397988214772383959257/1500000000000000000000000000", "rational_bound": "1894331236266714772383959257/1500000000000000000000000000", "decimal_bound": 1.2628874908444765, "coefficient_rows": 31046, "negative_rows": 1288, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "317/250", "minimum_slack": "2989/5000", "support_upper_rounded": "121771/100000", "e_low": "79/2000", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 684720000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_1268_exclusion.json", "alpha": "2989/5000", "support_upper": "868463554637951/713194250000000", "necessary_repeat": "35866754362049/904330309000000", "final_bound": "317/250", "mode": "bound", "raw_bound": "39526287161/31250000000", "correction": "187567687179207238613/1500000000000000000000000000", "rational_bound": "1897261971295687179207238613/1500000000000000000000000000", "decimal_bound": 1.2648413141971249, "coefficient_rows": 31046, "negative_rows": 1337, "rigorous_infeasible": false}
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "5/4", "minimum_slack": "1/2", "support_upper_rounded": "122181/100000", "e_low": "9/400", "equalities": 1256, "inequalities": 4028, "coordinates": 31073, "psd_blocks": 86, "scale": 2160000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{"certificate": "rank6_uniform_sharp_125_exclusion.json", "alpha": "1/2", "support_upper": "1221800627/1000000000", "necessary_repeat": "28199373/1250000000", "final_bound": "5/4", "mode": "bound", "raw_bound": "312419970929/250000000000", "correction": "73834315704703985647/100000000000000000000000000", "rational_bound": "124968062205915704703985647/100000000000000000000000000", "decimal_bound": 1.249680622059157, "coefficient_rows": 31046, "negative_rows": 1480, "rigorous_infeasible": false}
+{
+  "final_bound": "5/4",
+  "decimal": 1.25
+}

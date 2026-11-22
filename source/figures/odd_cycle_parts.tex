@@ -1,0 +1,15 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \node[graph vertex,label=below:$c_0$] (c0) at (0,1.4) {};
+  \node[graph vertex,label=left:$c_1$] (c1) at (-1.55,0.45) {};
+  \node[graph vertex,label=below:$c_2$] (c2) at (-0.95,-1) {};
+  \node[graph vertex,label=below:$c_3$] (c3) at (0.95,-1) {};
+  \node[graph vertex,label=right:$c_4$] (c4) at (1.55,0.45) {};
+  \node[graph vertex,label=above:$x$] (x) at (0,2.35) {};
+  \draw[marked edge] (c0)--(c1)--(c2)--(c3)--(c4)--(c0);
+  \draw[marked edge] (c1)--(x)--(c4);
+\end{tikzpicture}
+\caption{A vertex $x$ in $U_0$ and its two marked edges to the cycle.}
+\label{fig:odd-cycle-parts}
+\end{figure}

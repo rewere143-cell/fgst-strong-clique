@@ -1,0 +1,37 @@
+{
+  "certificate": {
+    "all_passed": true,
+    "certificate_sha256": "382d140a2d6bb1d94117566c1f5fcfc372c795d76224637022a074822af7c798",
+    "variables": 23789,
+    "degree_rows": 3516,
+    "psd_blocks": 57,
+    "positive_rank_one_factors": 4110,
+    "common_denominator": "24000000000000000000",
+    "weight_denominator": "240000000000",
+    "vector_denominator": "10000",
+    "raw_dual_numerator": "30000000000000000000",
+    "exact_bound": "5/4",
+    "rounding_correction": "0",
+    "degree_nonzeros_checked": 433899,
+    "gram_nonzeros_checked": 1895405,
+    "residual_count": 23789,
+    "positive_residuals": 23656,
+    "zero_residuals": 133,
+    "negative_residuals": 0,
+    "maximum_residual_numerator": "6585320580913555566720",
+    "order_three_defect_residual_numerators": {
+      "0": "10841720490114425493",
+      "2": "10841720494599237071",
+      "3": "10841720494364544024",
+      "4": "10841720494723978068"
+    },
+    "arithmetic": "Python arbitrary precision integers and fractions; no floating-point algebra"
+  },
+  "penalty": "9/20",
+  "defect_residuals": {
+    "0": "3613906830038141831/8000000000000000000",
+    "2": "10841720494599237071/24000000000000000000",
+    "3": "451738353931856001/1000000000000000000",
+    "4": "903476707893664839/2000000000000000000"
+  }
+}

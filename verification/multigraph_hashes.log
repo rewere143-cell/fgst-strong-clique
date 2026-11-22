@@ -1,0 +1,8 @@
+
+. / 归档哈希复验.py 
+{"version": "phase-1-2026-11-17-loopless-multigraph-exact", "files_verified": 1883}
+
+. / verify_supplemental_hashes.py 
+{"supplemental_files_verified": 127}
+
+PASS hashes

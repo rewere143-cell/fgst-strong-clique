@@ -1,0 +1,21 @@
+{
+  "name": "s01123",
+  "slack": [
+    0,
+    1,
+    1,
+    2,
+    3
+  ],
+  "result": "VERIFIED_UNSAT",
+  "code": 20,
+  "limit": null,
+  "variables": 94348,
+  "clauses": 508707,
+  "replay": {
+    "added": 36705,
+    "deleted": 137888
+  },
+  "cnf_sha256": "ebf01dd45be7d7c6ee53c270815855c119343bd36dff844068c91d0c8f622c96",
+  "lrat_sha256": "9e71a6f2ac7751507ed532dc63aee10bbddf4857aeafb1ce7f4d9dbc4827c461"
+}

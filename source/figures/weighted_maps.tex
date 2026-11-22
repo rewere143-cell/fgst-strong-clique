@@ -1,0 +1,20 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[marked edge/.append style={draw=red!70!black}]
+  \node[graph vertex,label=below:$a$] (a) at (0,0) {};
+  \node[graph vertex,label=below:$b$] (b) at (1.05,0) {};
+  \node[graph vertex,label=below:$c$] (c) at (2.1,0) {};
+  \draw[marked edge] (a)--(b)--(c);
+  \node[above=6pt] at (b) {$T=\{ab,bc\}$};
+  \draw[-{Latex[length=2.2mm]}] (2.65,0)--node[above]{$\phi$}(3.65,0);
+  \node[graph vertex,label=below:$x$] (x) at (4.25,0) {};
+  \node[graph vertex,label=below:$y$] (y) at (5.55,0) {};
+  \draw[marked edge] (x)--(y);
+  \draw[marked edge] (x) to[bend left=25] (y);
+  \draw[marked edge] (x) to[bend right=25] (y);
+  \node[above=10pt] at (4.9,0) {$b_{xy}=2$};
+\end{tikzpicture}
+\caption{A weighted map with $\phi(a)=\phi(c)=x$ and $\phi(b)=y$.
+Its weight is $b_{xy}^2=4$.}
+\label{fig:weighted-maps}
+\end{figure}

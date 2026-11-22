@@ -1,0 +1,35 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[graph vertex,label=below:$0$] (a0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (a1) at (1.9,0) {};
+\node[graph vertex,label=above:$2$] (a2) at (0,1.18) {};
+\draw[marked edge] (a0)--node[above] {$2$} (a1);
+\draw[unmarked edge] (a0)--node[left] {$1$} (a2);
+\node at (0.95,-0.65) {First flag};
+
+\begin{scope}[xshift=3.6cm]
+\node[graph vertex,label=below:$0$] (b0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (b1) at (1.9,0) {};
+\node[graph vertex,label=above:$3$] (b3) at (1.9,1.18) {};
+\draw[marked edge] (b0)--node[above] {$2$} (b1);
+\draw[unmarked edge] (b1)--node[right] {$1$} (b3);
+\node at (0.95,-0.65) {Second flag};
+\end{scope}
+
+\begin{scope}[xshift=7.45cm]
+\node[graph vertex,label=below:$0$] (c0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (c1) at (1.9,0) {};
+\node[graph vertex,label=above:$2$] (c2) at (0,1.18) {};
+\node[graph vertex,label=above:$3$] (c3) at (1.9,1.18) {};
+\draw[marked edge] (c0)--node[above] {$2$} (c1);
+\draw[unmarked edge] (c0)--node[left] {$1$} (c2);
+\draw[unmarked edge] (c1)--node[right] {$1$} (c3);
+\draw[densely dashed] (c2)--node[above] {$?$} (c3);
+\node at (0.95,-0.65) {Union};
+\end{scope}
+\end{tikzpicture}
+\caption{Two flags with common type on $\{0,1\}$. In their union,
+the dashed pair has color $0$, $1$ or $2$. Undrawn pairs have color $0$.}
+\label{fig:flag-union}
+\end{figure}

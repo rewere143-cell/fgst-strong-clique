@@ -1,0 +1,55 @@
+\documentclass[preprint,11pt,numbers]{elsarticle-arxiv}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath,amsthm,mathtools}
+\usepackage{booktabs,enumitem,indentfirst,url}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\tikzset{
+  graph vertex/.style={circle,fill=black,inner sep=1.7pt},
+  marked edge/.style={draw=blue!65!black,line width=1.05pt},
+  unmarked edge/.style={draw=black!65,line width=0.65pt}
+}
+\usepackage[hidelinks]{hyperref}
+\ifdefined\pdfgentounicode
+  \InputIfFileExists{glyphtounicode.tex}{}{}
+  \pdfgentounicode=1
+\fi
+\pdfstringdefDisableCommands{\def\corref#1{}\def\fnref#1{}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\DeclareMathOperator{\tr}{tr}
+\setlist[enumerate]{itemsep=3pt,topsep=5pt,parsep=0pt,listparindent=1.5em}
+\setlength{\emergencystretch}{2em}
+\setlength{\parindent}{1.5em}
+\setcounter{tocdepth}{2}
+\newcommand{\standalonesupplement}{}
+\newcommand{\articletitle}{The Proof of the Faudree--Gy\'arf\'as--Schelp--Tuza Conjecture}
+\hypersetup{pdftitle={Supplementary Proofs for \articletitle},
+  pdfauthor={Zhijun Lu, Chengshuo Qiao, Qirui Ying, Huimin Song}}
+\input{supplementary-main-labels}
+
+\begin{document}
+\begin{frontmatter}
+\title{\textbf{\Large Supplementary Proofs for\\\textquotedblleft\articletitle\textquotedblright}}
+\author[1]{Zhijun Lu\fnref{equalcontrib}}
+\author[1]{Chengshuo Qiao\fnref{equalcontrib}}
+\author[1]{Qirui Ying\fnref{equalcontrib}}
+\author[1]{Huimin Song\corref{cor1}}
+\fntext[equalcontrib]{Zhijun Lu, Chengshuo Qiao and Qirui Ying contributed equally to this work.}
+\cortext[cor1]{Corresponding author. \textit{E-mail address:} \url{hmsong@sdu.edu.cn} (H.Song).}
+\affiliation[1]{organization={School of Mathematics and Statistics},
+ addressline={Shandong University},city={Weihai},postcode={264209},
+ state={Shandong},country={China}}
+\begin{abstract}
+We give the data and verification procedures for the flag inequalities
+used in the main paper, together with the five-cycle estimates and
+finite reductions for odd maximum degree. We use the notation of the
+main paper. A reference beginning with a letter points to this
+supplement. A reference beginning with a number points to the main paper.
+\end{abstract}
+\end{frontmatter}
+\thispagestyle{plain}
+
+\tableofcontents
+\input{appendices}
+\end{document}

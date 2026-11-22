@@ -1,0 +1,461 @@
+{
+  "verified": true,
+  "instances": 34,
+  "additions": 4727741,
+  "sources": {
+    "d9_n23_twin_sat.py": "f1e7584ed148d27827a87ee9d16c8c208fb3a9848892cbcd9002b3ee09348b00",
+    "d9_n23_trianglefree_sat.py": "13472227931c3ed1234a0bb0789d63ae96b7e13300fada522fb35a9af8fcd458",
+    "d9_verify_n23.py": "3934e100d949923e363dfea4ab2c577065ad1148b115f3216fd44804a2576c7c",
+    "d9_n23_c5_saturated.py": "5c9d463efd422067350f81d8286fb2b704a52a516627826d2c51de07713910c3",
+    "d9_n23_twin_triangle.py": "435c49b64cba235281e2d5e3cca0567aa259616be82bdc3440d83f294dd0d0be",
+    "d7_parallel_sat.py": "67441156eb3d81b5460dca8e168a191390907906e6cab08aaf3baaa7155c659f",
+    "d7_bipartite_ore_coupled.py": "002495e2cdde01522d52a6baaa6fc030a6681a507063fe1532cdd19cb7c9ee2d",
+    "d5_exact_sat.py": "8c33b999c6bfeb808bc61ac8f340442755cd58fb25bbaeec502a76363e92999b",
+    "d7_rup_replay.c": "ae7bd971b0f5146270bdeda4d64719cd09b83a6ef9954c22f6f57abc214f8847",
+    "source_snapshot/reproducibility/verifiers/c_runtime.h": "2f285b153fd3d0678a0d1f2810486515c5d908755c90d0d33d074d3c15015e38"
+  },
+  "proofs": [
+    {
+      "name": "p2_d1",
+      "variables": 13897,
+      "clauses": 47937,
+      "cnf_sha256": "a6c619af4acdb19e8acdd3519ca8ecf86783fd633d02bb798f99a0d748096e92",
+      "code": 20,
+      "replay": {
+        "added": 6794,
+        "deleted": 2490
+      },
+      "lrat_sha256": "504a503057c5c5b7e14ec478df8c32344d4b413e0d2273f2585f85133c47f602",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p2_d2",
+      "variables": 13867,
+      "clauses": 47818,
+      "cnf_sha256": "1ec38817be2dbdf93d5ac09baa2fe4f1bb6c61b809c1f7faba51a96a618fb9ac",
+      "code": 20,
+      "replay": {
+        "added": 8974,
+        "deleted": 2463
+      },
+      "lrat_sha256": "806ccca516aa70fda2d867176756c238bed54921aa68e2b4e7657e4808dd94bd",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p2_d3",
+      "variables": 13833,
+      "clauses": 47764,
+      "cnf_sha256": "6ad4d4467db5e36654ee70b7d6bb711d8421ca48a925e011807f16a456541daf",
+      "code": 20,
+      "replay": {
+        "added": 4295,
+        "deleted": 2466
+      },
+      "lrat_sha256": "3718e8aa246cd4b9b7720c21601eab02708f0167bcad3884a73eeb9b9357571e",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p2_d4",
+      "variables": 13795,
+      "clauses": 47662,
+      "cnf_sha256": "6b44d070a18a4c68866c46621659f043868a6739d07f65650977b93199a10129",
+      "code": 20,
+      "replay": {
+        "added": 4500,
+        "deleted": 2467
+      },
+      "lrat_sha256": "0a0a6584ff913b4884613928843375235150932de1a032d7a158580f106150ec",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p3_d1",
+      "variables": 13897,
+      "clauses": 47949,
+      "cnf_sha256": "08c31a1ad7d6a6142bf6fe02c5d64f66b36087a7f6e91e7fd675fbae745eed1a",
+      "code": 20,
+      "replay": {
+        "added": 7765,
+        "deleted": 9935
+      },
+      "lrat_sha256": "0f6c46a68d013f04bd5c1f974030ef0874c5d6d17524a00e7cf9cede58e3be9c",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p3_d2",
+      "variables": 13867,
+      "clauses": 47830,
+      "cnf_sha256": "ff2c8e1000acf650878a3e36850275f8e0af71139368b3cbc2c4984d647ed6cd",
+      "code": 20,
+      "replay": {
+        "added": 7385,
+        "deleted": 9990
+      },
+      "lrat_sha256": "66cdd7bb521dded4a1f8fbf64b3a74aafdc35711816e51966ad4df1f999f95c7",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p3_d3",
+      "variables": 13833,
+      "clauses": 47776,
+      "cnf_sha256": "89f2c30ee2b553939797604e2ce39a3b7d3d05a906a4e00a802d166ad6934b59",
+      "code": 20,
+      "replay": {
+        "added": 5173,
+        "deleted": 10037
+      },
+      "lrat_sha256": "fbb51dcce6838456b49430b3ed9e5f410fb425d323d4613aae308361e478da18",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "p3_d4",
+      "variables": 13795,
+      "clauses": 47674,
+      "cnf_sha256": "3b3118f49c84b9e2ef37da5e6538b0d6e93ade9bd08c181d0fda89ebf89e353b",
+      "code": 20,
+      "replay": {
+        "added": 8166,
+        "deleted": 10114
+      },
+      "lrat_sha256": "8238a19b7e055740cb329f4cf9cea612ba0bd81ecfec9731794841df877b1f1d",
+      "branch": "d9_n23_twin_sat"
+    },
+    {
+      "name": "k8_11111114_b6",
+      "clauses": 220025,
+      "variables": 64519,
+      "cnf_sha256": "f8ff8bb414360bcabbae753072c935900ec4cb1ef938fe2a564da7e1076e1d7e",
+      "code": 20,
+      "replay": {
+        "added": 50742,
+        "deleted": 96093
+      },
+      "lrat_sha256": "12297b45d0b04f300204d00b361135cf447e66c5a447c08d63a01f66aa9c597b",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111114_b7",
+      "clauses": 220027,
+      "variables": 64519,
+      "cnf_sha256": "ee1499e0512058a7ef983d7384ef131f4decf8657fb45c8ad05d97c77cb4534f",
+      "code": 20,
+      "replay": {
+        "added": 69577,
+        "deleted": 118299
+      },
+      "lrat_sha256": "cafb877c3c199091dabdfd22dbe0ad2c4f48f2f32ccd4a0e5e343d939308c3f2",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111114_c",
+      "clauses": 222386,
+      "variables": 64719,
+      "cnf_sha256": "3614a18a7398c9f34a8b0c31fa05a936eb9096b035c2fba02699810ca30b051c",
+      "code": 20,
+      "replay": {
+        "added": 167102,
+        "deleted": 239312
+      },
+      "lrat_sha256": "8517c869e2c62d5c99518392d74a66edfc02d186960531c0b191b67ad0f198b6",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111123_b6",
+      "clauses": 211679,
+      "variables": 61751,
+      "cnf_sha256": "d5490f530ba79eec2ec7aca6d8e7832fc7469983b4fe2ec13f24c952a3279532",
+      "code": 20,
+      "replay": {
+        "added": 57264,
+        "deleted": 97965
+      },
+      "lrat_sha256": "3c43feaef805370b3a4e93abda906b8182942ba16ccae173d07e82bf3a1ab4d5",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111123_b7",
+      "clauses": 211681,
+      "variables": 61751,
+      "cnf_sha256": "21f84fd9e6132e165cc676d4edccb183d2028f9625d167c04eea488719630fa1",
+      "code": 20,
+      "replay": {
+        "added": 188845,
+        "deleted": 308225
+      },
+      "lrat_sha256": "6a75e7766ebde9cc9ab1583f02a3558ae5acfcb68b48e1e7b64ee42d8ba6d7b7",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111123_c",
+      "clauses": 214040,
+      "variables": 61951,
+      "cnf_sha256": "afaedf36969bda80fd1dd42ba3fa321dd1ed48b2dd4d3275b1d99fed2126d763",
+      "code": 20,
+      "replay": {
+        "added": 138197,
+        "deleted": 213531
+      },
+      "lrat_sha256": "ce2958690eafdb4a61556a2b5ec6daa6bdfc7184f863f0c2f79f8babdc813f2d",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111222_b6",
+      "clauses": 212228,
+      "variables": 61920,
+      "cnf_sha256": "ac55a80fe48c4e79242a0fa395a644ee1cccddc44314e4193edc2e867cc6e1e9",
+      "code": 20,
+      "replay": {
+        "added": 36860,
+        "deleted": 70045
+      },
+      "lrat_sha256": "efaf2f60d17702503a5f68732ab44e5e1c8c9ea2eedfaf7ef3e166ca05baae02",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111222_b7",
+      "clauses": 212230,
+      "variables": 61920,
+      "cnf_sha256": "ec2c422bd0b379df7fd0b4c25312bd0b14b76e1bfaac8cc8dddde404557a1592",
+      "code": 20,
+      "replay": {
+        "added": 241189,
+        "deleted": 376093
+      },
+      "lrat_sha256": "4992866cdf5d51b9d7c9fece22e99cd713fb7489487ab844b01dc711ff114068",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k8_11111222_c",
+      "clauses": 214589,
+      "variables": 62120,
+      "cnf_sha256": "902b77d89e14ab90dace348fc6511cbda8c4883897eab708fe4a1d1071ffd05b",
+      "code": 20,
+      "replay": {
+        "added": 152214,
+        "deleted": 258140
+      },
+      "lrat_sha256": "c8b3c1dd4e7c2e3e33e97fd3f0d8019cf3a34959e33f5625ae6e44376b33899e",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111113_b5",
+      "clauses": 220416,
+      "variables": 64648,
+      "cnf_sha256": "4ee70dc70a0eab2f00226323552e9033560179e665f0e6ddc316c96fe0990a9d",
+      "code": 20,
+      "replay": {
+        "added": 53595,
+        "deleted": 135445
+      },
+      "lrat_sha256": "4688e90d257d9affb11bc430ca3888a4cea3c7a4bb41c1d0e4505007ca7e9c40",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111113_b6",
+      "clauses": 220419,
+      "variables": 64648,
+      "cnf_sha256": "89e86794fc26cd0459f516b47c23914c10c4bb4f753075a6765ff64bfce4bb2b",
+      "code": 20,
+      "replay": {
+        "added": 197488,
+        "deleted": 331719
+      },
+      "lrat_sha256": "81e457a0820f9bd854e4a41cb201d1a4446663c56e1e3c5267aa685878938614",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111113_b7",
+      "clauses": 220420,
+      "variables": 64648,
+      "cnf_sha256": "67ac12a3be09ed2c6ec65ca1d8fb002e63f79487864bdfd453d12b9a8ca8af10",
+      "code": 20,
+      "replay": {
+        "added": 238336,
+        "deleted": 383314
+      },
+      "lrat_sha256": "10563b6676453158f44cf68cd427faac66744c084f1380e509f8ba08bca6cdf4",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111113_c",
+      "clauses": 222386,
+      "variables": 64828,
+      "cnf_sha256": "c124fa07a554a399b9645fe75a93b1f5ac3d6389c376735292ae450fd8c6b54a",
+      "code": 20,
+      "replay": {
+        "added": 139028,
+        "deleted": 221702
+      },
+      "lrat_sha256": "f155e367355c9be570104cecf2c61c095c4ecc4c92f27d50339519c1156dcc81",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111122_b5",
+      "clauses": 220422,
+      "variables": 64650,
+      "cnf_sha256": "bc21257807e7c9907847e40cb7419ac4d4698f5bfb68d5b058b9946bc875f224",
+      "code": 20,
+      "replay": {
+        "added": 109769,
+        "deleted": 248891
+      },
+      "lrat_sha256": "2c6b2b9df9e498f0b7354582253ca7e77407f69ac89dcaf2df454a05f465cb00",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111122_b6",
+      "clauses": 220425,
+      "variables": 64650,
+      "cnf_sha256": "8bcb5922cfdc03c0977d9c6266b1dbacb8cdef0c4f014f77bd1b7f02d3199eb0",
+      "code": 20,
+      "replay": {
+        "added": 226304,
+        "deleted": 368893
+      },
+      "lrat_sha256": "caa70ff902ccf13046100afb6dbade6aba3ff1f627a46bb376e0e459ac4fdbfd",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111122_b7",
+      "clauses": 220426,
+      "variables": 64650,
+      "cnf_sha256": "fec5d212cdfe71d369b7be33d299b79369d71fb3d2527cc1ad93c332ce95602b",
+      "code": 20,
+      "replay": {
+        "added": 298609,
+        "deleted": 423532
+      },
+      "lrat_sha256": "a58c512ae60a7a26b9ca3a32d0f5dcbeddde94365d12e54a7fba2442aee98ebf",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k9_111111122_c",
+      "clauses": 222392,
+      "variables": 64830,
+      "cnf_sha256": "fd683fc10ba737f098b0ab5491c43c4ee7274bde15138f0e811d8d6f2176b32f",
+      "code": 20,
+      "replay": {
+        "added": 156914,
+        "deleted": 265982
+      },
+      "lrat_sha256": "9b35fe00c1df5c6f623a2179ae454241aa3d2d281fe4960fef5f5595f49b772e",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k10_1111111112_b4",
+      "clauses": 218766,
+      "variables": 64097,
+      "cnf_sha256": "f30505464ae098d892df79968a29f316e72d5285376c2f300fe5796f4cb6bda9",
+      "code": 20,
+      "replay": {
+        "added": 155682,
+        "deleted": 259979
+      },
+      "lrat_sha256": "116151ba7d2d0912cce8ccc69d89f5fc1b1dcec53a856ddde8b6c99ba30c87ed",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k10_1111111112_b5",
+      "clauses": 218770,
+      "variables": 64097,
+      "cnf_sha256": "70ef0bec40f7d7b3ab32e2879fc70bef0fa0c6f4c080e00cd5ff85d3e3887d7d",
+      "code": 20,
+      "replay": {
+        "added": 308220,
+        "deleted": 435698
+      },
+      "lrat_sha256": "4b48a66ca8a9ca9615ac69f498f83a695e321cdfd258638797fb18b93a5fb017",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k10_1111111112_b6",
+      "clauses": 218772,
+      "variables": 64097,
+      "cnf_sha256": "fc4fc214845d99c1cb7d140d5716cba942d52a47a46fca89869db0c4bdb7dd81",
+      "code": 20,
+      "replay": {
+        "added": 290266,
+        "deleted": 420913
+      },
+      "lrat_sha256": "a0fcabbd73a51bbd9ab19e56a9f27496450df428f17c21d50558291f362b629a",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k10_1111111112_c",
+      "clauses": 220380,
+      "variables": 64257,
+      "cnf_sha256": "0992e0a15c6e2152db2551f2d6b3aabf8d10e66b38bb8221b1e5639cb76b5675",
+      "code": 20,
+      "replay": {
+        "added": 144874,
+        "deleted": 218683
+      },
+      "lrat_sha256": "7af9d605432cea2c1c72d1189e6af6ab4b817695f00194098b56c46869efeb87",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k11_11111111111_b3",
+      "clauses": 225158,
+      "variables": 66213,
+      "cnf_sha256": "9d0baf06261bbe8e05356d8d567e38df54a1d5ca62e9d12803c00936bf3657f7",
+      "code": 20,
+      "replay": {
+        "added": 249438,
+        "deleted": 355061
+      },
+      "lrat_sha256": "e6d47373aa6185919e72fb0104555319331c30da46d7dbe7f002e1103f394924",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k11_11111111111_b4",
+      "clauses": 225163,
+      "variables": 66213,
+      "cnf_sha256": "6b6a3f20595479d2ebdf3af28374dc1e73ce33731e0f441bef88b49b6cbaec60",
+      "code": 20,
+      "replay": {
+        "added": 253830,
+        "deleted": 380321
+      },
+      "lrat_sha256": "16f87c4f197f5ca513b4a49a16fff30197469f18e45369bb143970c2e120a28c",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k11_11111111111_b5",
+      "clauses": 225166,
+      "variables": 66213,
+      "cnf_sha256": "a9e69a3e859f2645aa07206585e586df40702c9cd800df481b86d012e8b8971b",
+      "code": 20,
+      "replay": {
+        "added": 304536,
+        "deleted": 443240
+      },
+      "lrat_sha256": "40af4b00fc7769acb1916206ae1b32b6da145df49e006814936468f1133d7e33",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k11_11111111111_b6",
+      "clauses": 225167,
+      "variables": 66213,
+      "cnf_sha256": "080a2ddb3a5cc08bf9dd57077afec6c539f29f4d5bf9149f5df667637aec79d9",
+      "code": 20,
+      "replay": {
+        "added": 292744,
+        "deleted": 416583
+      },
+      "lrat_sha256": "1f58d61e99e55017560108a98b1b60d74ce803811f5948b6ecc60d59dd0cf5bc",
+      "branch": "d9_n23_trianglefree_sat"
+    },
+    {
+      "name": "k11_11111111111_c",
+      "clauses": 226451,
+      "variables": 66353,
+      "cnf_sha256": "fd77a55c9ab277fb778493421cb489a5846c11ca539b21a83fbf26b5d80280e0",
+      "code": 20,
+      "replay": {
+        "added": 153066,
+        "deleted": 231076
+      },
+      "lrat_sha256": "5a73b62c1dfa1c4690c2062dd486f0e39dc50235e134aff60df5f549b8799a02",
+      "branch": "d9_n23_trianglefree_sat"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "rows": [
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 11,
+      "upper": 102
+    },
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 12,
+      "upper": 91
+    },
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 13,
+      "upper": 77
+    },
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 14,
+      "upper": 63
+    },
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 15,
+      "upper": 49
+    },
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 16,
+      "upper": 36
+    },
+    {
+      "components": 10,
+      "paths": 7,
+      "center_edges": 17,
+      "upper": 21
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 10,
+      "upper": 150
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 11,
+      "upper": 139
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 12,
+      "upper": 126
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 13,
+      "upper": 113
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 14,
+      "upper": 100
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 15,
+      "upper": 89
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 16,
+      "upper": 76
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 17,
+      "upper": 62
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 18,
+      "upper": 49
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 19,
+      "upper": 34
+    },
+    {
+      "components": 9,
+      "paths": 8,
+      "center_edges": 20,
+      "upper": 16
+    }
+  ],
+  "excluded": [
+    [
+      10,
+      14
+    ],
+    [
+      10,
+      15
+    ],
+    [
+      10,
+      16
+    ],
+    [
+      10,
+      17
+    ],
+    [
+      9,
+      17
+    ],
+    [
+      9,
+      18
+    ],
+    [
+      9,
+      19
+    ],
+    [
+      9,
+      20
+    ]
+  ]
+}

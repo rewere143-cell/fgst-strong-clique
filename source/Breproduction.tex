@@ -1,0 +1,170 @@
+\subsection{Reproducing the Computation}\label{app:reproduction}
+
+Download the verification programs and all files named
+\path{fgst-verification-data-*.zip} from the
+\href{https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0}{version 1.0.0 release}
+that accompanies the paper. Extract the source archive, open its root
+directory, and run \texttt{python restore\_data.py} followed by the
+path to the directory containing the downloaded ZIP files. The
+programs and their inputs are then in \path{reproducibility/}.
+The simple-graph verification programs run offline on a 64-bit
+little-endian machine with Python 3.9 or later and a C17 compiler
+such as GCC or Clang. From the directory containing
+\path{reproducibility/}, run
+\begin{verbatim}
+cd reproducibility
+python run_all.py --output results/fresh-run
+\end{verbatim}
+with Python assertions enabled. Use an output directory that does
+not exist. To select a compiler, pass \verb|--cc| followed by its path.
+
+The runner checks the byte counts and SHA-256 digests against
+\path{DATA_SHA256.json}, compiles the C programs and runs the checks
+in \textbf{Table~\ref{tab:verification}}. It records the results in
+\path{summary.json} in the output directory. A successful run has
+\verb|all_passed| set to \verb|true| and \verb|exact_bound| set to
+\verb|5/4|. The output directory also contains the individual reports.
+
+\begin{table}[htbp]
+\centering
+\caption{Verification programs and their checks.}
+\label{tab:verification}
+\begin{tabular}{@{}lp{0.49\linewidth}@{}}
+\toprule
+Program & Check\\
+\midrule
+\path{check_index.c} &
+Order-six pattern validity and relabeling orbits\\
+\path{check_low_orders_and_bases.py} &
+Lower-order indices, degree rows and flag lists\\
+\path{check_reverse.c} &
+Degree and nonconstant moment coefficients\\
+\path{check_certificate.py} &
+Exact residual and constant for each rational certificate\\
+\path{check_finite_models.py} &
+Direct map counts on six finite graphs\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The runner verifies both certificates in \path{data/} separately.
+It also checks that the integer verifier rejects two altered versions
+of the compact certificate. One has a negative weight numerator.
+The other increases the degree multiplier numerator for the
+two-position base by one, changing the certified constant.
+
+The checks on finite graphs compare the degree equations, the moment
+entries and the objective in \eqref{eq:objective-value} with direct
+counts of color-preserving maps. They use $K_2$, $K_3$ and $C_5$ with
+all edges marked, and $K_4$ and $K_{3,3}$ with marked matchings.
+The final example is an eight-cycle formed by joining corresponding
+endpoints of two disjoint four-vertex paths. The two end edges of one
+path are marked, and its unmarked middle edge joins their endpoints.
+
+The directories \path{results/reference-run/} and
+\path{results/revision-replay/} contain the archived verification reports from two independent runs. The file
+\path{research_provenance/README.md} gives commands to regenerate the
+coefficient tables and construct a rational certificate from the
+included numerical output. That directory also preserves the
+original optimization code, its initialization data and the solver
+tests. The verification command above uses the fixed tables and
+rational certificates in \path{data/} and performs no numerical
+optimization.
+
+\subsubsection{Odd-Degree Certificates and Integer Checks}
+
+Extract \path{reproducibility/odd_degree/simple_odd_degree_fixed.zip}
+to a fresh directory. From that directory run
+\begin{verbatim}
+python -B verify_odd_archive.py --output replay
+\end{verbatim}
+The output directory must not exist. The compiler option \verb|--cc|
+is also available for this runner. It checks the hashes of the 69
+archived inputs and replays the pattern-index, coefficient and
+quadratic-bound checks. It then verifies the five-cycle certificates in
+\eqref{eq:odd-moment-bounds} by checking the corresponding inequalities
+with rational arithmetic. The program \path{check_c5_dual.py} reads
+the verified coefficient tables and the files
+\path{c5_abundance_column_candidate_third.json},
+\path{c5_abundance_column_candidate_second.json} and
+\path{c5_anchor_column_candidate_fifth.json}. The first two bound the
+number of marked induced five-cycles from below. The third bounds the
+sum of their remaining degrees from above. The file
+\path{independent_replay.json} identifies the fixed archive by its
+SHA-256 digest.
+
+The runner also executes \path{verify_odd_simple.py}. Its small-degree
+calculation calls \path{check_anchored_odd_small.py} with the rational
+parameters in \textbf{Appendix~\ref{app:odd-small}}. The four cases
+used for \textbf{Lemma~\ref{lem:simple-small-support}} can be replayed
+independently. With the fixed archive extracted, execute the following
+Python statements from the directory containing the verifiers.
+\begin{verbatim}
+from fractions import Fraction as F
+from check_anchored_odd_small import one_degree
+for D in (3, 5, 7, 9):
+    failed = one_degree(D, F(99999, 100000), F(56425, 100000),
+                        F(2, 10**9), F(1, 10**9),
+                        step=1, relax=True)
+    assert not failed, (D, failed)
+\end{verbatim}
+Here \verb|step=1| checks the upper bound for a counterexample with
+$f(D)+1$ edges. The full runner repeats the certificate and finite
+checks from the original odd-degree archive. It records
+\verb|finite_arithmetic_passed| and \verb|all_passed| on success.
+
+\subsubsection{Multigraph Certificates and Finite Checks}
+\label{app:multi-reproduction}
+
+The multigraph verifiers and their inputs are in
+\path{reproducibility/multigraph/}.
+Its \path{REPLAY.md} indexes the supporting proofs and the fixed
+inputs. The source package also includes \path{PROOF_NOTES.md},
+which identifies the arguments cited in the appendices. From the
+companion directory, with Python assertions enabled, run
+\begin{verbatim}
+python -X utf8 -B verify.py hashes
+python -X utf8 -B verify.py flags
+python -X utf8 -B verify.py finite --jobs 2
+\end{verbatim}
+The first command checks the sizes and SHA-256 digests of the files
+listed in the two release manifests. The second rebuilds
+the weighted flag calculations for the uniform bound and all eleven
+odd-degree intervals in \textbf{Table~\ref{tab:multi-odd}}.
+It requires NumPy and SciPy.
+It uses the Ore-degree bounds listed in the accompanying proof notes.
+Appendix~\ref{app:ore-replay} describes the separate check for the
+bipartite bound.
+The third command verifies the finite cases used in
+\textbf{Appendix~\ref{app:multi-finite}}, including the integer enumeration in
+degree five and the positive reverse unit propagation proofs for the
+Boolean formulas. The proof checker verifies every added clause by
+unit propagation and checks that the empty clause is derived. The
+source package gives the archive digest and the independently replayed
+checks in \path{VERIFICATION.md}.
+
+In the same directory, the following command verifies
+\eqref{eq:absence-red-cycle}. It reconstructs the constraints for
+$q_C=0$, computes the rational upper bound on $M$ from the stored
+coefficients and checks that it is strictly less than $\frac{98}{81}$.
+\begin{verbatim}
+python -X utf8 -B check_induced_five_cycle.py
+\end{verbatim}
+
+\subsubsection{Rational Interval Check for the Bipartite Ore Bound}
+\label{app:ore-replay}
+
+The bound with coefficient $\frac{2973}{10000}$ uses induction on the
+number of marked edges in a loopless multigraph whose marked graph is
+bipartite. The companion proof on witness deficits and neighborhood
+differences gives the inequalities defining the interval check. In the
+multigraph proof directory, \path{check_multigraph_bipartite_coupled.py}
+checks the initial coefficient $\frac{2989}{10000}$.
+\path{check_multigraph_recursive_ore.py} then verifies the coefficient
+$\frac{1489}{5000}$ and writes a table of conditional bounds.
+\path{refine_recursive_ore_child_ratio.py} refines this table in four
+rounds. With the refined table, \path{check_bipartite_neighborhood_slack.py}
+verifies the coefficient $\frac{2973}{10000}$ using the four-part subdivision
+and the tightened inequalities in the companion proof. All endpoints
+and comparisons are rational. The final check completes after $73{,}919$
+subdivisions with no unresolved boxes.

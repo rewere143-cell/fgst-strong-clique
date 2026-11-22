@@ -1,0 +1,13 @@
+{
+  "name": "n25_t1",
+  "variables": 221968,
+  "clauses": 692270,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "c9cf50d2b87fd27f759d8586c72e5f0390fabbd79dcc8cc15b2dfcce48f4fdbf",
+  "lrat_sha256": "fedca523044b334542bf374866df8aa96b04c96918f4114df8b482925b795b8e",
+  "replay": {
+    "added": 589936,
+    "deleted": 1026802
+  }
+}

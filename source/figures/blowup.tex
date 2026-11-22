@@ -1,0 +1,36 @@
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[scale=0.9,every node/.style={font=\small}]
+\foreach \i in {0,...,4}
+  \coordinate (v\i) at ({90+72*\i}:1.16);
+\foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}
+  \draw[unmarked edge] (v\i)--(v\j);
+\foreach \i in {0,...,4}
+  \node[graph vertex] at (v\i) {};
+\node at (0,-2.08) {$C_5$};
+
+\begin{scope}[xshift=5.45cm]
+\foreach \i in {0,...,4}{
+  \pgfmathsetmacro{\angle}{90+72*\i}
+  \coordinate (a\i) at (\angle:1.18);
+  \coordinate (b\i) at (\angle:1.76);
+  \coordinate (part\i) at (\angle:1.47);
+  \begin{scope}[shift={(part\i)},rotate=\angle]
+    \draw[draw=black!45,fill=black!7] (0,0)
+      ellipse[x radius=.42,y radius=.17];
+  \end{scope}
+}
+\foreach \i/\j in {0/1,1/2,2/3,3/4,4/0}{
+  \draw[marked edge] (a\i)--(a\j) (a\i)--(b\j)
+    (b\i)--(a\j) (b\i)--(b\j);
+}
+\foreach \i in {0,...,4}{
+  \node[graph vertex] at (a\i) {};
+  \node[graph vertex] at (b\i) {};
+}
+\node at (0,-2.08) {$t=2$};
+\end{scope}
+\end{tikzpicture}
+\caption{The cycle $C_5$ and its blow-up with two vertices per part.}
+\label{fig:blowup}
+\end{figure}

@@ -1,0 +1,5 @@
+Child envelope verified in 21.55s
+PASS beta=2989/10000, child grid 2048: {'empty': 2, 'first': 2, 'one_level': 53, 'coupled': 42503, 'split': 42559}, depth 37, elapsed 25.81s
+Exact certificate: c = 2989/10000 target = 12989/10000 {'empty': 0, 'first': 137, 'second': 1102, 'monotone': 1, 'split': 1239} maximum subdivision depth 20
+Exact certificate: c = 2989/10000 target = 51/40 {'empty': 0, 'first': 313, 'second': 13469, 'monotone': 792, 'split': 14573} maximum subdivision depth 32
+PASS re-rooting constants: maximum-degree coefficient 1039/800

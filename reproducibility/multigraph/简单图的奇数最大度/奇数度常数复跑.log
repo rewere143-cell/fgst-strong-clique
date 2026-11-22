@@ -1,0 +1,3 @@
+All exact constants pass for delta=5e-6, D>=2000; simple threshold 100000.
+All exact constants pass for delta=8e-6, D>=3000; simple threshold 62500.
+All exact constants pass for delta=1e-5, D>=3000; simple threshold 50000.

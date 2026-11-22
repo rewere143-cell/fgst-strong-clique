@@ -1,0 +1,9 @@
+Exact child table assembled after 0.00s
+Splits=10000; time=27.6; depth=51; witness=5926; pending=21
+Splits=20000; time=55.9; depth=58; witness=12617; pending=25
+Splits=30000; time=85.1; depth=59; witness=19754; pending=34
+Splits=40000; time=107.2; depth=59; witness=26125; pending=24
+Splits=50000; time=130.3; depth=59; witness=33004; pending=32
+Splits=60000; time=154.2; depth=59; witness=40295; pending=31
+Splits=70000; time=179.3; depth=59; witness=47737; pending=29
+PASS beta=2973/10000, earlier beta=1489/5000, counts={'empty': 19710, 'root': 3, 'coupled': 3632, 'witness': 50575, 'split': 73919}, depth=59, seconds=189.34

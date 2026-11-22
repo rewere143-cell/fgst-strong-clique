@@ -1,0 +1,29 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  marked edge/.append style={draw=red!70!black},
+  blue pair/.style={draw=blue!70!black,densely dashed,line width=0.95pt},
+  font=\small
+]
+  \filldraw[fill=black!4,draw=black!40,rounded corners=4pt]
+    (-0.65,-0.55) rectangle (4.15,1.85);
+  \node[anchor=north west] at (-0.65,1.85) {$B$};
+  \node at (0.15,1.51) {$U_i$};
+  \node at (3.3,1.51) {$U_{i+1}$};
+  \node[graph vertex] (a) at (0.15,0.95) {};
+  \node[graph vertex] (b) at (0.15,0) {};
+  \node[graph vertex] (c) at (3.3,0.95) {};
+  \node[graph vertex] (d) at (3.3,0) {};
+  \node[graph vertex,label=above:$x$] (x) at (5.95,0) {};
+  \draw[marked edge] (a) to[bend left=9] (c);
+  \draw[marked edge] (a) to[bend right=9] (c);
+  \draw[marked edge] (a)--(d);
+  \draw[marked edge] (b)--(c);
+  \draw[blue pair] (b)--node[below] {two incidences in $B$} (d);
+  \draw[blue pair] (d)--node[below] {one incidence in $B$} (x);
+\end{tikzpicture}
+\caption{A blue edge between consecutive parts contributes twice to
+the degree sum on $B$. A blue edge from $x\notin B$ to $B$ contributes
+once. Both copies of a marked pair contribute to marked degree.}
+\label{fig:multigraph-cut}
+\end{figure}

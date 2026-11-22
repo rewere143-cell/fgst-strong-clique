@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "source_snapshot": "2026-11-03T09:26:14Z",
+  "source_archive_sha256": "42957c99228c5d5674075202b0d01bae0ba5f31a9e461821aff27d84faa0e9aa",
+  "source_file_mapping": {
+    "data/basis.txt": "audit\\flag_coefficients\\basis.txt",
+    "data/degree.txt": "audit\\flag_coefficients\\degree.txt",
+    "data/keys.bin": "audit\\flag_coefficients\\keys.bin",
+    "data/values.bin": "audit\\flag_coefficients\\values.bin",
+    "data/degree_keys.bin": "audit\\flag_coefficients\\degree_keys.bin",
+    "data/degree_values.bin": "audit\\flag_coefficients\\degree_values.bin",
+    "data/idx3.bin": "audit\\flag_coefficients\\idx3.bin",
+    "data/idx4.bin": "audit\\flag_coefficients\\idx4.bin",
+    "data/idx5.bin": "audit\\flag_coefficients\\idx5.bin",
+    "data/order6_orbit_index.bin": "flags\\order6_orbit_index.bin",
+    "data/original_sharp_certificate.json": "flags\\order6_sharp_exact_certificate.json",
+    "data/compact_certificate.json": "flags\\sharp_face\\compact\\compact_R10000_simple_fourdefects_certificate.json"
+  },
+  "adaptations": [
+    "Original Python low-order and finite-model checks: input and output paths only, plus assertion-enabled guard.",
+    "Fresh C reverse-union checker: paths, portable CRT declarations, JSON summary.",
+    "New C six-position checker based on masks and complete permutations.",
+    "New Python exact certificate checker and orchestration script."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "n23_t2_distinct",
+  "variables": 180161,
+  "clauses": 558103,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "9d734059ae6a49d979c3044aa3a5cc49492f6e4d73a74ce598a213f7c785d802",
+  "lrat_sha256": "f125eb9d2e985bda8b54af3684c78a5fc46255f893c2ec35de1cda255a6fca38",
+  "replay": {
+    "added": 72503,
+    "deleted": 103762
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "template_count": 21,
+  "maximum_upper_bound": 27,
+  "templates_allowing_30": [],
+  "all_templates": [
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [],
+      "upper_bound": 17
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [],
+      "upper_bound": 27
+    },
+    {
+      "unmarked_spokes": [
+        0,
+        1
+      ],
+      "internal_edges": [],
+      "upper_bound": 26
+    },
+    {
+      "unmarked_spokes": [
+        0,
+        3
+      ],
+      "internal_edges": [],
+      "upper_bound": 26
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "upper_bound": 16
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "upper_bound": 17
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "upper_bound": 25
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "upper_bound": 25
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 24
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "upper_bound": 20
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 21
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 26
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          1,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 24
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "upper_bound": 18
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "upper_bound": 18
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 21
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 22
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 18
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 22
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 25
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 22
+    }
+  ]
+}

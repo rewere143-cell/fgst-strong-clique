@@ -1,0 +1,630 @@
+\section{A Sketch of the Proof}\label{sec:overview}
+
+We first use flag algebras to prove the bound $\frac{5}{4}\Delta(G)^2$
+for $\omega(L(G)^2)$ in simple graphs. By counting parallel edges
+with their multiplicities, we extend the bound to loopless multigraphs.
+This settles the even-degree case.
+For odd $\Delta=\Delta(G)\geq 9$, we show that if
+$\omega(L(G)^2)>\Delta^2+\lfloor\frac{\Delta}{2}\rfloor^2$,
+then $L(G)^2$ has a clique exceeding this bound whose vertices
+correspond to a set of edges of $G$ that includes both a pair of
+parallel edges and five edges forming an induced five-cycle in the
+underlying simple graph of $G$. Counting around such cycles gives a
+bound that contradicts the weighted flag inequalities. We handle the remaining small odd degrees separately,
+thereby completing the proof.
+
+\subsection{The Classical Flag Algebra Method}\label{subsec:flag-algebra}
+
+Let $G$ be a graph. For a graph $H$ with $|V(H)|\leq |V(G)|$,
+choose a subset $U\subseteq V(G)$ of size $|V(H)|$ uniformly at
+random. The \emph{induced subgraph density} of $H$ in $G$ is the
+probability that $G[U]$ is isomorphic to $H$. A \emph{type}
+$\sigma$ is a graph with a distinct label on each vertex.
+A \emph{$\sigma$-flag} is a partially labeled graph whose labeled
+vertices induce $\sigma$ with the same labels. When the type
+$\sigma$ is clear from the context, we call a $\sigma$-flag
+simply a flag. Two flags are considered the same if there is an
+isomorphism between them that preserves the labels. Fix a
+labeled induced copy of $\sigma$ in $G$. For a $\sigma$-flag $F$
+with $|V(F)|\leq |V(G)|$, choose uniformly at random a set of
+$|V(F)|-|V(\sigma)|$ vertices outside this copy. The \emph{flag
+density} of $F$ in $G$ is the probability that the chosen vertices
+together with the fixed vertices induce a copy of $F$ with the
+labels preserved. Fix a type $\sigma$. Let $\mathcal F^\sigma$
+be the set of $\sigma$-flags, and let $\mathcal F^\sigma_n$ be
+the set of $\sigma$-flags on $n$ vertices. Consider formal sums
+$\sum_{J\in\mathcal F^\sigma}a_JJ$ with real coefficients, only
+finitely many of which are nonzero. We add two such sums by
+adding their coefficients at each flag $J$. Multiplication by
+a scalar $\lambda$ sends each coefficient $a_J$ to $\lambda a_J$.
+With these operations, it is easy to see that the formal sums
+form a real vector space with basis $\mathcal F^\sigma$. We
+denote this space by $\mathbb R\mathcal F^\sigma$.
+
+For flags $F$ and $J$ with $|V(F)|\leq |V(J)|$, write $p(F;J)$
+for the flag density of $F$ in $J$. We use $p(F;G)$ in the same
+sense when the labeled copy of $\sigma$ in $G$ has been fixed.
+For each flag $F$ and each
+integer $n\geq |V(F)|$, form the vector
+\[
+  F-\sum_{J\in\mathcal F^\sigma_n}p(F;J)J.
+\]
+Let $\mathcal K^\sigma$ be the subspace of
+$\mathbb R\mathcal F^\sigma$ spanned by these vectors as $F$
+and $n$ vary. Put
+$\mathcal A^\sigma=\mathbb R\mathcal F^\sigma/\mathcal K^\sigma$.
+Two formal sums represent the same element of $\mathcal A^\sigma$
+if their difference lies in $\mathcal K^\sigma$.
+
+To define multiplication, let $F_1$ and $F_2$ be flags with
+$r_1$ and $r_2$ unlabeled vertices, respectively. Put
+$n=|V(\sigma)|+r_1+r_2$. For each $J\in\mathcal F^\sigma_n$,
+choose $r_1$ of its unlabeled vertices uniformly at random
+and put the remaining $r_2$ in the second group. Each group,
+together with the labeled vertices of $J$, induces a flag.
+Let $p(F_1,F_2;J)$ be the probability that the chosen group
+gives $F_1$ and the remaining group gives $F_2$. The product
+$F_1\cdot F_2$ is the element of $\mathcal A^\sigma$ represented by
+\[
+  \sum_{J\in\mathcal F^\sigma_n}p(F_1,F_2;J)J.
+\]
+To multiply two formal sums $\sum_i a_iF_i$ and $\sum_j b_jH_j$,
+take the flag product $F_i\cdot H_j$ for each pair of terms, one
+from each sum. Multiply each such product by the corresponding
+coefficient $a_ib_j$ and add the results. Thus
+\[
+  \left(\sum_i a_iF_i\right)\cdot\left(\sum_j b_jH_j\right)
+  =\sum_{i,j}a_ib_j(F_i\cdot H_j).
+\]
+Razborov showed that the product is well defined on the quotient
+$\mathcal A^\sigma$~\cite{Razborov2007}. With this product,
+$\mathcal A^\sigma$ is the \emph{flag algebra of type $\sigma$}.
+
+Razborov's flag algebra method uses products of flag densities
+to derive inequalities among induced subgraph
+densities~\cite{Razborov2007,CarliSilvaOliveiraSato2016}.
+Let $F_1$ and $F_2$ be $\sigma$-flags with $r_1$ and $r_2$
+unlabeled vertices, respectively. Fix a labeled induced copy
+of $\sigma$ in $G$, and suppose that the number of vertices
+outside this copy is at least $\max\{1,r_1+r_2\}$. Choose
+$r_1+r_2$ of these vertices uniformly at random. Together with
+the labeled vertices, they induce a flag $J$. Choose $r_1$ of
+the sampled vertices uniformly at random for the first group
+and put the remaining $r_2$ in the second group. Given $J$,
+the probability that the two groups, each taken together with
+the labeled vertices, induce $F_1$ and $F_2$, respectively, is
+$p(F_1,F_2;J)$. Since the probability of obtaining $J$ at the
+first step is $p(J;G)$, the probability of obtaining both
+$F_1$ and $F_2$ is
+\[
+  \sum_{J\in\mathcal F^\sigma_{|V(\sigma)|+r_1+r_2}}
+  p(J;G)\,p(F_1,F_2;J).
+\]
+Now let $W$ be the set of vertices of $G$ outside the fixed labeled
+copy of $\sigma$. Choose one of the $r_1$-element subsets of $W$
+uniformly at random and call it $U_1$. Independently of this
+choice, choose one of the $r_2$-element subsets of the same set
+$W$ uniformly at random and call it $U_2$. Let $A$ be the event
+that, for each $i\in\{1,2\}$, the subgraph induced by $U_i$ and
+the labeled vertices gives the flag $F_i$. By independence,
+$\Pr(A)=p(F_1;G)p(F_2;G)$.
+
+Let $B$ be the event that $U_1\cap U_2=\varnothing$. By
+independence and symmetry, conditional on $B$, all ordered
+pairs $(S_1,S_2)$ of disjoint subsets of $W$ with $|S_1|=r_1$
+and $|S_2|=r_2$ are equally likely. To count these pairs, choose
+the union $S_1\cup S_2$ and then choose $S_1$ within it. There
+are $\binom{|W|}{r_1+r_2}$ choices for the union and
+$\binom{r_1+r_2}{r_1}$ choices for $S_1$ within each union.
+Thus each pair has conditional probability
+$\frac{1}{\binom{|W|}{r_1+r_2}\binom{r_1+r_2}{r_1}}$.
+
+When the union is sampled first, each ordered pair $(S_1,S_2)$
+of disjoint subsets of $W$ with $|S_1|=r_1$ and $|S_2|=r_2$
+has probability
+$\frac{1}{\binom{|W|}{r_1+r_2}\binom{r_1+r_2}{r_1}}$.
+Under independent sampling, this is also the conditional
+probability of $(U_1,U_2)=(S_1,S_2)$ given $B$. The two sampling
+rules therefore give the same probability that the first set
+and the second set, each together with the labeled vertices,
+induce $F_1$ and $F_2$, respectively. For the experiment that
+samples the union first, we computed this probability by
+conditioning on the flag $J$ induced by the union and the
+labeled vertices. Thus
+\[
+  \Pr(A\mid B)
+  =\sum_{J\in\mathcal F^\sigma_{|V(\sigma)|+r_1+r_2}}
+    p(J;G)\,p(F_1,F_2;J).
+\]
+
+It remains to compare $\Pr(A\mid B)$ with the probability $\Pr(A)$
+under independent sampling. Since
+$\Pr(A)=\Pr(A\mid B)\Pr(B)+\Pr(A\cap B^c)$, their difference is
+bounded in absolute value by $\Pr(B^c)$. To bound $\Pr(B^c)$,
+fix the outcome of $U_1$. The set $U_2$ is still a uniform
+$r_2$-element subset of $W$, so each vertex of $U_1$ belongs
+to $U_2$ with probability $\frac{r_2}{|W|}$. The event $B^c$
+occurs if at least one of the $r_1$ vertices of $U_1$ belongs
+to $U_2$. The union bound over the vertices of $U_1$ gives
+$\Pr(B^c)\leq\frac{r_1r_2}{|W|}$, since the bound holds for every
+choice of $U_1$. Since $\Pr(A)=p(F_1;G)p(F_2;G)$ and
+$|W|=|V(G)|-|V(\sigma)|$, we have
+\begin{equation}\label{eq:flag-product-estimate}
+  \left|
+    p(F_1;G)p(F_2;G)
+    -\sum_{J\in\mathcal F^\sigma_{|V(\sigma)|+r_1+r_2}}
+        p(F_1,F_2;J)p(J;G)
+  \right|
+  \leq \frac{r_1r_2}{|V(G)|-|V(\sigma)|}.
+\end{equation}
+
+Fix a list of $\sigma$-flags $F_1,\ldots,F_t$ and a real
+symmetric positive semidefinite $t\times t$ matrix $Q=(Q_{ij})$.
+For each $i$, let $r_i=|V(F_i)|-|V(\sigma)|$. Take $G$ large
+enough for \eqref{eq:flag-product-estimate} to apply to every
+pair $F_i,F_j$, and assume $|V(G)|\geq 2|V(\sigma)|$. Let
+$\theta$ be an injective assignment of the labels of $\sigma$
+to vertices of $G$ such that the assigned vertices, with
+their labels, induce $\sigma$. Write $p_\theta(F;G)$ for
+the density of a flag $F$ in $G$ with this assignment, and
+let $v_\theta$ be the column vector with $i$th entry
+$p_\theta(F_i;G)$. Since $Q$ is positive semidefinite,
+\[
+  0\leq v_\theta^{\mathsf T}Qv_\theta
+    =\sum_{i,j=1}^{t}Q_{ij}\,
+       p_\theta(F_i;G)p_\theta(F_j;G).
+\]
+
+For each pair $F_i,F_j$, expand the flag product $F_i\cdot F_j$
+using flags on $|V(\sigma)|+r_i+r_j$ vertices, as in the definition
+of multiplication. Multiply each expansion by $Q_{ij}$, add the
+expansions, and collect terms to obtain the formal sum
+$\sum_J c_JJ$. Thus the pair $F_i,F_j$ contributes
+$Q_{ij}p(F_i,F_j;J)$ to $c_J$ when
+$|V(J)|=|V(\sigma)|+r_i+r_j$. The coefficients $c_J$ depend only
+on the fixed flags and $Q$.
+
+By \eqref{eq:flag-product-estimate}, replacing
+$p_\theta(F_i;G)p_\theta(F_j;G)$ by the expansion of
+$F_i\cdot F_j$ with each flag replaced by its density in $G$
+has error at most $\frac{r_ir_j}{|V(G)|-|V(\sigma)|}$.
+Multiplying these bounds by $|Q_{ij}|$ and summing gives
+\[
+  \left|v_\theta^{\mathsf T}Qv_\theta
+       -\sum_J c_Jp_\theta(J;G)\right|
+  \leq
+  \frac{\sum_{i,j=1}^{t}|Q_{ij}|r_ir_j}
+       {|V(G)|-|V(\sigma)|}.
+\]
+Here and below, $J$ runs over the flags in the product
+expansions. Since $|V(G)|\geq 2|V(\sigma)|$, the right-hand
+side is at most $\frac{C}{|V(G)|}$, where
+$C=2\sum_{i,j=1}^{t}|Q_{ij}|r_ir_j$. The nonnegativity of
+$v_\theta^{\mathsf T}Qv_\theta$ now gives
+\begin{equation}\label{eq:flag-density-lower-bound}
+  \sum_J c_Jp_\theta(J;G)\geq-\frac{C}{|V(G)|}.
+\end{equation}
+
+Let $\Theta$ be the set of all injective assignments of the
+labels of $\sigma$ to vertices of $G$. For each $\theta\in\Theta$
+whose labeled vertices induce $\sigma$, use the densities
+$p_\theta(J;G)$ defined above. For every other $\theta\in\Theta$,
+put $p_\theta(J;G)=0$ for each $J$. The left-hand side of
+\eqref{eq:flag-density-lower-bound} is then zero for those
+assignments, so the inequality holds for every $\theta\in\Theta$.
+Summing \eqref{eq:flag-density-lower-bound} over $\Theta$ and
+dividing by $|\Theta|$ gives
+\begin{equation}\label{eq:averaged-flag-density-lower-bound}
+  \sum_J c_J
+    \left(\frac{1}{|\Theta|}\sum_{\theta\in\Theta}p_\theta(J;G)\right)
+  \geq -\frac{C}{|V(G)|}.
+\end{equation}
+
+Fix a flag $J$ in \eqref{eq:averaged-flag-density-lower-bound}, and
+put $k=|V(J)|$, $s=|V(\sigma)|$ and $N=|V(G)|$. Choose
+$\theta\in\Theta$ uniformly at random and then choose $k-s$ vertices
+uniformly from the vertices that received no label. Let $S$ be
+the union of the $k-s$ chosen vertices and the $s$ vertices
+assigned labels by $\theta$. The two choices give $J$ if $G[S]$ with its assigned labels is
+isomorphic to $J$. For a fixed $\theta$, the probability of
+obtaining $J$ is $p_\theta(J;G)$. This also holds
+under the zero convention when the labeled vertices do not
+induce $\sigma$. When $\theta$ is chosen uniformly from $\Theta$,
+the probability of obtaining $J$ in the two steps is
+\[
+  \frac{1}{|\Theta|}\sum_{\theta\in\Theta}p_\theta(J;G).
+\]
+We call this probability the \emph{average flag density} of $J$
+in $G$.
+
+For a fixed $k$-element set $S$ and a fixed injective assignment
+$\theta$ of the labels within $S$, the probability of obtaining
+the pair $(S,\theta)$ by assigning the labels first is
+$\frac{1}{s!\binom{N}{s}\binom{N-s}{k-s}}$. Indeed, we must first
+choose $\theta$ from the $s!\binom{N}{s}$ injective assignments
+in $G$ and then choose the $k-s$ unlabeled vertices of $S$.
+If we choose $S$ uniformly first and then choose an injective
+assignment within $S$ uniformly, the probability of the same pair
+is $\frac{1}{\binom{N}{k}s!\binom{k}{s}}$. These probabilities are
+equal by the identity
+$\binom{N}{s}\binom{N-s}{k-s}=\binom{N}{k}\binom{k}{s}$,
+so the two sampling procedures give the same distribution.
+
+Write $H_J$ for the unlabeled graph on the $k$ vertices of the
+fixed flag $J$, with the same edges as $J$. For an unlabeled
+graph $H$, write $p(H;G)$ for its induced subgraph density in $G$.
+When $S$ is chosen first, the graph on which we assign labels is
+the $k$-vertex induced subgraph $G[S]$ of the host $G$. A label
+assignment within $S$ can give the flag $J$ only when
+$G[S]\cong H_J$, an event of probability $p(H_J;G)$.
+Choose an injective assignment of the labels of $\sigma$ to
+vertices of $H_J$ uniformly at random. Let $q_\sigma(J)$ be the
+probability that this assignment gives the flag $J$. Given a set
+$S$ with $G[S]\cong H_J$, a uniform injective assignment of the
+labels within $S$ gives $J$ with probability $q_\sigma(J)$. Hence
+the average flag density of $J$ in $G$ satisfies
+\[
+  \frac{1}{|\Theta|}\sum_{\theta\in\Theta}p_\theta(J;G)
+    =q_\sigma(J)p(H_J;G).
+\]
+Substituting this average into
+\eqref{eq:averaged-flag-density-lower-bound} gives
+\begin{equation}\label{eq:flag-unlabeled-lower-bound}
+  \sum_J c_Jq_\sigma(J)p(H_J;G)
+    \geq -\frac{C}{|V(G)|}.
+\end{equation}
+
+Inequality \eqref{eq:flag-unlabeled-lower-bound} gives a lower
+bound on a linear combination of induced subgraph densities.
+Flag algebra inequalities can be used to bound the induced
+subgraph density of a fixed graph in a given graph class.
+Let $d(G)$ be the density we want to bound and let $U$ be a
+proposed upper bound. Suppose
+identities for the graph class allow us to write $U-d(G)$ as
+the left-hand side of \eqref{eq:flag-unlabeled-lower-bound}
+plus a nonnegative linear combination of subgraph densities. Then
+$U-d(G)\geq-\frac{C}{|V(G)|}$, or
+$d(G)\leq U+\frac{C}{|V(G)|}$. The error tends to zero as
+$|V(G)|$ grows. For example, when $d(G)$ is the edge density
+in a triangle-free graph, the identity $p(K_3;G)=0$ can be
+used in finding such an expression for $U-d(G)$.
+
+\subsection{The Flag Algebra Method in Our Proof}\label{subsec:adapted-flags}
+
+We adapt the local flag algebra method of Davey, Hurley, de Joannis de
+Verclos, Kang and Volec~\cite{DaveyEtAlLocal2026,DaveyEtAlStrong2026},
+who use the maximum degree to normalize counts of small graphs.
+In our problem, we wish to express the size of a given strong clique
+in terms of such counts. We mark the edges of the clique and record
+both the marked and the unmarked edges, since an unmarked edge may
+join two disjoint marked edges, as in \textbf{Figure~\ref{fig:marked-maps}}(a).
+
+Suppose first that $G$ is simple, has maximum degree $\Delta$, and
+contains a strong clique of $m>0$ edges. By
+\textbf{Lemma~\ref{lem:regularization}}, we may take $G$ to be
+$\Delta$-regular. The marked edges are the original $m$ clique edges.
+A \emph{pattern} on the positions $0,\ldots,n-1$ assigns one of the
+colors $0,1,2$ to each unordered pair of distinct positions.
+A map from these positions to $V(G)$ determines a pattern. A pair
+receives color $2$ if its images are joined by a marked edge, color
+$1$ if they are joined by an unmarked edge, and color $0$ if they
+coincide or are nonadjacent. For instance, in
+\textbf{Figure~\ref{fig:marked-maps}}(b) the two positions $0$ and
+$2$ have the same image.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node at (1.65,0.83) {(a) A joining edge};
+\node[graph vertex,label=below:$a$] (a) at (0,0) {};
+\node[graph vertex,label=below:$b$] (b) at (1.1,0) {};
+\node[graph vertex,label=below:$c$] (c) at (2.2,0) {};
+\node[graph vertex,label=below:$d$] (d) at (3.3,0) {};
+\draw[marked edge] (a)--node[above] {$2$} (b);
+\draw[unmarked edge] (b)--node[above] {$1$} (c);
+\draw[marked edge] (c)--node[above] {$2$} (d);
+
+\begin{scope}[xshift=5.2cm]
+\node at (2.48,0.83) {(b) Repeated images};
+\node[graph vertex,label=below:$0$] (p0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (p1) at (0.94,0) {};
+\node[graph vertex,label=below:$2$] (p2) at (1.88,0) {};
+\node[graph vertex,label=below:$u$] (u) at (4,0) {};
+\node[graph vertex,label=below:$v$] (v) at (4.94,0) {};
+\draw[marked edge] (p0)--node[above] {$2$} (p1);
+\draw[marked edge] (p1)--node[above] {$2$} (p2);
+\draw[-{Latex[length=2mm]},semithick] (2.42,0)--node[above] {$f$} (3.46,0);
+\draw[marked edge] (u)--node[above] {$2$} (v);
+\end{scope}
+\end{tikzpicture}
+\caption{The edge $bc$ joins the marked edges in (a).
+In (b), $f(0)=f(2)=u$ and $f(1)=v$.}
+\label{fig:marked-maps}
+\end{figure}
+
+The graph underlying a pattern $F$ has an edge for each pair of
+color $1$ or $2$. For the simple-graph calculation we use patterns
+in which this graph is connected, the edges of color $2$ form a strong
+clique in it, and the pair $\{0,1\}$ has color $2$. We call $(0,1)$
+the ordered root. Let $h_F$ be the number of maps that give exactly
+the colors of $F$. To see why we use the normalized count
+$q_F=\frac{h_F}{2m\Delta^{n-2}}$, fix a spanning tree of the underlying
+graph that contains the root edge. Choose the image of $(0,1)$
+uniformly from the $2m$ ordered marked edges. Work outwards from the
+root edge along the tree. Whenever the image of a position is known,
+choose the image of each of its children independently and uniformly
+from the $\Delta$ neighbors of that image. Each map counted by $h_F$
+occurs with probability $\frac{1}{2m\Delta^{n-2}}$. Hence $q_F$ is the
+probability that the sampled map gives the prescribed colors on
+\emph{all} pairs of positions.
+
+Fix such a pattern $T$ on $k$ positions. A flag $F$ of type $T$
+is one of the patterns just described whose restriction to its first
+$k$ positions is $T$. Given a map $f$ that gives the colors of $T$,
+let $h_F(f)$ count the maps that give the colors of $F$ and agree
+with $f$ on these $k$ positions. For a flag on $n$ positions, extend
+a spanning tree of $T$ to a spanning tree of $F$. Starting with the
+images fixed by $f$, sample the remaining $n-k$ images along the
+tree. The probability of obtaining all the colors of $F$ is now
+$\frac{h_F(f)}{\Delta^{n-k}}$. This plays the role of the flag
+density for a fixed placement of the labels in
+\textbf{Subsection~\ref{subsec:flag-algebra}}.
+
+Take flags $F_i$ and $F_j$ of type $T$, with disjoint sets of positions
+outside $T$. An extension of $f$ to $F_i$ and an extension of $f$ to
+$F_j$ together define a map on the union of their positions. Its images
+specify the colors of the remaining pairs, each with one position
+in $F_i$ outside $T$ and one in $F_j$ outside $T$. Let
+$\mathcal U_{ij}$ be the set of patterns on the union that agree with
+both flags and in which the edges of color $2$ form a strong clique.
+Every pair of extensions determines exactly one pattern in
+$\mathcal U_{ij}$. Conversely, a map giving the colors of any
+$H\in\mathcal U_{ij}$ and extending $f$ restricts to one extension
+for each flag. Therefore
+\[
+ h_{F_i}(f)h_{F_j}(f)=\sum_{H\in\mathcal U_{ij}}h_H(f).
+\]
+The identity holds even when positions outside $T$ in the two flags
+have the same image, since the map records their pair as color $0$.
+Thus the formal sum $\sum_{H\in\mathcal U_{ij}}H$ in
+\eqref{eq:colored-flag-product} gives an exact product rule for these
+counts at every $\Delta$. Freedman, Lov\'asz and Schrijver use the
+same multiplication of extension counts for partially labeled
+graphs~\cite{FreedmanLovaszSchrijver2007}.
+
+In \textbf{Figure~\ref{fig:flag-union}}, only the color of $\{2,3\}$
+remains to be determined. Let $H_a$ be the pattern with color $a$
+on that pair. All three choices are possible in the formal product.
+When $a=2$, for example, the unmarked edge on $\{0,2\}$ joins the
+two disjoint marked edges on $\{0,1\}$ and $\{2,3\}$. For these flags
+the sum consists of $H_0,H_1,H_2$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[graph vertex,label=below:$0$] (a0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (a1) at (1.9,0) {};
+\node[graph vertex,label=above:$2$] (a2) at (0,1.18) {};
+\draw[marked edge] (a0)--node[above] {$2$} (a1);
+\draw[unmarked edge] (a0)--node[left] {$1$} (a2);
+\node at (0.95,-0.65) {First flag};
+
+\begin{scope}[xshift=3.6cm]
+\node[graph vertex,label=below:$0$] (b0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (b1) at (1.9,0) {};
+\node[graph vertex,label=above:$3$] (b3) at (1.9,1.18) {};
+\draw[marked edge] (b0)--node[above] {$2$} (b1);
+\draw[unmarked edge] (b1)--node[right] {$1$} (b3);
+\node at (0.95,-0.65) {Second flag};
+\end{scope}
+
+\begin{scope}[xshift=7.45cm]
+\node[graph vertex,label=below:$0$] (c0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (c1) at (1.9,0) {};
+\node[graph vertex,label=above:$2$] (c2) at (0,1.18) {};
+\node[graph vertex,label=above:$3$] (c3) at (1.9,1.18) {};
+\draw[marked edge] (c0)--node[above] {$2$} (c1);
+\draw[unmarked edge] (c0)--node[left] {$1$} (c2);
+\draw[unmarked edge] (c1)--node[right] {$1$} (c3);
+\draw[densely dashed] (c2)--node[above] {$?$} (c3);
+\node at (0.95,-0.65) {Union};
+\end{scope}
+\end{tikzpicture}
+\caption{Two flags with common type on $\{0,1\}$. In their union,
+the dashed pair has color $0$, $1$ or $2$. Undrawn pairs have color $0$.}
+\label{fig:flag-union}
+\end{figure}
+
+The product rule gives inequalities as follows. Fix a list of flags of
+type $T$. For the $i$th flag $F_i$, on $n_i$ positions, put
+$v_i(f)=\frac{h_{F_i}(f)}{\Delta^{n_i-k}}$. Let $v(f)$ be the column
+vector with these entries. The matrix
+\[
+ \frac{1}{2m\Delta^{k-2}}\sum_f v(f)v(f)^{\mathsf T}
+\]
+is positive semidefinite, since each summand is an outer product.
+The sum ranges over the maps giving the colors of $T$. In its
+$(i,j)$ entry the product rule sums the counts of patterns
+$H\in\mathcal U_{ij}$ on $n_i+n_j-k$ positions. Each map counted by
+$h_H$ has a unique restriction to $T$, so $\sum_f h_H(f)=h_H$.
+The three factors in the denominator give
+$2m\Delta^{k-2}\Delta^{n_i-k}\Delta^{n_j-k}
+=2m\Delta^{n_i+n_j-k-2}$. Thus the entry is
+$\sum_{H\in\mathcal U_{ij}}q_H$, as in \eqref{eq:moment-expansion}.
+In the example of \textbf{Figure~\ref{fig:flag-union}} it is
+$q_{H_0}+q_{H_1}+q_{H_2}$. Consequently each quadratic form of this matrix, evaluated at a fixed
+real vector, gives a linear expression in the counts $q_H$ whose
+value is nonnegative.
+
+For a multigraph, a map into the simple support records which pairs
+of vertices are adjacent. We also have to record how many edges of
+the strong clique join each pair. Call an edge of the support
+\emph{red} if at least one marked copy joins its endpoints. For each
+red edge $uv$, distinguish one marked copy, called the \emph{base
+copy}, and let $b_{uv}$ be the number of other marked copies, called
+\emph{extra copies}. A pattern can now require an extra copy on one
+or more specified edges. If the map sends such an edge to $uv$, there
+are $b_{uv}$ choices for that copy. For a fixed map, multiplying
+these numbers counts the choices on all specified edges.
+
+For two flags with a common type, first choose the copies required
+on the type. The choices on each flag outside the type are then
+independent, so the same product rule counts pairs of extensions.
+When the type itself requires extra copies, its map $f$ contributes
+an outer product multiplied by the number of choices on the type.
+This number is nonnegative, and the resulting matrix is again positive
+semidefinite. \textbf{Subsection~\ref{sec:weighted-counts}} specifies
+the weighted counts used in the multigraph proof.
+
+\subsection{The Uniform Bound for Simple Graphs}\label{subsec:marked-edge-pairs}
+
+We now express $\frac{m}{\Delta^2}$ in terms of the counts $q_F$.
+Choose the images of $(0,1)$ and $(2,3)$ independently from the $2m$
+ordered marked edges. The two choices may give the same edge. Each
+choice determines the images of four positions and hence the colors of
+all six pairs. If the two image edges are disjoint, a joining edge
+exists because the marked edges form a strong clique. If they share
+an endpoint, a position for that endpoint is adjacent in the pattern
+to a position on the other edge. Thus the pattern is connected in
+either case. Let $\mathcal B$ consist of the connected patterns on
+these four positions whose edges of color $2$ form a strong clique
+and include $\{0,1\}$ and $\{2,3\}$. Each choice of the two ordered
+edges contributes to exactly one $h_F$ with $F\in\mathcal B$, and
+every map counted by such an $h_F$ determines the two ordered edges.
+Therefore
+\[
+ \sum_{F\in\mathcal B}h_F=(2m)^2,\qquad
+ \frac{1}{2}\sum_{F\in\mathcal B}q_F=\frac{m}{\Delta^2}.
+\]
+
+To bound this sum we use the flag inequalities from
+\textbf{Subsection~\ref{subsec:adapted-flags}} and the degree
+equations. For the latter, fix a position in a pattern and require
+one new position to map to a neighbor of its image. Every map of the
+old positions has exactly $\Delta$ extensions. Sorting these
+extensions by their pair colors gives \eqref{eq:degree-extension}
+after normalization. The calculation in
+\textbf{Subsection~\ref{sec:simple-proof}} uses the degree equations to
+express $\frac{5}{4}-\frac{1}{2}\sum_{F\in\mathcal B}q_F$ as a sum
+of nonnegative multiples of individual counts $q_F$ and of quadratic
+forms of the positive semidefinite matrices with nonnegative weights. The identity is \eqref{eq:certificate-identity},
+with rational coefficients checked in the proof of
+\textbf{Lemma~\ref{prop:checked-certificate}}. Its right-hand side
+is nonnegative. The identity for the two ordered edges now gives
+$m\leq\frac{5}{4}\Delta^2$.
+
+\subsection{From Simple Graphs to Multigraphs}\label{subsec:weighted-sketch}
+
+Let $D$ be a positive integer and let $G$ be a loopless multigraph of
+maximum degree at most $D$. Mark the $m>0$ edges of a strong clique.
+Keep the subgraph induced by their endpoints. Between vertices joined
+by marked edges, keep all the marked copies. Between any other two
+adjacent vertices, keep one unmarked edge. Thus each pair of disjoint
+marked edges still has a joining edge. Let $s$ be the number of red
+edges in the simple support and $b=m-s$ the total number of extra
+copies. The $s$ red edges form a strong clique in the simple support,
+so the simple-graph bound gives $s\leq\frac{5}{4}D^2$.
+
+The degree of a vertex in the reduced multigraph is its number of
+distinct neighbors plus the number of extra copies incident with it.
+As shown in \textbf{Subsection~\ref{sec:weighted-counts}}, we may add
+unmarked edges and vertices to make the multigraph $D$-regular while
+preserving its induced subgraph on the old vertices. Then, for each
+vertex $v$, the extension by one incident edge has exactly $D$
+choices. A neighbor $u$ joined to $v$ by an unmarked edge contributes
+one choice. A neighbor on a red edge $uv$ contributes one choice of
+the base copy and $b_{uv}$ choices of an extra copy. Counting these
+choices in the weighted patterns gives the degree equations for
+multigraphs.
+
+Choose two ordered marked copies as in the simple-graph calculation.
+There are $2s$ choices for an ordered base copy and $2b$ for an ordered
+extra copy. Thus the numbers of choices using zero, one and two extra
+copies are $(2s)^2$, $2(2s)(2b)$ and $(2b)^2$, respectively. Dividing
+each count by $4mD^2$ gives the identity
+\[
+ \frac{s^2}{mD^2}+\frac{2sb}{mD^2}+\frac{b^2}{mD^2}
+ =\frac{m}{D^2}.
+\]
+Each term on the left is a linear combination of the weighted
+pattern counts. For example, in the last term each chosen edge of
+the support contributes its number of extra copies.
+
+Write $M=\frac{m}{D^2}$, $S=\frac{s}{D^2}$ and $e=\frac{b}{m}$.
+Then $S=M(1-e)$. Suppose that $M>\frac{5}{4}$. The weighted flag
+inequalities first give upper bounds on both $M$ and $e$. Degree
+estimates on induced five-cycles of red edges, together with flag
+inequalities in the simple support, give an upper bound on $S$.
+The identity $e=1-\frac{S}{M}$ then gives a lower bound on $e$.
+With $e$ restricted to this interval, the weighted flag inequalities
+give a smaller upper bound on $M$. The successive bounds in the proof
+of \textbf{Lemma~\ref{prop:multi-uniform}} yield $M<\frac{5}{4}$,
+contradicting our assumption. This proves $m\leq\frac{5}{4}D^2$.
+For even $D$, the right-hand side is $f(D)$.
+
+\subsection{The Structure of a Counterexample}\label{subsec:odd-sketch}
+
+Let $D=\Delta(G)$ be odd. If the bound $f(D)$ fails, mark exactly
+$m=f(D)+1$ edges of a strong clique and keep the multigraph on their
+endpoints as in \textbf{Subsection~\ref{subsec:weighted-sketch}}.
+The definition of $f(D)$ gives
+\[
+ M=\frac{m}{D^2}=\frac{5}{4}-\frac{1}{2D}+\frac{5}{4D^2}.
+\]
+For $D\geq9$ this value is at least $\frac{98}{81}$, with equality
+at $D=9$. If the simple support contained no induced five-cycle with
+all five edges red, the flag inequality in~\cite[(G.2)]{FGSTSupplement} would give
+$M<\frac{98}{81}$. Thus the support contains such a cycle, as stated
+in \textbf{Lemma~\ref{lem:counterexample-cycle}}. We examine the degrees around
+each such cycle to bound $s$, the number of distinct pairs of
+endpoints of the $m$ marked edges.
+
+Fix one of these cycles, say $c_0c_1c_2c_3c_4c_0$, and take
+indices modulo five. For each $i$, let $U_i$ consist of the vertices
+whose only neighbors on the cycle are $c_{i-1}$ and $c_{i+1}$ and
+whose edges to both of these vertices are red. In particular,
+$c_i\in U_i$. Take $x\in U_0$ and $y\in U_1$. The disjoint red edges
+$xc_4$ and $yc_2$ must have a joining edge. The definitions of
+$U_0,U_1$ exclude $xc_2$ and $yc_4$, and the induced cycle has no
+edge $c_4c_2$. Thus $xy$ is an edge of the support. The same argument
+with indices shifted shows that each vertex of $U_i$ is adjacent to
+every vertex of $U_{i-1}$ and $U_{i+1}$.
+
+In particular, $c_i$ is joined to at least $|U_{i-1}|+|U_{i+1}|$
+distinct vertices in the multigraph. After counting one copy of each
+of these edges, at most $D-|U_{i-1}|-|U_{i+1}|$ more edges can be
+incident with $c_i$. The sum of these five upper bounds is
+$R=5D-2\sum_{i=0}^4|U_i|$. For odd $D\geq11$, the degree count in
+\textbf{Subsection~\ref{subsec:exact-large-degree}} shows that $R>\frac{D+1}{2}$ on
+every such cycle in a counterexample.
+
+To see how this structural restriction yields an inequality, let
+$q_C$ be the number of ordered red induced five-cycles divided by
+$2sD^3$. Here an ordered cycle has a specified starting vertex and
+direction. Let $L_R$ be the sum of $\frac{R}{D}$ over the same
+ordered cycles, divided by the same denominator. The bound on $R$
+gives $L_R\geq\frac{q_C}{2}$. One of the flag inequalities for the
+simple support in~\cite[(G.1)]{FGSTSupplement} gives
+\[
+ S+0.45119\left(L_R-\frac{q_C}{2}\right)\leq 1.221800627,
+ \qquad\text{where }S=\frac{s}{D^2}.
+\]
+Its second term on the left is nonnegative. Thus
+$S\leq1.221800627$. For odd $D\geq15$, the value of $M$ above
+satisfies $M\geq\frac{11}{9}>1.221800627$. It follows that $s<m$,
+so some pair of vertices is joined by at least two marked copies.
+Moreover, $e=1-\frac{S}{M}$ gives an explicit lower bound on the
+fraction of extra copies.
+
+For $D=11,13$, the integer $R$ is odd, and the degree estimates
+in \textbf{Subsection~\ref{subsec:exact-large-degree}} give $R\geq9$. Substituting
+$L_R\geq\frac{9}{D}q_C$ into the flag inequalities gives $S<M$
+in these two cases as well. At $D=9$, the finite simple-graph
+bound excludes $s=m$. The remaining degree estimates restrict $e$
+further. For each odd $D\geq9$ the weighted flag inequalities then
+exclude the prescribed value $M=\frac{f(D)+1}{D^2}$ throughout the
+allowed interval for $e$, as detailed in
+\textbf{Table~\ref{tab:multi-odd}}. The cases $D=1,3,5,7$ are
+settled separately in \textbf{Subsection~\ref{subsec:exact-small-degree}}. This proves
+\textbf{Theorem~\ref{thm:multigraph}}.
+

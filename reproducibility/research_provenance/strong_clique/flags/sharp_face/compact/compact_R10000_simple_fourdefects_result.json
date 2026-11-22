@@ -1,0 +1,49 @@
+{
+  "vector_denominator": 10000,
+  "pair_strategy": 0,
+  "exact_sharp_pass": true,
+  "factor_count": 4110,
+  "factor_nonzero_entries": 278487,
+  "weight_denominator_digits": 2,
+  "common_denominator_digits": 10,
+  "max_vector_numerator": 9855,
+  "zero_residuals": 199,
+  "before_absorption_negative_count": 430,
+  "defect_transfers": 297,
+  "negative_residual_count": 0,
+  "negative_defect_free_count": 0,
+  "correction": "0",
+  "degree3_residuals": [
+    "1178741/300000000",
+    "0",
+    "187421/6250000",
+    "99481/3125000",
+    "1304223/100000000"
+  ],
+  "two_factor_fit": {
+    "generator_indices": [
+      22,
+      48
+    ],
+    "added_weights": [
+      "9202",
+      "17530"
+    ],
+    "generator_support_effects": [
+      [
+        -8,
+        8
+      ],
+      [
+        9,
+        1
+      ]
+    ],
+    "generator_count": 57,
+    "feasible_pair_count": 630
+  },
+  "seconds": 2.304448366165161,
+  "correction_method": "add_two_sparse_kernel_factors",
+  "absorb_all_zero_C5_parents": true,
+  "certificate": "compact_R10000_simple_fourdefects_certificate.json"
+}

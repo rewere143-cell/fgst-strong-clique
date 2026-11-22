@@ -1,0 +1,14 @@
+{
+  "arithmetic_verified": true,
+  "nonnegative_inequality_multipliers_verified": true,
+  "explicit_rank_one_PSD_factors_verified": true,
+  "corrected_dual_constant": "27332270490572378277/100000000000000000000",
+  "global_bound_certified": true,
+  "bound": "27332270490572378277/100000000000000000000",
+  "bound_decimal": 0.2733227049057238,
+  "below_620_over_1987": true,
+  "variables": 12772,
+  "inequalities": 3120,
+  "blocks": 47,
+  "seconds": 26.42531442642212
+}

@@ -1,0 +1,136 @@
+\subsection{Data and Encoding}\label{app:data-specification}
+
+The files in \path{reproducibility/data/} specify the coordinates of
+$q$, the degree equations, the flag lists and the certificates for
+\textbf{Lemmas~\ref{lem:finite-encoding} and~\ref{lem:rational-witness}}.
+
+\subsubsection{Pattern Indices}
+
+For each $n\in\{3,4,5,6\}$, the coordinates are indexed by the
+relabeling orbits of the connected admissible patterns on $n$ positions.
+As in \textbf{Lemma~\ref{lem:coordinates}}, the relabelings may take
+either ordering of any marked pair to $(0,1)$.
+
+List the unordered pairs of positions, written with the smaller
+position first, in lexicographic order as
+$e_0,e_1,\ldots,e_{\binom{n}{2}-1}$, with $e_0=01$. If $c_F(e_a)$ is
+the color in $\{0,1,2\}$ assigned to the pair of positions $e_a$ by $F$, define
+\begin{equation}\label{eq:pattern-code}
+ \operatorname{code}(F)=\sum_{a=1}^{\binom{n}{2}-1}c_F(e_a)3^{a-1}.
+\end{equation}
+The root color $c_F(e_0)=2$ is fixed. For $n=3,4,5$, order the orbits by the lexicographically least tuple
+$(c_F(e_1),\ldots,c_F(e_{\binom n2-1}))$ among the patterns $F$ in
+each orbit. At order six, they are indexed in order of their least numerical
+codes. \textbf{Table~\ref{tab:coordinates}} gives the file index ranges.
+File index $j-1$ corresponds to $q_j$. The two-position pattern
+$E_\star$ contributes the constant $1$.
+
+\begin{table}[htbp]
+\centering
+\caption{Pattern counts and coordinate index ranges.}
+\label{tab:coordinates}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Order & Labeled patterns & Connected and admissible & Orbits & File indices\\
+\midrule
+3 & 9 & 8 & 5 & $0$--$4$\\
+4 & 243 & 224 & 47 & $5$--$51$\\
+5 & 19,683 & 18,576 & 676 & $52$--$727$\\
+6 & 4,782,969 & 4,450,424 & 23,061 & $728$--$23,788$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the index file for the order of $F$, the entry at position
+$\operatorname{code}(F)$ is $-1$ when $F$ is disconnected or
+inadmissible. Otherwise, the files \path{idx3.bin}, \path{idx4.bin}
+and \path{idx5.bin} store the file index from
+\textbf{Table~\ref{tab:coordinates}}. For order six, the file index
+is $728$ plus the nonnegative entry in
+\path{order6_orbit_index.bin}. Each index file stores signed
+32-bit little-endian integers. The files also number degree rows,
+blocks and entries within blocks starting at zero.
+
+\subsubsection{Degree Rows and Flag Lists}
+
+The file \path{degree.txt} gives the number of rows, followed by
+the number $k$ of positions of the base pattern $F$, its code
+$\operatorname{code}(F)$, and the position $u$ to which a new vertex is
+attached.
+For base orders $2,3,4,5$, the numbers of rows are $1,10,125,3380$,
+respectively. For a row $(F,u)$ with base order $k$, the position $u$
+specifies the pair $uk$ of color $1$ or $2$ in the extensions of
+$F$ in \eqref{eq:degree-extension}. The coefficients count the
+extensions by orbit, with $1$ subtracted from the base coordinate
+when $F$ has more than two positions. The right-hand side is $1$
+if $F=E_\star$ and $0$ otherwise.
+
+The first line of \path{basis.txt} gives the number of coordinates and
+the number of blocks. For each block, the file gives the order and code
+of its type and the number of flags, followed by the order and code of
+each flag in basis order. The first flag is the type itself. For each
+listed flag order, the file contains one representative from each orbit
+under permutations fixing the type positions.
+\textbf{Table~\ref{tab:blocks}} gives the flag orders and sizes of the
+bases.
+
+\begin{table}[htbp]
+\centering
+\caption{The $57$ moment blocks and their $4{,}129$ flags.}
+\label{tab:blocks}
+\begin{tabular}{@{}lccr@{}}
+\toprule
+Type family & Flag orders & Block sizes & Blocks\\
+\midrule
+Marked two-position type & $2,3$ & $9$ & 1\\
+All labeled three-position types & $3,4$ & $27$ & 8\\
+Marked two-position type & $2,3,4$ & $133$ & 1\\
+One type per four-position orbit & $4,5$ & $75,78,81$ & 47\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+By \eqref{eq:moment-expansion}, each entry of $D_{\ell j}$ counts the
+labeled completions of the corresponding pair of flags whose union
+belongs to the orbit indexed by $j$. The two-position union
+$E_\star$ contributes $1$ to the first diagonal entry of each
+block with a two-position type. These are the only nonzero
+entries of the constant matrices $K_\ell$.
+
+The 57 blocks have 326,281 matrix entries in total. The coefficient
+files represent both entries $(i,i')$ and $(i',i)$ when $i\ne i'$,
+so the sum of entrywise products with a symmetric matrix counts both
+off-diagonal entries in the trace product. The matrices $D_{\ell j}$
+have $1{,}895{,}405$ nonzero entries in total.
+
+\subsubsection{Sparse Coefficients and Certificates}
+
+In the binary files, row and coordinate indices start at zero. Write
+$N=23{,}789$ for the number of coordinates. For a degree row $a$ and
+a coordinate index $j$, the key in
+\path{degree_keys.bin} is $aN+j$. The corresponding signed coefficient
+is in \path{degree_values.bin}. For the moment matrices, list the
+blocks in \path{basis.txt} order, with the entries of each block
+in row order. In a block of size $s$, entry $(i,i')$ has offset
+$is+i'$ within that block.
+For an entry at position $p$ in the full list and a coordinate index $j$,
+the key in \path{keys.bin} is $pN+j$ and the corresponding coefficient
+is in \path{values.bin}. Each coefficient is stored at the same
+file position as its key. Keys are nonnegative and stored as signed
+64-bit little-endian integers. Coefficients are signed 32-bit
+little-endian integers. An absent key has coefficient zero.
+
+The checker reconstructs the objective vector $o$ from
+\path{idx4.bin} by adding $\frac{1}{2}$ to the coordinate of each
+labeled order-four pattern with pair $23$ marked, as in
+\eqref{eq:objective-vector}. The JSON certificate stores the
+degree multiplier numerators and the integer vectors and weights in
+\eqref{eq:integral-Q}, along with their denominators.
+Each degree numerator is keyed by the base order, the full color
+tuple, and the attachment position. An unlisted row has multiplier
+zero.
+The earlier certificate \path{original_sharp_certificate.json}
+has $4{,}115$ positive-weight factors and gives the same bound
+for the same degree equations and moment matrices. The file
+\path{reproducibility/DATA_FORMAT.md} specifies the layouts and the
+JSON fields of both certificates.

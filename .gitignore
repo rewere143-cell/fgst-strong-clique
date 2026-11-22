@@ -1,0 +1,10 @@
+# Restored proof data are distributed as release assets.
+/reproducibility/**/*.gz
+/reproducibility/**/*.lrat
+/reproducibility/**/*.cnf
+/reproducibility/**/*.npz
+/reproducibility/**/*.bin
+/fgst-verification-data-*.zip
+/reproducibility/results/fresh-run*/
+__pycache__/
+*.pyc

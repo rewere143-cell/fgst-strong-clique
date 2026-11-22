@@ -1,0 +1,23 @@
+{
+  "result": "NO_WITNESS",
+  "cases": [
+    {
+      "k": 6,
+      "cores": 8,
+      "full_patterns": 20,
+      "cross_incidence_patterns": 1
+    },
+    {
+      "k": 7,
+      "cores": 18,
+      "full_patterns": 49,
+      "cross_incidence_patterns": 50
+    },
+    {
+      "k": 8,
+      "cores": 30,
+      "full_patterns": 144,
+      "cross_incidence_patterns": 459
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{"variables": 31073, "rows": 3769, "grams": 86, "shadow_grams": 48, "shadow_coordinates": 23381, "anchor_good_coefficients": 1}
+{"mass_lower": "1283/1000", "minimum_slack": "1521/2500", "support_upper_rounded": "121729/100000", "e_low": "51/1000", "equalities": 1256, "inequalities": 4004, "coordinates": 31073, "psd_blocks": 86, "scale": 2771280000000000}
+{"excluded_zero_columns": 27, "remaining": 31046}
+{
+  "mode": "bound",
+  "raw_bound": "637263320267/500000000000",
+  "correction": "257656984377539985707/750000000000000000000000000",
+  "rational_bound": "955895238057484377539985707/750000000000000000000000000",
+  "decimal_bound": 1.2745269840766458,
+  "coefficient_rows": 31046,
+  "negative_rows": 1304,
+  "rigorous_infeasible": false
+}

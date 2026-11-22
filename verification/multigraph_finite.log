@@ -1,0 +1,1146 @@
+
+简单图的奇数最大度 / d5_check_lrat.py d5_sat
+{
+  "verified": 48,
+  "all_unsat": true,
+  "results": [
+    {
+      "name": "n12_000012",
+      "added": 2842,
+      "deleted": 3000,
+      "cnf_sha256": "25e9c950a7b7e68462bc43b0f6378b01c5e3e44807cbd88a09a9a0593b3c4591",
+      "lrat_sha256": "01ef72e577835edfb535438e49a6911f279dbd8249149ca450fc505dd59b309e"
+    },
+    {
+      "name": "n13_00058",
+      "added": 6402,
+      "deleted": 9114,
+      "cnf_sha256": "ca0cf132f3593212e25059dbf161af7e2bdc556ee3668099f5eb8aed92bd00bb",
+      "lrat_sha256": "bae64ee7a3eafaf5396cb8cfa95db8ab8c3ccb433aa248e024cf87df8b750169"
+    },
+    {
+      "name": "n13_00139",
+      "added": 4802,
+      "deleted": 6865,
+      "cnf_sha256": "529d6f6db72e71d96acacaf5eeae771268ae9afff2e1f1650455c3da1d677a2c",
+      "lrat_sha256": "ccb9dddec4d778219698d7fe9fb66d0d524a90d18ba117383aaffeaffb5c5e2b"
+    },
+    {
+      "name": "n13_002110",
+      "added": 3666,
+      "deleted": 7416,
+      "cnf_sha256": "7c78f894433ffc583b153b65a0bd310dc80857fbca1651d9a4903abb8058b438",
+      "lrat_sha256": "aaa57af128ea06721b576e111c39dd40b6e9d9934bd5eb7ecd8b677fa35f5099"
+    },
+    {
+      "name": "n13_010210",
+      "added": 4186,
+      "deleted": 7841,
+      "cnf_sha256": "32dc4997ca7bb171da334a35275afac84248bb65b9ac1d55e40e781bd1e64944",
+      "lrat_sha256": "f1d628bb98589db1760dea77d6eecec1d1fc99eeeffc963e0220bba4bace8973"
+    },
+    {
+      "name": "n13_011011",
+      "added": 2191,
+      "deleted": 3192,
+      "cnf_sha256": "3ec75db3b4bafd7df437ff46f99b37da6a4a771d00425a39f15438eed71e8f8b",
+      "lrat_sha256": "6f454c794c90f473f8b6f3c4a4d2a7cf147d6241dbe503638f0c277d0cb1f6ff"
+    },
+    {
+      "name": "n13_100111",
+      "added": 2857,
+      "deleted": 3213,
+      "cnf_sha256": "a301f99c8f00c9b15f11ba2cbb83aacbef1a3c8e0ec050c66a545ceb2192bcdf",
+      "lrat_sha256": "a1584f0f50627d5a48ed606b854a2ff7a16aeb4822a409e4edd62d35a164f617"
+    },
+    {
+      "name": "n14_00428",
+      "added": 6324,
+      "deleted": 7997,
+      "cnf_sha256": "f5eb3408f584fd8873b356ecb37bdb304fdef45cfe0ccb2b41605cb09f798880",
+      "lrat_sha256": "7416d2c4eaca7821e1dcdf00065cf82646f42648c3524c6fb702cda960d28ab7"
+    },
+    {
+      "name": "n14_00509",
+      "added": 3941,
+      "deleted": 5235,
+      "cnf_sha256": "d8425598c784ef1793c9808cc7081b2a8e343845a713a3f6407dcc1ba2ffe654",
+      "lrat_sha256": "ad9832d15c768e4c9ae04088fc654e8688383ed624b6ec8cb67330050c32c847"
+    },
+    {
+      "name": "n14_01157",
+      "added": 6317,
+      "deleted": 8302,
+      "cnf_sha256": "0f72c37a6e87865421c5b50c8bea0ac6b02db017e1825cf3613426e66043962b",
+      "lrat_sha256": "9102c91498395ca77d6326d3361535461cc3bcc3ea98d23fdec8b950318e1b1b"
+    },
+    {
+      "name": "n14_01238",
+      "added": 5364,
+      "deleted": 7548,
+      "cnf_sha256": "a37b795b67167e9f16073d4ad8376a4a9ec632a8bf84e5516ef018455375145c",
+      "lrat_sha256": "7884d57af6dee56e445113133e61f99f7544b024afba727331dce0b4b39c6fc9"
+    },
+    {
+      "name": "n14_01319",
+      "added": 4913,
+      "deleted": 6883,
+      "cnf_sha256": "65dda5dbce507a2f14f37d9eb6aa0b339dc0d849c8b54ecc470a8481553631c6",
+      "lrat_sha256": "ef7ded914469626276bfb5e80ccd85382e9b806c091799827693311957ac08a0"
+    },
+    {
+      "name": "n14_02048",
+      "added": 4435,
+      "deleted": 6951,
+      "cnf_sha256": "6cadd4e7ae9219659126fefbb610adb8723d45d06d75869a1541c3ffd0044c46",
+      "lrat_sha256": "7a164ebea9dc4c5af311e0c3118492ed77c3b25475b3daea7d138260916d00c5"
+    },
+    {
+      "name": "n14_02129",
+      "added": 6508,
+      "deleted": 10274,
+      "cnf_sha256": "377a64a1c55b71b1e54a77be155d05972b1dc53efb575633b465f46e6b3d54ff",
+      "lrat_sha256": "e7bad7deb5602aee7b55405ed3fb73b59d321d67778076d91791f44793591fc2"
+    },
+    {
+      "name": "n14_022010",
+      "added": 5527,
+      "deleted": 10784,
+      "cnf_sha256": "014221b02ed7f8cf82f3abe17377234800454938ca72a072c719d655ed5c34ee",
+      "lrat_sha256": "ef55707c6cf83bfa247e53e11bb9527bc362f349954c8a81b341017fce90d762"
+    },
+    {
+      "name": "n14_030110",
+      "added": 4701,
+      "deleted": 9865,
+      "cnf_sha256": "35d8cb40ce6163dfdcf50507f32f6b0a37e7acd4cf4daaeef8cfa23193d3fcf0",
+      "lrat_sha256": "f17962675d4e97a198606e0a96ac7139cb195ba29a0c2257a41a8db200542111"
+    },
+    {
+      "name": "n14_10067",
+      "added": 4350,
+      "deleted": 6250,
+      "cnf_sha256": "51161ece8c70e66162da5710405b88e601936ac7020507757c98fc6ab01c1c30",
+      "lrat_sha256": "f4b13e127683d68c2a3c63c6597f75a9f491374f438d884499e7fb673222e28f"
+    },
+    {
+      "name": "n14_10148",
+      "added": 7478,
+      "deleted": 11390,
+      "cnf_sha256": "d3c56dff5100c1d2389c76a6783f89f90132afa8e5bdf61291df6893e1e80664",
+      "lrat_sha256": "9268c503de6aa23ec049802a42ba7b897987d18a14083b3910825bae98224020"
+    },
+    {
+      "name": "n14_10229",
+      "added": 5964,
+      "deleted": 9349,
+      "cnf_sha256": "4929f949a2a8e1ba16e1e3b54c7604bc6f229a18d59b55f980d9dcdcd129f118",
+      "lrat_sha256": "59d2f8cc464ac19c11c74a98e175015c6e33d1106c980b943668e9e784b8c7ce"
+    },
+    {
+      "name": "n14_103010",
+      "added": 5554,
+      "deleted": 9683,
+      "cnf_sha256": "57c8a71be015c7469dcd4f1d755d11625fd7c256803cb1975d3fbec3cfddfc13",
+      "lrat_sha256": "88620b8b56074765762eb76b1178070134994ca24dee36daa504385474f1f12d"
+    },
+    {
+      "name": "n14_11039",
+      "added": 5629,
+      "deleted": 10842,
+      "cnf_sha256": "80d23559b4f189fa2628039d2b2136029bfddb03a3e51551010bf171a563103a",
+      "lrat_sha256": "22e91f0e8572b844de9d5d58603a50ca1e9ee9058e47b0fd79571f02e2d9dbab"
+    },
+    {
+      "name": "n14_111110",
+      "added": 4702,
+      "deleted": 9668,
+      "cnf_sha256": "052858007c1839e064a9d0aebb64c8cb29a345eb7b9668c3b7b0e6327b2e39fd",
+      "lrat_sha256": "66fd287703ed9f6bc32388811a82d5b00afc471638327ea75bb14b6e499e1159"
+    },
+    {
+      "name": "n14_120011",
+      "added": 2905,
+      "deleted": 3504,
+      "cnf_sha256": "6b33c2c86dd1f2bd9ceb13ca841831d82d53337ad19b8c1b2aad76fe610ab3de",
+      "lrat_sha256": "a290ac9c8d0137754770c13cf9d3f551a1c54bf17fe88bdb32da4a02ce4b653d"
+    },
+    {
+      "name": "n14_200210",
+      "added": 2940,
+      "deleted": 3560,
+      "cnf_sha256": "9a5e818359c4edd84cc4188493c90978eb23b8cd2069aaa37f319a5fdcf316b2",
+      "lrat_sha256": "f7ecbc354b4f6989cb14eecfaf23a8514807fecb10f031b0094257e4837ff792"
+    },
+    {
+      "name": "n14_201011",
+      "added": 2724,
+      "deleted": 3536,
+      "cnf_sha256": "235f009f892038c301154134f648e0396f36dd4bc69fa870f77b25b858cb4ae4",
+      "lrat_sha256": "db7dff43563ea8e8d4999e930c7a06f03e4f69404c0bdf445c9bbb3b4760719e"
+    },
+    {
+      "name": "n15_050010",
+      "added": 3872,
+      "deleted": 8093,
+      "cnf_sha256": "5b9987e789a28001128895059d56da87c83b0a7d4ffe638fdead67d6cedaa976",
+      "lrat_sha256": "83e752796365925bf22ad3b4291b143ff78ea6ab84ecc49e14ebd9e4e09e4567"
+    },
+    {
+      "name": "n15_12219",
+      "added": 5836,
+      "deleted": 9609,
+      "cnf_sha256": "96a2648447719733af779e04af7742953dc1138e99ee095e4a25d60004db6691",
+      "lrat_sha256": "567986e3264172b424668c4cd3837ac36b4c8d297eb34595b95be7aeeec23202"
+    },
+    {
+      "name": "n15_13029",
+      "added": 5370,
+      "deleted": 9956,
+      "cnf_sha256": "bec49fbfaade89315f5f12db704486000a7c7aa1eb7aa3cacf825c6d43c77276",
+      "lrat_sha256": "c62ab2511257ca3741d0511c0cfbc1ac2b8138eff3ad8005b224fb8894c13717"
+    },
+    {
+      "name": "n15_131010",
+      "added": 4484,
+      "deleted": 8924,
+      "cnf_sha256": "55fde9852c2fdce494567f0a94ccfdd240eced20a1e8490bcd513486dd190bb6",
+      "lrat_sha256": "49265d2100dd5f3c0b1b1ddc9af2159af6cf36b81bd84f54395bdea06a0da3cd"
+    },
+    {
+      "name": "n15_20238",
+      "added": 7002,
+      "deleted": 9573,
+      "cnf_sha256": "37b9922dc517223d7599fcbea2fb14c59438f143ca83141cc619eb5bac2a355f",
+      "lrat_sha256": "216b47d6ff92d6663baf144e361bbcab782d45286ff6b547bfd5b5e9e7d9db6f"
+    },
+    {
+      "name": "n15_20319",
+      "added": 5251,
+      "deleted": 9166,
+      "cnf_sha256": "3822ce9d82546efe558a6080de14c83e1c7382cf41a0ac1b5bc46616479e3dd0",
+      "lrat_sha256": "abf733d0e2cab8831618893ca94769e07b5cced44364f3bef157a8f0ec358586"
+    },
+    {
+      "name": "n15_21048",
+      "added": 5063,
+      "deleted": 8521,
+      "cnf_sha256": "0336416be4e5c9f2bbd1fc42c9b09e1ed744224f2bb8186bed25d24362132dd4",
+      "lrat_sha256": "2656e3acfcf910435c64a905ba18d5c79153a136a3dd95886bc76fb1efcc745a"
+    },
+    {
+      "name": "n15_21129",
+      "added": 6866,
+      "deleted": 14742,
+      "cnf_sha256": "97aa8d718ad0715c02ba96269e9243bfa402340671ffb2f74a5d73b239f79f29",
+      "lrat_sha256": "b9bfd5767ff5dcfa27a1151d8c2dc49a0949d0cc5c6be90ff8157db1607e628b"
+    },
+    {
+      "name": "n15_212010",
+      "added": 5255,
+      "deleted": 11757,
+      "cnf_sha256": "7b65bd644c93653d2a2bcf616cb866512ea59b1358077f663cd0739f74ffb4cf",
+      "lrat_sha256": "5ecbcb129c69bb9e4d36f7e87d748cb65682710c74627ace3d4872e461b03df0"
+    },
+    {
+      "name": "n15_220110",
+      "added": 5613,
+      "deleted": 11067,
+      "cnf_sha256": "cfc1b301c3b01ab46365ddb1fb8e5bfc21156aed26b05a792749d6197656a647",
+      "lrat_sha256": "528abd060082b0f433649b64d315d0e6e89dd71f022a93d8505c2204bb939d90"
+    },
+    {
+      "name": "n15_30039",
+      "added": 5799,
+      "deleted": 12031,
+      "cnf_sha256": "f3a931fc00708658a8a258e74829e91e5f38a699945c069b522d6f4193975060",
+      "lrat_sha256": "91306fe2cfa9a92be4d2ef105834e44156bdbae5c2cd3f2b6c4fb9ea69b1ed34"
+    },
+    {
+      "name": "n15_301110",
+      "added": 5716,
+      "deleted": 12234,
+      "cnf_sha256": "9f85a7e9a33702769f45ca6be912ee1afdc1b26714546db289644c787e4e757b",
+      "lrat_sha256": "3f8b82d9f6ac0c55ab34d9814b0a597b3dabb440a8c2d38df0e104a35ca5f877"
+    },
+    {
+      "name": "n15_310011",
+      "added": 3906,
+      "deleted": 3877,
+      "cnf_sha256": "760d60fdcb3ad8eb01e8c844b1a388249cccf9399f28d7478c0aa9b176d6c28a",
+      "lrat_sha256": "891d0d2b1d16b1b533fbdd006fb0f4710c031af454508b07681b5fc4a1f3662c"
+    },
+    {
+      "name": "n16_240010",
+      "added": 5198,
+      "deleted": 11148,
+      "cnf_sha256": "c827664e1bf6ff03b1beebcd351327c3fccf42967df65d8ebc2fae90e0b4d188",
+      "lrat_sha256": "619175d825d6ec61676ebde8331ff44734e2788e1f9920717812727f612d14c7"
+    },
+    {
+      "name": "n16_32029",
+      "added": 7725,
+      "deleted": 15221,
+      "cnf_sha256": "dbf5dc5f83a7c0f401b5f71ea40c1a25f375c5d279d2475b99c1d5b866f46c07",
+      "lrat_sha256": "39decf3cb6b4bee1dfbb19c695be0ea0d7c4f2874000463a43adeb8a80152052"
+    },
+    {
+      "name": "n16_321010",
+      "added": 5028,
+      "deleted": 10611,
+      "cnf_sha256": "013d5b229c99233a92d144ff39983a89c55f4a3ae65afa0e8e9192c21653f00a",
+      "lrat_sha256": "1343969b03d8bcfa59c59e8cf8abcf1477ebde2920b5b05af1db21df1d522cf0"
+    },
+    {
+      "name": "n16_40048",
+      "added": 6106,
+      "deleted": 12644,
+      "cnf_sha256": "30424f988411d28e37b6f0f8c6df5fcbe918f6bf4fef926a2722715a9c26e515",
+      "lrat_sha256": "23705ccfa7def2e532b0fb4cf3fc24c0fcad3925aca66694096a019ef5dfb102"
+    },
+    {
+      "name": "n16_40129",
+      "added": 6407,
+      "deleted": 12181,
+      "cnf_sha256": "b337459bfeae60ad80b4e944157f0d30d9e2e6160c56f5f9a3056821bb4dd48c",
+      "lrat_sha256": "d57903b7ae07cee2e7ae491f91357c7b4e1f1a06d19c49a624e43500e1616cc2"
+    },
+    {
+      "name": "n16_402010",
+      "added": 4908,
+      "deleted": 10236,
+      "cnf_sha256": "9ca0fc119cdcdaba23514a7708f7ebb5f037b8a41e11583babe60ca4d020c49d",
+      "lrat_sha256": "6c90d99beffb28d9824e869f569918d1591aec1be3def2f6c4a86d2c879ab5c1"
+    },
+    {
+      "name": "n16_410110",
+      "added": 6193,
+      "deleted": 14933,
+      "cnf_sha256": "5585a87cce1e5b89c676e207062d0cec376f0df4554bd05216b58981c4c2de6b",
+      "lrat_sha256": "6f358eade464c192d98c881103b6956f9ada5f65a821761009c86324996f423b"
+    },
+    {
+      "name": "n16_500011",
+      "added": 3506,
+      "deleted": 4296,
+      "cnf_sha256": "f5775f98a7a7765658b0c8aacfc5760005b1ee9e0ef76b07d01d75543c722cea",
+      "lrat_sha256": "4ff61d002b4c41491a9087a45b7187f9f081860c06c1475e5a0afc8d615feda4"
+    },
+    {
+      "name": "n17_511010",
+      "added": 5790,
+      "deleted": 13818,
+      "cnf_sha256": "ca4ab9b7a4191cea57ef913c7ad4fd5e1f2ed17d29e8e0d5d77767318752e4ef",
+      "lrat_sha256": "01976412fd6d0d82e1e06a474f172efa313988c377e60fabe3a7f94f9d27f490"
+    },
+    {
+      "name": "n17_600110",
+      "added": 6124,
+      "deleted": 11605,
+      "cnf_sha256": "d5efb6c7e2517c3315b216e2e850cd2ae6a91f282684a0c04435cbcf14ae8b6f",
+      "lrat_sha256": "9578cf0acdfd9c99fab1368b4c0d452224f1b3ed62535a3e100bcd65d0d06b91"
+    }
+  ]
+}
+
+一般无环多重图的推广 / d5_parallel_spoke_bound.py 
+{
+  "template_count": 21,
+  "maximum_upper_bound": 27,
+  "templates_allowing_30": [],
+  "all_templates": [
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [],
+      "upper_bound": 17
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [],
+      "upper_bound": 27
+    },
+    {
+      "unmarked_spokes": [
+        0,
+        1
+      ],
+      "internal_edges": [],
+      "upper_bound": 26
+    },
+    {
+      "unmarked_spokes": [
+        0,
+        3
+      ],
+      "internal_edges": [],
+      "upper_bound": 26
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "upper_bound": 16
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "upper_bound": 17
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "upper_bound": 25
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "upper_bound": 25
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 24
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "upper_bound": 20
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 21
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 26
+    },
+    {
+      "unmarked_spokes": [
+        0
+      ],
+      "internal_edges": [
+        [
+          1,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 24
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "upper_bound": 18
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "upper_bound": 18
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 21
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 22
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 18
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          3,
+          1
+        ]
+      ],
+      "upper_bound": 22
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          0,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 25
+    },
+    {
+      "unmarked_spokes": [],
+      "internal_edges": [
+        [
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          4,
+          1
+        ]
+      ],
+      "upper_bound": 22
+    }
+  ]
+}
+
+一般无环多重图的推广 / d7_verify_parallel.py --jobs 2
+q10_l0_r3 640283 verified RUP additions
+q10_l0_r4 965708 verified RUP additions
+q10_l1_r2 600423 verified RUP additions
+q10_l0_r5 809515 verified RUP additions
+q10_l1_r3 1024108 verified RUP additions
+q10_l1_r4 1167230 verified RUP additions
+q10_l1_r5 1010069 verified RUP additions
+q10_l2_r2 1169103 verified RUP additions
+q10_l2_r3 1397463 verified RUP additions
+q10_l2_r4 1546528 verified RUP additions
+q10_l2_r5 1343086 verified RUP additions
+q10_l3_r3 2062118 verified RUP additions
+q10_l3_r4 1879697 verified RUP additions
+q10_l3_r5 1354095 verified RUP additions
+q10_l4_r4 1708915 verified RUP additions
+q10_l4_r5 1342824 verified RUP additions
+q9a_l1_r5 4859 verified RUP additions
+q9a_l2_r4 12356 verified RUP additions
+q9a_l2_r5 14620 verified RUP additions
+q9a_l3_r3 39611 verified RUP additions
+q9a_l3_r4 26345 verified RUP additions
+q9a_l3_r5 17665 verified RUP additions
+q9a_l4_r2 26389 verified RUP additions
+q9a_l4_r3 12423 verified RUP additions
+q9a_l4_r4 16541 verified RUP additions
+q9a_l4_r5 18278 verified RUP additions
+q9b_l0_r5 14841 verified RUP additions
+q9b_l1_r4 16275 verified RUP additions
+q10_l5_r5 1294635 verified RUP additions
+q9b_l1_r5 23883 verified RUP additions
+q9b_l2_r3 33649 verified RUP additions
+q9b_l2_r5 18014 verified RUP additions
+q9b_l2_r4 27496 verified RUP additions
+q9b_l3_r2 23654 verified RUP additions
+q9b_l3_r3 30625 verified RUP additions
+q9b_l3_r4 18433 verified RUP additions
+q9b_l3_r5 17281 verified RUP additions
+q9c_l11_r41 15519 verified RUP additions
+q9c_l21_r31 39779 verified RUP additions
+q9c_l20_r41 20987 verified RUP additions
+q9c_l21_r41 48979 verified RUP additions
+q9c_l30_r31 9160 verified RUP additions
+q9c_l31_r31 148918 verified RUP additions
+q9c_l30_r40 47650 verified RUP additions
+q9c_l30_r41 21626 verified RUP additions
+q9c_l31_r41 18351 verified RUP additions
+q9c_l40_r31 7164 verified RUP additions
+q9c_l40_r21 19308 verified RUP additions
+q9c_l40_r40 39937 verified RUP additions
+q9c_l40_r41 11467 verified RUP additions
+q9c_l41_r41 39510 verified RUP additions
+Verified 51 instances and 22217393 RUP additions.
+
+一般无环多重图的推广\三小时续研_有限度数 / d9_order23_blue_chain_sat.py --out d9_order23_blue_chain --verify --shape matching star path twopaths path9 matching10
+matching_a6 VERIFIED_UNSAT 
+matching_a7 VERIFIED_UNSAT 
+star_a6 VERIFIED_UNSAT 
+star_a7 VERIFIED_UNSAT 
+path_a6 VERIFIED_UNSAT 
+path_a7 VERIFIED_UNSAT 
+twopaths_a6 VERIFIED_UNSAT 
+twopaths_a7 VERIFIED_UNSAT 
+path9_a5 VERIFIED_UNSAT 
+path9_a6 VERIFIED_UNSAT 
+path9_a7 VERIFIED_UNSAT 
+matching10_a4 VERIFIED_UNSAT 
+matching10_a5 VERIFIED_UNSAT 
+matching10_a6 VERIFIED_UNSAT 
+matching10_a4_i2 VERIFIED_UNSAT 
+matching10_a5_i2 VERIFIED_UNSAT 
+matching10_a4_i3 VERIFIED_UNSAT 
+matching10_a5_i3 VERIFIED_UNSAT 
+{
+  "matching_a6": "VERIFIED_UNSAT",
+  "matching_a7": "VERIFIED_UNSAT",
+  "star_a6": "VERIFIED_UNSAT",
+  "star_a7": "VERIFIED_UNSAT",
+  "path_a6": "VERIFIED_UNSAT",
+  "path_a7": "VERIFIED_UNSAT",
+  "twopaths_a6": "VERIFIED_UNSAT",
+  "twopaths_a7": "VERIFIED_UNSAT",
+  "path9_a5": "VERIFIED_UNSAT",
+  "path9_a6": "VERIFIED_UNSAT",
+  "path9_a7": "VERIFIED_UNSAT",
+  "matching10_a4": "VERIFIED_UNSAT",
+  "matching10_a5": "VERIFIED_UNSAT",
+  "matching10_a6": "VERIFIED_UNSAT",
+  "matching10_a4_i2": "VERIFIED_UNSAT",
+  "matching10_a5_i2": "VERIFIED_UNSAT",
+  "matching10_a4_i3": "VERIFIED_UNSAT",
+  "matching10_a5_i3": "VERIFIED_UNSAT"
+}
+
+一般无环多重图的推广\七小时续研_有限度数 / d9_blue_ferrers_sat.py --out chain_n23_broad --verify --jobs 2
+n23_b3_04_k5_9x9_i0 VERIFIED_UNSAT  104333 348348
+n23_b3_05_k6_7x9_i1 VERIFIED_UNSAT  113874 381067
+n23_b3_05_k6_8x8_i1 VERIFIED_UNSAT  114864 384604
+n23_b3_05_k6_8x9_i0 VERIFIED_UNSAT  122052 409741
+n23_b4_04_k5_9x9_i0 VERIFIED_UNSAT  97267 324532
+n23_b4_03_k5_9x9_i0 VERIFIED_UNSAT  105578 350204
+n23_b4_05_k5_9x9_i0 VERIFIED_UNSAT  97447 324968
+n23_b4_06_k5_9x9_i0 VERIFIED_UNSAT  100877 336529
+n23_b4_07_k6_8x9_i0 VERIFIED_UNSAT  114017 382710
+n23_b4_08_k6_8x9_i0 VERIFIED_UNSAT  113799 381635
+n23_b4_10_k7_5x9_i2 VERIFIED_UNSAT  112481 377004
+n23_b4_09_k6_8x9_i0 VERIFIED_UNSAT  114569 384998
+n23_b4_10_k7_6x9_i1 VERIFIED_UNSAT  121983 410154
+n23_b4_10_k7_7x8_i1 VERIFIED_UNSAT  124252 418224
+n23_b4_10_k7_7x9_i0 VERIFIED_UNSAT  130993 441997
+n23_b4_10_k7_8x8_i0 VERIFIED_UNSAT  132133 446081
+n23_b4_11_k8_4x9_i2 VERIFIED_UNSAT  127924 429779
+n23_b4_11_k8_5x7_i3 VERIFIED_UNSAT  127302 427816
+n23_b4_11_k8_5x8_i2 VERIFIED_UNSAT  132668 446641
+n23_b4_11_k8_5x9_i1 VERIFIED_UNSAT  138273 466122
+n23_b4_11_k8_6x7_i2 VERIFIED_UNSAT  135062 455126
+n23_b4_11_k8_6x8_i1 VERIFIED_UNSAT  141864 478964
+n23_b4_11_k8_7x7_i1 VERIFIED_UNSAT  143177 483613
+n23_b4_11_k8_6x9_i0 VERIFIED_UNSAT  148275 501607
+n23_b5_02_k5_9x9_i0 VERIFIED_UNSAT  90274 299784
+n23_b4_11_k8_7x8_i0 VERIFIED_UNSAT  150769 510569
+n23_b5_03_k5_9x9_i0 VERIFIED_UNSAT  91593 304939
+n23_b5_04_k5_9x9_i0 VERIFIED_UNSAT  90258 299783
+n23_b5_05_k5_9x9_i0 VERIFIED_UNSAT  91171 303577
+n23_b5_06_k5_9x9_i0 VERIFIED_UNSAT  93176 308039
+n23_b5_08_k6_8x9_i0 VERIFIED_UNSAT  105396 352565
+n23_b5_07_k6_8x9_i0 VERIFIED_UNSAT  179188 593637
+n23_b5_09_k6_8x9_i0 VERIFIED_UNSAT  108992 364286
+n23_b5_10_k6_8x9_i0 VERIFIED_UNSAT  105521 353447
+n23_b5_11_k6_8x9_i0 VERIFIED_UNSAT  105412 353038
+n23_b5_12_k6_8x9_i0 VERIFIED_UNSAT  106917 357824
+n23_b5_14_k6_8x9_i0 VERIFIED_UNSAT  106659 357664
+n23_b5_13_k6_8x9_i0 VERIFIED_UNSAT  106020 355834
+n23_b5_15_k6_8x9_i0 VERIFIED_UNSAT  110371 369580
+n23_b5_16_k7_5x9_i2 VERIFIED_UNSAT  104181 348303
+n23_b5_16_k7_6x9_i1 VERIFIED_UNSAT  113479 380753
+n23_b5_16_k7_7x9_i0 VERIFIED_UNSAT  122285 411895
+n23_b5_17_k7_5x9_i2 VERIFIED_UNSAT  103344 345781
+n23_b5_16_k7_8x8_i0 VERIFIED_UNSAT  123397 415878
+n23_b5_17_k7_6x9_i1 VERIFIED_UNSAT  112688 378385
+n23_b5_17_k7_7x9_i0 VERIFIED_UNSAT  121540 409681
+n23_b5_18_k7_5x9_i2 VERIFIED_UNSAT  113167 377171
+n23_b5_17_k7_8x8_i0 VERIFIED_UNSAT  122658 413688
+n23_b5_18_k7_6x9_i1 VERIFIED_UNSAT  121889 407467
+n23_b5_18_k7_7x9_i0 VERIFIED_UNSAT  130069 436288
+n23_b5_19_k7_5x9_i2 VERIFIED_UNSAT  102507 342647
+n23_b5_18_k7_8x8_i0 VERIFIED_UNSAT  131116 440021
+n23_b5_19_k7_6x9_i1 VERIFIED_UNSAT  111805 375097
+n23_b5_19_k7_7x9_i0 VERIFIED_UNSAT  120611 406239
+n23_b5_20_k7_5x9_i2 VERIFIED_UNSAT  104518 349983
+n23_b5_19_k7_8x8_i0 VERIFIED_UNSAT  121723 410222
+n23_b5_20_k7_6x9_i1 VERIFIED_UNSAT  113908 382741
+n23_b5_20_k7_7x9_i0 VERIFIED_UNSAT  122806 414191
+n23_b5_21_k7_5x9_i2 VERIFIED_UNSAT  108045 361746
+n23_b5_20_k7_8x8_i0 VERIFIED_UNSAT  123930 418219
+n23_b5_21_k7_6x9_i1 VERIFIED_UNSAT  117481 394658
+n23_b5_21_k7_7x9_i0 VERIFIED_UNSAT  126425 426262
+n23_b5_22_k8_4x9_i2 VERIFIED_UNSAT  118411 397672
+n23_b5_21_k7_8x8_i0 VERIFIED_UNSAT  127555 430311
+n23_b5_22_k8_5x8_i2 VERIFIED_UNSAT  123091 414312
+n23_b5_22_k8_5x9_i1 VERIFIED_UNSAT  128648 433622
+n23_b5_22_k8_6x8_i1 VERIFIED_UNSAT  132327 446706
+n23_b5_22_k8_6x9_i0 VERIFIED_UNSAT  138538 468715
+n23_b5_22_k8_7x7_i1 VERIFIED_UNSAT  133488 450891
+n23_b5_23_k8_4x9_i2 VERIFIED_UNSAT  117589 393889
+n23_b5_22_k8_7x8_i0 VERIFIED_UNSAT  141000 477565
+n23_b5_23_k8_5x9_i1 VERIFIED_UNSAT  127688 429377
+n23_b5_23_k8_5x8_i2 VERIFIED_UNSAT  122197 410281
+n23_b5_23_k8_6x8_i1 VERIFIED_UNSAT  131313 442273
+n23_b5_23_k8_6x9_i0 VERIFIED_UNSAT  137440 464008
+n23_b5_23_k8_7x7_i1 VERIFIED_UNSAT  132456 446396
+n23_b5_24_k8_4x9_i2 VERIFIED_UNSAT  119227 400649
+n23_b5_23_k8_7x8_i0 VERIFIED_UNSAT  139866 472730
+n23_b5_24_k8_5x8_i2 VERIFIED_UNSAT  123931 417371
+n23_b5_24_k8_5x9_i1 VERIFIED_UNSAT  129510 436753
+n23_b5_24_k8_6x8_i1 VERIFIED_UNSAT  133207 449899
+n23_b5_24_k8_6x9_i0 VERIFIED_UNSAT  139446 472000
+n23_b5_24_k8_7x7_i1 VERIFIED_UNSAT  134374 454105
+n23_b5_25_k9_3x9_i2 VERIFIED_UNSAT  132496 446035
+n23_b5_24_k8_7x8_i0 VERIFIED_UNSAT  141920 480892
+n23_b5_25_k9_4x7_i3 VERIFIED_UNSAT  134600 453634
+n23_b5_25_k9_4x8_i2 VERIFIED_UNSAT  139042 469323
+n23_b5_25_k9_4x9_i1 VERIFIED_UNSAT  143664 485457
+n23_b5_25_k9_5x6_i3 VERIFIED_UNSAT  137163 462671
+n23_b5_25_k9_5x7_i2 VERIFIED_UNSAT  142975 483284
+n23_b5_25_k9_5x8_i1 VERIFIED_UNSAT  149116 504845
+n23_b5_25_k9_6x6_i2 VERIFIED_UNSAT  144358 488121
+n23_b5_25_k9_5x9_i0 VERIFIED_UNSAT  154680 524624
+n23_b5_25_k9_6x7_i1 VERIFIED_UNSAT  151734 514205
+n23_b5_25_k9_6x8_i0 VERIFIED_UNSAT  158799 539363
+n23_b5_26_k10_2x9_i2 VERIFIED_UNSAT  146113 492356
+n23_b5_26_k10_3x6_i4 VERIFIED_UNSAT  148500 500591
+n23_b5_25_k9_7x7_i0 VERIFIED_UNSAT  160151 544239
+n23_b5_26_k10_3x7_i3 VERIFIED_UNSAT  151589 511808
+n23_b5_26_k10_3x8_i2 VERIFIED_UNSAT  154850 523442
+n23_b5_26_k10_3x9_i1 VERIFIED_UNSAT  158212 535249
+n23_b5_26_k10_4x5_i4 VERIFIED_UNSAT  151260 510367
+n23_b5_26_k10_4x6_i3 VERIFIED_UNSAT  155832 526817
+n23_b5_26_k10_4x7_i2 VERIFIED_UNSAT  160668 544105
+n23_b5_26_k10_4x8_i1 VERIFIED_UNSAT  165592 561582
+n23_b5_26_k10_4x9_i0 VERIFIED_UNSAT  170382 578570
+n23_b5_26_k10_5x5_i3 VERIFIED_UNSAT  157313 532022
+n23_b5_26_k10_5x6_i2 VERIFIED_UNSAT  163502 554157
+n23_b5_26_k10_5x7_i1 VERIFIED_UNSAT  170151 577744
+n23_b5_26_k10_6x6_i1 VERIFIED_UNSAT  171614 582923
+n23_b5_26_k10_5x8_i0 VERIFIED_UNSAT  176483 600350
+n23_b5_26_k10_6x7_i0 VERIFIED_UNSAT  179501 611133
+{
+  "n23_b3_04_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b3_05_k6_7x9_i1": "VERIFIED_UNSAT",
+  "n23_b3_05_k6_8x8_i1": "VERIFIED_UNSAT",
+  "n23_b3_05_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_03_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_04_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_05_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_06_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_07_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_08_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_09_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_10_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b4_10_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b4_10_k7_7x8_i1": "VERIFIED_UNSAT",
+  "n23_b4_10_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_10_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_4x9_i2": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_5x7_i3": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_5x8_i2": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_5x9_i1": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_6x7_i2": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_6x8_i1": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_6x9_i0": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_7x7_i1": "VERIFIED_UNSAT",
+  "n23_b4_11_k8_7x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_02_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_03_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_04_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_05_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_06_k5_9x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_07_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_08_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_09_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_10_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_11_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_12_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_13_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_14_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_15_k6_8x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_16_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_16_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_16_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_16_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_17_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_17_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_17_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_17_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_18_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_18_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_18_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_18_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_19_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_19_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_19_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_19_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_20_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_20_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_20_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_20_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_21_k7_5x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_21_k7_6x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_21_k7_7x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_21_k7_8x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_4x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_5x8_i2": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_5x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_6x8_i1": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_6x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_7x7_i1": "VERIFIED_UNSAT",
+  "n23_b5_22_k8_7x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_4x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_5x8_i2": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_5x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_6x8_i1": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_6x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_7x7_i1": "VERIFIED_UNSAT",
+  "n23_b5_23_k8_7x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_4x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_5x8_i2": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_5x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_6x8_i1": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_6x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_7x7_i1": "VERIFIED_UNSAT",
+  "n23_b5_24_k8_7x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_3x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_4x7_i3": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_4x8_i2": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_4x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_5x6_i3": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_5x7_i2": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_5x8_i1": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_5x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_6x6_i2": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_6x7_i1": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_6x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_25_k9_7x7_i0": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_2x9_i2": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_3x6_i4": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_3x7_i3": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_3x8_i2": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_3x9_i1": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_4x5_i4": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_4x6_i3": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_4x7_i2": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_4x8_i1": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_4x9_i0": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_5x5_i3": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_5x6_i2": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_5x7_i1": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_5x8_i0": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_6x6_i1": "VERIFIED_UNSAT",
+  "n23_b5_26_k10_6x7_i0": "VERIFIED_UNSAT"
+}
+
+一般无环多重图的推广\三小时续研_九度矩 / d9_anchor_cases.py --verify
+{"slack_cap": {"minimum_slack_at_most": 7, "source_sha256": "f74cf430a6d2a6e643e2aa63de3ee417bfe3c1ae12c6098a93f313092cced10e", "gamma": "4633232669763907/9536743164062500", "epsilon": "10177052277394907/10000000000000000000000", "projected_deficit": "17/324"}, "cases": 60, "unresolved": []}
+
+一般无环多重图的推广\七小时续研_奇偶变换 / verify_d9_two_bundles.py --jobs 2
+{
+  "cap": {
+    "minimum_slack_at_most": 9,
+    "source_sha256": "f74cf430a6d2a6e643e2aa63de3ee417bfe3c1ae12c6098a93f313092cced10e",
+    "gamma": "4633232669763907/9536743164062500",
+    "epsilon": "10177052277394907/10000000000000000000000",
+    "projected_deficit": "7/108"
+  },
+  "total": 114,
+  "proofs": 71,
+  "counted_out": 43,
+  "added_rup": 13513672
+}
+
+一般无环多重图的推广 / 一般无环多重图的推广\七小时续研_奇偶变换\d9_pentagon.py --out 一般无环多重图的推广\七小时续研_奇偶变换\d9_b1_triangle --strengthen --verify --degree 9 --bundles 1 --triangles require --min-order 24 --max-order 25 --select s11212
+s11212 REPLAY_PASS
+{"cases": 1, "verified": 1, "unresolved": []}
+
+一般无环多重图的推广 / 一般无环多重图的推广\七小时续研_奇偶变换\d9_pentagon.py --out 一般无环多重图的推广\七小时续研_奇偶变换\d11_b1 --strengthen --verify --degree 11 --bundles 1 --triangles allow --min-order 27 --select s11212
+s11212 REPLAY_PASS
+{"cases": 1, "verified": 1, "unresolved": []}
+
+一般无环多重图的推广\三小时续研_九度矩 / -c import d9_anchor_cases as a; print(*[a.case_name(s) for s in a.patterns(9) if not a.counted_out(s)], sep=chr(10))
+s01107
+s01116
+s01125
+s01134
+s01206
+s01215
+s01224
+s01233
+s01305
+s01314
+s01323
+s01332
+s01404
+s01413
+s01422
+s01503
+s01512
+s01602
+s02025
+s02034
+s02115
+s02124
+s02133
+s02142
+s02205
+s02214
+s02223
+s02232
+s02304
+s02313
+s02403
+s03033
+s03114
+s03123
+s11115
+s11124
+s11133
+s11214
+s11223
+s11232
+s11313
+s12123
+s12213
+s12222
+
+一般无环多重图的推广 / 一般无环多重图的推广\七小时续研_奇偶变换\d9_pentagon.py --out 一般无环多重图的推广\七小时续研_奇偶变换\d9_r7_zero_triangle_free --strengthen --verify --bundles 0 --min-order 24 --capacity-cuts --jobs 2 --select s01033 s01105 s01114 s01123 s01132 s01204 s01213 s01222 s01231 s01303 s01312 s01402 s02023 s02113 s02122 s02203
+s01033 REPLAY_PASS
+s01105 REPLAY_PASS
+s01114 REPLAY_PASS
+s01123 REPLAY_PASS
+s01132 REPLAY_PASS
+s01204 REPLAY_PASS
+s01222 REPLAY_PASS
+s01213 REPLAY_PASS
+s01231 REPLAY_PASS
+s01303 REPLAY_PASS
+s01312 REPLAY_PASS
+s01402 REPLAY_PASS
+s02023 REPLAY_PASS
+s02113 REPLAY_PASS
+s02203 REPLAY_PASS
+s02122 REPLAY_PASS
+{"cases": 16, "verified": 16, "unresolved": []}
+
+一般无环多重图的推广 / 一般无环多重图的推广\七小时续研_奇偶变换\d9_pentagon.py --out 一般无环多重图的推广\七小时续研_奇偶变换\d9_r7_zero_triangle --strengthen --verify --triangles require --max-order 25 --bundles 0 --min-order 24 --capacity-cuts --jobs 2 --select s01033 s01105 s01114 s01123 s01132 s01204 s01213 s01222 s01231 s01303 s01312 s01402 s02023 s02113 s02122 s02203
+s01033 REPLAY_PASS
+s01105 REPLAY_PASS
+s01114 REPLAY_PASS
+s01123 REPLAY_PASS
+s01204 REPLAY_PASS
+s01132 REPLAY_PASS
+s01213 REPLAY_PASS
+s01222 REPLAY_PASS
+s01231 REPLAY_PASS
+s01303 REPLAY_PASS
+s01312 REPLAY_PASS
+s01402 REPLAY_PASS
+s02023 REPLAY_PASS
+s02113 REPLAY_PASS
+s02122 REPLAY_PASS
+s02203 REPLAY_PASS
+{"cases": 16, "verified": 16, "unresolved": []}
+
+一般无环多重图的推广 / 一般无环多重图的推广\七小时续研_奇偶变换\d9_pentagon.py --out 一般无环多重图的推广\七小时续研_奇偶变换\d9_r9_triangle_free --strengthen --verify --bundles 0 --min-order 24 --capacity-cuts --jobs 2 --select s01107 s01116 s01125 s01134 s01206 s01215 s01224 s01233 s01305 s01314 s01323 s01332 s01404 s01413 s01422 s01503 s01512 s01602 s02025 s02034 s02115 s02124 s02133 s02142 s02205 s02214 s02223 s02232 s02304 s02313 s02403 s03033 s03114 s03123 s11115 s11124 s11133 s11214 s11223 s11232 s11313 s12123 s12213 s12222
+s01107 REPLAY_PASS
+s01116 REPLAY_PASS
+s01134 REPLAY_PASS
+s01125 REPLAY_PASS
+s01206 REPLAY_PASS
+s01215 REPLAY_PASS
+s01224 REPLAY_PASS
+s01233 REPLAY_PASS
+s01305 REPLAY_PASS
+s01314 REPLAY_PASS
+s01332 REPLAY_PASS
+s01323 REPLAY_PASS
+s01404 REPLAY_PASS
+s01413 REPLAY_PASS
+s01422 REPLAY_PASS
+s01503 REPLAY_PASS
+s01602 REPLAY_PASS
+s01512 REPLAY_PASS
+s02025 REPLAY_PASS
+s02034 REPLAY_PASS
+s02115 REPLAY_PASS
+s02124 REPLAY_PASS
+s02133 REPLAY_PASS
+s02142 REPLAY_PASS
+s02205 REPLAY_PASS
+s02214 REPLAY_PASS
+s02232 REPLAY_PASS
+s02223 REPLAY_PASS
+s02304 REPLAY_PASS
+s02313 REPLAY_PASS
+s02403 REPLAY_PASS
+s03033 REPLAY_PASS
+s03114 REPLAY_PASS
+s03123 REPLAY_PASS
+s11115 REPLAY_PASS
+s11124 REPLAY_PASS
+s11214 REPLAY_PASS
+s11133 REPLAY_PASS
+s11232 REPLAY_PASS
+s11223 REPLAY_PASS
+s11313 REPLAY_PASS
+s12123 REPLAY_PASS
+s12222 REPLAY_PASS
+s12213 REPLAY_PASS
+{"cases": 44, "verified": 44, "unresolved": []}
+
+一般无环多重图的推广 / 一般无环多重图的推广\七小时续研_奇偶变换\d9_pentagon.py --out 一般无环多重图的推广\七小时续研_奇偶变换\d9_r9_triangle --strengthen --verify --triangles require --max-order 25 --bundles 0 --min-order 24 --capacity-cuts --jobs 2 --select s01107 s01116 s01125 s01134 s01206 s01215 s01224 s01233 s01305 s01314 s01323 s01332 s01404 s01413 s01422 s01503 s01512 s01602 s02025 s02034 s02115 s02124 s02133 s02142 s02205 s02214 s02223 s02232 s02304 s02313 s02403 s03033 s03114 s03123 s11115 s11124 s11133 s11214 s11223 s11232 s11313 s12123 s12213 s12222
+s01116 REPLAY_PASS
+s01107 REPLAY_PASS
+s01125 REPLAY_PASS
+s01134 REPLAY_PASS
+s01206 REPLAY_PASS
+s01215 REPLAY_PASS
+s01224 REPLAY_PASS
+s01233 REPLAY_PASS
+s01314 REPLAY_PASS
+s01305 REPLAY_PASS
+s01332 REPLAY_PASS
+s01323 REPLAY_PASS
+s01413 REPLAY_PASS
+s01404 REPLAY_PASS
+s01422 REPLAY_PASS
+s01503 REPLAY_PASS
+s01602 REPLAY_PASS
+s01512 REPLAY_PASS
+s02025 REPLAY_PASS
+s02034 REPLAY_PASS
+s02115 REPLAY_PASS
+s02124 REPLAY_PASS
+s02133 REPLAY_PASS
+s02142 REPLAY_PASS
+s02205 REPLAY_PASS
+s02214 REPLAY_PASS
+s02232 REPLAY_PASS
+s02223 REPLAY_PASS
+s02304 REPLAY_PASS
+s02313 REPLAY_PASS
+s02403 REPLAY_PASS
+s03033 REPLAY_PASS
+s03114 REPLAY_PASS
+s11115 REPLAY_PASS
+s11124 REPLAY_PASS
+s03123 REPLAY_PASS
+s11133 REPLAY_PASS
+s11214 REPLAY_PASS
+s11223 REPLAY_PASS
+s11232 REPLAY_PASS
+s11313 REPLAY_PASS
+s12123 REPLAY_PASS
+s12213 REPLAY_PASS
+s12222 REPLAY_PASS
+{"cases": 44, "verified": 44, "unresolved": []}
+
+PASS finite

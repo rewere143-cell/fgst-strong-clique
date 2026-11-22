@@ -1,0 +1,13 @@
+{
+  "name": "twopaths_a7",
+  "variables": 63520,
+  "clauses": 203913,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "34b2c4135fc3bf59095d4ea57b83f32ef4e61372b70b6f0067d6f51a601c26cc",
+  "lrat_sha256": "127e28fd26dbea8ed4be6d32027cd46909d621e716a0a195423d59b59fe8ae84",
+  "replay": {
+    "added": 269437,
+    "deleted": 371228
+  }
+}

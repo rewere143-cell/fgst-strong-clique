@@ -1,0 +1,31 @@
+{
+  "exact_integer_dual_verified": true,
+  "mode": "abundance",
+  "cycle_coordinate": 434,
+  "target_coefficients": {
+    "434": -1
+  },
+  "gamma": "2384185791004709/2384185791015625",
+  "epsilon": "5216145382201/5000000000000000000000",
+  "epsilon_decimal": 1.0432290764402e-09,
+  "cap": "1125000001043801389221/1000000000000000000000",
+  "raw_cap": "11250000000005726391741/10000000000000000000000",
+  "negative_coefficients": 1516,
+  "correction": "10432287500469/10000000000000000000000",
+  "rank_one_weights_checked": 4150,
+  "additional_rank_one_weights_checked": 40,
+  "degree_nonzeros_checked": 433899,
+  "gram_nonzeros_checked": 1895405,
+  "candidate_sha256": "4ac87435ac8b48bdc53184b931aaa0bd624e4223cc243f119b74b9440fe122d5",
+  "base_sha256": "369542796834aa1f297dccf750f1743c8f01827d8b4ef08ef044ff474909a912",
+  "matrix_sha256": {
+    "basis.txt": "10665e56c7df1fcb5f28feef675f95d8264297f976c633b0d0c56dde2c940763",
+    "degree.txt": "6d1cbaeef209f0840493111ae06d56abc6863690e70ed1dbd6207677a9de06ce",
+    "idx4.bin": "4c3978041262113b0f1af184070d806a367f5d31e7d94d5d278a7b9948671782",
+    "idx5.bin": "a73708d7bb65a8dd9df185cfef950665e3268249c1f6355781265ff112e6ed1e",
+    "keys.bin": "510e573c48b6e7a4729ffea4ad44cd0a1318dbf99b6fef74c1c70d9b874ce041",
+    "values.bin": "8053195b04718f9445ae77d8d8f4910a732dc6606a154260e9bdcb655548f65c",
+    "degree_keys.bin": "2cdfc451dd88c37488a37983cc9d1f7d903c05e08b17605c504d5bfda31420ac",
+    "degree_values.bin": "55a7aeab9e2742d7c87c028aab7c36742781e60164157abd33b0e81658469d05"
+  }
+}

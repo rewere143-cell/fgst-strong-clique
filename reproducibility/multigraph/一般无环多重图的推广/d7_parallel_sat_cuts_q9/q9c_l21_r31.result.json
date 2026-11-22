@@ -1,0 +1,1 @@
+{"name": "q9c_l21_r31", "code": 20, "result": "VERIFIED_UNSAT", "replay_stdout": "{\"added\":39779,\"deleted\":13145}\n", "replay_stderr": "", "cnf_sha256": "1c1f0b017162c8a716d89c8a921c155d561493d362f467a539525ac6809eb440", "lrat_sha256": "7edc701efd1f640a2bcb3d5c391591d8435b375cc0884f5ac1431db1a882849f"}

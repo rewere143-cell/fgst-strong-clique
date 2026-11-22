@@ -1,0 +1,21 @@
+{
+  "name": "s01022",
+  "slack": [
+    0,
+    1,
+    0,
+    2,
+    2
+  ],
+  "result": "VERIFIED_UNSAT",
+  "code": 20,
+  "limit": null,
+  "variables": 35967,
+  "clauses": 184854,
+  "replay": {
+    "added": 20306,
+    "deleted": 3565
+  },
+  "cnf_sha256": "9f1a896475f031402ec737ea43a4c0e58c7af3403d93ab81ae5571e4c1f44059",
+  "lrat_sha256": "b624a45f3c793156729805e5e7cef4482a1286a09a8906dc8f1e78d27adca08c"
+}

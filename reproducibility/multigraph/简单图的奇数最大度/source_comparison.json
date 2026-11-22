@@ -1,0 +1,53 @@
+{
+  "source_zip_sha256": "08f437813e496ab50c2019cfffc8f7f5032e335ab349a15643717700fdfa4d6e",
+  "data_files": {
+    "reproducibility/data/basis.txt": {
+      "sha256": "10665e56c7df1fcb5f28feef675f95d8264297f976c633b0d0c56dde2c940763",
+      "matches_previous": true
+    },
+    "reproducibility/data/compact_certificate.json": {
+      "sha256": "369542796834aa1f297dccf750f1743c8f01827d8b4ef08ef044ff474909a912",
+      "matches_previous": true
+    },
+    "reproducibility/data/degree.txt": {
+      "sha256": "6d1cbaeef209f0840493111ae06d56abc6863690e70ed1dbd6207677a9de06ce",
+      "matches_previous": true
+    },
+    "reproducibility/data/degree_keys.bin": {
+      "sha256": "2cdfc451dd88c37488a37983cc9d1f7d903c05e08b17605c504d5bfda31420ac",
+      "matches_previous": true
+    },
+    "reproducibility/data/degree_values.bin": {
+      "sha256": "55a7aeab9e2742d7c87c028aab7c36742781e60164157abd33b0e81658469d05",
+      "matches_previous": true
+    },
+    "reproducibility/data/idx3.bin": {
+      "sha256": "ee7a664a2e9ca4d895f5e7e575ba74fc53d7cebce859fd8784f2c798a17c7899",
+      "matches_previous": true
+    },
+    "reproducibility/data/idx4.bin": {
+      "sha256": "4c3978041262113b0f1af184070d806a367f5d31e7d94d5d278a7b9948671782",
+      "matches_previous": true
+    },
+    "reproducibility/data/idx5.bin": {
+      "sha256": "a73708d7bb65a8dd9df185cfef950665e3268249c1f6355781265ff112e6ed1e",
+      "matches_previous": true
+    },
+    "reproducibility/data/keys.bin": {
+      "sha256": "510e573c48b6e7a4729ffea4ad44cd0a1318dbf99b6fef74c1c70d9b874ce041",
+      "matches_previous": true
+    },
+    "reproducibility/data/order6_orbit_index.bin": {
+      "sha256": "944431345391f7e73928e2c548d8b0d805a6b279342ba20647e00ba5df12730a",
+      "matches_previous": true
+    },
+    "reproducibility/data/original_sharp_certificate.json": {
+      "sha256": "3bcb8303cda450d975fe1cc70adcddc9800d95e53ec4b0204b379c0014a47851",
+      "matches_previous": true
+    },
+    "reproducibility/data/values.bin": {
+      "sha256": "8053195b04718f9445ae77d8d8f4910a732dc6606a154260e9bdcb655548f65c",
+      "matches_previous": true
+    }
+  }
+}

@@ -1,0 +1,104 @@
+\section{Auxiliary Lemmas}\label{sec:auxiliary}
+
+We use a regular supergraph to count the ways to extend a map by one
+vertex. We refine the regularization lemma of Davey et
+al.~\cite{DaveyEtAlStrong2026} for simple graphs by extending it to
+loopless multigraphs. The construction preserves the multiplicities
+of the original edges and gives every new edge multiplicity one.
+
+\begin{lemma}\label{lem:regularization}
+Let $D\geq1$ be an integer and let $G$ be a finite loopless multigraph
+with $\Delta(G)\leq D$. There is a finite $D$-regular loopless multigraph
+$\widehat G$ containing $G$ as an induced subgraph such that every
+edge of $\widehat G$ outside $G$ has multiplicity one. In particular, $\widehat G$ is simple
+if $G$ is simple.
+\end{lemma}
+
+\begin{proof}
+We must add $D-d_G(v)$ incidences at each vertex $v$. Their total
+is $D|V(G)|-2|E(G)|$. If it is odd, then $D$ is odd, so adjoining one
+isolated vertex makes the total even. Form a list containing $D-d(v)$
+occurrences of each vertex $v$ of the resulting graph, where $d(v)$ is
+its current degree. Partition the list into pairs. For a pair $(u,v)$,
+take a new copy of $K_{D+1}$, delete an edge $xy$, and add the edges
+$ux$ and $vy$. Use a different copy for each pair. This adds two
+distinct edges even when $u=v$. Both $x$ and $y$ regain degree $D$,
+and every occurrence in the list adds one incidence at the
+corresponding vertex. Thus all degrees are $D$. Each added edge has
+multiplicity one and at least one new endpoint, so the original
+vertices induce $G$.
+\end{proof}
+
+A strong clique in $G$ is also a strong clique in $\widehat G$, since
+every adjacency between endpoints of its edges is preserved. In the
+counting arguments we mark only the edges of the chosen clique, so
+all edges added in the construction are unmarked.
+
+Vector inequalities are coordinatewise. For symmetric matrices $X$
+and $Y$ of the same size, $\tr(XY)=\sum_{i,j}X_{ij}Y_{ij}$.
+
+In the simple-graph calculation we will express the size of a strong
+clique, divided by the square of the maximum degree, as a linear
+function of the pattern counts. The calculation uses a system with $N=23{,}789$ coordinates, $3{,}516$ linear equations and
+$57$ positive semidefinite matrix constraints. Write $Aq=b$ for the
+linear equations and $o^{\mathsf T}q$ for the objective, where
+$A\in\mathbb Q^{3516\times N}$, $b\in\mathbb Q^{3516}$ and
+$o\in\mathbb Q^N$. For each $\ell\in[57]$, let
+$K_\ell,D_{\ell1},\ldots,D_{\ell N}$ be symmetric rational matrices of
+the same size. The $\ell$th matrix constraint is $M_\ell(q)\succeq0$,
+where
+\begin{equation}\label{eq:intro-affine-gram}
+ M_\ell(q)=K_\ell+\sum_{j=1}^N q_jD_{\ell j}.
+\end{equation}
+The matrices and vectors are specified in~\cite[Section~A]{FGSTSupplement}.
+For a symmetric matrix
+$Q$ of the same size as $K_\ell$, define
+$D_\ell^*(Q)\in\mathbb R^N$ by
+\begin{equation}\label{eq:intro-trace-adjoint}
+ (D_\ell^*(Q))_j=\tr(QD_{\ell j})\qquad(j\in[N]).
+\end{equation}
+
+\begin{lemma}\label{prop:certificate-principle}
+Let $o\in\mathbb Q^N$ be an objective vector and
+$\lambda\in\mathbb Q^{3516}$. For each $\ell\in[57]$, let $Q_\ell$
+be a matrix of the same size as $K_\ell$ expressible as a finite
+nonnegative rational linear combination of outer products
+$ww^{\mathsf T}$ of rational vectors. Set
+\begin{align}
+ &r=A^{\mathsf T}\lambda-\sum_{\ell=1}^{57}D_\ell^*(Q_\ell)-o,
+ \label{eq:residual}\\
+ &C=b^{\mathsf T}\lambda+\sum_{\ell=1}^{57}\tr(Q_\ell K_\ell).
+ \label{eq:dual-value}
+\end{align}
+We call $r$ the residual vector. If $r\geq0$, then every $q\in\mathbb R^N$ with $q\geq0$, $Aq=b$ and
+$M_\ell(q)\succeq0$ for all $\ell\in[57]$ satisfies $o^{\mathsf T}q\leq C$.
+If $q\in[0,1]^N$ satisfies the same equations and matrix constraints,
+then $o^{\mathsf T}q\leq C-\sum_{j:r_j<0}r_j$, for any residual $r$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:intro-affine-gram} and
+\eqref{eq:intro-trace-adjoint}, each trace
+$\tr(Q_\ell M_\ell(q))$ equals
+$\tr(Q_\ell K_\ell)+D_\ell^*(Q_\ell)^{\mathsf T}q$.
+Adding the scalar product of $r$ in \eqref{eq:residual} with $q$
+cancels the terms involving $D_\ell^*(Q_\ell)$. Since $Aq=b$,
+we have $\lambda^{\mathsf T}Aq=b^{\mathsf T}\lambda$, so
+the definition of $C$ in \eqref{eq:dual-value} gives
+\begin{equation}\label{eq:certificate-identity}
+ C-o^{\mathsf T}q
+ =\sum_{\ell=1}^{57}\tr\bigl(Q_\ell M_\ell(q)\bigr)
+  +\sum_{j=1}^N r_jq_j.
+\end{equation}
+Write $Q_\ell=\sum_a\alpha_{\ell a}w_{\ell a}w_{\ell a}^{\mathsf T}$,
+where each $\alpha_{\ell a}$ is nonnegative. Then
+\[
+ \tr\bigl(Q_\ell M_\ell(q)\bigr)=
+ \sum_a\alpha_{\ell a}w_{\ell a}^{\mathsf T}M_\ell(q)w_{\ell a}\geq0
+\]
+because $M_\ell(q)$ is positive semidefinite. If $r\geq0$ and $q\geq0$,
+the second sum in \eqref{eq:certificate-identity} is nonnegative.
+For $0\leq q_j\leq1$, we have $r_jq_j\geq0$ if $r_j\geq0$ and
+$r_jq_j\geq r_j$ if $r_j<0$. Thus the second sum is at least
+$\sum_{j:r_j<0}r_j$ in that case.
+\end{proof}

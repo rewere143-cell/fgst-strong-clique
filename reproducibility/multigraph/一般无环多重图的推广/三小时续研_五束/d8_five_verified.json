@@ -1,0 +1,395 @@
+{
+  "moment_inputs": {
+    "projection_size": 76,
+    "slack_maximum": 8,
+    "conditional_sha256": "fd9cc35d9f795c5558a4f6a8d1a04d51edb62be2a9f6e8e26730b8c3141dedec",
+    "q_upper": "992/5625",
+    "gamma": "2168282759483523/4768371582031250",
+    "epsilon": "464458296643547/250000000000000000000",
+    "deficit_required_if_all_slacks_at_least_10": "152836660052767757753083/2343750000000000000000000"
+  },
+  "cases": 62,
+  "unresolved": [],
+  "results": [
+    {
+      "name": "s00006",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00015",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00024",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00033",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00105",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00114",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00123",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00132",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00141",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00204",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00213",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00222",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s00303",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01014",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01023",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01104",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 69250,
+        "deleted": 189134
+      }
+    },
+    {
+      "name": "s01113",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 115766,
+        "deleted": 218386
+      }
+    },
+    {
+      "name": "s01122",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 78566,
+        "deleted": 182985
+      }
+    },
+    {
+      "name": "s01131",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01203",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 103780,
+        "deleted": 156413
+      }
+    },
+    {
+      "name": "s01212",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 105032,
+        "deleted": 119296
+      }
+    },
+    {
+      "name": "s01221",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01302",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 70780,
+        "deleted": 114847
+      }
+    },
+    {
+      "name": "s02022",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 56432,
+        "deleted": 163181
+      }
+    },
+    {
+      "name": "s02112",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 85987,
+        "deleted": 177799
+      }
+    },
+    {
+      "name": "s11112",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 102295,
+        "deleted": 187086
+      }
+    },
+    {
+      "name": "s01016",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01025",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01034",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01106",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01115",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 184781,
+        "deleted": 285943
+      }
+    },
+    {
+      "name": "s01124",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01133",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01142",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01151",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01205",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 199914,
+        "deleted": 698819
+      }
+    },
+    {
+      "name": "s01214",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 211483,
+        "deleted": 694771
+      }
+    },
+    {
+      "name": "s01223",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 127166,
+        "deleted": 251033
+      }
+    },
+    {
+      "name": "s01232",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01241",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01304",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 254387,
+        "deleted": 657828
+      }
+    },
+    {
+      "name": "s01313",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 352556,
+        "deleted": 690429
+      }
+    },
+    {
+      "name": "s01322",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01331",
+      "result": "COUNTED_OUT"
+    },
+    {
+      "name": "s01403",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 268939,
+        "deleted": 699376
+      }
+    },
+    {
+      "name": "s01412",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 95631,
+        "deleted": 205938
+      }
+    },
+    {
+      "name": "s01502",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 45299,
+        "deleted": 134633
+      }
+    },
+    {
+      "name": "s02024",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 322395,
+        "deleted": 720062
+      }
+    },
+    {
+      "name": "s02033",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 236891,
+        "deleted": 624704
+      }
+    },
+    {
+      "name": "s02114",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 301976,
+        "deleted": 800366
+      }
+    },
+    {
+      "name": "s02123",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 331840,
+        "deleted": 797432
+      }
+    },
+    {
+      "name": "s02132",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 319088,
+        "deleted": 737300
+      }
+    },
+    {
+      "name": "s02204",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 333991,
+        "deleted": 794745
+      }
+    },
+    {
+      "name": "s02213",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 338977,
+        "deleted": 808676
+      }
+    },
+    {
+      "name": "s02222",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 320654,
+        "deleted": 748359
+      }
+    },
+    {
+      "name": "s02303",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 312495,
+        "deleted": 775686
+      }
+    },
+    {
+      "name": "s03113",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 475942,
+        "deleted": 958770
+      }
+    },
+    {
+      "name": "s11114",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 177824,
+        "deleted": 532044
+      }
+    },
+    {
+      "name": "s11123",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 393765,
+        "deleted": 859216
+      }
+    },
+    {
+      "name": "s11213",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 505949,
+        "deleted": 1018726
+      }
+    },
+    {
+      "name": "s11222",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 465985,
+        "deleted": 986346
+      }
+    },
+    {
+      "name": "s12122",
+      "result": "LEGACY_VERIFIED_UNSAT",
+      "replay": {
+        "added": 672807,
+        "deleted": 1086624
+      }
+    }
+  ]
+}

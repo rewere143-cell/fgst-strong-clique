@@ -1,0 +1,88 @@
+{
+  "verified": true,
+  "templates": 2,
+  "instances": [
+    {
+      "name": "p2_b00000011_t00000000_x0",
+      "witness_pairs": 2,
+      "case": [
+        "b10",
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        5,
+        0
+      ],
+      "bundles": 10,
+      "strengthened": true,
+      "exterior_saturation": true,
+      "deletion_cuts": true,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 354992,
+        "deleted": 582183
+      },
+      "cnf_sha256": "027babae6f5f75f255cb549563e0d91178c3002b69d34c514415b5c415ca61a6",
+      "lrat_sha256": "2e6acb391e813f98804ea1f1f7b2fac0033ceab994a965aa73396f25db67928e"
+    },
+    {
+      "name": "p2_b00000002_t00000000_x0",
+      "witness_pairs": 2,
+      "case": [
+        "b10",
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        5,
+        0
+      ],
+      "bundles": 10,
+      "strengthened": true,
+      "exterior_saturation": true,
+      "deletion_cuts": true,
+      "result": "VERIFIED_UNSAT",
+      "limit": null,
+      "replay": {
+        "added": 360457,
+        "deleted": 542017
+      },
+      "cnf_sha256": "df609df827cde8a5ae0d38fb50ec6431af199760d3a89178f8b7900fd9860c62",
+      "lrat_sha256": "9c2e9c98f7b277f40b6302bff25ccce39c725b9da230f71596fcbed8fd57d1fa"
+    }
+  ]
+}

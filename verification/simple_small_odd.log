@@ -1,0 +1,5 @@
+{'degree': 3, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 5, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 7, 'unresolved_shapes': 0, 'samples': []}
+{'degree': 9, 'unresolved_shapes': 0, 'samples': []}
+{'verified': [3, 5, 7, 9], 'exact_upper_only': True, 'gamma_cycle': '99999/100000', 'gamma_anchor': '2257/4000', 'epsilon_cycle': '1/500000000', 'epsilon_anchor': '1/1000000000', 'used_relaxation': True}

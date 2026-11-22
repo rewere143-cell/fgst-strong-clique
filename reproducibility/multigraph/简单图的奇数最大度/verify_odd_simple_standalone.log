@@ -1,0 +1,25 @@
+{"verified_certificate": "c5_abundance_column_candidate_third.json", "gamma": "2384185791004709/2384185791015625", "epsilon": "5216145382201/5000000000000000000000", "sha256": "4ac87435ac8b48bdc53184b931aaa0bd624e4223cc243f119b74b9440fe122d5"}
+{"verified_certificate": "c5_abundance_column_candidate_second.json", "gamma": "2301759632650598/2384185791015625", "epsilon": "4440482007899/10000000000000000000000", "sha256": "d9dd06c5efce2927bc45089230dfd73a9c48da7c1afb322de435cb5cb3455a2a"}
+{"verified_certificate": "c5_anchor_column_candidate_fifth.json", "gamma": "1345297200078184/2384185791015625", "epsilon": "1052947997299/1250000000000000000000", "sha256": "c1a6e2905c044a962ae827eab8b3f58d36d0065df7130c7ee9bc9cc1993564bb"}
+{"verified_odd_degree": 3, "upper_bound": 10}
+{"verified_odd_degree": 5, "upper_bound": 29}
+{"verified_odd_degree": 7, "upper_bound": 58}
+{"verified_odd_degree": 9, "upper_bound": 97}
+{"verified_odd_degree": 11, "upper_bound": 146}
+{"verified_odd_degree": 13, "upper_bound": 205}
+{"verified_odd_degree": 15, "upper_bound": 274}
+{"verified_odd_degree": 17, "upper_bound": 353}
+{"verified_odd_degree": 19, "upper_bound": 442}
+{"verified_odd_degree": 21, "upper_bound": 541}
+{"verified_odd_degree": 23, "upper_bound": 650}
+{"verified_odd_degree": 25, "upper_bound": 769}
+{"verified_odd_degree": 27, "upper_bound": 898}
+{"verified_odd_degree": 29, "upper_bound": 1037}
+{"verified_odd_degree": 31, "upper_bound": 1186}
+{"verified_odd_degree": 33, "upper_bound": 1345}
+{"verified_odd_degrees":[35,149],"proof":"anchor signatures"}
+{"verified_odd_degrees":[151,49999],"proof":"anchor capacities"}
+All exact constants pass for delta=5e-6, D>=2000; simple threshold 100000.
+All exact constants pass for delta=8e-6, D>=3000; simple threshold 62500.
+All exact constants pass for delta=1e-5, D>=3000; simple threshold 50000.
+{"finite_arithmetic_passed":true,"degree_one":"matching","large_degrees":"two_stage_odd.md"}

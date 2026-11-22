@@ -1,0 +1,3 @@
+{"condition": "weighted_marked_maximum", "upper": "1249/1000", "boxes": 98893, "maximum_depth": 39}
+{"condition": "simple_marked_maximum", "upper": "1249/1000", "boxes": 348185, "maximum_depth": 41}
+{"condition": "root_marked_simple_degree_sum", "upper": "1249/1000", "boxes": 1317481, "maximum_depth": 43}

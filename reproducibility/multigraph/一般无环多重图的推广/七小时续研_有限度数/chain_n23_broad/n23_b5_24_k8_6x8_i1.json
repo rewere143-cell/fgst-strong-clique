@@ -1,0 +1,87 @@
+{
+  "name": "n23_b5_24_k8_6x8_i1",
+  "case": {
+    "order": 23,
+    "beta": 5,
+    "blue_id": 24,
+    "blue_order": 8,
+    "blue": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        7
+      ]
+    ],
+    "components": [
+      [
+        0,
+        2,
+        [
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      [
+        2,
+        2,
+        [
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      [
+        4,
+        4,
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      ]
+    ],
+    "left": 6,
+    "right": 8,
+    "isolates": 1,
+    "min_internal": 36,
+    "min_cover": 6,
+    "rows": []
+  },
+  "variables": 133207,
+  "clauses": 449899,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "a7c7aa88bfaf5f56cd6da620e5e15fec5c988660746ca1d44a690ec7327340a5",
+  "lrat_sha256": "2ed52a472c03e4e72645ca7deb31f2e76d0cf25a46ccd4ca47fb9278853bce45",
+  "replay": {
+    "added": 13475,
+    "deleted": 133
+  }
+}

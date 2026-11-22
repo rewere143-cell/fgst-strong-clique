@@ -1,0 +1,11 @@
+{"check": "compile_check_index", "passed": true, "return_code": 0, "seconds": 6.620496999996249}
+{"check": "compile_check_reverse", "passed": true, "return_code": 0, "seconds": 1.5795741999754682}
+{"check": "six_position_index", "passed": true, "return_code": 0, "seconds": 2.234702899993863}
+{"check": "low_orders_and_bases", "passed": true, "return_code": 0, "seconds": 4.313248399994336}
+{"check": "all_coefficients", "passed": true, "return_code": 0, "seconds": 3.5986352000036277}
+{"check": "compact_certificate", "passed": true, "return_code": 0, "seconds": 5.2044754000380635}
+{"check": "original_certificate", "passed": true, "return_code": 0, "seconds": 7.957062000001315}
+{"check": "six_finite_models", "passed": true, "return_code": 0, "seconds": 8.4701893000165}
+{"check": "negative_factor_weight", "passed": true, "return_code": 1, "seconds": 0.9429441000102088}
+{"check": "degree_multiplier_plus_one", "passed": true, "return_code": 1, "seconds": 5.642509099969175}
+{"all_passed": true, "version": "1.0.0", "exact_bound": "5/4", "seconds": 49.011842800013255}

@@ -1,0 +1,29 @@
+{
+  "all_passed": true,
+  "inputs": 69,
+  "scope": "finite simple graphs and every positive odd D",
+  "exact_bound": "(5*D^2-2*D+1)/4",
+  "checks": [
+    "source",
+    "local_defect",
+    "odd_degrees"
+  ],
+  "archive": "简单图奇数度_固定复现_2026-11-16.zip",
+  "zip_sha256": "c186a17cb4e874631a2184220439504fbae38c8d8b9655da056b1cd295ad9c25",
+  "archive_bytes": 17134793,
+  "fresh_extraction": true,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "byteorder": "little",
+    "c_compiler": "clang version 22.1.4",
+    "minimal_windows_crt": true
+  },
+  "checked_original_steps": 11,
+  "logs": {
+    "original_summary.json": "532c8a52758cc6d4d8d56a41b1662d8f51fcddec8ae38fd5fa068001e9e8faac",
+    "local_defect.log": "207286d3208628d04701e71e23b458eee07e4db2b3d68a961a9ceec45fa2546c",
+    "odd_degrees.log": "e0a2858b13125db1b77a7069d72d30b592449473fc714a9e12bcab53e159ef6b",
+    "source.log": "9b89324576b73604c03ac519f73b8498e58e48b67a6c790882485865fce929f0"
+  }
+}

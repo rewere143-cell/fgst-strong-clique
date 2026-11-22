@@ -1,0 +1,35 @@
+Exact moment replay: c5_abundance_column_candidate_third.json 2384185791004709/2384185791015625 5216145382201/5000000000000000000000
+Exact moment replay: c5_anchor_column_candidate_fifth.json 1345297200078184/2384185791015625 1052947997299/1250000000000000000000
+Exact moment replay: c5_anchor_column_candidate_sixth.json 2709423048577847/4768371582031250 8595354498451/10000000000000000000000
+Three multigraph support tolerances verified using exact rational arithmetic.
+Wider even tolerance 0.0122: 9384117/2000000000
+Wider odd tolerance .0105 minimum degree 323 certified steps [('21/2000', '160737693/1000000000', ['three', 'all']), ('24076301/2500000000', '958833181/5000000000', ['three', 'all']), ('80722469/10000000000', '2408863141/10000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('32131083/5000000000', '2880223219/10000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('10749081/2000000000', '3157366779/10000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('9805561/2000000000', '131077957/400000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('47238687/10000000000', '3321608793/10000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('46603551/10000000000', '3336605177/10000000000', ['all', 'all', 'all', 'all'])]
+Wider odd tolerance .0115 minimum degree 451 certified steps [('23/2000', '431127819/2500000000', ['three', 'three', 'all']), ('4017977/625000000', '1515767041/5000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('3657051/1000000000', '1830769007/5000000000', ['all', 'all'])]
+Wider odd tolerance .0120 minimum degree 751 certified steps [('3/250', '444306079/2500000000', ['three', 'three', 'all']), ('3746173/1000000000', '2962253/7812500', ['all', 'all'])]
+Wider odd tolerance .0122 minimum degree 1001 certified steps [('61/5000', '1786096399/10000000000', ['three', 'three', 'all']), ('6991511/2500000000', '710835949/2000000000', ['all'])]
+Exact overlap constants: ('3/7', '5/12')
+Anchor-only cap 0.333: (Fraction(415156477, 5000000000), Fraction(0, 1), 1571391)
+Joint odd tolerance .0140 minimum degree 401 certified steps [('1190876667/10000000000', '56693661/40000000000', 122883, '104702933/10000000000')] [('104702933/10000000000', '880108331/5000000000', ['three', 'all']), ('70836893/10000000000', '561581573/2000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('8881223/2000000000', '3418461503/10000000000', ['all', 'all'])]
+Joint odd tolerance .0150 minimum degree 451 certified steps [('1265598179/10000000000', '566831813/400000000000', 133110, '21899673/2500000000')] [('21899673/2500000000', '298708219/1250000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('46393411/10000000000', '3411979111/10000000000', ['all', 'all'])]
+Joint odd tolerance .0155 minimum degree 551 certified steps [('321753231/2500000000', '445777587/400000000000', 173072, '7050753/1000000000')] [('7050753/1000000000', '589166291/2000000000', ['all', 'all', 'all', 'all', 'all', 'all', 'all', 'all', 'all']), ('30804241/10000000000', '33918977/100000000', ['all'])]
+Odd tolerance with repeat charge .0150 minimum degree 401 certified steps [('1265599527/10000000000', '4306121/10000000000', 135049, '49260559/5000000000')] [('prior support tolerance', '7/500')]
+Odd tolerance with repeat charge .0160 minimum degree 451 certified steps [('285830919/2500000000', '27/125000', 132148, '96967069/10000000000')] [('prior support tolerance', '3/200')]
+Odd tolerance with repeat charge .0165 minimum degree 451 certified steps [('54572533/500000000', '3/20000', 132159, '101575591/10000000000')] [('prior support tolerance', '2/125')]
+Odd tolerance with repeat charge .0165 minimum degree 551 certified steps [('1', '0', 132160, '9074411/10000000000')] [('prior support tolerance', '31/2000')]
+Odd tolerance with repeat charge .0170 minimum degree 551 certified steps [('1', '0', 132160, '9074411/10000000000')] [('prior support tolerance', '33/2000')]
+Exact combined moment gap: 168507386623360455933/10000000000000000000000
+Odd tolerance with combined moment 0.01685 minimum degree 651: [('1', '0', 132160, '1920123/2500000000')] [('prior support tolerance', '33/2000')]
+Odd tolerance with repeat charge .0172 minimum degree 651 certified steps [('1', '0', 132160, '1920123/2500000000')] [('prior support tolerance', '337/20000')]
+Odd tolerance with repeat charge .0175 minimum degree 651 certified steps [('1', '0', 133696, '1920123/2500000000')] [('prior support tolerance', '43/2500')]
+Odd tolerance with repeat charge .0180 minimum degree 801 certified steps [('1', '0', 185920, '3121099/5000000000')] [('prior support tolerance', '7/400')]
+
+Final combined-moment replay
+Frozen fourth candidate SHA-256: f51bbfb3e4ff5da12095b26758264052f2f23251b5acbfc3e4ef75d0f2261e69
+Even tolerance 0.02025 via shifted combined moment: 31853669971032049967181962479/1572432768395715768448000000000
+Odd tolerance .01959 minimum degree 1501 ([('1', '0', 388672, '3331113/10000000000')], [('prior support tolerance', '9/500')])
+Odd tolerance .02025 minimum degree 2501 ([('1', '0', 1350208, '1999201/10000000000')], [('prior support tolerance', '1943/100000')])
+Both final combined-moment odd thresholds passed.
+
+Anchor-only cap 0.34 with parallel incidence at least 0.04: (Fraction(1, 1), Fraction(0, 1), 588352)
+
+All final tabulated multigraph thresholds were verified with exact rational arithmetic.

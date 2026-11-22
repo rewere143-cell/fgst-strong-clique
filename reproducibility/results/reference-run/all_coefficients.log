@@ -1,0 +1,6 @@
+Fresh C union-projection order 3: 8 admissible labeled patterns checked
+Fresh C union-projection order 4: 224 admissible labeled patterns checked
+Fresh C union-projection order 5: 18576 admissible labeled patterns checked
+Fresh C union-projection order 6: 4450424 admissible labeled patterns checked
+PASS fresh independent C implementation: 4469232 indexed labeled patterns; 3516 degree rows (433899 sparse coefficients, 542909 extension contributions); 1895405 Gram nonzeros (2116783 full-union contributions); all zero entries agree.
+{"all_passed":true,"valid_labeled_patterns":4469232,"degree_rows":3516,"degree_nonzeros":433899,"gram_nonzeros":1895405,"gram_union_contributions":2116783,"all_zero_entries_agree":true}

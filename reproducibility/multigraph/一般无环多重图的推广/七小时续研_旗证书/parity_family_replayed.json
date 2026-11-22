@@ -1,0 +1,185 @@
+{
+  "certificates": [
+    {
+      "certificate": "d9_alpha1222_structure.json",
+      "first": 9,
+      "last": 9,
+      "minimum_counterexample_mass": "98/81",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "-1973919297437/1000000000000",
+        "correction": "332961929798749333692331/544050000000000000000000000000",
+        "rational_bound": "-1073910460808670051250666307669/544050000000000000000000000000",
+        "decimal_bound": -1.9739186854308797,
+        "coefficient_rows": 18103,
+        "negative_rows": 33,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "d11_alpha818_structure.json",
+      "first": 11,
+      "last": 11,
+      "minimum_counterexample_mass": "147/121",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "784845887059/1000000000000",
+        "correction": "356247020273853193825007029/327996000000000000000000000000000",
+        "rational_bound": "257426667818824037853193825007029/327996000000000000000000000000000",
+        "decimal_bound": 0.7848469731912098,
+        "coefficient_rows": 30641,
+        "negative_rows": 75,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "d13_alpha846_profiles.json",
+      "first": 13,
+      "last": 13,
+      "minimum_counterexample_mass": "206/169",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "143192658367/250000000000",
+        "correction": "41645030788101882713314999/21933000000000000000000000000000",
+        "rational_bound": "12562619948884432101882713314999/21933000000000000000000000000000",
+        "decimal_bound": 0.5727725322064666,
+        "coefficient_rows": 26723,
+        "negative_rows": 126,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "d15_alpha733_profiles.json",
+      "first": 15,
+      "last": 15,
+      "minimum_counterexample_mass": "11/9",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "413279662047/500000000000",
+        "correction": "458852833183160988652253/687375000000000000000000000000",
+        "rational_bound": "568156674251946433160988652253/687375000000000000000000000000",
+        "decimal_bound": 0.8265599916376744,
+        "coefficient_rows": 28812,
+        "negative_rows": 42,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "d17_alpha647_structure.json",
+      "first": 17,
+      "last": 17,
+      "minimum_counterexample_mass": "354/289",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "126008488267/200000000000",
+        "correction": "26665275990562548750326863/18373500000000000000000000000000",
+        "rational_bound": "11576111461144613062548750326863/18373500000000000000000000000000",
+        "decimal_bound": 0.6300438926249551,
+        "coefficient_rows": 30641,
+        "negative_rows": 103,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "d19_alpha578_structure.json",
+      "first": 19,
+      "last": 19,
+      "minimum_counterexample_mass": "443/361",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "181904288189/200000000000",
+        "correction": "1014527330622524630303827/1380375000000000000000000000000",
+        "rational_bound": "1255481673571784997524630303827/1380375000000000000000000000000",
+        "decimal_bound": 0.9095221759100136,
+        "coefficient_rows": 30641,
+        "negative_rows": 29,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "odd_17_23_alpha565.json",
+      "first": 21,
+      "last": 23,
+      "minimum_counterexample_mass": "542/441",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "1227682100513/1000000000000",
+        "correction": "118282448887265452163/5103750000000000000000000000",
+        "rational_bound": "6265782638775672637265452163/5103750000000000000000000000",
+        "decimal_bound": 1.2276821236885962,
+        "coefficient_rows": 30641,
+        "negative_rows": 24,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "odd_25_37_alpha542.json",
+      "first": 25,
+      "last": 37,
+      "minimum_counterexample_mass": "154/125",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "44141450237/250000000000",
+        "correction": "7076296494268891435491683/4158000000000000000000000000000",
+        "rational_bound": "734167676638278268891435491683/4158000000000000000000000000000",
+        "decimal_bound": 0.17656750279900874,
+        "coefficient_rows": 31608,
+        "negative_rows": 87,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "odd_39_47_alpha531.json",
+      "first": 39,
+      "last": 47,
+      "minimum_counterexample_mass": "1883/1521",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "-338267258761/500000000000",
+        "correction": "144426537709150937023/270000000000000000000000000",
+        "rational_bound": "-182664175304402290849062977/270000000000000000000000000",
+        "decimal_bound": -0.6765339826088974,
+        "coefficient_rows": 31608,
+        "negative_rows": 34,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "odd_49_57_alpha_third.json",
+      "first": 49,
+      "last": 57,
+      "minimum_counterexample_mass": "2978/2401",
+      "checked": {
+        "mode": "bound",
+        "raw_bound": "291535466397/1000000000000",
+        "correction": "43684260048703707532633/930000000000000000000000000",
+        "rational_bound": "271171668009258703707532633/930000000000000000000000000",
+        "decimal_bound": 0.291582438719633,
+        "coefficient_rows": 31608,
+        "negative_rows": 1196,
+        "rigorous_infeasible": false
+      }
+    },
+    {
+      "certificate": "odd_59_alpha228_penalty.json",
+      "first": 59,
+      "last": null,
+      "minimum_counterexample_mass": "4323/3481",
+      "checked": {
+        "mode": "infeasible",
+        "raw_bound": "-1000002614567/1000000000000",
+        "correction": "109876730526401173/400000000000000000000",
+        "rational_bound": "-399891169096273598827/400000000000000000000",
+        "decimal_bound": -0.999727922740684,
+        "coefficient_rows": 31608,
+        "negative_rows": 1066,
+        "rigorous_infeasible": true
+      }
+    }
+  ],
+  "arithmetic": {
+    "sums": 3805,
+    "products": 8530,
+    "largest_bound": 5111479168128000000
+  }
+}

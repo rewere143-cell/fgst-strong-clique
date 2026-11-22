@@ -1,0 +1,7 @@
+verifiers\check_reverse.c: In function 'main':
+verifiers\check_reverse.c:45:4: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   45 |    if(idx[n][code]<0)continue;int q=idx[n][code]+(n==6?728:0);need(q>=0&&q<N,"union coordinate");nv++;int a[6][6]={{0}},x=code;a[0][1]=a[1][0]=2;
+      |    ^~
+verifiers\check_reverse.c:45:31: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   45 |    if(idx[n][code]<0)continue;int q=idx[n][code]+(n==6?728:0);need(q>=0&&q<N,"union coordinate");nv++;int a[6][6]={{0}},x=code;a[0][1]=a[1][0]=2;
+      |                               ^~~

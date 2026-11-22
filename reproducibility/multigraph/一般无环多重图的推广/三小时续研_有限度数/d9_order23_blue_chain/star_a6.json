@@ -1,0 +1,13 @@
+{
+  "name": "star_a6",
+  "variables": 63448,
+  "clauses": 203390,
+  "limit": null,
+  "result": "VERIFIED_UNSAT",
+  "cnf_sha256": "b704a7066c82dcd83a64d8a3b5d02e4cbfd9fe2e7ef777dae1babab99e87e362",
+  "lrat_sha256": "193debdc73feb154de337f9b2b674a59df8208073f156f186f5a946ecfadb391",
+  "replay": {
+    "added": 279231,
+    "deleted": 415934
+  }
+}

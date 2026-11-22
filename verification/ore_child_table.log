@@ -1,0 +1,4 @@
+Round 1: {'proved': 192, 'fallback': 0, 'branches': 52804, 'max_depth': 31}, seconds 12.3
+Round 2: {'proved': 168, 'fallback': 0, 'branches': 51625, 'max_depth': 31}, seconds 23.6
+Round 3: {'proved': 153, 'fallback': 0, 'branches': 47636, 'max_depth': 31}, seconds 32.7
+Round 4: {'proved': 96, 'fallback': 0, 'branches': 37109, 'max_depth': 31}, seconds 40.4

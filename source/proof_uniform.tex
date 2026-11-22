@@ -1,0 +1,642 @@
+\section{Proof of the Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4}}\label{sec:uniform}
+
+Let $G$ be a finite loopless multigraph with maximum degree $\Delta$.
+We prove that $\omega(L(G)^2)\leq\frac{5}{4}\Delta^2$. We first
+prove the bound for simple graphs. To extend it to multigraphs, we
+count how many edges of a given strong clique join each pair of
+adjacent vertices.
+
+\subsection{The Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4} in Simple Graphs}
+\label{sec:simple-proof}\label{sec:finite-model}\label{sec:identities}\label{sec:finite-instance}
+\label{subsubsec:conditional-extension-counts}
+
+By \textbf{Lemma~\ref{lem:regularization}}, a nonempty strong clique
+in a simple graph of maximum degree $\Delta$ remains a strong clique
+in a $\Delta$-regular simple graph. Let $G$ be this regular graph and
+mark the set $S$ of edges in the given clique. We retain the other
+edges of $G$, which may join the endpoints of disjoint marked edges.
+The symmetric function
+$c_G\colon V(G)\times V(G)\to\{0,1,2\}$ is given by
+\[
+ c_G(u,v)=
+ \begin{cases}
+  2,&uv\in S,\\
+  1,&uv\in E(G)\setminus S,\\
+  0,&u=v\text{ or }uv\notin E(G).
+ \end{cases}
+\]
+
+\begin{defn}\label{def:patterns}
+For an integer $n\geq2$, put $P_n=\{0,\ldots,n-1\}$. A \emph{pattern}
+$F$ of order $n$ assigns a color $c_F(i,j)\in\{0,1,2\}$ to each pair
+$ij=\{i,j\}$ of distinct positions in $P_n$, with $c_F(0,1)=2$. We
+call $(0,1)$ the ordered root. The underlying graph $H$ of $F$ has
+vertex set $P_n$ and edge set consisting of the pairs of color $1$
+or $2$. We call $F$ \emph{connected} if $H$ is connected and
+\emph{admissible} if the pairs of color $2$ form a clique in $L(H)^2$.
+Equivalently, for every two disjoint pairs of color $2$, some pair
+with one position in each has color $1$ or $2$.
+Let $\mathcal F_n$ be the set of connected admissible patterns of order $n$.
+\end{defn}
+
+\begin{defn}\label{def:color-preserving-maps}
+Let $F$ be a pattern of order $n$, and let $G$ be a finite simple graph
+with marked set $S\subseteq E(G)$. A \emph{color-preserving map} from $F$
+to $G$ is a map $f\colon P_n\to V(G)$ such that
+$c_F(i,j)=c_G(f(i),f(j))$ for all distinct $i,j\in P_n$.
+For fixed $G$ and $S$, let $h_F$ be the number of color-preserving maps
+from $F$ to $G$.
+\end{defn}
+
+Distinct positions may map to the same vertex, in which case their
+pair has color $0$.
+
+\begin{lemma}\label{lem:pullback}
+Let $G$ be a finite simple graph, let $S\subseteq E(G)$ be a clique
+in $L(G)^2$, and let $n\geq 2$. Every map $f\colon P_n\to V(G)$ with
+$c_G(f(0),f(1))=2$ gives an admissible pattern $F$ by setting
+$c_F(i,j)=c_G(f(i),f(j))$ for all distinct $i,j\in P_n$.
+\end{lemma}
+
+\begin{proof}
+Consider disjoint pairs $ij$ and $k\ell$ of color $2$ in $F$. Their
+images are edges of $S$. If the image edges are disjoint, some
+endpoint of one is adjacent to an endpoint of the other since $S$
+is a clique in $L(G)^2$. The corresponding pair of positions has
+color $1$ or $2$.
+
+If the image edges have a common endpoint, we may name the positions
+so that $f(i)=f(k)$. The pair $jk$ then maps to the marked edge
+$f(j)f(i)$ and has color $2$. The same reasoning applies when the
+image edges are equal.
+\end{proof}
+
+Let $G$ be a finite simple $\Delta$-regular graph with $\Delta>0$,
+and let $S\subseteq E(G)$ be a nonempty clique in $L(G)^2$ of size $m$.
+For $F\in\mathcal F_n$, define
+\begin{equation}\label{eq:q-definition}
+ q_F=\frac{h_F}{2m\Delta^{n-2}}.
+\end{equation}
+The factor $2m$ counts the possible images of the ordered root.
+For the two-position pattern $E_\star$ with its unique pair marked,
+we have $h_{E_\star}=2m$ and hence $q_{E_\star}=1$.
+
+Two patterns $F,F'\in\mathcal F_n$ are equivalent if there is a
+permutation $\pi$ of $P_n$ with
+$c_F(i,j)=c_{F'}(\pi(i),\pi(j))$ for every pair $ij$ of distinct
+positions. The preimage of $\{0,1\}$ under $\pi$ may be any pair of
+color $2$ in $F$, with either ordering of its two positions. These
+are isomorphism classes of the colored patterns with the root allowed
+to move. We call them orbits, as in the data files.
+
+For $k\geq2$, $F\in\mathcal F_k$ and $u\in P_k$, let
+$\mathcal E(F,u)$ be the set of admissible patterns on $P_{k+1}$ whose
+restriction to $P_k$ is $F$ and whose pair $uk$ has color $1$ or $2$.
+Each such pattern is connected because its restriction to $P_k$ is
+connected and the new position $k$ is adjacent to $u$.
+
+\begin{lemma}\label{lem:coordinates}\label{lem:degree}
+Suppose that $G$ is $\Delta$-regular and that its $m>0$ marked edges
+form a strong clique. For every $k\geq2$ and $F\in\mathcal F_k$,
+$q_F\in[0,1]$ and $q_{F'}=q_F$ for every $F'$ in the orbit of $F$.
+For each $u\in P_k$,
+\begin{equation}\label{eq:degree-extension}
+ \sum_{F'\in\mathcal E(F,u)}q_{F'}=q_F.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $F$ is connected, its underlying graph has a spanning tree
+containing the root edge. Choose the image of the ordered root in
+$2m$ ways. Then assign images to the remaining positions in order of
+increasing distance from $\{0,1\}$ in the tree, so that each new
+position has a tree neighbor whose image is already chosen. The pair
+joining them has color $1$ or $2$, so the new image has at most
+$\Delta$ choices. Thus $0\leq h_F\leq 2m\Delta^{n-2}$, and
+$q_F\in[0,1]$ by \eqref{eq:q-definition}.
+
+If $\pi$ is a permutation of $P_n$ with
+$c_F(i,j)=c_{F'}(\pi(i),\pi(j))$ for all distinct $i,j$, then
+$f\mapsto f\circ\pi$ maps the color-preserving maps of $F'$ to those
+of $F$. Precomposing with $\pi^{-1}$ gives the inverse, so
+$h_F=h_{F'}$. The two counts have the same denominator in
+\eqref{eq:q-definition}, which gives $q_F=q_{F'}$.
+
+Fix a color-preserving map $f$ of $F$. The image of $k$ can be any
+of the $\Delta$ neighbors of $f(u)$, including neighbors already
+used by $f$. Each choice determines the colors of all pairs involving
+$k$ and therefore a unique extension pattern in $\mathcal E(F,u)$.
+Admissibility follows from \textbf{Lemma~\ref{lem:pullback}}.
+Conversely, a map counted by $h_{F'}$ for $F'\in\mathcal E(F,u)$
+restricts to a color-preserving map of $F$ and sends $k$ to a neighbor
+of the image of $u$. Thus
+$\sum_{F'\in\mathcal E(F,u)}h_{F'}=\Delta h_F$.
+Dividing by $2m\Delta^{k-1}$ gives \eqref{eq:degree-extension}.
+\end{proof}
+
+Index the $N=23{,}789$ relabeling orbits in
+$\bigcup_{n=3}^6\mathcal F_n$ as in~\cite[Section~A.1]{FGSTSupplement}.
+For each $j\in[N]$, set $q_j=q_F$ for any $F$ in orbit $j$.
+We treat $q_{E_\star}=1$ as a constant. When we collect the terms of a
+sum over labeled patterns by orbit, each labeled pattern contributes
+once to its orbit coordinate.
+
+The degree equations in $Aq=b$ are the identities in
+\eqref{eq:degree-extension} written in the orbit coordinates.
+In the row for $(F,u)$, each $F'\in\mathcal E(F,u)$ contributes
+one to the column indexed by its orbit. If $F=E_\star$, the right
+side of \eqref{eq:degree-extension} is $1$. Otherwise we subtract
+one from the column indexed by the orbit of $F$ and set the right
+side to $0$.
+
+The pairs $(F,u)$ used for the degree equations are specified
+in~\cite[Section~A.2]{FGSTSupplement}, with $F$ of order $2$, $3$,
+$4$ or $5$. At order $5$, we use one pattern from each orbit and
+take every position of that pattern in turn as $u$. The resulting
+$3{,}516$ equations form the system
+\begin{equation}\label{eq:linear-system}
+ Aq=b.
+\end{equation}
+For example, the first row, for $F=E_\star$ and $u=1$, is
+$q_1+q_2+q_3+2q_4+q_5=1$. The two extensions with color pairs
+$(c_{F'}(0,2),c_{F'}(1,2))=(1,2)$ and $(2,1)$ contribute to
+the same orbit, giving the coefficient of $q_4$.
+
+A \emph{type} of order $k$ is a pattern $T\in\mathcal F_k$.
+A \emph{flag of type $T$} is a pattern in $\mathcal F_n$, for some
+$n\geq k$, whose restriction to $P_k$ is $T$. The positions of the
+flag remain labeled when counting extensions. Let
+$\mathcal L=(F_1,\ldots,F_s)$ be a list of flags of type $T$ of
+orders $n_1,\ldots,n_s$, respectively. For a color-preserving map
+$f$ of $T$ into $G$ and any flag $F$ of type $T$, let $h_F(f)$ be
+the number of color-preserving maps from $F$ to $G$ that extend
+$f$. For each $i\in[s]$, put $v_i(f)=\frac{h_{F_i}(f)}{\Delta^{n_i-k}}$.
+Let $v(f)$ be the column vector with entries $v_i(f)$. Define the
+\emph{moment matrix} for $T$ and $\mathcal L$ by
+\begin{equation}\label{eq:moment-definition}
+ M(T,\mathcal L)=\frac{1}{2m\Delta^{k-2}}
+       \sum_{f:T\to G}v(f)v(f)^{\mathsf T}.
+\end{equation}
+The sum runs over all color-preserving maps of $T$ into $G$. If a
+flag $F_i$ equals $T$, then $v_i(f)=1$ for each such map.
+
+\begin{lemma}\label{lem:moment}
+For any finite list $\mathcal L$ of flags of type $T\in\mathcal F_k$,
+the moment matrix $M(T,\mathcal L)$ is positive semidefinite.
+If $n_i+n_j-k\leq6$ for all $i,j\in[s]$, each entry is a nonnegative
+integer linear combination of the coordinates of $q$ and the
+constant $q_{E_\star}=1$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:moment-definition}, for every $x\in\mathbb R^s$,
+$x^{\mathsf T}M(T,\mathcal L)x$ is the sum of the squares
+$(x^{\mathsf T}v(f))^2$ divided by $2m\Delta^{k-2}$, so it is
+nonnegative.
+
+To compute entry $(i,j)$, put $n=n_i+n_j-k$. In $P_n$, identify each position $r$ of $F_i$ with $r\in P_{n_i}$.
+Identify position $r$ of $F_j$ with $r$ if $r<k$ and with $n_i+r-k$
+otherwise. The flags agree on their intersection
+$P_k$. The unspecified pairs have one position in
+$P_{n_i}\setminus P_k$ and the other in $P_n\setminus P_{n_i}$.
+Let $\mathcal U_{ij}$ be the set of admissible completions of the
+colors of these pairs. Each completed pattern is connected because
+the flags are connected and share the type. We write the product of
+the two colored flags as the formal sum
+\begin{equation}\label{eq:colored-flag-product}
+ F_i\star_T F_j=\sum_{H\in\mathcal U_{ij}}H.
+\end{equation}
+The positions are labeled, so each admissible assignment of
+the unspecified colors contributes one summand.
+
+Fix a color-preserving map $f$ of $T$. A pair of extensions of $f$
+to $F_i$ and $F_j$ gives a unique map on $P_n$, since the extensions
+agree on $P_k$. The images of distinct positions may coincide,
+including positions from different flags. Evaluating $c_G$ on the
+images of each unspecified pair determines its color. The resulting
+pattern belongs to $\mathcal U_{ij}$ by
+\textbf{Lemma~\ref{lem:pullback}}. Conversely, a map counted by
+$h_H(f)$ for $H\in\mathcal U_{ij}$ restricts to an extension of $f$
+to each of the two flags. Counting these pairs and dividing by
+$\Delta^{(n_i-k)+(n_j-k)}=\Delta^{n-k}$ gives
+\begin{equation}\label{eq:colored-flag-evaluation}
+ v_i(f)v_j(f)=\frac{\displaystyle\sum_{H\in\mathcal U_{ij}}h_H(f)}
+                         {\Delta^{n-k}}.
+\end{equation}
+Thus the product in \eqref{eq:colored-flag-product} expresses the
+product of the two normalized extension counts exactly.
+
+Substitute \eqref{eq:colored-flag-evaluation} into
+\eqref{eq:moment-definition}. Summing $h_H(f)$ over all maps
+$f$ of $T$ gives $h_H$, since each color-preserving map of $H$
+has a unique restriction to $T$. The total power of $\Delta$ in
+the denominator is $(k-2)+(n-k)=n-2$. Hence
+\eqref{eq:q-definition} gives
+\begin{equation}\label{eq:moment-expansion}
+ \bigl(M(T,\mathcal L)\bigr)_{ij}
+ =\frac{\displaystyle\sum_{H\in\mathcal U_{ij}}h_H}{2m\Delta^{n-2}}
+ =\sum_{H\in\mathcal U_{ij}}q_H.
+\end{equation}
+For the flags in \textbf{Figure~\ref{fig:flag-union}}, let $H_a$ be
+the completion that assigns color $a$ to the pair $23$, for
+$a\in\{0,1,2\}$. All three completions are admissible. In particular,
+when $23$ has color $2$, the pairs $02$ and $13$ of color $1$ join
+the marked pairs $01$ and $23$. The product in
+\eqref{eq:colored-flag-product} is therefore $H_0+H_1+H_2$.
+Both flags occur in the list of nine flags for the marked
+two-position type in~\cite[Table~A.2]{FGSTSupplement}. Their product
+gives the entry $q_{H_0}+q_{H_1}+q_{H_2}$ of the corresponding
+moment matrix.
+
+If $n=2$, the union is $E_\star$ and contributes the constant $1$.
+If $3\leq n\leq6$, each summand contributes to the coordinate of
+its relabeling orbit.
+\end{proof}
+
+In \eqref{eq:moment-expansion}, the coefficient of an orbit coordinate
+counts the labeled completions in that orbit. If two flags differ
+only by a permutation of their positions outside the type, that
+permutation gives a bijection between their extensions of each
+type map. We therefore use one representative of each class of
+flags under permutations fixing the type positions.
+
+The system uses $57$ pairs $(T_\ell,\mathcal L_\ell)$, with types of
+order $2$, $3$ or $4$. The flag orders in
+\cite[Table~A.2]{FGSTSupplement} ensure $n_i+n_j-k\leq6$ for every
+pair of flags in the same list. For the graph counts, we set
+$M_\ell(q)=M(T_\ell,\mathcal L_\ell)$. To write these matrices as in
+\eqref{eq:intro-affine-gram}, let $(D_{\ell j})_{ab}$ count the labeled
+completions in $\mathcal U_{ab}$ that belong to orbit $j$, where
+$\mathcal U_{ab}$ is taken for the list $\mathcal L_\ell$.
+A union of order $2$ occurs only when both flags equal the type
+$E_\star$. This gives a $1$ at the first diagonal entry of $K_\ell$
+in each of the two lists with this type, and every other entry of
+every $K_\ell$ is $0$. By \textbf{Lemma~\ref{lem:moment}},
+\begin{equation}\label{eq:positive-moments}
+ M_\ell(q)\succeq0\qquad(\ell\in[57]).
+\end{equation}
+
+To express $\frac{m}{\Delta^2}$ in terms of $q$, we choose the
+images of $(0,1)$ and $(2,3)$ independently from the $2m$ ordered
+marked edges. Let $\mathcal B\subseteq\mathcal F_4$ consist of the
+patterns in which both $01$ and $23$ have color $2$. For $j\in[N]$,
+let $o_j$ be half the number of patterns in $\mathcal B$ belonging
+to orbit $j$. Then
+\begin{equation}\label{eq:objective-vector}
+ o^{\mathsf T}q=\frac{1}{2}\sum_{F\in\mathcal B}q_F.
+\end{equation}
+
+\begin{lemma}\label{lem:finite-encoding}\label{lem:objective}
+Let $G$ be a finite simple graph of maximum degree $\Delta>0$, and
+let $S\subseteq E(G)$ be a strong clique of size $m>0$. For the system
+specified in~\cite[Section~A]{FGSTSupplement}, there exists
+$q\in[0,1]^N$ such that $Aq=b$, $M_\ell(q)\succeq0$ for all
+$\ell\in[57]$, and
+\begin{equation}\label{eq:objective-value}
+ o^{\mathsf T}q=\frac{m}{\Delta^2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Apply \textbf{Lemma~\ref{lem:regularization}} to $G$ with $D=\Delta$
+and mark the $m$ edges of $S$ in the regular supergraph. Form $q$
+from the counts in \eqref{eq:q-definition}. By
+\textbf{Lemma~\ref{lem:coordinates}}, these counts lie in $[0,1]$
+and depend only on their orbits. Equations \eqref{eq:linear-system}
+and \eqref{eq:positive-moments} give $Aq=b$ and $M_\ell(q)\succeq0$
+for all $\ell\in[57]$. It remains to evaluate $o^{\mathsf T}q$.
+
+There are $(2m)^2$ choices for the two ordered marked images.
+Each choice specifies a map of the four positions and therefore
+an admissible pattern by \textbf{Lemma~\ref{lem:pullback}}.
+Admissibility guarantees a pair of color $1$ or $2$ joining the
+two marked pairs of positions. Thus the pattern is connected,
+so the choice contributes to exactly one pattern in $\mathcal B$.
+Conversely, a map counted by $h_F$ for $F\in\mathcal B$ sends both
+pairs to ordered marked edges. Hence $\sum_{F\in\mathcal B}h_F=(2m)^2$.
+Using this count in \eqref{eq:q-definition} and
+\eqref{eq:objective-vector} gives
+\[
+ o^{\mathsf T}q
+ =\frac{(2m)^2}{2\cdot2m\Delta^2}
+ =\frac{m}{\Delta^2}.
+\]
+\end{proof}
+
+It remains to bound the objective $o^{\mathsf T}q$. We give integer
+coefficients for the bound in \textbf{Lemma~\ref{prop:certificate-principle}}
+and verify them against the equations and flag products above.
+
+The file \path{reproducibility/data/compact_certificate.json} stores
+the vector $L\in\mathbb Z^{3516}$ of degree multiplier numerators.
+For each block $\ell\in[57]$, it also gives a list of pairs
+$(w_{\ell a},z_{\ell a})$ with $w_{\ell a}\in\mathbb Z_{\geq0}$ and
+$z_{\ell a}\in\mathbb Z^{s_\ell}$, where $s_\ell$ is the number of
+flags in $\mathcal L_\ell$. These pairs represent the weights
+$\frac{w_{\ell a}}{24}$ and vectors $\frac{z_{\ell a}}{10{,}000}$
+in a decomposition of $Q_\ell$. We use the common
+denominator $\Lambda=24\cdot10{,}000^2=2{,}400{,}000{,}000$ and set
+\begin{equation}\label{eq:integral-Q}
+ B_\ell=\sum_a w_{\ell a}z_{\ell a}z_{\ell a}^{\mathsf T},
+ \qquad Q_\ell=\frac{B_\ell}{\Lambda},
+ \qquad \lambda=\frac{L}{\Lambda}.
+\end{equation}
+There are $4{,}110$ pairs with positive weight across the $57$ blocks.
+The representation in \eqref{eq:integral-Q} shows that each $Q_\ell$
+is positive semidefinite.
+
+\begin{lemma}\label{prop:checked-certificate}\label{prop:quadratic-bound}\label{lem:rational-witness}
+The numerators $L$ and $B_\ell$ in \eqref{eq:integral-Q} satisfy
+\begin{align}
+ &\rho=A^{\mathsf T}L-\sum_{\ell=1}^{57}D_\ell^*(B_\ell)
+                  -\Lambda o\geq0,\label{eq:integer-residual}\\
+ &b^{\mathsf T}L+\sum_{\ell=1}^{57}\tr(B_\ell K_\ell)
+     =3{,}000{,}000{,}000=\frac{5}{4}\Lambda.
+       \label{eq:integer-constant}
+\end{align}
+Consequently, every finite simple graph $G$ satisfies
+$\omega(L(G)^2)\leq\frac{5}{4}\Delta(G)^2$.
+\end{lemma}
+
+\begin{proof}
+We verify the index tables before using them to compute
+\eqref{eq:integer-residual}. The index programs enumerate all labeled
+patterns on three through six positions with pair $01$ marked and
+test each pattern for connectivity and admissibility. For a
+representative of each stored class, the programs apply all
+permutations of the positions, retaining the relabelings with pair
+$01$ marked. The programs compare the resulting orbit with the
+patterns assigned to the class. The lower-order checker also verifies
+that every degree row specifies a connected admissible base pattern
+and a position of that pattern. For each listed type and flag order,
+the checker verifies that the flag list contains one representative
+from every orbit under permutations fixing the type positions.
+
+The program \path{check_reverse.c} starts with the stored
+coefficients and subtracts the contributions to them from
+\eqref{eq:degree-extension} and \eqref{eq:moment-expansion}. For a
+degree row $(F,u)$ with $F$ of order greater than two, it first
+adds $1$ to the coefficient of the orbit of $F$, accounting for
+$-q_F$ on the left side of the equation. It then enumerates the
+connected admissible patterns in the verified tables. A pattern
+extending $F$ at $u$ as in \eqref{eq:degree-extension} subtracts
+$1$ from the coefficient of its orbit in that row. For a moment
+entry, a pattern on three through six positions subtracts $1$
+from the coefficient of its orbit if the restrictions to the two
+position sets in the proof of \textbf{Lemma~\ref{lem:moment}} are
+the prescribed flags. There are $2{,}116{,}783$ such moment
+contributions. The program requires every updated key to be in
+the table and all remainders to be zero. This checks the
+$433{,}899$ stored degree coefficients, the $1{,}895{,}405$ stored
+moment coefficients and the zeros at all omitted keys.
+
+The program \path{check_certificate.py} checks the denominators,
+the vector lengths and the nonnegativity of the weights. It computes
+$B_\ell$ using \eqref{eq:integral-Q}. To reconstruct $o$, the program
+counts the labeled patterns of order four with pair $23$ marked and
+adds $\frac{1}{2}$ to the corresponding coordinate for each such
+pattern, as in \eqref{eq:objective-vector}. It uses integer arithmetic
+by scaling these contributions by $\Lambda$, which is even. The
+program also accounts for the constant contribution from $E_\star$.
+In each block whose type has order two, it includes the first
+diagonal entry of $B_\ell$ in \eqref{eq:integer-constant}, since
+$(K_\ell)_{11}=1$ and all other entries of $K_\ell$ are zero.
+For larger types, $K_\ell=0$.
+
+With the verified coefficients, the program evaluates every entry of
+$\rho$ and the constant in \eqref{eq:integer-constant}. Of the
+$23{,}789$ entries of $\rho$, $23{,}590$ are positive and $199$ are
+zero. The largest is $899{,}382{,}275{,}568$. The constant equals
+$3{,}000{,}000{,}000$. The commands and the corresponding reports
+are described in~\cite[Section~B]{FGSTSupplement}.
+
+
+Thus the program verifies that every entry of the residual vector
+$r=\frac{\rho}{\Lambda}$ is nonnegative and that $C=\frac{5}{4}$.
+If $G$ has an edge, let $m$ be the size of a maximum clique in $L(G)^2$.
+For the vector $q$ given by \textbf{Lemma~\ref{lem:finite-encoding}},
+\textbf{Lemma~\ref{prop:certificate-principle}} now gives
+$o^{\mathsf T}q\leq\frac{5}{4}$.
+Since $o^{\mathsf T}q=\frac{m}{\Delta(G)^2}$ by \eqref{eq:objective-value},
+we obtain $m\leq\frac{5}{4}\Delta(G)^2$.
+If $G$ has no edges, the clique number is zero.
+\end{proof}
+
+\subsection{The Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4} in Multigraphs}
+\label{sec:multigraph}\label{sec:weighted-counts}
+
+The simple support of a multigraph records every adjacency that can
+join two marked edges. To count the marked edges themselves, we must
+also record how many copies have each pair of endpoints.
+
+Let $D\geq1$ be an integer. Take a loopless multigraph $G$ with
+$\Delta(G)\leq D$ and fix a
+nonempty strong clique of size $m$ in $G$. Mark the edges of the clique
+and restrict the host to the subgraph induced by their endpoints.
+Every edge joining two disjoint marked edges has both endpoints in this
+subgraph. Keep all marked edges. Between each pair of adjacent vertices joined
+only by unmarked edges, keep one of those edges. The simple support $G_{\rm s}$ of the reduced
+host therefore retains all adjacencies needed for the marked edges to
+form a strong clique. Color an edge of $G_{\rm s}$ red if its endpoints are joined by a
+marked edge of $G$, and blue otherwise. Let $s$ be the number of red
+edges. For each red edge $uv$, choose one marked edge with endpoints
+$u,v$ as its \emph{base copy}. Call the remaining marked edges with
+these endpoints \emph{extra copies}. The red edges form a strong
+clique in $G_{\rm s}$.
+
+Put
+\[
+ b=m-s,\qquad M=\frac{m}{D^2},\qquad S=\frac{s}{D^2},
+ \qquad e=\frac{b}{m}.
+\]
+Here $M$ and $S$ are normalized clique sizes and $e$ is the fraction
+of marked edges that are extra copies. Thus $S=M(1-e)$. For each edge $uv$ of $G_{\rm s}$ let $b_{uv}$ be its
+number of extra copies, with $b_{uv}=0$ for blue edges. Write
+$d_{\rm s}(v)=d_{G_{\rm s}}(v)$ and
+$j_v=\sum_{u\in N_{G_{\rm s}}(v)}b_{uv}$.
+Then $\sum_v j_v=2b$ and $d_{\rm s}(v)+j_v\le D$.
+
+We now write $G$ for this reduced multigraph. To obtain a
+$D$-regular multigraph, apply \textbf{Lemma~\ref{lem:regularization}} and give each new edge
+color blue. The reduced host is induced in the completion, and all
+new edges have multiplicity one. Thus the red edges, their
+multiplicities and the adjacencies among their endpoints are
+unchanged. In the next counts we use the simple support of the
+completed multigraph.
+
+Use colors $0,1,2$ for a pair with equal or nonadjacent images,
+a blue edge and a red edge, respectively. Let $P$ be a connected colored pattern on $n$ positions
+with at least one red edge. As in \textbf{Definition~\ref{def:patterns}},
+any two red edges in $P$ either meet or have endpoints joined by a red
+or blue edge. In the weighted counts, $P$ has no designated root edge.
+Let $T$ be a set of red edges of $P$ that form a forest on the positions.
+Define
+\[
+ Q(P,T)=\frac{1}{2mD^{n-2}}
+       \sum_{\phi}\ \prod_{uv\in T} b_{\phi(u)\phi(v)},
+ \qquad
+ X(P,T)=\frac{Q(P,T)}{|\operatorname{Aut}(P,T)|}.
+\]
+Here $\phi$ runs over color-preserving maps of the positions of $P$
+to the simple support, and $\operatorname{Aut}(P,T)$ is the group of
+permutations of the positions that preserve the pair colors and the
+edge set $T$. As before, color $0$ permits equal images. Each edge
+of $T$ contributes its extra multiplicity, even if two edges of $T$
+have the same image, as in \textbf{Figure~\ref{fig:weighted-maps}}.
+The forest condition is imposed on the positions. We use patterns
+with $2\le n\le6$ and $|T|\le3$. Write $X$ for the vector of coordinates
+$X(P,T)$, using one representative for each isomorphism class of pairs
+$(P,T)$.
+
+\input{figures/weighted_maps}
+
+For the pattern $P$ consisting of a single red edge, summing over the
+$2s$ oriented red edges of the simple support gives $Q(P,\varnothing)=1-e$. Summing their extra
+multiplicities gives $Q(P,E(P))=e$, where $E(P)$ consists of the
+single red pair. Each degree identity extends a fixed pattern
+at a specified position. For a red extension, the unweighted and
+weighted counts represent one base edge and the extra copies,
+respectively. An extension to a blue neighbor counts its unique copy.
+Together the blue and red extensions account for exactly
+$D$ edge copies at the image of that position. The equations use
+those extensions whose terms all occur in the model.
+
+Choose two ordered marked edges independently, allowing the same
+copy in both choices. Classify each choice as a base or an extra
+copy. There are $(2s)^2$ ordered pairs of base copies,
+$2(2s)(2b)$ ordered pairs with one base and one extra copy, and
+$(2b)^2$ ordered pairs of extra copies. Each choice of the two
+ordered copies determines the images of four positions in the
+support. Their colors give a connected pattern because the two
+edges belong to the strong clique. The forest weights count the
+choices of an extra copy for each specified pair. As in
+\eqref{eq:objective-vector}, divide the counts by $2mD^2$ and take
+one half. The three contributions to the objective are
+\[
+ O_0=\frac{s^2}{mD^2},\qquad
+ O_1=\frac{2sb}{mD^2},\qquad
+ O_2=\frac{b^2}{mD^2}.
+\]
+Their sum is $M$ since $m=s+b$. More generally, adding an independent
+ordered marked copy to a fixed pattern gives $2M Q(P,T)$
+after normalization. Indeed, choosing the ordered copy multiplies the raw count by
+$2m$, and the two new positions contribute a factor $D^2$ in the denominator. Replacing that copy by a base
+or extra copy gives $2S Q(P,T)$ or $2Me Q(P,T)$. These formulas
+give linear bounds when $M$, $S$ and $e$ are restricted to intervals.
+For example, the bounds $e_-\le e\le e_+$ imply
+\[
+ O_2\le(e_-+e_+)\left(O_2+\frac{O_1}{2}\right)-e_-e_+M
+\]
+by expanding $M(e-e_-)(e_+-e)\ge0$.
+
+Fix a type on $k$ positions and flags extending the type. In addition
+to the colors, the type and flags specify forest edges as in $(P,T)$.
+For a type map $\phi$, let $w(\phi)$ be the product of the extra
+multiplicities on its specified forest edges. For the $i$th flag, on
+$n_i$ positions, sum over the extensions of $\phi$ to that flag. Each
+extension contributes the product of the extra multiplicities on its
+specified forest edges outside the type. Let $v_i(\phi)$ be this sum
+divided by $D^{n_i-k}$ and let $v(\phi)$ be the column vector with
+entries $v_i(\phi)$. Then
+\[
+ \frac{1}{2mD^{k-2}}\sum_\phi w(\phi)v(\phi)v(\phi)^{\mathsf T}\succeq0.
+\]
+The matrix is a sum of outer products with nonnegative coefficients
+because every extra multiplicity is a nonnegative integer. Its $(i,j)$ entry is a sum over pairs of extensions that agree on the type,
+with denominator $2mD^{n_i+n_j-k-2}$. The two extensions may use the
+same vertex outside the type. Group the pairs by the colors on the
+remaining position pairs. Each resulting pattern uses the forest
+edges in the type once, through $w(\phi)$. This writes each matrix
+entry as a linear combination of coordinates $X(P,T)$. We use flag
+lists for which these products lie in the specified pattern collection.
+The same counting identity applies to the matrices formed from local
+degrees and from counts of extensions satisfying degree constraints.
+
+\begin{lemma}\label{prop:multi-uniform}
+Every strong clique of size $m$ in a finite loopless multigraph of maximum
+degree at most $D$ satisfies $m\le\frac{5D^2}{4}$. If $m>0$, $D>0$, and
+$M\ge\frac{4967}{4000}$,
+then $e<\frac{1}{4}$.
+\end{lemma}
+
+\begin{proof}
+If $m=0$ the asserted bound holds. Otherwise $D>0$, and the
+red edges form a strong clique of size $s$ in the simple support,
+which has maximum degree at most $D$. Thus
+\textbf{Lemma~\ref{prop:quadratic-bound}} gives $S\leq\frac{5}{4}$.
+The weighted counts satisfy the degree equations and the
+positive semidefinite constraints derived from the weighted flag
+products. The rational inequalities for these counts are verified
+in~\cite[Section~G]{FGSTSupplement}. Under the assumption
+$M>\frac{5}{4}$, the five-position inequalities give
+$M<1.28746$ and $e<\frac{421}{2000}$. For each induced red five-cycle,
+the degree count in~\cite[Section~E]{FGSTSupplement}
+bounds the number of incidences left at its five vertices after
+reserving their edges to the two neighboring parts. This bound uses
+$M>\frac{5}{4}$ and applies to both parities of $D$. With the
+simple-support inequalities in~\cite[Section~G.1]{FGSTSupplement},
+it gives an upper bound on $S$. The identity $S=M(1-e)$ then bounds
+$e$ from below. Successive inequalities for the resulting ranges of
+$M$ and $e$ give
+\[
+ M\leq\frac{124968062205915704703985647}
+                 {100000000000000000000000000}<\frac{5}{4}.
+\]
+This contradicts $M>\frac{5}{4}$. The inequality for $e$ when
+$M\geq\frac{4967}{4000}$ follows from the five-position calculation
+in~\cite[Section~G.4]{FGSTSupplement}.
+\end{proof}
+
+The quadratic bound gives $m\leq f(D)$ for even $D$. For odd $D$
+we shall need one further estimate on the number of extra copies.
+
+\begin{lemma}\label{lem:multi-extra}
+Suppose $b>0$ and set $A=\frac{\sum_v j_v^2}{2bD}$. Then
+\[
+ M\le 2-\left(2+\frac{1}{D}\right)A-\frac{1}{D^2},
+ \qquad
+ Me\le 2A(1-A)-\frac{A}{D}.
+\]
+In particular, $e\le 1-\frac{M}{2}$ whenever $M\ge1$.
+\end{lemma}
+
+\begin{proof}
+Count ordered pairs $(g_1,g_2)$ of marked edges, allowing $g_1=g_2$.
+For each ordered pair of marked edges, the strong clique property gives adjacent vertices
+$u,v$ with $u$ an endpoint of $g_1$ and $v$ an endpoint of $g_2$.
+If the edges share an endpoint, there are at least two
+such ordered pairs $(u,v)$. Among the $b^2$ ordered pairs of extra copies,
+exactly $\sum_v j_v^2-\sum_{uv\in E(G_{\rm s})}b_{uv}^2$ share an
+endpoint. The second sum removes the
+double count of pairs sharing both endpoints. The result is at least
+$\frac{1}{2}\sum_v j_v^2$, since $\sum_v j_v^2\ge2\sum_{uv}b_{uv}^2$.
+Counting the ordered adjacent endpoints gives
+\[
+ b^2+\frac{1}{2}\sum_v j_v^2
+ \le 2\sum_{uv\in E(G_{\rm s})}j_uj_v
+ \le \sum_v j_v^2(D-j_v).
+\]
+The last inequality follows from $2j_uj_v\le j_u^2+j_v^2$ and
+$d_{\rm s}(v)\le D-j_v$. The quantities $\frac{j_v}{D}$ have
+weighted mean $A$ with weights $\frac{j_v}{2b}$. Expanding
+$\sum_v \frac{j_v}{2b}\bigl(\frac{j_v}{D}-A\bigr)^2\geq0$
+gives $\sum_v j_v^2(D-j_v)\le 2bD^2A(1-A)$.
+This gives the upper bound on $Me=\frac{b}{D^2}$.
+
+Let $h_v$ be the number of base copies incident to $v$. Among ordered pairs
+with the extra copy first and the base copy second, at least
+$b$ share an endpoint, since each extra copy shares its two
+endpoints with its own base copy. Using $h_v\le D-j_v$ gives
+\[
+ sb+b\le \sum_v j_v\sum_{u\in N_{G_{\rm s}}(v)} h_u
+ \le D\sum_v j_v d_{\rm s}(v)-2\sum_{uv\in E(G_{\rm s})}j_uj_v.
+\]
+Using $d_{\rm s}(v)\le D-j_v$ and the lower bound on
+$2\sum_{uv\in E(G_{\rm s})}j_uj_v$ gives
+\[
+ b(m+1)\le 2bD^2-\left(D+\frac{1}{2}\right)\sum_v j_v^2.
+\]
+Divide by $bD^2$ to obtain the first inequality. For $M\ge1$ we
+have $0\le A\le 1-\frac{M}{2}\le\frac{1}{2}$. The function $2x(1-x)$ is
+increasing on $[0,\frac{1}{2}]$, so $Me\le M(1-\frac{M}{2})$.
+\end{proof}

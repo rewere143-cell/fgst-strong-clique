@@ -1,0 +1,29 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node at (1.65,0.83) {(a) A joining edge};
+\node[graph vertex,label=below:$a$] (a) at (0,0) {};
+\node[graph vertex,label=below:$b$] (b) at (1.1,0) {};
+\node[graph vertex,label=below:$c$] (c) at (2.2,0) {};
+\node[graph vertex,label=below:$d$] (d) at (3.3,0) {};
+\draw[marked edge] (a)--node[above] {$2$} (b);
+\draw[unmarked edge] (b)--node[above] {$1$} (c);
+\draw[marked edge] (c)--node[above] {$2$} (d);
+
+\begin{scope}[xshift=5.2cm]
+\node at (2.48,0.83) {(b) Repeated images};
+\node[graph vertex,label=below:$0$] (p0) at (0,0) {};
+\node[graph vertex,label=below:$1$] (p1) at (0.94,0) {};
+\node[graph vertex,label=below:$2$] (p2) at (1.88,0) {};
+\node[graph vertex,label=below:$u$] (u) at (4,0) {};
+\node[graph vertex,label=below:$v$] (v) at (4.94,0) {};
+\draw[marked edge] (p0)--node[above] {$2$} (p1);
+\draw[marked edge] (p1)--node[above] {$2$} (p2);
+\draw[-{Latex[length=2mm]},semithick] (2.42,0)--node[above] {$f$} (3.46,0);
+\draw[marked edge] (u)--node[above] {$2$} (v);
+\end{scope}
+\end{tikzpicture}
+\caption{The edge $bc$ joins the marked edges in (a).
+In (b), $f(0)=f(2)=u$ and $f(1)=v$.}
+\label{fig:marked-maps}
+\end{figure}

@@ -1,0 +1,72 @@
+The reductions for degrees five, seven and nine use the following count. Let $H$ consist of the marked edges of the reduced host $G$.
+We count edges of both graphs with multiplicity. Assume that two
+vertices $u,v$ are joined by $k\geq2$ marked edges. We call $u,v$
+the roots. Put $A=(N_G(u)\cup N_G(v))\setminus\{u,v\}$,
+$q=|A|$, and $W=V(G)\setminus(A\cup\{u,v\})$. An edge
+joining a root to a vertex of $A$ is a \emph{spoke}. Every
+marked edge other than the $k$ copies of $uv$ has an endpoint
+in $A$, since it belongs to the same strong clique as $uv$.
+At most $2D-k$ marked edges meet a root, and each vertex of
+$A$ has at most $D-1$ incident edges that avoid the roots.
+Using $q\le 2(D-k)$ gives
+\begin{equation}\label{eq:multi-root-pair-budget}
+\begin{aligned}
+ m&\le 2D-k+(D-1)q\le 2D^2-(2D-1)k,\\
+ m&=k+\sum_{a\in A}d_H(a)-e_H(A).
+\end{aligned}
+\end{equation}
+Here $e_H(A)$ counts the marked edges with both endpoints in $A$.
+
+We shall also need an upper bound for a bipartite marked subgraph.
+The host itself can have edges within either side of the bipartition.
+We use the following recurrence to bound the size of a
+bipartite marked strong clique in which a pair of vertices is joined
+by at most $\kappa$ marked edges. In the reductions below we use
+$\kappa=2$ except when testing the possibility of a triple pair at
+$D=9$, where $\kappa=3$. A state specifies the two host degree bounds,
+an upper bound $\sigma$ on the Ore-degree of the marked subgraph
+in the current host, the maximum
+marked degree $h$, and an upper bound on the number of
+vertices of the first side. Take a vertex $v$ of marked
+degree $h$ and host degree $r_0$. Let $A'$ consist of its
+$a$ distinct marked neighbors, so $\lceil\frac{h}{\kappa}\rceil\le a\le h$.
+Let $c$ be the smaller of the host degree bound of the other
+side and $\sigma-r_0$. The host degree of every vertex of
+$A'$ is at most $c$. Put $B'=V(G)\setminus N_G[v]$ in the
+host of the state and let $K$ be the marked graph induced on
+$B'$. Write $\Pi$ for the number of unmarked edges between
+$A'$ and $B'$. At most $\min(ah,ac-\Pi)$ marked edges
+meet $A'$. Besides $A'$ there are at most $r_0-h$ vertices
+in $N_G(v)$, and every mark at $v$ meets $A'$. Hence the
+number of marks before deletion is at most
+\begin{equation}\label{eq:finite-bipartite-root-count}
+ \min(ah,ac-\Pi)+h(r_0-h)+|E(K)|.
+\end{equation}
+Every edge of $K$ has, among its endpoints, a neighbor of
+each of the $a$ vertices of $A'$, by comparison with the
+marks at $v$. Thus the sum of its endpoint degrees in the host
+induced on $B'$ is at most $\sigma-a$. If $v$ is in the first side
+the vertex bound on that side decreases by at least one,
+and otherwise it decreases by at least $a$.
+
+Write $\delta=\Delta(K)$. For $x\in B'$ on the same side
+as $v$, let $h_x$ count marks from $x$ to $A'$ and put
+$f_x=d_K(x)$. Counting the required adjacencies to $A'$
+over all marks of $K$ gives
+\[
+ a|E(K)|\le\delta\Pi+\sum_x h_xf_x.
+\]
+Each unmarked edge to $A'$ can account for at most
+$\delta$ of these adjacencies. The marked edges to $A'$
+can only meet $x$ on the same side as $v$, and their
+contribution is at most $\sum_x h_x f_x$. To bound the sum
+the recurrence enumerates the positive $f_x$, subject to
+$\sum_x f_x=|E(K)|$, $f_x\le\delta$, $h_x+f_x\le h$,
+$h_x\le\kappa a$ and $\sum_x h_x\le\min(ah,ac-\Pi)-h$.
+The vertex bound on the first side also limits the
+number of positive $f_x$ when $v$ is on that side. The
+new state has a strictly smaller Ore-degree bound, since $a\geq1$.
+Thus the computation terminates with the empty marked graph.
+The degree-seven bounds obtained from this recurrence are listed
+in~\cite[Section~F.1]{FGSTSupplement}. The initial degree-nine
+reduction uses the same recurrence with $\kappa=3$.

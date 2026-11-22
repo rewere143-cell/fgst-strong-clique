@@ -1,557 +1,23 @@
-\subsection{Five-Cycle Structure and Odd-Degree Reductions}
+\subsection{Small Slack Values and Simple Equality Cases}
 \label{app:multi-structure}
 
-Use the notation of \textbf{Section~\ref{sec:exact}}. The host is
-induced by the endpoints of the marked copies, and $D$ remains the
-degree bound after this restriction. Write $\mu=\frac{5}{4}D^2-m$.
-The capacity and redistribution estimates below apply to both parities
-of $D$. When we apply them to a counterexample of odd degree, we use
-$\mu\le\frac{D}{2}-\frac{5}{4}$.
+Use the notation of \textbf{Lemma~\ref{lem:half-degree-cycle}} in the
+main paper. When the enlarged core has $R'=3$ and the three units of
+slack lie at the three anchor neighbors of one vertex $z$, its
+neighborhood has the two forms shown in \textbf{Figure~\ref{fig:cycle-three-neighbors}}.
 
-\subsubsection{Core capacities and discharging}
+\input{figures/cycle_three_neighbors}
 
-Let $c_0,\ldots,c_4$ be the vertices of an induced cycle in the simple
-support whose five edges are red. Call these vertices the anchors.
-Indices in this appendix are taken modulo five. The class $U_i$ consists
-of the vertices whose anchor neighbors are exactly $c_{i-1}$ and
-$c_{i+1}$, with both pairs red. Write $B=\bigcup_i U_i$ for the
-original core. A vertex outside $B$ is called an exterior vertex
-until the parts are enlarged. Let $L$ count the blue edges between $U_i$ and
-$U_{i+1}$ over all $i$. Every vertex of $U_i$ is adjacent in the
-simple support to every vertex of $U_{i+1}$, as proved in
-\textbf{Section~\ref{sec:exact}}. Put
-$a_i=|U_i|$, $s_i=D-a_{i-1}-a_{i+1}$, $R=\sum_i s_i$ and
-$a_*=\frac{D-R}{2}$. The quantity $s_i$ is an upper bound on the
-number of host incidences at a vertex of $U_i$ after reserving one edge
-to each vertex of $U_{i-1}\cup U_{i+1}$. Summing the defining equations
-gives $|B|=\frac{5D-R}{2}$. Since
-$s_{i-2}+s_{i+2}=2D-|B|+a_i$, we obtain
-\begin{equation}\label{eq:multi-core-identities}
-a_i=a_*+s_{i-2}+s_{i+2},\qquad
-A=\sum_i a_i s_i=\frac{RD}{2}-\frac{R^2}{2}
-                    +2\sum_i s_i s_{i+2}\le\frac{RD}{2}.
-\end{equation}
-For the inequality, take the five-cycle on the indices with edges
-$\{i,i+2\}$. If two nonadjacent indices have positive weights, move
-their combined weight to the index with the larger sum of neighboring
-weights. The product sum weakly increases and the support shrinks.
-After repeating the move, the support is a clique of size at most two,
-so the product sum is at most $\frac{R^2}{4}$. The identity
-$R=5D-2|B|$ gives $R\equiv D\pmod 2$.
+\begin{lemma}\label{lem:supp-slack-cases}
+Suppose that a strong clique with $m=f(D)+1$ marked copies contains
+a marked induced five-cycle in its simple support. Its pair $(D,R)$
+cannot be $(11,7)$, $(13,9)$, or $(15,9)$.
+\end{lemma}
 
-The signature of a vertex $x$ is the set $\{i:xc_i\in E(G_{\rm s})\}$,
-of size $k_x$. Summing the capacity $s_i$ at the five anchors gives
-$K=\sum_{x\notin B}k_x\le R$. For $x\notin B$, let $h_x$ be its marked
-degree, let $Q_x=|N_{G_{\rm s}}(x)\cap B|$, and let $b_x$ count its
-blue pairs to $B$. For any marked edge $xy$, the union of the
-signatures of $x$ and $y$ covers every edge of the cycle. In fact,
-if $xy$ is disjoint from a cycle edge, the strong clique condition
-gives an adjacency to one of the ends of that cycle edge. If $xy$
-shares an endpoint with a cycle edge, its other cycle endpoint is
-a neighbor of the shared vertex. Since a vertex cover of $C_5$ has
-at least three vertices, a vertex with $k_x=0$ can have a marked
-edge only to a vertex $y$ with $k_y\ge3$. In particular such an $x$
-has no marked edge into $B$, since $k_y=2$ for $y\in B$.
-A vertex outside $B$ of signature size two has at least one blue anchor pair. For
-consecutive positions, a marked anchor pair would fail the strong
-clique condition with the cycle edge opposite those positions. For
-nonconsecutive positions, two marked anchor pairs would put the vertex
-in $B$.
-
-Every blue pair between consecutive classes uses two unmarked incidences
-in $B$. The $b_x$ blue pairs of $x$ into $B$ use one unmarked incidence
-in $B$ each, disjoint from the first set of incidences. The two
-counts are illustrated in \textbf{Figure~\ref{fig:multigraph-cut}}.
-Summing the marked incidences inside and outside $B$ gives
-\begin{equation}\label{eq:multi-core-cut}
- 2m\le D|B|-2L+\sum_{x\notin B}(h_x-b_x).
-\end{equation}
-
-\input{figures/multigraph_cut}
-
-We first bound the total outside contribution after charging $b_x$ against
-the core capacity. Suppose $k_x=1$ and $x$ has a marked edge to a vertex of $B$.
-We show that $b_x\ge a_*+1$. Let $j$ be the sole index in the signature of $x$, and write $xy$ for
-its marked edge with $y\in U_i$. Since $\{j,i-1,i+1\}$ covers the
-cycle, $i=j\pm2$. Of the two cycle neighbors of $c_j$, let $c_k$
-be the one nonadjacent to $y$. For each $u\in U_j$ the edge $c_ku$
-is marked. Comparing it with $xy$ gives $xu$ or $yu$ in the support.
-The edge $xy$ uses one of the $s_i$ extra incidences at $y$, so
-$y$ has at most $s_i-1$ neighbors in $U_j$. At least
-$a_j-s_i+1\ge a_*+1$ vertices of $U_j$ are therefore adjacent to
-$x$. Each of these edges is blue, since $\{j,j-1,j+1\}$ does not
-cover the cycle. If $xy$ is marked with $k_x=1$ and $k_y=2$, the union of their
-signatures is a vertex cover of the cycle and hence has size three.
-Whenever the union on an outside marked edge has size three, its two
-omitted positions are nonconsecutive. Every red edge from either
-omitted anchor into $B$ forces its other end to be adjacent to at least
-one end of the outside marked edge. The core neighborhoods of those
-ends therefore cover three classes. The other two classes have total
-size at most $D$, so the three classes contain at least $|B|-D=D+a_*$
-vertices. Each end uses one degree unit on the outside marked edge,
-and so each sees at least $a_*+1$ vertices of $B$. If the end of
-signature size one has no marked edge into $B$, these pairs are blue.
-
-We redistribute the quantities $h_x-b_x$ over vertices outside $B$.
-A vertex of signature size one with a marked core neighbor or a
-marked neighbor of signature size two has $b_x\ge a_*+1$. Since
-$h_x+b_x\le D$, it retains a contribution at most $R-2$. Any other
-vertex of signature size one sends $\frac{1}{2}$ per marked copy to
-its neighbors, all of which have signature size at least three. Its
-remaining contribution is at most $\frac{D}{2}$. A vertex $x$ of
-signature size zero with a marked neighbor of signature size three
-has $b_x=Q_x\ge a_*$ by the comparison with the two omitted anchors.
-It distributes its positive contribution uniformly over its marked
-edges. Since $h_x\le D-Q_x$, the amount per copy is at most
-$\frac{2R}{D+R}$. The other vertices of signature size zero use the
-same rule, with at most one per copy and with recipients of
-signature size at least four. We discard any negative contribution
-left at a vertex of signature size zero.
-
-A recipient of signature size three with a marked neighbor of
-signature size zero also sees at least $a_*$ vertices of $B$, so it
-has at most $\frac{D+R}{2}$ marked copies outside $B$. Multiplying
-this bound by the larger of the two sending rates shows that it
-receives at most $\max\{\frac{D+R}{4},R\}$. If it has no marked
-neighbor of signature size zero, it receives at most $\frac{D}{2}$.
-A recipient with at least four positions receives at most $D$.
-Adding each recipient's own contribution, at most $D$, shows that
-the total contribution at every outside vertex is at most
-$k_x\max\{\frac{D}{2},R\}$ for $R\le D$. By \eqref{eq:multi-core-cut},
-\begin{equation}\label{eq:multi-rough-discharge}
-2m\le D|B|-2L+\max\left\{\frac{D}{2},R\right\}K.
-\end{equation}
-
-In the graph on $B$ consisting of the marked pairs, the minimum size
-of a vertex cover is at least $D+q$, where $q=a_*-\frac{L}{a_*}$
-when $a_*>0$. In fact, any independent set in this graph with $x_i$
-vertices in $U_i$ satisfies $\sum_i x_i x_{i+1}\le L$, and
-\[
- \sum_i x_i x_{i+1}\ge a_*\left(\sum_i x_i-D\right).
-\]
-The difference between the two sides is affine in each $x_i$ on
-$[0,a_i]$, so it suffices to check the inequality for each $x_i$ in
-$\{0,a_i\}$. At such a point, delete one occupied class from each
-consecutive occupied pair until the occupied classes are pairwise
-nonconsecutive. An edge with both classes occupied accounts for a
-product $a_i a_{i+1}$, and either deletion removes at most
-$\frac{a_i a_{i+1}}{a_*}$ vertices. The remaining classes contain at
-most $D$ vertices because any two nonconsecutive classes have a
-common neighboring class. Hence any independent set has size at most
-$D+\frac{L}{a_*}$. Subtracting from $|B|=2D+a_*$ gives the bound on
-the vertex cover number. The argument applies also with enlarged
-classes below. The core neighborhoods of the two ends of an outside
-marked edge cover all marked pairs in $B$, so $Q_x+Q_y\ge D+q$ for
-every such edge $xy$.
-
-For a sharper estimate, let $q\ge0$ be any lower bound on the vertex
-cover number minus $D$. Vertices of signature size zero, and vertices
-of signature size one with no marked neighbor in $B$ or of signature
-size two, now send only their positive contributions. They distribute
-these contributions uniformly over their marked copies, all of which
-meet vertices of signature size at least three. At a sender $x$ with
-positive contribution, $b_x=Q_x$, so $Q_x<h_x\le D-Q_x$.
-Each of its marked neighbors has at least $D+q-Q_x$ core neighbors
-and hence at most $Q_x-q$ outside marked copies. In particular,
-$q\le Q_x<\frac{D}{2}$. If $q\ge\frac{D}{2}$, there is no positive
-transfer. Set $u=(\frac{D}{2}-q)_+$. A recipient receives at most
-\[
- C(u)=\frac{2u^2}{\frac{D}{2}+u}.
-\]
-Indeed, the amount sent per copy is
-$1-\frac{Q_x}{h_x}\le\frac{D-2Q_x}{D-Q_x}\le\frac{D-2q}{D-q}$,
-and the recipient has at most $u$ outside marked copies. If $a_*>0$
-and $q\ge a_*-\frac{L}{a_*}$, then $u\le\frac{R}{2}+\frac{L}{a_*}$.
-Since $0\le C'(u)\le2$ for $u\ge0$, it follows that
-$C(u)\le\frac{R^2}{D+R}+\frac{2L}{a_*}$.
-More generally, if there are $c$ possible recipients, positive
-transfer requires $Q_x<h_x\le c(Q_x-q)$. This is impossible for $c=1$,
-and for $c=2$ it implies $Q_x>2q$. For two recipients the amount
-sent per copy is at most $\frac{D-4q}{D-2q}$ whenever transfer
-is possible. Multiplying by $u$ shows that each recipient receives
-at most $\max\{0,\frac{D-4q}{2}\}$.
-
-For each $x$ outside $B$, discard any negative contribution left
-at a sender and denote by $\ell_x$ the difference between
-$\frac{k_xD}{2}$ and the resulting contribution of $x$.
-A vertex of signature size one has $\ell_x\ge t+2$ for
-$t=\frac{D}{2}-R$ and $R\ge3$. Indeed, it either retains at most
-$R-2$ or sends its whole positive contribution and retains zero.
-For signature size two, $\ell_x=D-h_x+b_x\ge2b_x\ge2$.
-A recipient of signature size $k$ has
-$\ell_x\ge(\frac{k}{2}-1)D-C(u)$, or the bound obtained using the
-smaller transfer estimate when $c\le2$. Substituting
-$\sum_x(h_x-b_x)\le\frac{DK}{2}-\sum_x\ell_x$ into
-\eqref{eq:multi-core-cut} and using $|B|=\frac{5D-R}{2}$ gives
-\begin{equation}\label{eq:multi-loss-budget}
- 2L+\frac{D}{2}(R-K)+\sum_x\ell_x\le2\mu.
-\end{equation}
-
-\subsubsection{A joint bound on the core and its exterior}
-\label{app:multi-joint}
-
-Write $r=\frac{R}{D}$, $j=\frac{\sum_i j_{c_i}}{D}$,
-$g=\frac{m}{D^2}-\frac{5}{4}$, and $\lambda=\frac{L}{D^2}$.
-The outside anchor pairs and the extra marked copies at the anchors
-use disjoint units of the capacity $R$, so $\frac{K}{D}\le r-j$.
-If $\frac{1}{2}\le r\le1$, then
-\begin{equation}\label{eq:multi-joint}
- 2g+2\lambda\le
- \frac{1+r}{2+r}\,r\left(r-\frac{1}{2}\right)
- -\frac{1+r^2}{2+r}\,j .
-\end{equation}
-
-To prove this, divide all vertex counts and degrees by $D$, and all
-edge counts by $D^2$. Write $\eta=\frac{1-r}{2}$, $v=\frac{1+r}{2}$
-and $\rho=\frac{2r}{1+r}$. An outside marked edge whose signatures
-have union of size three has two ends each with normalized core
-degree at least $\eta$. Each end has outside marked degree at most
-$v$.
-
-Let $x$ count the vertices of signature size one with a marked
-neighbor in the core or a marked neighbor of signature size two.
-Their total contribution in \eqref{eq:multi-core-cut}, in the
-normalized units, is denoted by $C_1$. Each of these vertices has
-at least $\eta$ blue pairs into the core, and $C_1\le rx$. Let
-$p_2,p_3$ count the marked edges from these vertices to vertices of
-signature size two and of signature size at least three, respectively.
-Let $n_2$ count their neighbors of signature size two via a marked
-edge. Also let $z_3,z_0$ count the vertices of signature size three
-and of signature size zero, respectively, that meet a marked edge
-joining these two groups. Denote the count of such edges by $p_{03}$.
-The three groups counted by $n_2,z_3,z_0$ are disjoint. Each of their
-vertices uses at least $\eta$ of the core capacity by the comparison
-with the two omitted anchors, and $p_2\le v n_2$ and
-$p_{03}\le v\min\{z_0,z_3\}$.
-
-By \eqref{eq:multi-core-identities}, the total normalized capacity
-of the core after reserving its consecutive pairs is at most
-$\frac{r}{2}$. Deduct the core capacity used by the groups counted
-by $x,n_2,z_3,z_0$. To bound $C_1$, add the exterior marked
-counts $p_2+p_3$ and deduct the blue core pairs at the vertices
-counted by $x$. This gives
-$C_1\le\frac{r}{2}-2\eta x-\eta(n_2+z_3+z_0)+p_2+p_3$.
-With $\theta=\frac{2r-1}{2+r}$ and $c=r-\theta=\frac{1+r^2}{2+r}$,
-take weights $1-\theta,\theta$ on the two bounds for $C_1$ to get
-\begin{equation}\label{eq:multi-joint-first}
- C_1\le cx+\frac{\theta r}{2}
-     +\theta(p_2+p_3)-\theta\eta(n_2+z_3+z_0).
-\end{equation}
-
-For the other outside vertices, use the redistribution leading to
-\eqref{eq:multi-rough-discharge}. A vertex of signature size two
-retains at most one. Assign $\theta p_2-\theta\eta n_2$ in
-\eqref{eq:multi-joint-first} to the group of such vertices. Since
-$p_2\le v n_2$, its additional contribution is at most $\theta r$
-per vertex, or at most $c=\frac{1}{2}+\frac{\theta r}{2}$ per signature
-position after adding the original contribution.
-
-For a vertex of signature size at least four, let $d_1$ be its
-marked degree to the group counted by $x$. None of those edges
-transfers any contribution to it, so its own and received
-contributions sum to at most $2-d_1$. The corresponding bound for a
-vertex of signature size three with no marked neighbor of signature
-size zero is $\frac{3}{2}-\frac{d_1}{2}$. Adding the corresponding
-$\theta d_1$ from $\theta p_3$ gives at most $c$ per signature
-position in both cases, since $c\ge\frac{1}{2}$ and $\theta\le\frac{1}{3}$.
-
-For the group counted by $z_3$, write $d_{1,3}$ for its marked
-degree to the group counted by $x$. The vertices counted by $z_3$
-have outside marked degree at most $v$ and receive at most
-$\frac{1}{2}$ per marked copy, except for edges to the vertices
-counted by $z_0$, which can transfer up to $\rho$ each. The total
-after adding the corresponding terms of \eqref{eq:multi-joint-first}
-is at most
-\[
- \left(1+\frac{v}{2}\right)z_3
- -\left(\frac{1}{2}-\theta\right)d_{1,3}
- +\left(\rho-\frac{1}{2}\right)p_{03}-\theta\eta(z_3+z_0).
-\]
-Use $z_0\ge\frac{p_{03}}{v}$, then $p_{03}\le v z_3$, to
-bound this by $(1+\rho v-2\theta\eta)z_3=3c z_3$. The second
-substitution is valid because
-$\rho-\frac{1}{2}-\frac{\theta\eta}{v}\ge0$ for $\frac{1}{2}\le r\le1$.
-This accounts for all terms of \eqref{eq:multi-joint-first}.
-The vertices of signature size one outside the group counted by
-$x$ retain at most $\frac{1}{2}$ each. Thus the right side of
-\eqref{eq:multi-core-cut}, divided by $D^2$, is at most
-$\frac{5-r}{2}-2\lambda+c(r-j)+\frac{\theta r}{2}$.
-Subtracting $\frac{5}{2}$ proves \eqref{eq:multi-joint}.
-
-\subsubsection{Enlarging the Five Parts}
-
-Every vertex $x$ whose signature consists of two nonconsecutive indices $i,j$,
-with $b_x<a_*$, and with complete host adjacency to both $U_i$ and
-$U_j$, is put into their common neighboring class. We show that
-every pair joining consecutive enlarged classes is still an edge
-of the simple support. For two newly
-added vertices $x,y$ in consecutive classes $p,p+1$, choose a marked
-neighbor of $x$ in $U_{p-1}$ avoiding the at most $s_{p+1}$ neighbors
-of $y$ there. Then choose a marked neighbor of $y$ in $U_{p+2}$ avoiding
-the neighbors of the first choice and of $x$. The latter two vertices
-have at most $s_{p-1}+s_p$ neighbors in that class. Both choices
-are possible by \eqref{eq:multi-core-identities} and $b_x,b_y<a_*$.
-The two chosen marked edges force $xy$. The old--new pairs are
-complete by the inclusion rule. A prime denotes enlarged quantities.
-In particular each inclusion reduces $R$ and $K$ by two. The old
-marked anchor stars can still be used.
-
-Here are the comparisons for a remaining vertex of signature size two. If its
-positions $\{i,j\}$ are nonconsecutive, $b_x<a_*$, and
-it remains outside, it omits at least one point of both $U_i$ and $U_j$.
-Indeed an omitted point in $U_i$, through its marked spoke, bounds the
-number of distinct marked neighbors of $x$ in $U_j$ by $s_i$. This
-contradicts complete adjacency to $U_j$ since $a_j-b_x>s_i$.
-The same comparison with an omitted point works for neighbors in
-$U'_j$, using the new bound $s_i'$. Its marked core neighbors can only
-lie in $U_i'\cup U_j'$. To see this, take positions $\{4,1\}$, so that
-comparison with the cycle excludes $U_0'$. A mark to $U_2'$ would force
-at least $a_4-s_2'$ host neighbors of $x$ in $U_4$ by the star from
-$c_0$. At most $s_1'$ of these are marked, contrary to $b_x<a_*$
-by \eqref{eq:multi-core-identities}. A mark to $U_3'$ is excluded by
-reflection. Both anchor pairs of $x$ are blue. If one were marked,
-the marked star into the other designated class, based at an anchor
-missing the first, would force complete adjacency to that other
-class. Each of the two marked-neighbor counts into the designated
-classes is at most the slack of the opposite class. Thus
-\begin{equation}\label{eq:multi-low-blue-outside}
- Q_x\le s_i'+s_j'+b_x.
-\end{equation}
-If $xy$ is marked with $y\in U_i'$, every omitted old $U_j$ vertex must
-see $y$, again by its marked spoke. At most $s_i'-1$ such vertices
-can be omitted since $xy$ already consumes one unit at $y$. It follows
-that $b_x\ge a_j-2s_i'+1\ge a_*-s_i'+1$. The same omitted vertices
-also give
-\begin{equation}\label{eq:multi-rectangle}
- I+b_{x,j}\ge a_j-s_i'\ge a_*,
-\end{equation}
-where $I$ counts host edges inside the enlarged core other than its
-reserved base edges and
-$b_{x,j}$ counts the blue neighbors of $x$ in old $U_j$.
-
-A vertex with $b_x<a_*$ and signature $\{0,1\}$ can have marked edges
-into the enlarged core only to $U_3'$. The cycle excludes marked edges to $U_0'$ and
-$U_1'$. A mark to $U_2'$ forces at least $a_0-s_2'$ blue neighbors
-in $U_0$ by the star from $c_4$, and a mark to $U_4'$ is excluded
-by the reflected comparison. If there is a marked neighbor in $U_3'$,
-the two ends of that mark must cover the marked $U_0$--$U_1$ pairs.
-If the union of their neighborhoods omits $t_0$ vertices of $U_0$
-and $t_1$ vertices of $U_1$, then all $t_0t_1$ pairs between these
-omitted sets are blue. Thus $t_0t_1\le L$ and one of $t_0,t_1$ is at
-most $\sqrt L$.
-The neighbor in $U_3'$ can pay for at most $s_3'-1$ wrong-class
-adjacencies in either part after accounting for the selected mark.
-Thus $b_x\ge a_*+1-\sqrt L$. Finally, if a remaining outside vertex
-has no enlarged core mark, a marked outside neighbor has $Q\le D-1$.
-The old vertex-cover bound therefore gives $b_x=Q_x\ge q+1$.
-
-Reserve one base copy for each pair in consecutive enlarged
-classes, choosing a marked copy whenever possible. Let $L'$
-count the unmarked base copies. Let $I$ count the other host
-edges inside the enlarged core, $P$ count the marked ones among
-them, $L_{\rm cut}$ count the unmarked copies across the cut of
-the enlarged core, and $f$ count the marked copies with both ends
-outside. There are $\frac{D|B'|-A'}{2}-L'$ marked base copies.
-The number of marked copies across the cut is at most
-$A'-2I-L_{\rm cut}$, since the edges counted by $I$ each use two
-units of the remaining core capacity $A'$. Adding $P$ and $f$ and
-using \eqref{eq:multi-core-identities} gives
-\begin{equation}\label{eq:multi-extra-capacity}
- \mu\ge \frac{R'D-2A'}{4}+L'+(2I-P)+L_{\rm cut}-f
- \ge L'+I+L_{\rm cut}-f .
-\end{equation}
-When $R'=1$, all but one class have zero extra capacity. If all
-outside signatures are singletons, outside marks are impossible.
-Any non-base mark in the only positive-capacity class or from
-outside to that class misses the opposite cycle edge, so only marked
-base copies remain. Their total is at most $f(D)$.
-
-\subsubsection{The half-degree threshold}
-\label{app:multi-half}
-
-We prove that for odd $D\ge9$, a counterexample has $R>\frac{D+1}{2}$ on
-every anchored cycle. If $R=1$, outside signatures have size at most
-one and no outside vertex can have signature zero in the marked
-endpoint host. The $R'=1$ base count above applies without enlargement.
-Assume $R\ge3$ and $t\ge-\frac{1}{2}$. If $t\ge\frac{1}{2}$,
-\eqref{eq:multi-rough-discharge} gives $L\le \frac{D}{2}-\frac{5}{4}$ and $R-K\le1$.
-Also $a_*\ge3$ and $\frac{L}{a_*}<2$. For $t=-\frac{1}{2}$ and $D\ge13$, it gives
-$L\le\frac{5D-9}{8}$ and $\frac{L}{a_*}<\frac{5}{2}$, with $a_*\ge3$. In both cases
-$q>0$. The remaining case $(D,R)=(9,5)$ has $a_*=2$, $L\le4$ and
-$q\ge0$. Also $K\le5$, so at most one recipient is possible there.
-In all cases $C(u)\le \frac{D}{2}$ and the losses in
-\eqref{eq:multi-loss-budget} are nonnegative. That inequality gives
-$R-K\in\{0,1\}$ and $L\le \frac{D}{2}-\frac{5}{4}$.
-
-There is at most one vertex of signature size at least three.
-Indeed, $\frac{R^2}{D+R}\le \frac{D}{6}$ for $t\ge\frac{1}{2}$ and is at most $\frac{D}{6}+\frac{1}{2}$
-for $t=-\frac{1}{2}$. The loss of three recipients, with $2L$ included,
-would be at least $D-\frac{3}{2}$, since $a_*\ge3$. With two recipients,
-the improved bound gives total loss with $2L$ at least $D-1$.
-Both bounds exceed the budget. With one recipient no positive
-transfer occurs, and its size is exactly three.
-
-Suppose first there is one vertex of signature size three, say $z$. Let $a$
-count vertices of signature size one. Parity and the budget force $a$ even
-and $R-K=0$. The lower bound on the total loss is
-$\frac{D}{2}+R-3+a(t+1)$. For $a\ge2$ this exceeds $D-\frac{5}{2}$, so $a=0$.
-We show that every vertex with $k_x=2$ is included in the enlarged core.
-For $t=-\frac{1}{2}$ the budget forces $L=0$ and each vertex of signature size two
-to have one blue neighbor. A remaining vertex with nonconsecutive
-signature positions and $b_x<a_*$ would have two blue anchor pairs.
-The other remaining types
-violate $b_x\ge a_*+1-\sqrt L$ or $b_x\ge q+1$. For $t\ge\frac{1}{2}$ a
-remaining vertex with nonconsecutive signature positions, $b_x<a_*$
-and a marked edge to the core satisfies
-$b_x\ge a_*+1-s_i'\ge t+\frac{3}{2}$. Indeed, $R'=K'$ and the slack
-at each position counts the remaining vertices that use it.
-There are $\frac{R'-3}{2}$ such vertices of signature size two,
-and at most one more can use that position, namely $z$.
-Together with the loss of $z$ and the other vertices of signature size two
-this gives a loss of at least $D+t-2>D-\frac{5}{2}$. A remaining vertex with $b_x\ge a_*$
-costs at least $2a_*$ and a remaining vertex of either other type
-costs at least $2a_*+2$ with $2L$ included. These also exceed the
-budget after adding the other vertex losses.
-
-The resulting enlarged core has $R'=3$, with three units at the
-positions of $z$. Write $D=2d+1$. If the omitted positions are
-nonconsecutive, the three classes of positive capacity have sizes
-$d+1,d,d$, base count $f(D)-D$ and extra capacity $3d+1$.
-If $zy$ is marked outside, then the vertex of signature size zero $y$ has
-only blue core pairs. The two omitted anchor stars force
-$Q_z'+Q_y'\ge3d+1-L'$, since each omitted point of those three
-classes consumes a distinct blue base pair. Also $f\le D-Q_z'$.
-Thus $L'+L_{\rm cut}-f\ge d$. If there is no outside mark, only
-$z$ remains outside. The extra marks either all touch $z$ and
-number at most $D$, or there is a marked non-base copy inside
-the core. No same-class mark is possible by the opposite cycle
-edge. A mark from the class of size $d+1$ to one of size $d$
-blocks any mark from $z$ to those two classes. Its endpoints use
-their only extra units and every possible edge joining their marked edge to
-such a mark from $z$ would use one of those units. The total number
-of extra marks is then at most $\frac{3d+1+d}{2}\le D$. If there are
-only repeated internal marks between the two consecutive size-$d$
-classes, one of those repetitions blocks marks from $z$ to the
-size-$(d+1)$ class by the same comparison. The extra marks then
-use at most $2d$ units and still number at most $D$.
-
-If the two omitted positions are consecutive, put the three
-positive positions at $0,1,2$. The base count is $f(D)-(D-1)$.
-No outside mark sees the omitted cycle edge. A mark from $z$ to
-$U_1'$ would also miss that edge, so $h_z\le D-1$ and $z$ marks
-to $U_0'$ or $U_2'$. A mark to $U_0'$ forces $z$ to see every
-vertex of $U_2'$ having a marked neighbor in $U_3'$ by comparison
-with the marked edges to $U_3'$, where $s'_3=0$. If such a
-neighbor is absent at some vertex of $U_2'$ then $L'\ge d+1$
-and \eqref{eq:multi-extra-capacity} suffices. Otherwise the
-adjacency to $U_2'$ is complete. If these pairs are all blue the
-cut costs at least $d$. If one is marked, reflection forces
-complete adjacency to $U_0'$ too. The two classes now have no
-remaining extra capacity and the middle class cannot have a
-same-class mark. The only extra marks meet $z$ and number at most
-$D-1$. In every subcase $\mu\ge d$ suffices, since its fractional
-part is $\frac{1}{4}$.
-
-Suppose now that there is no vertex with three or more positions.
-Then there are no vertices of signature size zero. If all outside vertices have
-two positions, the budget and parity give $R-K=1$ and there are
-$n=\frac{R-1}{2}$ outside vertices. The total number of unmarked host
-edges is at most $\frac{D-5}{4}$. Indeed, summing the differences
-between $D$ and the marked degree over the $\frac{5D-1}{2}$ vertices
-counts at least twice the number of unmarked host edges.
-Hence $\sum b_x\le \frac{D-5}{4}-L<a_*-\sqrt L$,
-using $a_*\ge\frac{D-1}{4}$. Every outside vertex has a marked core
-neighbor by the vertex-cover bound, while the comparison for
-consecutive positions excludes those positions. Apply the enlargement
-rule to every eligible vertex. Two remaining vertices cannot be joined
-by a marked edge.
-Their combined old-core neighborhood would have to omit at most
-$\sqrt L$ points in at least three classes, since two consecutive
-omitted sets have product at most $L$. In any class outside the
-intersection of their two designated class sets, their combined
-neighborhood omits at least $a_*-b_x-b_y>\sqrt L$ points. The
-intersection has at most two classes. If no vertex remains, $R'=1$.
-Otherwise take a marked edge to $U_i'$ from a remaining vertex $x$
-of positions $\{i,j\}$. Each original vertex of signature size two pays
-one blue anchor pair to $L'+L_{\rm cut}$. For $x$ choose its pair
-to $c_i$, which is disjoint from its $b_{x,j}$ pairs. By
-\eqref{eq:multi-rectangle} and \eqref{eq:multi-extra-capacity},
-$\mu\ge n+a_*=\frac{D-1}{2}$, as required.
-
-It remains to consider $a>0$ vertices of signature size one and no
-vertex of signature size three. If $a$ is even then $R-K=1$ and the loss
-is at least $\frac{D}{2}+R-1+a(t+1)>D-\frac{5}{2}$. Hence $a$ is odd and $R=K$.
-Apply the enlargement rule and let $n$ be the number of remaining
-vertices of signature size two, so $R'=a+2n$. After subtracting the base
-losses, \eqref{eq:multi-loss-budget} implies
-\[
- 2L+\sum_{\rm remaining\ two}(\ell_x-2)
- \le T=2a_*-\frac{5}{2}-a(t+1).
-\]
-A vertex with $b_x\ge a_*$ contributes at least $2a_*-2>T$ to the
-left side. For a vertex with $b_x<a_*$ and consecutive signature
-positions, or a vertex without a marked edge to the core, its
-contribution together with $2L$ is at least $2a_*$ by the bounds
-$a_*+1-\sqrt L$ and $q+1$, respectively. Therefore each remaining
-vertex with $k_x=2$ has $b_x<a_*$, nonconsecutive signature positions,
-and a marked edge to the core. Its two anchor pairs are blue.
-
-If two such vertices $x,y$ mark to one another, their signatures
-are distinct. Equation \eqref{eq:multi-low-blue-outside} shows that
-their marked-neighbor counts in the old core sum to at most
-$2R'-n$, since any shared position has $s_i'\le a+n$.
-Consequently
-\[
- b_x+b_y\ge D+q-2R'+n\ge a_*+2t+n-\frac{L}{a_*}.
-\]
-The budget gives $b_x+b_y\le \frac{T}{2}-n+4-L$. These contradict for
-$n\ge2$, $a\ge1$ and $t\ge-\frac{1}{2}$.
-
-Suppose $xy$ is marked, where $k_x=1$ and $y$ is a remaining
-vertex with $k_y=2$. After a rotation of the cycle, the signature
-of $x$ is $\{0\}$ and that of $y$ is $\{1,3\}$ or $\{2,4\}$. The omitted anchor stars require
-complete combined adjacency to the three indicated old classes.
-If $x$ has a marked edge to $B$, it has at least $a_*+1$ blue pairs
-in $U_0$. The designated class $U_1$ or $U_4$ for $y$ is short of
-at least $a_*-b_y$ of its vertices. These must be covered by
-additional blue pairs of $x$, since $x$ only marks to $U_2$ or
-$U_3$ in the old core. If $x$ has no marked edge to $B$, the
-three required classes have at least $D+a_*$ vertices and $y$
-has at most $R'$ marked neighbors there. Both cases imply
-$b_x+b_y\ge2a_*+1$. The budget then requires at least
-$D+a(t+1)-2>D-\frac{5}{2}$ in losses after including the other vertices.
-There are also no marks between two vertices of signature size one.
-Thus $f=0$. If $n>0$, then \eqref{eq:multi-rectangle} and the blue edges
-from one vertex of signature size one to $B$ give $I+L_{\rm cut}\ge2a_*+1>\frac{D}{2}$.
-If $n=0$ and $a\ge3$ then $L_{\rm cut}\ge3(a_*+1)>\frac{D}{2}$.
-The last possibility is $R'=a=1$, already settled.
-
-
-\subsubsection{Small-degree slack thresholds and a single repeated pair}
-\label{app:multi-small-slack}
-
-For $(D,R)=(11,7),(15,9)$, write $D=4k+3$ and $R=2k+3$.
-Here $k=2,3$ and $a_*=k$. Equation \eqref{eq:multi-rough-discharge}
-gives $L\le9,13$, respectively. For $L<D$, the old marked
-vertex-cover number satisfies the improved bound
-\begin{equation}\label{eq:multi-small-cover}
- \tau\ge D+a_*-\max\{0,\lfloor\sqrt L\rfloor-1\}.
-\end{equation}
-To prove it, consider an independent set of size $\alpha>D$ in
-the marked old core, with $x_i$ points in $U_i$. It occupies a
-consecutive pair of positions, since any two nonconsecutive classes
-have total size at most $D$. If the occupied positions induce a
-connected graph, summing $x_i x_j\ge x_i+x_j-1$ on a spanning tree
-gives $L\ge\alpha-1\ge D$. If they induce a disconnected graph,
-the occupied positions consist of one edge and one isolated point.
-The two classes of the edge cannot contribute their own anchors,
-because the anchor spokes to the adjacent class are marked. Either
-of these classes and the isolated class now contribute at most
-$D-1$ points. Hence the adjacent classes
-each contribute at least $\alpha-D+1$ and $L\ge(\alpha-D+1)^2$.
-Subtracting the upper bound for $\alpha$ from $|B|$ proves
-\eqref{eq:multi-small-cover}.
-
+\begin{proof}
+For the pairs $(11,7)$ and $(15,9)$, write $D=4k+3$ and $R=2k+3$,
+where $k=2,3$, respectively. Then $a_*=k$ and $L<D$ by
+\eqref{eq:multi-rough-discharge}.
 Use $q=\tau_{\rm lo}-D$ with $\tau_{\rm lo}$ the right-hand side
 of \eqref{eq:multi-small-cover} in the sharper discharging.
 Initially $q\ge0$. A vertex with $k_x=1$ has loss at least
@@ -579,24 +45,7 @@ three in either degree, with no positive transfer.
 
 We give the remaining cases for $D=11,15$ in terms of
 $d=\frac{D-1}{2}=2k+1$. A contradiction follows from $\mu\ge d$.
-We use two consequences of enlargement. First, each absorbed vertex
-$x$ contributes at most $D-h_x$ new blue consecutive pairs and at
-least one such pair, since one of its two anchor pairs is blue.
-Thus, if $p$ vertices are absorbed,
-\begin{equation}\label{eq:multi-new-blue}
- L+p\le L'\le L+\sum_{x\ {\rm absorbed}}(D-h_x).
-\end{equation}
-The vertex cover number of the enlarged marked core is at least
-$\tau'=D+a_*'-\frac{L'}{a_*'}$, rounded up to the next integer,
-where $a_*'=\frac{D-R'}{2}$. Second, if all $f$ outside marked
-edges meet one vertex and that vertex has at most $p$
-distinct outside marked neighbors, then
-\begin{equation}\label{eq:multi-center-cut}
- f\le\frac{p}{p+1}(2D-\tau').
-\end{equation}
-Indeed, one of its neighbors has outside marked degree at least
-$\frac{f}{p}$, and the outside marked degrees of the two ends sum to
-at most $2D-\tau'$. The bound is immediate when $p=0$.
+
 
 Suppose there is one vertex $z$ of signature size three. Write $a$
 for the number of vertices of signature size one. If $R-K=1$, the
@@ -620,7 +69,7 @@ $B$, since a vertex without the two listed kinds of marked neighbor
 would lose $\frac{D}{2}$, exceeding the available excess loss
 $\frac{a}{2}-1$. If a vertex of signature size zero marks to $z$,
 its entire core neighborhood is blue and has size at least
-$\tau'-D+f$. In these cases $\tau'\ge D$, by
+$\tau'-D+F_{\rm out}$. In these cases $\tau'\ge D$, by
 \eqref{eq:multi-new-blue} and the bounds on $L'$ below. The
 capacity inequality \eqref{eq:multi-extra-capacity} thus gives
 $\mu\ge a(k+1)\ge d$. We may assume that all outside marked
@@ -651,17 +100,17 @@ two vertices have the same signature and mark to the same
 class only. The index of this class is used at most once by
 the remaining signatures, namely by $z$. Since $R'=K'$,
 $s_i'\le1$. Their total marked degree is consequently at most
-$a_i'+f$. By the rounded cover bound,
+$a_i'+F_{\rm out}$. By the rounded cover bound,
 $\tau'\ge D+2k-1$, so \eqref{eq:multi-center-cut} gives
-$f\le\frac{2(2k+4)}{3}$. As $a_i'\le2k+4$, this sum is
+$F_{\rm out}\le\frac{2(2k+4)}{3}$. As $a_i'\le2k+4$, this sum is
 strictly less than $6k+4$, a contradiction.
 
 If $a=4$, then $R'=7$, and \eqref{eq:multi-new-blue} gives
 $L'\le k-1$. Hence $\tau'\ge D+2k-2$ and
-$f\le\frac{4(2k+5)}{5}$, which gives $f\le7$ for $k=2$ and
-$f\le8$ for $k=3$. In both cases $L_{\rm cut}\ge4(k+1)$
+$F_{\rm out}\le\frac{4(2k+5)}{5}$, which gives $F_{\rm out}\le7$ for $k=2$ and
+$F_{\rm out}\le8$ for $k=3$. In both cases $L_{\rm cut}\ge4(k+1)$
 and \eqref{eq:multi-extra-capacity} gives $\mu\ge d$.
-If $a=6$, then $k=3$, $L_{\rm cut}\ge24$ and $f\le15$,
+If $a=6$, then $k=3$, $L_{\rm cut}\ge24$ and $F_{\rm out}\le15$,
 which again suffice.
 
 Suppose there is no vertex of signature size at least three.
@@ -694,17 +143,17 @@ into the enlarged core has two blue anchor pairs. By
 most $R'+b_x$. A marked edge between such a vertex $y$ and a
 vertex $x$ of signature size one requires
 $b_x+b_y\ge2a_*+1=2k+1$, by the comparison with the two
-omitted anchors in \textbf{Appendix~\ref{app:multi-half}}.
+omitted anchors in the proof of \textbf{Lemma~\ref{lem:half-degree-cycle}}.
 
 If $a\ge5$ and $n\le1$, then all outside marks meet the sole
 remaining vertex of signature size two, if it exists. For $n=0$,
-$f=0$. For $n=1,k=2$, $L_{\rm cut}\ge5(k+1)+1=16$.
+$F_{\rm out}=0$. For $n=1,k=2$, $L_{\rm cut}\ge5(k+1)+1=16$.
 For $n=1,k=3,a=5$ we have $L\le3$, so a remaining vertex
 of signature size two has at least two blue cut pairs, whether
 its signature is consecutive or nonconsecutive or it has no
 core mark. This gives $L_{\rm cut}\ge22$. If $a\ge7$ and
 $k=3$, the vertices of signature size one alone give at least
-$28$. In each case $f\le D$ and the capacity inequality suffices.
+$28$. In each case $F_{\rm out}\le D$ and the capacity inequality suffices.
 
 If $a\ge5$ and $n\ge2$, then $k=3$, $a=5$, $n=2$, and
 $T=6$. The two remaining vertices of signature size two have
@@ -713,16 +162,16 @@ nonconsecutive positions and a mark into the enlarged core by
 the lower bounds on $b_x,b_y$ for the other types. If the two
 vertices have a marked edge between them, the sum of their
 outside marked degrees is at most $D-q$ by the old core cover
-bound, so $f\le D$. Otherwise, if both have blue degree two,
+bound, so $F_{\rm out}\le D$. Otherwise, if both have blue degree two,
 they use at least four units of the budget $T$. At most one
 vertex of signature size one can use the remaining two units
 to increase its blue degree from four to five. The comparison
 $b_x+b_y\ge7$ forces all outside marked copies to meet that
-vertex, so $f\le D$. If instead one of the two vertices has
+vertex, so $F_{\rm out}\le D$. If instead one of the two vertices has
 blue degree at least three, the two vertices exhaust $T$.
 The vertices of signature size one all have blue degree four,
 preventing a marked edge to the remaining vertex of blue
-degree two. Again $f\le D$. In each case the blue cut has at
+degree two. Again $F_{\rm out}\le D$. In each case the blue cut has at
 least 24 edges.
 
 If $a=3$, then $T=2k-1$. Each remaining vertex of signature
@@ -735,12 +184,12 @@ vertex of signature size two. If the two vertices of size two
 have a marked edge, their signatures are distinct and share at
 most one position, of slack at most $a+n$. By
 \eqref{eq:multi-low-blue-outside} their combined old core degree
-is at most $2R'-n+4=16<D+q$, also impossible. Hence $f=0$.
+is at most $2R'-n+4=16<D+q$, also impossible. Hence $F_{\rm out}=0$.
 For $n=1$ we have $R'=5$, and
 \eqref{eq:multi-new-blue} and \eqref{eq:multi-small-odd-budget}
 give $L'\le(k-1)+T-2-L\le3k-4$. The resulting cover bounds
 are $\tau'\ge14$ for $k=2$ and $\tau'\ge19$ for $k=3$.
-Equation \eqref{eq:multi-center-cut} gives $f\le6$ and $f\le8$,
+Equation \eqref{eq:multi-center-cut} gives $F_{\rm out}\le6$ and $F_{\rm out}\le8$,
 respectively. The blue cut has at least 11 or 14 edges,
 respectively, and in the latter case $L'\ge2$ by
 \eqref{eq:multi-new-blue}. For $n=0$ there are no outside marks,
@@ -754,8 +203,8 @@ remaining vertex $y$ has $b_y\ge k$, its loss above two uses
 all of $T$. It is the only remaining vertex of signature size
 two, with $b_y=k$ and $h_y=D-k$. We have $L=0$, there are $k$
 absorbed vertices, and $L'\le k$. The vertex $x$ of signature size
-one has $b_x=k+1$ and $h_x=D-b_x$. Now $R'=3$. If $f=0$, the
-blue cut has at least $2k+1=d$ edges. If $f>0$, all outside
+one has $b_x=k+1$ and $h_x=D-b_x$. Now $R'=3$. If $F_{\rm out}=0$, the
+blue cut has at least $2k+1=d$ edges. If $F_{\rm out}>0$, all outside
 marks run between $x$ and $y$. Rotate so that their signature union
 is $\{0,2,3\}$. The three corresponding slacks are one and all
 other slacks are zero. Put $A_i=U_i'$ for $i=0,2,3$. The sizes
@@ -765,8 +214,8 @@ pairs give distinct blue base pairs, so $w\le L'$. Write
 $Q_x',Q_y'$ for the enlarged core degrees. The omitted anchors
 force the union of the two neighborhoods to cover at least
 $3d+1-w$ vertices of $A_0\cup A_2\cup A_3$. Each end has at most
-$D-f$ core neighbors, so $Q_x',Q_y'\ge d+f-w$ and
-$2f\le d+1+w$. If one end has no core mark, its blue cut pairs
+$D-F_{\rm out}$ core neighbors, so $Q_x',Q_y'\ge d+F_{\rm out}-w$ and
+$2F_{\rm out}\le d+1+w$. If one end has no core mark, its blue cut pairs
 and $L'\ge w$ give $\mu\ge d$.
 
 Assume both ends have a core mark. If the signature of $x$
@@ -779,7 +228,7 @@ has $w_0$ blue pairs, this gives at least $d+1-w_0$ blue cut
 pairs at $x$. The only available core marks at $y$ go to
 $A_0$, by comparison with the cycle edges. At most $w_0$
 vertices there still have a degree unit free for $y$. Thus
-$L'+L_{\rm cut}-f\ge L'+d+1-w_0+Q_y'-w_0-f\ge2d+1-2w_0\ge d$,
+$L'+L_{\rm cut}-F_{\rm out}\ge L'+d+1-w_0+Q_y'-w_0-F_{\rm out}\ge2d+1-2w_0\ge d$,
 using $w_0\le L'\le k$ and $d=2k+1$.
 
 Otherwise, reflect to give $x$ signature $\{2\}$. It can
@@ -795,11 +244,11 @@ cover at least $d-w_3$ vertices there, where $w_3$ counts the
 vertices in $A_3$ without a red pair to an omitted anchor.
 The corresponding blue base pairs in $A_3$ are disjoint
 from the $w_2$ pairs of the star, so $L'\ge w_2+w_3$.
-This gives $\mu\ge 2d-f\ge d$, as $2f\le d+1+L'\le2d$.
+This gives $\mu\ge 2d-F_{\rm out}\ge d$, as $2F_{\rm out}\le d+1+L'\le2d$.
 If every choice of $u$ instead gives a blue pair $uc_1$,
 each marked copy from $x$ into $A_0$ gives a distinct
-blue base pair. Now $L'\ge h_x-f$, and the old blue pairs
-at $x,y$ give $\mu\ge h_x+b_x+b_y-2f=D+k-2f\ge d$.
+blue base pair. Now $L'\ge h_x-F_{\rm out}$, and the old blue pairs
+at $x,y$ give $\mu\ge h_x+b_x+b_y-2F_{\rm out}=D+k-2F_{\rm out}\ge d$.
 
 If all remaining vertices have $b_x<k$, then $n>0$ is possible
 only for $k=3$, with $n\le2$ and each blue degree equal to two.
@@ -810,7 +259,7 @@ would then give blue degree at least three. For $n=2$, the
 two vertices use all of $T$, so $L=0$ and the vertex of
 signature size one has blue degree four. Neither vertex can
 mark to it, and their combined old core degree is at most
-$2R'-n+4=12<D+q$ if they mark to one another. Thus $f=0$.
+$2R'-n+4=12<D+q$ if they mark to one another. Thus $F_{\rm out}=0$.
 If $n>0$, apply \eqref{eq:multi-rectangle} to one remaining
 vertex and add the $a_*+1$ blue cut pairs of the vertex of
 signature size one. These incidences are disjoint and give
@@ -824,9 +273,9 @@ For $(D,R)=(13,9)$, \eqref{eq:multi-joint} gives
 It follows from \eqref{eq:multi-small-cover} that $q\ge0$.
 For a vertex with $k_x=1$, the initial lower bound on its loss is $-\frac{1}{2}$, so
 \eqref{eq:multi-loss-budget} gives $R-K\le2$ and $L\le7$ and
-hence $q\ge1$. For completeness, we record the transfer bounds
-that reduce this case to the terminal counts in the proof supplement.
-If there are $c$ recipients, then $c\le3$, and a sender with positive
+hence $q\ge1$. To bound the number of vertices that can receive a positive transfer,
+let $c$ count the vertices with signature size at least three.
+Since $K\le9$, we have $c\le3$, and a sender with positive
 contribution has $Q<h\le\min\{13-Q,c(Q-q)\}$. It follows that
 $Q\le6$ and that a recipient has outside marked degree at most
 $6-q$. With $c=3$, there are no vertices of signature size one.
@@ -854,44 +303,49 @@ least $5+9$ blue pairs across that cut. The total is at least 61,
 whereas \eqref{eq:multi-core-identities} bounds the capacity of
 the cut by $18+2\lfloor\frac{81}{4}\rfloor=58$.
 
-There is thus at most one recipient, with no positive transfer.
-The exact integer comparisons and remaining cases are proved in
-Sections 2--5 of \emph{The exact bound for degree thirteen with
-slack nine} in the proof supplement indexed by \path{PROOF_NOTES.md}.
-Section 2 supplies
-the cover bounds for the enlarged core, and Sections 3--5 split
-according to the number of vertices of signature size one and
-the signatures remaining after enlargement. Each case gives
-$\mu\ge6$ or the base count for $R'=1$. Consequently $R\ge11$
-for degree thirteen. For degree nine, the finite reductions
-in \textbf{Appendix~\ref{app:multi-nine}} handle $R=7,9$.
+There is thus at most one vertex of signature size at least three.
+The one-recipient bound shows that no positive transfer occurs.
+\input{main_degree_thirteen_cases}
 
-We also need to exclude $b=1$ after taking exactly $m=f(D)+1$
-marked copies. The projection to distinct host pairs preserves
-both the strong-clique obligation and the anchor classes. If
-$b=1$, this projection has exactly $f(D)$ marked pairs. In the
-simple equality configuration with class sizes
-$(d,d,d+1,d+1,d)$, where $d=\frac{D-1}{2}$, every marked pair has
-an endpoint of host degree at least $D$ in the projection.
-A second marked copy on it contradicts the host capacity.
+\end{proof}
 
-The simple equality test in the companion files uses a cycle with
-largest old core and identifies the five slack entries under
-dihedral symmetry. For $D=9,11$, the only possible exception
-to the simple equality configuration is $(1,1,2,1,2)$.
-For $D=13,15$, the exceptions can only be $(1,1,2,1,2)$,
-$(1,1,3,1,3)$ or $(1,2,2,2,2)$. The last two have total
-slack nine. Thus the preceding half-degree and special
-slack bounds rule out every exceptional case at $D=11,13,15$
-in the multigraph counterexample. At $D=9$, the case $b=1$ with a
-triangle-free marked graph in the simple support is ruled out by the fixed
-$27$-formula replay in \path{d9_anchor_cases.py}.
-With a marked triangle the order is $24$ or $25$ by the
-degree-nine order reduction. The only exceptional shape is
-$(1,1,2,1,2)$, and the replay with \path{d9_pentagon.py},
-\path{--bundles 1 --triangles require}, and
-\path{--select s11212} checks its fixed unsatisfiability
-proof. This is the case \path{d9_b1_triangle/s11212.json}
-in the companion archive. The precise reduction and replay
-transcripts are indexed under \emph{A single repeated marked pair}.
+\begin{lemma}\label{lem:supp-simple-equality}
+Let $D\in\{9,11,13,15\}$, and let $f(D)$ distinct marked edges form
+a strong clique in a simple graph of maximum degree at most $D$.
+Unless the marked edges form the five-cycle blow-up with part sizes
+$(d,d,d+1,d+1,d)$, where $d=\frac{D-1}{2}$, there is a marked
+induced five-cycle with $R\le7$ for $D=9,11$ and $R\le9$ for $D=13,15$.
+\end{lemma}
 
+\begin{proof}
+With $m=f(D)$, the left-hand side of the first inequality in
+\eqref{eq:odd-moment-bounds} is $\frac{2D-1}{4D^2}$. The stated
+bounds on $\gamma_C$ and $\epsilon_C$ give $q_C>0$ for these
+four degrees, so a marked induced five-cycle exists.
+The test for a single extra marked copy uses the finite simple-graph
+equality calculation in \path{check_anchored_odd_small.py}. The proof
+index \path{PROOF_NOTES.md} links to its input and the output table.
+For $D\in\{9,11,13,15\}$ the input specifies a simple support of maximum
+degree at most $D$ with $f(D)$ distinct marked pairs. The test chooses
+an induced red five-cycle for which $|B|$ is largest. For this cycle,
+its five values of $s_i$ are identified up to rotation and reflection.
+Outside the equality construction, the only possible tuple for $D=9,11$
+is $(1,1,2,1,2)$. For $D=13,15$ the additional tuples are
+$(1,1,3,1,3)$ and $(1,2,2,2,2)$.
+
+The first vector has sum seven, and the other two have sum nine.
+The first vector lies in the upper group of
+\textbf{Figure~\ref{fig:finite-simple-slack-seven}}. The other two
+are in the last row of \textbf{Figure~\ref{fig:finite-nine-slack-nine}}.
+\end{proof}
+
+For $D=9$, the verifier \path{d9_anchor_cases.py} checks 27 Boolean
+instances for the case in which the red graph is triangle-free.
+When the red graph contains a triangle, the degree-nine reduction
+restricts the order to 24 or 25. For the remaining tuple
+$(1,1,2,1,2)$, run \path{d9_pentagon.py} with the options
+\verb|--bundles 1 --triangles require --select s11212|.
+The verifier checks the fixed unsatisfiability proof identified by
+\path{d9_b1_triangle/s11212.json}. The input files and reproduction
+commands are listed under \emph{A single repeated marked pair} in the
+file \path{reproducibility/multigraph/REPLAY.md}.

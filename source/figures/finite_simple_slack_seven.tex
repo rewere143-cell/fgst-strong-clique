@@ -1,0 +1,505 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[font=\scriptsize,
+sc marked/.style={draw=red!65!black,line width=.75pt},
+sc unmarked/.style={draw=blue!65!black,line width=.68pt,dash pattern=on 1.5pt off 1.35pt}]
+\node[inner sep=0pt] at (0,0) {\(R=7,\quad D\in\{7,9\}\)};
+\begin{scope}[shift={(-5.25,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(5\)};
+\end{scope}
+\begin{scope}[shift={(-3.75,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(-2.25,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(-0.75,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(5\)};
+\end{scope}
+\begin{scope}[shift={(0.75,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(2.25,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(3.75,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(5.25,-0.89)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(4\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(1\)};
+\end{scope}
+\begin{scope}[shift={(-5.25,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(-3.75,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(-2.25,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(-0.75,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(1\)};
+\end{scope}
+\begin{scope}[shift={(0.75,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(2.25,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(3.75,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(4\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(5.25,-2.17)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(-3.75,-3.45)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(-2.25,-3.45)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(-0.75,-3.45)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(0.75,-3.45)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(2.25,-3.45)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(3.75,-3.45)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\node[inner sep=0pt] at (0,-4.88) {\(R=7,\quad D\in\{9\}\)};
+\begin{scope}[shift={(-5.25,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(7\)};
+\end{scope}
+\begin{scope}[shift={(-3.75,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(6\)};
+\end{scope}
+\begin{scope}[shift={(-2.25,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(5\)};
+\end{scope}
+\begin{scope}[shift={(-0.75,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(0.75,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(6\)};
+\end{scope}
+\begin{scope}[shift={(2.25,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(5\)};
+\end{scope}
+\begin{scope}[shift={(3.75,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(5.25,-5.77)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(-5.25,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(4\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(-3.75,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(5\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(1\)};
+\end{scope}
+\begin{scope}[shift={(-2.25,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(5\)};
+\end{scope}
+\begin{scope}[shift={(-0.75,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(0.75,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\begin{scope}[shift={(2.25,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(2\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(2\)};
+\end{scope}
+\begin{scope}[shift={(3.75,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(4\)};
+\end{scope}
+\begin{scope}[shift={(5.25,-7.05)}]
+\coordinate (c0) at (90:.53);
+\coordinate (c1) at (18:.53);
+\coordinate (c2) at (-54:.53);
+\coordinate (c3) at (-126:.53);
+\coordinate (c4) at (-198:.53);
+\draw[black!70,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+\node[fill=white,inner sep=.65pt] at (c0) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c1) {\(0\)};
+\node[fill=white,inner sep=.65pt] at (c2) {\(3\)};
+\node[fill=white,inner sep=.65pt] at (c3) {\(1\)};
+\node[fill=white,inner sep=.65pt] at (c4) {\(3\)};
+\end{scope}
+\end{tikzpicture}
+\caption{Five-cycle slack vectors with $R=7$. The five entries are read clockwise from the top. Each heading lists the degrees for which the vector satisfies the slack bound and all five parts are nonempty.}
+\label{fig:finite-simple-slack-seven}
+\end{figure}

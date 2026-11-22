@@ -1,0 +1,78 @@
+\begin{lemma}\label{lem:multi-even-equality}
+Suppose the host has positive even maximum degree $D$ and the
+number of marked copies is $\frac{5D^2}{4}$. The host induced by
+the marked endpoints is a blow-up of $C_5$ with all five parts of
+size $\frac{D}{2}$. Every edge of that blow-up is single and marked.
+\end{lemma}
+
+\begin{proof}
+The five-position multiplicity bound applies at $M=\frac{5}{4}$ and
+gives $e<0.2105$. If every induced red five-cycle had
+$\frac{R}{D}\ge\frac{1}{2}$, the support bound in \eqref{eq:support-projection-four} would give $S\le1.22181$ and
+hence $e>0.0225$. These bounds satisfy the hypotheses of the last six-position certificate in \textbf{Table~\ref{tab:uniform-chain}}, whose upper bound is strictly less than
+$\frac{5}{4}$. Thus there is a cycle with $R<\frac{D}{2}$.
+
+Apply the redistribution leading to \eqref{eq:multi-rough-discharge}
+at this cycle. For every outside vertex $x$ with $k_x>0$, its
+resulting contribution is strictly less than $\frac{k_xD}{2}$.
+For $k_x=1$, a vertex either keeps at most $R-2$ or sends half of
+its marked degree and has a blue anchor edge. For $k_x=2$, there
+is a blue anchor edge and no incoming transfer. For $k_x=3$ with
+a marked neighbor of signature size zero, the incoming transfer
+is at most $\max\{\frac{D+R}{4},R\}<\frac{D}{2}$. Without such a
+neighbor, it is at most $\frac{D-3}{2}$, since the three anchor
+adjacencies use degree units inside the core. For $k_x\ge4$,
+the transfer is at most $D-k_x$ and its own contribution is
+at most $D$. Vertices of signature size zero retain no positive
+contribution. Since $K\le R$, the presence of an outside vertex
+of positive signature size would give $2m<D|B|+\frac{DK}{2}
+\le\frac{5D^2}{2}$ by \eqref{eq:multi-core-cut}.
+
+Hence $K=0$. Now $2m\le D|B|=\frac{D(5D-R)}{2}$, so $R=0$.
+By \eqref{eq:multi-core-identities}, the five part sizes are
+$\frac{D}{2}$. For a vertex of $U_i$, the neighbors in
+$U_{i-1}\cup U_{i+1}$ already use all $D$ degree units. There are
+$\frac{5D^2}{4}$ edges on these pairs. Any marked copy outside
+$B$ would require an outside vertex of positive signature size.
+Thus all edges in the blow-up are marked, and $B$ contains every
+marked endpoint.
+\end{proof}
+
+
+We finish with a consequence used in \textbf{Section~\ref{sec:exact}}
+to force an induced red five-cycle. For $m,D>0$ we have
+\begin{equation}\label{eq:absence-red-cycle}
+ q_C=0 \quad\Longrightarrow\quad M<\frac{98}{81}.
+\end{equation}
+Suppose that $q_C=0$ and $M\geq\frac{98}{81}$. The uniform bounds for
+the multigraph and its simple support give $M,S\leq\frac54$.
+If $b=0$ then $e=0$. If $b>0$, \textbf{Lemma~\ref{lem:multi-extra}}
+gives $e\leq1-\frac{M}{2}$. Thus in either case
+\[
+ \frac{98}{81}\leq M\leq\frac{12883}{10000},
+ \qquad 0\leq e\leq\frac{32}{81}.
+\]
+These are the intervals used in the stored calculation.
+
+Let $P$ be the five-position pattern of an induced red five-cycle.
+As in the definition of $q_C$, every color-preserving map of $P$ is injective. Hence $q_C=0$ excludes every such map. It follows from
+the definition of $X(P,T)$ in
+\textbf{Subsection~\ref{sec:weighted-counts}} that $X(P,T)=0$ for
+each forest $T\subseteq E(P)$ used in the calculation, including
+$T=\varnothing$. Since the coordinates are nonnegative, the verifier
+imposes all these equations by summing the distinct coordinates
+$X(P,T)$ and requiring this sum to be at most zero.
+
+Together with this inequality, the five-position calculation uses
+the weighted degree and flag constraints, the simple-support bound,
+the first inequality in \eqref{eq:support-projection-four}, and the
+rooted five-cycle bounds indexed in the proof notes accompanying~\cite{FGSTSupplement}.
+Using the five-position certificate from Section~G.4 of
+the supplement~\cite{FGSTSupplement} and adding the correction for
+negative residual coefficients gives
+\[
+ M\leq\frac{14802480264533669793521}{12250000000000000000000}
+   <\frac{98}{81}.
+\]
+This contradicts the assumed range of $M$ and proves
+\eqref{eq:absence-red-cycle}.

@@ -1,0 +1,26 @@
+\begin{figure}[!htbp]
+\centering
+\begingroup
+\newcommand{\nineTriangle}[3]{\begin{tikzpicture}[x=1mm,y=1mm,baseline=-.8mm]
+\path[use as bounding box] (-4,-1) rectangle (18,13);
+\coordinate (A) at (1,2); \coordinate (B) at (7,2); \coordinate (C) at (4,7.2);
+\coordinate (X) at (4,-.7);
+\ifnum#2=1\coordinate (Y) at (4,1.15);\else\coordinate (Y) at (9,7.1);\fi
+\draw[marked edge] (A)--(B)--(C)--cycle;
+\ifnum#1>0\draw[black!75,line width=.55pt] (A)--(X)--(B);
+\fill[white] (X) circle[radius=.48mm];\draw (X) circle[radius=.48mm];\fi
+\ifnum#1=2
+ \ifnum#2=1
+ \draw[black!75,line width=.55pt] (A)--(Y)--(B);
+ \else \draw[black!75,line width=.55pt] (C)--(Y)--(B);\fi
+ \fill[white] (Y) circle[radius=.48mm];\draw (Y) circle[radius=.48mm];\fi
+\foreach \x in {A,B,C}{\fill (\x) circle[radius=.4mm];}
+\node[font=\scriptsize,inner sep=0pt] at (4,10.6) {#3};
+\end{tikzpicture}}
+\nineTriangle{0}{0}{$t=0$}\quad\nineTriangle{1}{0}{$t=1$}\quad
+\nineTriangle{2}{1}{$t=2$, same}\quad\nineTriangle{2}{0}{$t=2$, distinct}
+\endgroup
+\caption{A marked triangle and the $t$ exterior vertices with two
+triangle neighbors. Each thin line is a required host adjacency.}
+\label{fig:nine-triangle-neighbors}
+\end{figure}

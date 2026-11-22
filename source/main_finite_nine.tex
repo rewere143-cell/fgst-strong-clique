@@ -1,0 +1,441 @@
+For $D=9$ the normalized flag inequalities require bounds on $b$
+and on the slack of each induced five-cycle. We prove those bounds
+first and then derive the additional inequalities for a marked triangle.
+
+\begin{lemma}\label{lem:finite-nine}
+If $D=9$ and the marked edges form a strong clique of size $98$, then
+$2\leq b\leq17$ and $|V(G)|\geq24$ in the reduced host. Every induced
+five-cycle with all five edges marked has $R\geq11$.
+\end{lemma}
+
+\begin{proof}
+By \textbf{Lemma~\ref{lem:counterexample-cycle}}, a pair of parallel
+marked edges exists. Choose its endpoints as roots and use the notation
+of \eqref{eq:multi-root-pair-budget}. By that equation, every marked pair has
+multiplicity at most three. For a repeated pair of multiplicity $k$,
+let $p_0$ count unmarked spokes and $i_m,i_u$ count marked and
+unmarked edges within $A$. The marked degree sum on $A$ is
+$98-k+i_m$. Since the unmarked spokes and edges in $A$ use at
+least $p_0+2i_u$ further incidences,
+\[
+ p_0+i_m+2i_u\leq 9q-98+k .
+\]
+Let $M_\times$ count marked edges between $A$ and $W$, and let $h$
+count all spokes from the roots to $A$. Counting all $98$ marked
+edges gives $M_\times=98-k-h+p_0-i_m$. Since $h\leq18-2k$,
+the displayed bound gives $M_\times\geq178-9q+2p_0$.
+The root bound \eqref{eq:multi-root-pair-budget} gives $q\geq11$.
+The possible neighborhoods of the two roots are shown in
+\textbf{Figure~\ref{fig:nine-root-profiles}} of the supplement~\cite{FGSTSupplement}.
+After deleting the roots the host degrees on the two sides of the
+marked bipartite graph are at most eight and nine. With Ore-degree
+at most 17, the recurrence \eqref{eq:finite-bipartite-root-count}
+gives $M_\times\leq83$ for $q=11$ and $M_\times\leq84$ for $q=12$.
+Thus only $p_0=0,1,2$ for $q=11$, or $0\leq p_0\leq7$ for $q=12$,
+can occur. The case analysis for these values counts the joining edges
+required between the two sets of marked spokes and the edges from $A$
+to $W$. It excludes $q=11$ and $q=12$
+in Sections~2 and~4--11, respectively, of the initial degree-nine
+reduction indexed in~\cite[Section~F.2]{FGSTSupplement}. Hence $q\geq13$.
+Since $q\leq2(9-k)$, each repeated pair has multiplicity two.
+At each endpoint let $j_x$ count the number of marked copies beyond
+the first on each pair incident with $x$. Its number of distinct
+neighbors is at most $9-j_x$. For a double pair $uv$ this gives
+$13\leq q\leq16-j_u-j_v$, so $j_u+j_v\leq3$.
+Consequently the graph of double pairs has maximum degree two, and
+every neighbor of a vertex of degree two in this graph has degree
+one. Each component is therefore a single edge or a two-edge path.
+Equality holds in the bound on $q$ for each edge of a path component.
+Both endpoints of such a pair have host degree nine and have no
+common host neighbor. A double pair has either 13 or 14 neighbors
+outside its roots. Sections~14--17 of the same reduction exclude a
+marked triangle through the roots and, for both possible neighborhood
+sizes, exclude the case in which all their spokes are marked.
+
+For the stronger bound on $b$, let $p$ count the two-edge
+path components, let $a$ count the single-edge components,
+and let $T$ be the union of their vertex sets. Let $E$ count the
+unordered pairs of adjacent vertices in $T$ that belong to different
+components of the graph of double pairs. Of these pairs, let $x$
+count those with both endpoints at path centers and let $y$ count
+those with exactly one endpoint at a path center.
+Counting degrees at the centers and joining edges between
+marked edges of distinct components gives
+\[
+ 2x+y\le5p,\qquad
+ E\ge4\binom{p}{2}+2ap+\binom{a}{2}-3x-y.
+\]
+For instance, if two path centers are nonadjacent and are
+adjacent to $u$ and $v$ leaves of the other path, respectively,
+then for $(2-u)(2-v)$ pairs of marked edges the only possible
+joining edge has a leaf of each path as its endpoints. The vertices of $T$ have
+total capacity at most $19p+14a-2E$ for edges leaving $T$.
+Put $c=a+p$, so $b=c+p$. If $p=0$, each component has at most
+14 edges to the other components, giving $b=c\leq15$. If $p>0$,
+each path center has at most five neighbors outside its component.
+Both leaves must be adjacent to each component missed by the center.
+The 19 available incidences at the three vertices of the path give
+$2(c-1)-5\leq19$, so $c\leq13$. Moreover,
+$3x+y\leq5p+\min\{\binom{p}{2},\lfloor5p/2\rfloor\}$.
+Substituting this bound in the inequality for $E$ and using
+$2E\leq19p+14a$ gives $p\leq8,7,5,2$, respectively, for
+$c=10,11,12,13$. For $c\leq9$, $b=c+p\leq18$. Thus $b\leq18$.
+If $b=18$, the only feasible component counts are
+$(a,p)=(4,7),(2,8),(0,9)$, as shown in
+\textbf{Figure~\ref{fig:nine-double-components}} of the supplement.
+In these cases, counting the
+possible witnesses at the centers gives at most $2,60,54$
+marks other than the double pairs, respectively. Each bound
+is less than the required $98-36=62$. The calculation for each of the three component counts is identified
+in~\cite[Section~F.2]{FGSTSupplement}. Therefore $b\leq17$.
+
+Let $n=|V(G)|$. The degree sum $9n\ge2m=196$ gives $n\ge22$.
+If $n=22$, the total marked degree deficiency is two. Each
+double pair has an unmarked spoke, so the host is 9-regular
+and has exactly one unmarked edge $uv$. Every double pair
+meets $\{u,v\}$. A vertex of $C=V(G)\setminus\{u,v\}$ cannot
+have double pairs to both $u$ and $v$, because the pairs
+would form a path whose edge from $C$ to $u$ has a common
+host neighbor $v$. Thus every vertex of $C$ sends at most
+three marked copies to $\{u,v\}$. The graph $G[C]$ is
+simple, has minimum degree at least six, and all its edges
+are marked. In particular, it has no induced $2K_2$.
+
+Suppose first that $G[C]$ is triangle-free. Any shortest odd
+cycle of length at least seven would contain an induced
+$2K_2$. If $G[C]$ were bipartite, it would have a single
+component, since it has no isolated vertices and no induced
+$2K_2$. The neighborhoods on either side would be nested
+under inclusion, giving a vertex adjacent to the entire
+other side. The degree bound would then give $|C|\le18$.
+Therefore $G[C]$ contains an induced cycle of five marked
+edges. Use the vertices of this cycle as the anchors for
+the sets $U_i$ in \textbf{Section~\ref{sec:exact}}.
+A vertex of $C$ cannot have one anchor neighbor or two
+consecutive anchor neighbors, since a marked edge to an
+anchor would lack a witness to the opposite cycle edge.
+If it has no anchor neighbor, the anchor neighbors of
+each of its marked neighbors must cover the five cycle
+edges, so there must be at least three. Only $u,v$ can
+have three anchor neighbors, since $G[C]$ is triangle-free.
+They cannot account for the marked degree nine of a vertex
+of $C$. Consequently $C\subseteq B=\bigcup_i U_i$.
+
+Each vertex of $\{u,v\}\setminus B$ has at least three
+anchor neighbors. Indeed, it has marked degree eight.
+With no anchor neighbor it has no possible marked neighbor
+in $C$, and with one neighbor or two consecutive neighbors
+one of its marked anchor edges would lack a witness to the
+opposite cycle edge. Two nonconsecutive anchor neighbors would
+place the vertex in one of the $U_i$, as $uv$ is the only unmarked
+edge and neither endpoint is an anchor. If both $u,v$ are outside
+$B$, their anchor incidences exceed the slack $R\le45-2\cdot20=5$. If
+exactly one is outside, the three units of slack occur at
+distinct anchors, so every vertex in $B$ has at most one
+unit beyond its required degree to the neighboring classes.
+The exterior vertex cannot have a double pair to $B$.
+The endpoint of $uv$ in $B$ spends its only unit on $uv$
+and cannot have a double pair either. If both $u,v$ lie in
+$B$, then $R=1$. A double pair between consecutive classes
+would require positive slack in both classes, and a double
+pair otherwise would require two units at each end. These
+cases give $b=0$, a contradiction.
+
+If $G[C]$ contains a triangle, all three edges are marked. The
+order-22 count in Section~18 of the initial degree-nine reduction
+shows that the triangle dominates the host, that no exterior vertex
+has three triangle neighbors, and that at most two have two
+triangle neighbors; see \textbf{Figure~\ref{fig:nine-triangle-neighbors}}
+of the supplement.
+Group the vertices with exactly one triangle
+neighbor according to that neighbor. A marked edge between two
+of the groups must have a joining edge to every marked spoke in
+the third group. This reduces the sum of its endpoint degrees
+in the first two groups by at least the size of the third group.
+If zero or one vertex has two triangle neighbors, the bounds for
+all three pairs of groups sum to at most 70 or 65, respectively,
+while at least 74 or 67 marks are needed. With two such vertices,
+each pair of groups needs 20 marks and has Ore-degree at most nine.
+Section~18 treats separately the cases in which these two vertices
+miss the same triangle vertex or different triangle vertices and
+excludes equality in both cases~\cite[Section~F.2]{FGSTSupplement}.
+
+For $n=23$, let $\beta$ count unmarked edges, let $Q$ be
+their set of endpoints and put $C=V(G)\setminus Q$.
+Counting marked and unmarked degrees gives
+\[
+ 11=9\cdot23-196=\sum_v(9-d_G(v))+2\beta.
+\]
+Thus $1\le\beta\le5$, and $k=|Q|\le2\beta$. Every edge
+of $G[C]$ is marked and simple, since every double pair
+meets $Q$. There are at least $98-9k+2\beta>0$ such
+edges, and $G[C]$ has no induced $2K_2$.
+
+For a marked triangle in a host of order 23, the degree counts at
+vertices with no triangle neighbor show that the triangle dominates
+the host. No exterior vertex has three triangle neighbors. If two
+vertices each have two triangle neighbors, their sets of triangle
+neighbors coincide or differ. The two Boolean checks
+in~\cite[Section~F.2]{FGSTSupplement} exclude the last two diagrams
+in \textbf{Figure~\ref{fig:nine-triangle-neighbors}} of the supplement.
+The count of unmarked edges leaving the triangle gives at least one
+and at most three such edges. Thus a triangle cannot lie in $G[C]$,
+as none of its vertices would be incident with an unmarked edge.
+Suppose that $G[C]$ contains an induced five-cycle. Every edge from
+one of its vertices to a vertex outside the cycle is marked. Let $h$
+count vertices with at least three neighbors on the cycle and $z$
+those with none. The other $23-h-z$ vertices have two nonconsecutive
+cycle neighbors, since a marked spoke must have a joining edge to
+the opposite cycle edge. Each of the $h$ vertices belongs to $Q$,
+as three cycle neighbors include two adjacent vertices. The
+restrictions on marked triangles force each to have exactly three
+cycle neighbors. A vertex with no cycle neighbor can have a marked
+edge only to one of these $h$ vertices. Each such vertex uses three
+units of degree on the cycle and at least one on an unmarked edge,
+leaving at most five marked edges to the $z$ vertices. Counting
+cycle incidences and marked degree deficiencies gives
+\[
+  2(23-h-z)+3h\leq45,\qquad 9z-4h\leq11 .
+\]
+Each of the $h$ vertices forms a marked triangle with two cycle
+vertices and therefore sees all $z$ vertices, since that triangle
+dominates the host. In particular $z\leq6$. The order-23 reduction
+excludes the resulting pairs $(z,h)$ by applying the same degree
+constraints to these triangles~\cite[Section~F.2]{FGSTSupplement}.
+A shortest odd cycle
+of length at least seven would contain an induced $2K_2$.
+Hence $G[C]$ is bipartite with a single nontrivial component.
+Two incomparable neighborhoods on one side would yield an
+induced $2K_2$, so this component is a chain graph. Its two
+sides have sizes $a\le c\le9$. Write $i=23-k-a-c$ for the
+number of isolated vertices of $G[C]$.
+
+If the host has a marked triangle, we enumerate the simple
+unmarked graph on $Q$ by connected components with at most
+five edges in total. For each unmarked graph we enumerate
+the parameters $a,c,i$ with $ac\ge B_0=98-9k+2\beta$.
+If a vertex in $Q$ is joined by a marked edge to an isolated vertex
+of $G[C]$, its neighbors in the chain must cover all chain edges.
+Let $\tau_0$
+be the minimum of $a,c$ and the values $r+t$ with
+$1\le r<a$, $1\le t<c$ and $ac-(a-r)(c-t)\ge B_0$.
+A cover containing $r$ and $t$ vertices on the respective
+sides leaves $(a-r)(c-t)$ pairs unavailable, so every cover
+has size at least $\tau_0$. A vertex in $Q$ of unmarked
+degree $d_0$ can contribute at most
+$\max(0,\min(9-d_0-\tau_0,2i,i+2))$ marks to the isolates.
+The bounds $2i$ and $i+2$ use the double multiplicity cap
+and the component structure of the double pairs,
+respectively. There are at least $9i-(11-2\beta)$ marks
+to these isolates, by the degree deficiency bound above.
+The inequalities leave $0,0,4,21,87$ configurations for
+$\beta=1,\ldots,5$, respectively.
+
+Encode the chain graph by its bipartite adjacency matrix
+with nested rows and columns, both ordered by decreasing
+size. The first row and first column consist of ones,
+because the chain graph is connected and nontrivial.
+The formulas add weighted degree constraints and the
+requirement that each two disjoint marked edges have adjacent endpoints, as well as
+the constraints on marked triangles, repeated root
+neighborhoods, and deletion of two vertices recorded in
+the order-23 reduction. All resulting formulas are unsatisfiable
+by~\cite[Section~F.2]{FGSTSupplement}.
+
+If the host has no marked triangle, let $x\in Q$ have a marked neighbor
+that is isolated in $G[C]$. Its neighbors in the chain cover every
+chain edge and form an independent set, since every edge incident
+with a vertex of $C$ is marked. An
+independent vertex cover of a connected bipartite graph
+is a part of its bipartition. These constraints and the
+degree bounds give the remaining finite list for the triangle-free
+case. Each of the 18 formulas uses the unmarked graph and chain
+dimensions of a template already considered for the marked-triangle
+case. The supplement lists both families in
+\textbf{Figures~\ref{fig:nine-chain-1}--\ref{fig:nine-chain-6}}.
+Every formula on this list is also unsatisfiable
+by~\cite[Section~F.2]{FGSTSupplement}. Thus $n\geq24$.
+
+It remains to exclude $b=1$ and to bound the minimum slack.
+
+If $b=1$, the simple support has exactly 97 marked pairs.
+The simple-graph equality check in~\cite[Section~F.2]{FGSTSupplement}
+leaves the extremal five-cycle blow-up or a remaining
+configuration that contains an induced cycle of five
+marked edges. In the blow-up, every marked pair meets a
+vertex of simple degree nine, so another copy cannot be
+added.
+
+In the case with no marked triangle, evaluate the five-cycle moments
+$q_C,L_R$ in the simple support with 97 marked pairs. The projection
+certificate and the rooted cycle count give
+\[
+ \frac54-\frac{97}{81}\geq
+ \gamma\left(L_R-\frac54 q_C+\frac5{32}\right)-\varepsilon,
+ \qquad q_C\leq\frac{992}{5625},
+\]
+with $\gamma>\frac{485}{1000}$ and $0<\varepsilon<\frac{2}{10^6}$
+in the one-pair calculation~\cite[Section~F.2]{FGSTSupplement}.
+If every such cycle has $R\ge9$, then $L_R\geq q_C$, so the
+right-hand side is at least
+$\gamma(\frac5{32}-\frac{248}{5625})-\varepsilon>
+\frac{17}{324}=\frac54-\frac{97}{81}$.
+The minimum slack is odd and therefore at most seven. The slack
+vectors with $R=1,3,5,7$ give 60 configurations up to
+rotations and reflections of the cycle. The supplement lists them in
+\textbf{Figures~\ref{fig:finite-simple-slack-low}
+and~\ref{fig:finite-simple-slack-seven}}. Counting the
+capacity available to the endpoints of each anchor edge
+excludes 33. The remaining configurations are excluded by the
+refutations in~\cite[Section~F.2]{FGSTSupplement}.
+
+When the host has a marked triangle, the simple-graph
+equality check leaves the slack vector $(1,1,2,1,2)$.
+The marked triangle restrictions bound the number of
+vertices by 25, so the possibilities are 24 and 25.
+The Boolean formula for this vector permits both orders. Its
+refutation~\cite[Section~F.2]{FGSTSupplement} excludes $b=1$.
+
+We now bound the slack.
+
+Choose an induced five-cycle with all five edges marked, whose existence follows from
+\textbf{Lemma~\ref{lem:counterexample-cycle}}. Among these cycles take one minimizing
+$R=\sum_i s_i=45-2|B|$, where $B=\bigcup_i U_i$ and
+$s_i=9-|U_{i-1}|-|U_{i+1}|$. Solving the five slack
+equations gives $a_i=|U_i|=\frac{9-R}{2}+s_{i+2}+s_{i+3}$,
+with indices taken modulo five. By \textbf{Lemma~\ref{lem:half-degree-cycle}},
+$R>\frac{9+1}{2}=5$.
+For $R=7,9$ the finite checks enumerate the nonnegative
+integer vectors $(s_i)_{i=0}^4$ with all $a_i>0$, up to
+rotations and reflections of the cycle.
+\textbf{Figures~\ref{fig:finite-simple-slack-seven}
+and~\ref{fig:finite-nine-slack-nine}} of the supplement list the vectors for $R=7$ and
+$R=9$, respectively. For each vector left by the degree counts,
+we distinguish whether the marked edges contain a triangle.
+
+The signature of an exterior vertex is its set of
+neighbors among the five anchors. Any vertex with
+nonempty signature uses at least one of the $R$ anchor
+incidences available outside $B$. For every marked
+exterior edge, the union of the signatures of its
+endpoints covers the cycle edges. An exterior vertex
+with empty signature can therefore be marked only to
+a vertex with at least three anchor neighbors. Such a
+marked edge cannot meet $B$, where every vertex has
+exactly two anchor neighbors. A vertex with $t\ge3$
+anchor neighbors accounts for at most $9-t$ vertices with
+empty signature and itself uses $t$ anchor incidences.
+Compared with counting one vertex per incidence, the
+increase is at most $(9-t)+1-t=10-2t\le4$. Hence there
+are at most $R+4\lfloor\frac{R}{3}\rfloor$ exterior
+vertices, and unused positions can be filled by isolated
+vertices. In the marked triangle case the triangle-degree estimates below give
+at most 25 vertices. If there is no marked triangle, the vertices
+incident with no unmarked edge induce a bipartite graph. Indeed, a
+five-cycle on these vertices would have all its spokes marked. Every
+outside neighbor of an anchor would then have exactly two
+nonconsecutive anchor neighbors, since a third gives a marked
+triangle. All these neighbors lie in the five corresponding parts.
+The opposite-edge count for consecutive anchors with no neighbors
+outside the five parts gives $m\leq97$. Longer induced odd cycles
+contain an induced $2K_2$. Writing $Q$ for the endpoints of the
+unmarked edges, the degree count for the isolated vertices of this
+bipartite graph gives
+$|Q|\geq\min\{n-2D+1,\frac{D+5}{2}\}$ in the triangle-free
+reduction indexed in~\cite[Section~F.2]{FGSTSupplement}.
+Since $n\geq24$ and $D=9$, at least seven vertices lie in $Q$.
+
+For an additional necessary condition, let $z_i$ count the
+vertices in $U_i$ adjacent to neither endpoint of a
+marked exterior edge. Then all $\sum_i z_i z_{i+1}$
+pairs joining such vertices in consecutive classes must
+be unmarked. Otherwise a marked edge in those classes would have no joining
+edge to the exterior marked edge. For each cycle edge the formulas
+also bound the number of marks that can belong to the same strong clique,
+and require that replacing one anchor cannot yield a
+larger set $B$ while preserving an induced cycle of
+five marked edges.
+Every counterexample of minimum slack 7 or 9 would therefore
+supply a satisfying assignment for one of the instances verified
+in~\cite[Section~F.2]{FGSTSupplement}. The refutations exclude both
+values. Thus $R\geq11$ on every induced five-cycle with all five
+edges marked, $2\leq b\leq17$, and $n\geq24$.
+
+\end{proof}
+
+The degree-nine flag inequalities also count marked triangles. We
+derive the restrictions on the number of marked edges meeting one of
+these triangles.
+
+Fix a marked triangle. If an exterior vertex with no triangle
+neighbor is incident with a marked edge, its other endpoint has at
+least two triangle neighbors. Together the endpoints must also see
+at least one endpoint of every marked edge joining vertices with
+exactly one triangle neighbor. Counting the degree used for these two
+requirements gives the following restrictions for $n\geq24$ in
+Section~3 of the initial degree-nine reduction indexed
+in~\cite[Section~F.2]{FGSTSupplement}. Each triangle vertex has host
+degree nine and is incident only with single edges. No exterior
+vertex has three triangle neighbors, and at most one has two.
+If a vertex has two triangle neighbors, at least one of these edges
+is unmarked. The count gives $n=24$ when no exterior vertex has two
+triangle neighbors and $n\in\{24,25\}$ otherwise.
+Let $t\in\{0,1\}$ count the exterior vertices with two
+triangle neighbors. The signature of an exterior vertex
+for this argument is the set of its triangle neighbors.
+Completing the host to a 9-regular multigraph, as in
+\textbf{Subsection~\ref{sec:weighted-counts}}, adds no edges
+at the triangle vertices. The total marked degree
+deficiency on the original vertices is $9n-196$.
+Each unmarked pair between exterior vertices with
+nonempty signature accounts for two units of this
+deficiency. Since $n\le24+t$, there are at most
+$10+4t$ such pairs.
+
+Let $p$ count unmarked edges from the triangle to its
+complement and let $r_0$ count marked edges having an
+exterior endpoint of empty signature. Every such marked
+edge meets a vertex with at least two triangle neighbors,
+since its endpoint signatures must cover the triangle
+edges. Hence $r_0=0$ if $t=0$. The three triangle vertices
+are incident with $24-p$ marked edges, leaving $74+p$
+marked edges outside the triangle. After deleting the
+triangle and the vertices with empty signature, the
+maximum degree is at most eight, so
+$74+p-r_0\le80$ by \textbf{Lemma~\ref{prop:multi-uniform}}.
+
+If $t=0$ and $p=6$, equality would hold in this bound.
+The host after deletion would have maximum degree eight by
+\textbf{Lemma~\ref{prop:multi-uniform}}.
+By \textbf{Lemma~\ref{lem:multi-even-equality}}, the 80 marked
+edges form the balanced five-cycle blow-up on their endpoints.
+The three sets of vertices with
+exactly one triangle neighbor, grouped by that
+neighbor, have seven vertices each and form three
+independent sets in the marked graph. Each part of the
+balanced blow-up has size four. If a part uses two
+colors, both adjacent parts use the third color. If
+each part uses a single color, two parts share a color.
+Both cases give at least eight vertices of the same
+color, a contradiction. Thus $p\le5+t+r_0$.
+
+Next consider two of the groups with single, distinct
+triangle neighbors, and let $p_i$ be the number of
+marked spokes to the third group. For a marked edge joining the
+first two groups, there must be a joining edge to each of those $p_i$
+spokes. Its two endpoints therefore use at least $p_i$
+units of host degree outside the two groups, so the sum of its
+endpoint degrees in their induced host is at most $16-p_i$.
+Each group has at most seven vertices, and
+each marked pair has multiplicity at most two. The
+recurrence based on \eqref{eq:finite-bipartite-root-count} with both host degree bounds set to
+eight gives the bounds $22,28,34,40,46,52,56,56$ for
+Ore bounds $9$ through $16$, respectively. Each is at
+most $6(16-p_i)-32$. If $t=0$, the three groups account
+for all exterior marked edges. Summing the bounds over
+the three pairs of groups gives $74+p\le192-6(21-p)$,
+hence $p\ge2$. If $t=1$, at least one spoke is unmarked,
+so $p+t\ge2$ also holds. The flag calculation counts
+extensions of a fixed triangle with these restrictions,
+allowing repeated images of flag positions when their
+colors permit them.

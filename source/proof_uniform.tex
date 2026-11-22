@@ -359,60 +359,13 @@ $\omega(L(G)^2)\leq\frac{5}{4}\Delta(G)^2$.
 \end{lemma}
 
 \begin{proof}
-We verify the index tables before using them to compute
-\eqref{eq:integer-residual}. The index programs enumerate all labeled
-patterns on three through six positions with pair $01$ marked and
-test each pattern for connectivity and admissibility. For a
-representative of each stored class, the programs apply all
-permutations of the positions, retaining the relabelings with pair
-$01$ marked. The programs compare the resulting orbit with the
-patterns assigned to the class. The lower-order checker also verifies
-that every degree row specifies a connected admissible base pattern
-and a position of that pattern. For each listed type and flag order,
-the checker verifies that the flag list contains one representative
-from every orbit under permutations fixing the type positions.
-
-The program \path{check_reverse.c} starts with the stored
-coefficients and subtracts the contributions to them from
-\eqref{eq:degree-extension} and \eqref{eq:moment-expansion}. For a
-degree row $(F,u)$ with $F$ of order greater than two, it first
-adds $1$ to the coefficient of the orbit of $F$, accounting for
-$-q_F$ on the left side of the equation. It then enumerates the
-connected admissible patterns in the verified tables. A pattern
-extending $F$ at $u$ as in \eqref{eq:degree-extension} subtracts
-$1$ from the coefficient of its orbit in that row. For a moment
-entry, a pattern on three through six positions subtracts $1$
-from the coefficient of its orbit if the restrictions to the two
-position sets in the proof of \textbf{Lemma~\ref{lem:moment}} are
-the prescribed flags. There are $2{,}116{,}783$ such moment
-contributions. The program requires every updated key to be in
-the table and all remainders to be zero. This checks the
-$433{,}899$ stored degree coefficients, the $1{,}895{,}405$ stored
-moment coefficients and the zeros at all omitted keys.
-
-The program \path{check_certificate.py} checks the denominators,
-the vector lengths and the nonnegativity of the weights. It computes
-$B_\ell$ using \eqref{eq:integral-Q}. To reconstruct $o$, the program
-counts the labeled patterns of order four with pair $23$ marked and
-adds $\frac{1}{2}$ to the corresponding coordinate for each such
-pattern, as in \eqref{eq:objective-vector}. It uses integer arithmetic
-by scaling these contributions by $\Lambda$, which is even. The
-program also accounts for the constant contribution from $E_\star$.
-In each block whose type has order two, it includes the first
-diagonal entry of $B_\ell$ in \eqref{eq:integer-constant}, since
-$(K_\ell)_{11}=1$ and all other entries of $K_\ell$ are zero.
-For larger types, $K_\ell=0$.
-
-With the verified coefficients, the program evaluates every entry of
-$\rho$ and the constant in \eqref{eq:integer-constant}. Of the
-$23{,}789$ entries of $\rho$, $23{,}590$ are positive and $199$ are
-zero. The largest is $899{,}382{,}275{,}568$. The constant equals
-$3{,}000{,}000{,}000$. The commands and the corresponding reports
-are described in~\cite[Section~B]{FGSTSupplement}.
-
-
-Thus the program verifies that every entry of the residual vector
-$r=\frac{\rho}{\Lambda}$ is nonnegative and that $C=\frac{5}{4}$.
+The exact checks in~\cite[Section~B]{FGSTSupplement} verify the
+degree and moment coefficients against \eqref{eq:degree-extension}
+and \eqref{eq:moment-expansion}. With these coefficients, the
+residual in \eqref{eq:integer-residual} has $23{,}590$ positive entries
+and $199$ zero entries, and the constant in \eqref{eq:integer-constant}
+is $3{,}000{,}000{,}000$. Thus $r=\frac{\rho}{\Lambda}\geq0$ and
+$C=\frac{5}{4}$ for the multipliers in \eqref{eq:integral-Q}.
 If $G$ has an edge, let $m$ be the size of a maximum clique in $L(G)^2$.
 For the vector $q$ given by \textbf{Lemma~\ref{lem:finite-encoding}},
 \textbf{Lemma~\ref{prop:certificate-principle}} now gives
@@ -421,6 +374,8 @@ Since $o^{\mathsf T}q=\frac{m}{\Delta(G)^2}$ by \eqref{eq:objective-value},
 we obtain $m\leq\frac{5}{4}\Delta(G)^2$.
 If $G$ has no edges, the clique number is zero.
 \end{proof}
+
+\input{main_simple_cycle_counts}
 
 \subsection{The Bound \texorpdfstring{$\frac{5}{4}\Delta^2$}{5 Delta squared / 4} in Multigraphs}
 \label{sec:multigraph}\label{sec:weighted-counts}
@@ -552,6 +507,10 @@ lists for which these products lie in the specified pattern collection.
 The same counting identity applies to the matrices formed from local
 degrees and from counts of extensions satisfying degree constraints.
 
+\input{main_multigraph_cycle_counts}
+
+\input{main_flag_bounds}
+
 \begin{lemma}\label{prop:multi-uniform}
 Every strong clique of size $m$ in a finite loopless multigraph of maximum
 degree at most $D$ satisfies $m\le\frac{5D^2}{4}$. If $m>0$, $D>0$, and
@@ -564,27 +523,63 @@ If $m=0$ the asserted bound holds. Otherwise $D>0$, and the
 red edges form a strong clique of size $s$ in the simple support,
 which has maximum degree at most $D$. Thus
 \textbf{Lemma~\ref{prop:quadratic-bound}} gives $S\leq\frac{5}{4}$.
-The weighted counts satisfy the degree equations and the
-positive semidefinite constraints derived from the weighted flag
-products. The rational inequalities for these counts are verified
-in~\cite[Section~G]{FGSTSupplement}. Under the assumption
-$M>\frac{5}{4}$, the five-position inequalities give
-$M<1.28746$ and $e<\frac{421}{2000}$. For each induced red five-cycle,
-the degree count in~\cite[Section~E]{FGSTSupplement}
-bounds the number of incidences left at its five vertices after
-reserving their edges to the two neighboring parts. This bound uses
-$M>\frac{5}{4}$ and applies to both parities of $D$. With the
-simple-support inequalities in~\cite[Section~G.1]{FGSTSupplement},
-it gives an upper bound on $S$. The identity $S=M(1-e)$ then bounds
-$e$ from below. Successive inequalities for the resulting ranges of
-$M$ and $e$ give
+The five-position certificates in~\cite[Section~G.4]{FGSTSupplement}
+exclude $M\geq\frac{4967}{4000}$ and $e\geq\frac14$ simultaneously,
+giving the second assertion. They also give
+$e<\frac{421}{2000}$ for $M\geq\frac54$ and $M<1.28492$ for
+$M>\frac54$.
+
+Suppose that $M>\frac54$. For an induced red five-cycle put
+$r=\frac RD$ and $g=M-\frac54$. The degree estimates in
+\textbf{Lemma~\ref{lem:multigraph-cycle-counts}} give $r>\frac12$.
+When $r\leq1$, \eqref{eq:multi-rough-discharge} implies
+$2g\leq r(r-\frac12)$, and \eqref{eq:multi-joint} gives the
+stronger inequality
+\[
+ 2g\leq\frac{1+r}{2+r}r\left(r-\frac12\right).
+\]
+Both right-hand sides are increasing on $[\frac12,1]$.
+For a proposed lower bound $M_-$ on $M$, substitute
+$g\geq M_--\frac54$ and solve for a lower bound $\alpha$ on $r$.
+For example, if $M_-=1.283$, then
+$0.6084(0.6084-\frac12)<2(1.283-\frac54)$, so $r>0.6084$.
+All values of $\alpha$ in \textbf{Table~\ref{tab:uniform-chain}}
+are at most one and hence also apply when $r>1$.
+It follows from \eqref{eq:support-projection-four} that
+$e\geq1-\frac{S_{\max}(\alpha)}{M_-}$. This argument includes the
+case of no induced red five-cycle, when $L_R=q_C=0$.
+
+\begin{table}[htbp]
+\centering
+\caption{Intervals excluded by the six-position certificates. Each row
+gives a certified upper bound for $M$ strictly below $M_-$.}
+\label{tab:uniform-chain}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$M_-$ & $M_+$ & $\alpha$ & Lower bound on $e$\\
+\midrule
+1.283 & 1.28492 & 0.6084 & 0.051\\
+1.279 & 1.283 & 0.6446 & 0.049\\
+1.274 & 1.279 & 0.6242 & 0.0445\\
+1.268 & 1.274 & 0.5978 & 0.0395\\
+$\frac54$ & 1.274 & 0.5 & 0.0225\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each row, assume $M_-\leq M\leq M_+$. On this interval the
+weighted counts satisfy the lower bound on $e$ in the last column
+and $e<\frac{421}{2000}$. The rational certificates for these
+intervals, including the corrections for negative residuals, are
+specified in~\cite[Section~G.4]{FGSTSupplement}. The first three
+rows successively exclude $M\geq1.283$, $M\geq1.279$ and
+$M\geq1.274$. The last row now applies throughout the remaining
+interval and gives
 \[
  M\leq\frac{124968062205915704703985647}
-                 {100000000000000000000000000}<\frac{5}{4}.
+                 {100000000000000000000000000}<\frac54,
 \]
-This contradicts $M>\frac{5}{4}$. The inequality for $e$ when
-$M\geq\frac{4967}{4000}$ follows from the five-position calculation
-in~\cite[Section~G.4]{FGSTSupplement}.
+contrary to $M>\frac54$.
 \end{proof}
 
 The quadratic bound gives $m\leq f(D)$ for even $D$. For odd $D$
@@ -640,3 +635,5 @@ Divide by $bD^2$ to obtain the first inequality. For $M\ge1$ we
 have $0\le A\le 1-\frac{M}{2}\le\frac{1}{2}$. The function $2x(1-x)$ is
 increasing on $[0,\frac{1}{2}]$, so $Me\le M(1-\frac{M}{2})$.
 \end{proof}
+
+\input{main_flag_equality}

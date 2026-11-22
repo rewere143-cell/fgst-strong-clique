@@ -1,0 +1,27 @@
+\begin{figure}[!htbp]
+\centering
+\begingroup
+\newcommand{\ninePair}{\begin{tikzpicture}[x=1mm,y=1mm,baseline=-.6mm]
+\draw[marked edge,line width=.5pt] (0,0) to[bend left=23] (2.5,0)
+ (0,0) to[bend right=23] (2.5,0);
+\fill (0,0) circle[radius=.30mm] (2.5,0) circle[radius=.30mm];
+\end{tikzpicture}}
+\newcommand{\ninePath}{\begin{tikzpicture}[x=1mm,y=1mm,baseline=-.6mm]
+\foreach \x/\y in {0/2.5,2.5/5}{
+\draw[marked edge,line width=.5pt] (\x,0) to[bend left=23] (\y,0)
+ (\x,0) to[bend right=23] (\y,0);}
+\fill (0,0) circle[radius=.30mm] (2.5,0) circle[radius=.30mm]
+ (5,0) circle[radius=.30mm];
+\end{tikzpicture}}
+\begin{tabular}{@{}r@{\hspace{4mm}}l@{}}
+$(4,7)$ & \ninePair\ \ninePair\ \ninePair\ \ninePair\quad
+ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\\
+$(2,8)$ & \ninePair\ \ninePair\quad
+ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\\
+$(0,9)$ & \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath\ \ninePath
+\end{tabular}
+\endgroup
+\caption{The three possible lists of double-pair components for $b=18$.
+Each label gives $(a,p)$.}
+\label{fig:nine-double-components}
+\end{figure}

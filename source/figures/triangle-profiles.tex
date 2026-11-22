@@ -1,0 +1,27 @@
+\begin{figure}[H]
+\centering
+\begingroup
+\newcommand{\triangleneighbors}[1]{%
+  \begin{tikzpicture}[x=.62cm,y=.62cm,baseline=(current bounding box.center)]
+    \coordinate (a) at (0,0);
+    \coordinate (b) at (1,.62);
+    \coordinate (c) at (1,-.62);
+    \coordinate (v) at (2.05,.20);
+    \draw[line width=.6pt] (a)--(b)--(c)--cycle;
+    \ifnum#1>0 \draw[densely dashed] (v)--(b);\fi
+    \ifnum#1>1 \draw[densely dashed] (v)--(c);\fi
+    \ifnum#1>2 \draw[densely dashed] (v)--(a);\fi
+    \foreach \root in {a,b,c} {\fill (\root) circle[radius=1.3pt];}
+    \draw[fill=white] (v) circle[radius=1.6pt];
+  \end{tikzpicture}}
+\begin{tabular}{cccc}
+\triangleneighbors{0} & \triangleneighbors{1} & \triangleneighbors{2} & \triangleneighbors{3}\\
+0 neighbors & 1 neighbor & 2 neighbors & 3 neighbors
+\end{tabular}\par\medskip
+\input{figures/triangle-profile-values}
+\endgroup
+\caption{Neighborhoods of an outside vertex at a marked triangle.
+For each listed pair $(t,q)$, the entry is the largest retained value of $E$.
+A blank cell has no retained triple.}
+\label{fig:finite-triangle-profiles}
+\end{figure}

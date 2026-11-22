@@ -1,19 +1,23 @@
 {
   "main": {
     "file": "fgst_conjecture.pdf",
-    "pages": 25,
-    "sha256": "334187f87dba41125c62c798281eb2c08460c0800cb55ef023b6f9e70d0e38d8"
+    "pages": 55,
+    "sha256": "e62ee1d2a2453bfb4a2e44f67e4da8ecdf60cc5e1c92b05e4c473067fb0aaf32",
+    "destinationsInCompanionChecked": 18
   },
   "supplementary": {
     "file": "supplementary.pdf",
-    "pages": 36,
-    "sha256": "1390893a1678d9957ca9c75af39139e2f406ec7bbdf79fd0ab60e6b1e23d6c8d"
+    "pages": 30,
+    "sha256": "0593a14e2ad82924d9df489bb9bac9fa7625d6b6a0f3581b07e817b7bced115b",
+    "destinationsInCompanionChecked": 32
   },
   "main_without_appendix": {
     "file": "fgst_conjecture_without_appendix.pdf",
-    "pages": 25,
-    "sha256": "b78a522000274f007151cdc830e2ede1f172498c12d45dcc066268a665368c56"
+    "pages": 55,
+    "sha256": "cd94ccfe3b68bf020b42989ec392dcf08eca23c82adcf6c197dbee1f5d54f8e6",
+    "destinationsInCompanionChecked": 18
   },
-  "externalDestinationsChecked": 19,
-  "mainLabelsImportedBySupplement": 22
+  "supplementaryFigures": 24,
+  "mainLabelsImportedBySupplement": 32,
+  "supplementaryLabelsImportedByMain": 18
 }

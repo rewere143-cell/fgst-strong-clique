@@ -1,0 +1,126 @@
+Choose vertices $u,v$ joined by $k\geq2$ marked edges. As in
+\eqref{eq:multi-root-pair-budget}, let $A$ consist of the neighbors of
+$u$ or $v$ other than the roots, put $q=|A|$, and let $W$ consist of
+the remaining nonroot vertices. Equation~\eqref{eq:multi-root-pair-budget} gives
+$m\leq8$ for $D=3$, whereas a counterexample requires $m=f(3)+1=11$.
+
+At $D=5$, we have $m=30$. The bound
+\eqref{eq:multi-root-pair-budget} leaves only $k=2$ and $q=6$.
+Each root has three nonroot neighbors, and these two sets are
+disjoint. Each of the six spokes has multiplicity one. Let $p$
+count unmarked spokes, and let $i_m$ and $i_u$ count marked and
+unmarked edges with both endpoints in $A$, respectively. Then
+\[
+ p+i_m+2i_u\le\sum_{a\in A}(5-d_H(a))+i_m=2.
+\]
+Indeed, every vertex in $A$ has degree at most five, and
+the equality follows from \eqref{eq:multi-root-pair-budget}.
+Up to permuting the neighbors of each root and interchanging the
+roots, this inequality leaves 21 possibilities for the marked and
+unmarked edges on $A\cup\{u,v\}$, listed in
+\textbf{Figure~\ref{fig:finite-five-spokes}} of the supplementary material.
+
+For each such choice write $A=\{a_1,\ldots,a_6\}$ and
+$c_i=4-d_{G[A]}(a_i)$. For $x\in W$, let $z_i$ be the
+marked multiplicity of $xa_i$. If $z_i>0$, $a_j$ has a
+marked spoke to the other root and $a_ia_j\notin E(G)$,
+then $xa_j\in E(G)$, since only this edge can join an endpoint
+of $xa_i$ to an endpoint of that marked spoke. Let $u_i$ be the maximum of $z_i$ and the
+indicator that $xa_i$ is required by one of these comparisons.
+Thus $0\le u_i\le c_i$, $\sum_i u_i\le5$, and
+$\sum_i z_i>0$ because every $x\in W$ has a marked edge to $A$.
+For a vector $c'$ of remaining capacities, let $V(c')$ be
+the maximum of zero and $\sum_i z_i+V(c'-u)$ over all
+pairs of vectors $(z,u)$ satisfying these conditions and $u\le c'$
+coordinatewise. Each step strictly decreases the sum of
+the capacities, so the recurrence terminates. The recurrence
+only uses necessary conditions on the edges from $W$ to $A$.
+For each of the 21 choices, the number of fixed marked edges plus
+$V(c)$ is at most 27 by the computation in~\cite[Section~F.1]{FGSTSupplement}.
+This is less than $f(5)+1=30$.
+
+At $D=7$, we have $m=59$. Equation
+\eqref{eq:multi-root-pair-budget} excludes $k\ge4$. If
+$k=3$, then $q\le8$, and its second line forces $q=8$,
+$d_H(a)=7$ for every $a\in A$, and $e_H(A)=0$.
+All edges incident with $A$ are marked, so $G[A]$ has no
+edges. The two roots have disjoint sets of four neighbors in
+$A$. A marked edge from one set to $x\in W$ forces $x$ to
+be adjacent to all four vertices of the other set, by comparison
+with their spokes. These four edges at $x$ are also marked.
+Comparing one of them with the spokes on the first side forces
+four more neighbors at $x$, exceeding the degree bound.
+Thus every repeated marked pair has multiplicity two.
+
+Fix such a pair as the root pair. Equation
+\eqref{eq:multi-root-pair-budget} gives $q\in\{9,10\}$.
+Let $T$ count spokes with multiplicity, $p$ count the
+unmarked spokes, and $i_m$ and $i_u$ count marked and
+unmarked edges within $A$. Let $m_\times$ and $U$ count
+marked and unmarked edges between $A$ and $W$, respectively,
+and put $\ell=\sum_{a\in A}(7-d_G(a))$. Counting the
+marked edges and summing the degrees on $A$ gives
+\begin{equation}\label{eq:multi-seven-counts}
+ 57=T-p+i_m+m_\times,\qquad
+ \ell+p+i_m+2i_u+U=7q-57.
+\end{equation}
+As $T,q\le10$, these equations imply $m_\times\ge34+2p$.
+
+To bound $w=|W|$, assign each vertex in $W$ to one of its
+marked neighbors in $A$. Let $n_a$ be the number assigned
+to $a\in A$. Write $J$ for the simple support of $G[A]$
+and $D_A=m_\times+U$ for the number of edges between $A$
+and $W$. If $a,b$ are nonadjacent in $J$, vertices $x,y$
+assigned to $a,b$, respectively, give disjoint marked edges
+$ax$ and $by$. At least one of $xy,ay,bx$ must be an edge of $G$. Write $d_G(a,W)$ for the number of edges from $a$ to $W$,
+counted with multiplicity. The number of such unordered pairs
+$\{x,y\}$ is at most $|E(G[W])|+\sum_a n_a(d_G(a,W)-n_a)$. Using
+$d_G(a,W)\le6-d_J(a)$ and $2|E(G[W])|\le7w-D_A$ gives
+\[
+ w^2+\sum_a n_a^2+2\sum_{ab\in E(J)}(n_a+n_b-n_an_b)
+ \le 19w-D_A.
+\]
+The inequality $2n_an_b\le n_a^2+n_b^2$ bounds the
+left side from below by $w^2+\sum_a[n_a^2+d_J(a)n_a(2-n_a)]$.
+Each summand is nonnegative. For $n_a\ge3$, this follows
+from $d_J(a)\le6-n_a$, which bounds the summand below
+by $n_a(n_a-3)(n_a-4)$. Since $D_A\ge34$, we obtain
+$w\le17$. If $w=17$, both inequalities are equalities, so
+every positive $n_a$ is three or four, every vertex with
+$n_a=3$ has degree three in $J$, and the endpoints of each
+edge of $J$ have equal group sizes. The group sizes must
+then be $3,3,3,4,4$. Each of the three vertices with group
+size three has at most two possible neighbors in $J$, a
+contradiction. Hence $w\le16$.
+
+Delete $u,v$ from the host and mark only the edges between
+$A$ and $W$. These edges still form a strong clique. The
+marked graph is bipartite, and the host can have edges within
+either side. The host degrees on the two sides are at most
+six and seven. Thus the Ore-degree of the bipartite marked
+subgraph in the host after deletion is at most 13.
+Applying the recurrence based on \eqref{eq:finite-bipartite-root-count}
+gives $m_\times\le48$ for Ore-degree at most 13 and
+$m_\times\le41$ for Ore-degree at most 12.
+
+By \eqref{eq:multi-seven-counts} and $m_\times\le48$,
+we have $p\le7$ for $q=10$ and $p\le3$ for $q=9$.
+Each root has at most five incidences available for spokes. Together
+with the bounds on $p$ and $q$, this leaves 51 configurations of
+the marked and unmarked spokes, up to relabeling the neighbors
+and interchanging the roots. These are listed in
+\textbf{Figures~\ref{fig:finite-seven-disjoint},
+\ref{fig:finite-seven-separate} and~\ref{fig:finite-seven-shared}}
+of the supplementary material. For each configuration, fix the
+edges incident with the roots and add isolated vertices so that $|W|=16$.
+Every counterexample therefore gives an assignment on one of these
+fixed vertex sets. The variables record the adjacency of each pair
+and its marked multiplicity. In particular, if $m_\times\geq42$,
+some marked edge between $A$ and $W$ has endpoint degree sum 13
+in the host with the roots deleted, since a sum of at most 12 on
+every such edge would give $m_\times\leq41$. Also, the endpoints
+of every double marked pair have at least nine distinct neighbors
+other than one another by \eqref{eq:multi-root-pair-budget}.
+The Boolean formulas tested in~\cite[Section~F.1]{FGSTSupplement}
+impose these conditions, the degree bounds and the strong clique
+condition. Every formula is unsatisfiable, which excludes $D=7$.

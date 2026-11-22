@@ -1,0 +1,33 @@
+\begin{figure}[H]
+\centering
+\begingroup
+\newcommand{\rootneighborhood}[2]{%
+  \begin{tikzpicture}[x=6mm,y=6mm,baseline=-2.5pt]
+    \coordinate (a) at (0,0);
+    \coordinate (b) at (1,1);
+    \coordinate (c) at (1,-1);
+    \coordinate (d) at (.66,0);
+    \coordinate (v) at (2.05,.20);
+    \draw[line width=.55pt] (a)--(b)--(c)--cycle (a)--(d)--(b) (d)--(c);
+    \foreach \endpoint in {#1} {\draw[densely dashed,line width=.45pt] (v)--(\endpoint);}
+    \foreach \root in {a,b,c,d} {\fill (\root) circle[radius=1.15pt];}
+    \draw[fill=white,line width=.55pt] (v) circle[radius=1.6pt];
+  \end{tikzpicture}\,$#2$}
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$q_v=1$ & $q_v=2$ & $q_v=3$ & $g$\\
+\midrule
+\rootneighborhood{b}{26} & \rootneighborhood{b,c}{27} & \rootneighborhood{b,c,d}{0} & $11$\\
+\addlinespace[6pt]
+\rootneighborhood{b}{25} & \rootneighborhood{b,c}{26} & \rootneighborhood{b,c,d}{1} & $7$\\
+\addlinespace[6pt]
+\rootneighborhood{b}{24} & \rootneighborhood{b,c}{25} & \rootneighborhood{b,c,d}{2} & $3$\\
+\bottomrule
+\end{tabular}
+\endgroup
+\caption{The three possible neighborhood counts at a marked $K_4$ for $D=23$.
+The open vertex lies outside $A$. Dashed lines show its neighbors in $A$,
+up to permutations of the four vertices.}
+\label{fig:finite-k4-neighborhoods}
+\end{figure}

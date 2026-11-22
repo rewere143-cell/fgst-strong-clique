@@ -1,0 +1,203 @@
+For odd $D\leq23$, the flag calculation uses one more restriction
+on the simple support.
+
+\begin{lemma}\label{lem:finite-k4}
+Suppose that $D\leq23$ is odd and $m=f(D)+1$ marked edges form a
+strong clique. No four vertices are joined pairwise by marked edges.
+\end{lemma}
+
+\begin{proof}
+
+Suppose $D\le23$ is odd and $m=f(D)+1$. Let $A$ be the
+vertex set of a copy of $K_4$ whose six pairs are marked. In particular,
+$D\ge3$.
+Complete the host to degree $D$ by adding unmarked edges
+as in \textbf{Subsection~\ref{sec:weighted-counts}}. For each vertex $v$ put
+$q_v=|N_G(v)\cap A|$ and $h_v=d_H(v)$. Let $J_A$ be
+the sum, over the vertices of $A$, of the difference
+between host degree and simple host degree. Let $m_A$
+be the number of marked edges with both endpoints in
+$A$. For $v\notin A$, let $r_v$ and $c_v$ count the
+marked and unmarked edges from $v$ to $A$, respectively.
+Then $r_v+c_v\ge q_v$ and $\sum_v q_v=4D-J_A$.
+
+For a marked edge with both endpoints outside $A$, the
+union of their neighborhoods in $A$ is a vertex cover of the
+$K_4$ on $A$ and therefore has size at least three. For a
+marked edge with exactly one endpoint in $A$, the sum
+of $q_v$ over its endpoints is $3+q_v$, where $v$ is its
+endpoint outside $A$. For a marked edge inside $A$ this
+sum is six. Adding over all marked edges gives
+\[
+ 3m+\sum_{a\in A}h_a+m_A+
+ \sum_{v\notin A}(q_v-1)r_v\le\sum_v q_vh_v.
+\]
+Likewise, summing the endpoint values of $q_v$ over
+unmarked edges gives
+\[
+ \sum_{a\in A}(D-h_a)+\sum_{v\notin A}(q_v-1)c_v
+ \le\sum_v q_v(D-h_v).
+\]
+Here all edges inside $A$ are marked. An unmarked edge
+from $A$ to $v\notin A$ contributes $3+q_v$ on the right
+and $q_v$ on the left, and any unmarked edge with both
+endpoints outside $A$ contributes only on the right.
+Adding the two inequalities and using $m_A\ge6$ gives
+\begin{equation}\label{eq:multi-k4-loss}
+ 3m\le4D(D-1)-6-DJ_A-\sum_{v\notin A}q_v(q_v-1).
+\end{equation}
+
+Put $W=\{v\notin A:q_v\ge2\}$. Every marked edge
+avoiding $A$ meets $W$, and each vertex of $W$ has at
+most $D-2$ incident edges avoiding $A$. There are at
+most $4D-6$ marks meeting $A$. Thus
+\[
+ |W|\le\left\lfloor\frac{4D(D-1)-6-3m}{2}\right\rfloor,
+ \qquad m\le4D-6+(D-2)|W|.
+\]
+The first bound is negative for odd $D\le11$. For odd
+$13\le D\le21$, substituting the first bound into the
+second gives $m\le m_{\rm up}$, with values
+\[
+\begin{array}{c|rrrrr}
+ D&13&15&17&19&21\\ \hline
+ m&206&275&354&443&542\\
+ m_{\rm up}&46&106&212&342&534.
+\end{array}
+\]
+In each column $m_{\rm up}<m$.
+
+For $D=23$, let $n_i$ count the vertices outside $A$
+with $q_v=i$, for $1\le i\le4$, and put
+$g=65-2n_2-6n_3-12n_4$. By \eqref{eq:multi-k4-loss},
+$g\ge0$. The difference $g$ bounds the number of marks
+inside $W$, since each contributes at least four to the
+sum of its endpoint values of $q_v$ and is charged only
+three in the marked-edge inequality. The same difference
+bounds the number of unmarked edges from vertices with
+$q_v=0$ to vertices outside $A$ with $q_v>0$, since each
+contributes at least one to the right of the unmarked-edge
+inequality.
+
+At least $651-(4\cdot23-6)=565$ marks avoid $A$.
+Counting them at $W$ gives $21n_2+20n_3+19n_4\ge565$.
+Every such mark either meets a vertex with $q_v=1$ or
+$q_v\ge3$, or has both endpoints in $W$. Thus
+$22n_1+20n_3+19n_4+g\ge565$. At most 20 distinct
+neighbors outside $A$ meet each anchor, so
+$n_1+2n_2+3n_3+4n_4\le80$. To list the possibilities, fix
+nonnegative integers $n_2,n_3,n_4$ with $2n_2+6n_3+12n_4\le65$
+and $21n_2+20n_3+19n_4\ge565$. The lower and upper bounds for
+$n_1$ are then
+\[
+ \left\lceil\frac{565-20n_3-19n_4-g}{22}\right\rceil
+ \le n_1\le80-2n_2-3n_3-4n_4 .
+\]
+The integer solutions have $n_3\in\{0,1,2\}$,
+$n_1=26-n_3$, $n_2=27-n_3$, $n_4=0$ and $g=11-4n_3$.
+The three cases are drawn in \textbf{Figure~\ref{fig:finite-k4-neighborhoods}}
+of the supplement~\cite{FGSTSupplement}.
+In each case every vertex of $A$ has 20 distinct neighbors outside
+$A$, so every edge meeting $A$ is single.
+The total capacity of $W$ for edges avoiding $A$ is
+$567-n_3$. If $p$ counts marks within $W$, then
+$p\le2-n_3$, because these marks are counted twice in
+the capacity sum. There are at most $567-n_3$ marks
+avoiding $A$, so at least $78+n_3$ of the 80 spokes at
+$A$ are marked.
+
+If $n_3$ is positive, there are at least $565-22n_1-p$
+marks between vertices with $q_v=0$ and vertices with
+$q_v=3$. This gives at least 14 marks when $n_3=1$ and
+37 when $n_3=2$. As each vertex with $q_v=3$ has at
+most 20 units of host degree outside $A$, it has at
+most six or three units left for other exterior edges,
+respectively. Choose one of these marked edges $xw$
+with $q_x=0$ and $q_w=3$, and let $c$ be the unique vertex of
+$A$ nonadjacent to $w$. For every marked spoke $cu$, its endpoint
+$u$ must be adjacent to $x$ or $w$. Apart from $w$,
+at most $n_3-1$ marked neighbors of $x$ have positive
+$q_v$, and at most $g$ unmarked neighbors of $x$ have
+positive $q_v$. The available degree at $w$ gives at
+most six or three further neighbors with positive $q_v$.
+Thus there are at most 13 or seven possible endpoints
+of these spokes, respectively. But $c$ has at least
+$18+n_3$ marked spokes, a contradiction.
+
+If $n_3=0$, retain the host on the vertices with $q_v=1$
+or $q_v=2$, keeping the marks only on edges between the
+two sets. There are at least $565-p\ge563$ marked
+edges. The sum of the endpoint degrees of each such edge in this
+host is at most $22+21=43$.
+On the side with $q_v=2$, the total degree available
+outside $A$ is 567. At least 565 units are used to
+count each exterior mark once. The $p$ marks internal
+to the side use $p$ more units, and each unmarked
+internal pair uses two units. Thus there are at most
+$p+\lfloor\frac{2-p}{2}\rfloor\le2$ internal host pairs
+on this side. On the other side the capacity is
+$26\cdot22=572$ and at least 563 units are used for
+crossing marks, leaving at most four internal host
+pairs. We use the following bound for this bipartite marked
+subgraph. If the Ore-degree of a bipartite marked graph is at most
+$\sigma$ in its host, and at most $E$ pairs on each side are adjacent
+in the host, then the number of marked edges is at most
+$\frac{\sigma^2}{4}+\sigma\sqrt{E}$.
+
+To prove the bound, take a vertex $v$ of maximum marked degree $a>0$,
+of host degree $d$, and call its side $X$ and the other side $Y$.
+Let $P$ be its $p$ distinct marked neighbors, $B_0$ the vertices
+outside $N_G[v]$, and $H_0$ the marked graph on $B_0$.
+Write $T$ for the vertices of $X\cap B_0$ incident with edges
+of $H_0$. For each $u\in P$, put $T_u=T\setminus N_G(u)$ and
+$Y_u=N_{H_0}(T_u)$. If $x\in T_u$ and $xy$ is marked in $H_0$,
+then $uy$ must be an edge of $G$ to join $uv$ and $xy$. These are
+unmarked edges on side $Y$. Hence $E'=\sum_{u\in P}|Y_u|\leq E$.
+
+Choose weights $0\leq w_x\leq1$ for $x\in T$ satisfying
+$d_{H_0}(x)\leq w_x(a-d_H(x,P))$. Put $W=\sum_{x\in T}w_x$
+and $\delta=\sum_{u\in P}\sum_{x\in T_u}w_x-E'$.
+Every vertex of $P$ has host degree at most $\sigma-d$.
+Counting its neighbors in $T$ with weights $w_x$ and its neighbors
+in $Y_u$ with weight one, and summing over $u$, gives
+$pW-\delta\leq p(\sigma-d)$.
+At most $a(d-a)$ marked edges meet $N_G(v)\setminus P$.
+All remaining marked edges lie in $H_0$ or meet $P$.
+For each adjacent pair $xu$ with $x\in T$ and $u\in P$,
+either at least one unit of degree at $u$ is unmarked or
+$w_x d_H(x,P)$ counts its weight in the bound for $d_{H_0}(x)$.
+Thus, writing $m_0$ for the number of marks in the host, we obtain
+\[
+ m_0\leq a(d-a)+(a-p)W+p(\sigma-d)+\delta
+ \leq a(\sigma-a)+\frac{a}{p}\delta.
+\]
+The second inequality uses $a\geq p$.
+
+Fix $0<\theta<1$. Temporarily unmark each edge of $H_0$ whose
+endpoint $x\in X$ satisfies $d_H(x,P)>(1-\theta)a$. There are at
+most $\frac{p(\sigma-d)}{(1-\theta)a}$ such vertices, each incident
+with at most $\theta a$ edges of $H_0$. For the remaining marks,
+choose $w_x=\frac{d_{H_0}(x)}{a-d_H(x,P)}$ on the resulting $T$.
+Then $w_x\leq\frac{d_{H_0}(x)}{\theta a}$. For each $y\in Y\cap B_0$,
+let $g_y$ be the number of $u\in P$ such that $y\in Y_u$, with
+$Y_u$ computed after unmarking. If $xy$ is still marked in $H_0$,
+then every $u\in P\setminus N_G(x)$ contributes to $g_y$. As
+$d_{H_0}(y)\leq a$, summing over marked edge copies gives
+\[
+ \sum_{u\in P}\sum_{x\in T_u}w_x
+ \leq\frac{1}{\theta a}\sum_{xy\in E(H_0),\,x\in X}g_y
+ \leq\frac{E'}{\theta}.
+\]
+Consequently $\delta\leq E(\frac{1}{\theta}-1)$. Adding back the
+removed marks bounds their original total by
+\[
+ a(\sigma-a)+p(\sigma-d)\frac{\theta}{1-\theta}
+              +\frac{aE}{p}\frac{1-\theta}{\theta}.
+\]
+Taking the infimum over $\frac{\theta}{1-\theta}>0$ gives
+$a(\sigma-a)+2\sqrt{a(\sigma-d)E}$. Since $a\le d$ and
+$a(\sigma-a)\le\frac{\sigma^2}{4}$, this proves the stated bound.
+For $\sigma=43$ and $E=4$, it gives at most
+$\frac{43^2}{4}+86=\frac{2193}{4}<563$ marked edges. This
+contradicts the required number of crossing marks.
+\end{proof}

@@ -1,198 +1,59 @@
-\subsection{Finite Reductions for Odd Degrees}\label{app:multi-finite}
+\subsection{Enumeration and Boolean Formulas for Multigraphs}
+\label{app:multi-finite}
+The main paper gives the degree and adjacency constraints used below.
+For each case, the verification enumerates the possible integer data
+or checks a refutation of the Boolean formula describing those
+constraints.
 
-Let $G$ be the reduced host on the endpoints of the marked edges,
-as in \textbf{Subsection~\ref{sec:multigraph}}, and let $H$ be its
-marked subgraph. We count edges of $G$ and $H$ with multiplicity.
-Between two vertices joined by a marked edge, $G$ retains all marked
-copies. Between any other two adjacent vertices it retains one
-unmarked edge. We take
-$m=f(D)+1$, where $f(D)=D^2+\lfloor\frac{D}{2}\rfloor^2$.
-Let $s$ be the number of distinct pairs of endpoints of marked
-edges and put $b=m-s$. For $D\in\{3,5,7\}$, if $b=0$, the simple
-support contains a strong clique of size $m$, contrary to
-\textbf{Lemma~\ref{lem:simple-small-support}}. For odd $D\geq9$,
-\textbf{Lemma~\ref{lem:extra-copy-required}} gives $b>0$. Thus for
-each $D>1$ considered here we may choose two parallel marked edges.
+\subsubsection{Maximum Degrees Five and Seven}\label{app:multi-low-degree}
 
-\subsubsection{Degrees One, Three, Five and Seven}\label{app:multi-low-degree}
+At $D=5$ the roots $u,v$ are joined by two marked edges, and each has
+three private neighbors. Let $A$ consist of these six neighbors. In the
+notation of the main paper, $p+i_m+2i_u\leq2$. An unmarked spoke or
+a marked edge of $G[A]$ contributes one unit to the left-hand side,
+and an unmarked edge of $G[A]$ contributes two. The program
+\path{d5_parallel_spoke_bound.py} lists all such choices up to
+permuting the three neighbors of each root and interchanging the roots.
+\textbf{Figure~\ref{fig:finite-five-spokes}} gives the resulting 21
+graphs on $A\cup\{u,v\}$. For each it evaluates the recurrence $V(c)$
+of the main paper and adds the fixed marked edges. The bound on $m$
+appears below the corresponding graph. Its largest value is 27,
+while a counterexample requires $m=30$.
 
-For $D=1$, every component has at most one edge. For larger
-$D$, choose a marked pair $uv$ of multiplicity $k\ge2$ and
-call $u,v$ the roots. Put $A=(N_G(u)\cup N_G(v))\setminus\{u,v\}$,
-$q=|A|$, and $W=V(G)\setminus(A\cup\{u,v\})$. An edge
-joining a root to a vertex of $A$ is a \emph{spoke}. Every
-marked edge other than the $k$ copies of $uv$ has an endpoint
-in $A$, since it belongs to the same strong clique as $uv$.
-At most $2D-k$ marked edges meet a root, and each vertex of
-$A$ has at most $D-1$ incident edges that avoid the roots.
-Using $q\le 2(D-k)$ gives
-\begin{equation}\label{eq:multi-root-pair-budget}
-\begin{aligned}
- m&\le 2D-k+(D-1)q\le 2D^2-(2D-1)k,\\
- m&=k+\sum_{a\in A}d_H(a)-e_H(A).
-\end{aligned}
-\end{equation}
-Here $e_H(A)$ counts the marked edges with both endpoints in $A$.
-For $D=3$, \eqref{eq:multi-root-pair-budget} gives $m\le8$.
+\input{figures/finite_five_spokes}
 
-At $D=5$, we have $m=30$. The bound
-\eqref{eq:multi-root-pair-budget} leaves only $k=2$ and $q=6$.
-Each root has three nonroot neighbors, and these two sets are
-disjoint. Each of the six spokes has multiplicity one. Let $p$
-count unmarked spokes, and let $i_m$ and $i_u$ count marked and
-unmarked edges with both endpoints in $A$, respectively. Then
-\[
- p+i_m+2i_u\le\sum_{a\in A}(5-d_H(a))+i_m=2.
-\]
-Indeed, every vertex in $A$ has degree at most five, and
-the equality follows from \eqref{eq:multi-root-pair-budget}.
-There are 21 choices for the unmarked spokes and the edges in
-$A$, up to permutations of the three neighbors of each root
-and exchange of the two roots.
+At $D=7$, Section~3 of \path{delta7_parallel_reduction.md} gives the
+state parameters for the recurrence implemented by
+\path{d7_bipartite_ore_coupled.py}. For $q=9,10$, the number
+$m_\times$ of marked edges between $A$ and $W$ is at most 48 for
+Ore-degree at most 13 and at most 41 for Ore-degree at most 12.
+Write $p$ for the number of unmarked spokes. At $q=10$, the
+neighborhoods of the two roots outside the root pair are disjoint,
+and all ten spokes are single. Up to permuting these neighbors and
+interchanging the roots, $p\leq7$ leaves the 17 choices in
+\textbf{Figure~\ref{fig:finite-seven-disjoint}}.
 
-For each such choice write $A=\{a_1,\ldots,a_6\}$ and
-$c_i=4-d_{G[A]}(a_i)$. For $x\in W$, let $z_i$ be the
-marked multiplicity of $xa_i$. If $z_i>0$, $a_j$ has a
-marked spoke to the other root and $a_ia_j\notin E(G)$,
-then $xa_j\in E(G)$, since only this edge can join an endpoint
-of $xa_i$ to an endpoint of that marked spoke. Let $u_i$ be the maximum of $z_i$ and the
-indicator that $xa_i$ is required by one of these comparisons.
-Thus $0\le u_i\le c_i$, $\sum_i u_i\le5$, and
-$\sum_i z_i>0$ because every $x\in W$ has a marked edge to $A$.
-For a vector $c'$ of remaining capacities, let $V(c')$ be
-the maximum of zero and $\sum_i z_i+V(c'-u)$ over all
-pairs of vectors $(z,u)$ satisfying these conditions and $u\le c'$
-coordinatewise. Each step strictly decreases the sum of
-the capacities, so the recurrence terminates. The recurrence
-only uses necessary conditions on the edges from $W$ to $A$.
-The enumeration in \path{d5_parallel_spoke_bound.py} gives
-at most 27 marked edges in each of the 21 cases after adding
-the fixed marks to $V(c)$.
+\input{figures/finite_seven_disjoint}
 
-At $D=7$, we have $m=59$. Equation
-\eqref{eq:multi-root-pair-budget} excludes $k\ge4$. If
-$k=3$, then $q\le8$, and its second line forces $q=8$,
-$d_H(a)=7$ for every $a\in A$, and $e_H(A)=0$.
-All edges incident with $A$ are marked, so $G[A]$ has no
-edges. The two roots have disjoint sets of four neighbors in
-$A$. A marked edge from one set to $x\in W$ forces $x$ to
-be adjacent to all four vertices of the other set, by comparison
-with their spokes. These four edges at $x$ are also marked.
-Comparing one of them with the spokes on the first side forces
-four more neighbors at $x$, exceeding the degree bound.
-Thus every repeated marked pair has multiplicity two.
+At $q=9$, there are nine distinct neighbors and at most ten spoke
+incidences. With disjoint neighborhoods outside the root pair, there
+are either nine single spokes or eight single spokes and one marked
+double spoke. The condition $p\leq3$ gives ten choices in each case.
+\textbf{Figure~\ref{fig:finite-seven-separate}} records the numbers
+of marked single spokes at the left and right roots.
 
-Fix such a pair as the root pair. Equation
-\eqref{eq:multi-root-pair-budget} gives $q\in\{9,10\}$.
-Let $T$ count spokes with multiplicity, $p$ count the
-unmarked spokes, and $i_m$ and $i_u$ count marked and
-unmarked edges within $A$. Let $m_\times$ and $U$ count
-marked and unmarked edges between $A$ and $W$, respectively,
-and put $\ell=\sum_{a\in A}(7-d_G(a))$. Counting the
-marked edges and summing the degrees on $A$ gives
-\begin{equation}\label{eq:multi-seven-counts}
- 57=T-p+i_m+m_\times,\qquad
- \ell+p+i_m+2i_u+U=7q-57.
-\end{equation}
-As $T,q\le10$, these equations imply $m_\times\ge34+2p$.
+\input{figures/finite_seven_nine_separate}
 
-To bound $w=|W|$, assign each vertex in $W$ to one of its
-marked neighbors in $A$. Let $n_a$ be the number assigned
-to $a\in A$. Write $J$ for the simple support of $G[A]$
-and $D_A=m_\times+U$ for the number of edges between $A$
-and $W$. If $a,b$ are nonadjacent in $J$, vertices $x,y$
-assigned to $a,b$, respectively, give disjoint marked edges
-$ax$ and $by$. At least one of $xy,ay,bx$ must be an edge of $G$. Write $d_G(a,W)$ for the number of edges from $a$ to $W$,
-counted with multiplicity. The number of such unordered pairs
-$\{x,y\}$ is at most $|E(G[W])|+\sum_a n_a(d_G(a,W)-n_a)$. Using
-$d_G(a,W)\le6-d_J(a)$ and $2|E(G[W])|\le7w-D_A$ gives
-\[
- w^2+\sum_a n_a^2+2\sum_{ab\in E(J)}(n_a+n_b-n_an_b)
- \le 19w-D_A.
-\]
-The inequality $2n_an_b\le n_a^2+n_b^2$ bounds the
-left side from below by $w^2+\sum_a[n_a^2+d_J(a)n_a(2-n_a)]$.
-Each summand is nonnegative. For $n_a\ge3$, this follows
-from $d_J(a)\le6-n_a$, which bounds the summand below
-by $n_a(n_a-3)(n_a-4)$. Since $D_A\ge34$, we obtain
-$w\le17$. If $w=17$, both inequalities are equalities, so
-every positive $n_a$ is three or four, every vertex with
-$n_a=3$ has degree three in $J$, and the endpoints of each
-edge of $J$ have equal group sizes. The group sizes must
-then be $3,3,3,4,4$. Each of the three vertices with group
-size three has at most two possible neighbors in $J$, a
-contradiction. Hence $w\le16$.
+If the roots have a common neighbor, all ten spokes are single.
+Each root then has four private neighbors. The state of the two
+spokes to the common neighbor, together with the number of marked
+spokes to each set of private neighbors, determines the configuration.
+The condition $p\leq3$ gives the fourteen choices in
+\textbf{Figure~\ref{fig:finite-seven-shared}}. Each of the 51
+configurations fixes exactly the edges incident with the roots.
+We allow 16 positions for $W$, with unused positions isolated.
 
-Delete $u,v$ from the host and mark only the edges between
-$A$ and $W$. These edges still form a strong clique. The
-marked graph is bipartite, and the host can have edges within
-either side. The host degrees on the two sides are at most
-six and seven. Thus the Ore-degree of the bipartite marked
-subgraph in the host after deletion is at most 13.
-
-We use the following recurrence to bound the size of a
-bipartite marked strong clique whose marks have multiplicity
-at most two. A state specifies the two host degree bounds,
-an upper bound $\sigma$ on the Ore-degree of the marked subgraph
-in the current host, the maximum
-marked degree $h$, and an upper bound on the number of
-vertices of the first side. Take a vertex $v$ of marked
-degree $h$ and host degree $r_0$. Let $A'$ consist of its
-$a$ distinct marked neighbors, so $\lceil\frac{h}{2}\rceil\le a\le h$.
-Let $c$ be the smaller of the host degree bound of the other
-side and $\sigma-r_0$. The host degree of every vertex of
-$A'$ is at most $c$. Put $B'=V(G)\setminus N_G[v]$ in the
-host of the state and let $K$ be the marked graph induced on
-$B'$. Write $\Pi$ for the number of unmarked edges between
-$A'$ and $B'$. At most $\min(ah,ac-\Pi)$ marked edges
-meet $A'$. Besides $A'$ there are at most $r_0-h$ vertices
-in $N_G(v)$, and every mark at $v$ meets $A'$. Hence the
-number of marks before deletion is at most
-\[
- \min(ah,ac-\Pi)+h(r_0-h)+|E(K)|.
-\]
-Every edge of $K$ has, among its endpoints, a neighbor of
-each of the $a$ vertices of $A'$, by comparison with the
-marks at $v$. Thus the sum of its endpoint degrees in the host
-induced on $B'$ is at most $\sigma-a$. If $v$ is in the first side
-the vertex bound on that side decreases by at least one,
-and otherwise it decreases by at least $a$.
-
-Write $\delta=\Delta(K)$. For $x\in B'$ on the same side
-as $v$, let $h_x$ count marks from $x$ to $A'$ and put
-$f_x=d_K(x)$. Counting the required adjacencies to $A'$
-over all marks of $K$ gives
-\[
- a|E(K)|\le\delta\Pi+\sum_x h_xf_x.
-\]
-Each unmarked edge to $A'$ can account for at most
-$\delta$ of these adjacencies. The marked edges to $A'$
-can only meet $x$ on the same side as $v$, and their
-contribution is at most $\sum_x h_x f_x$. To bound the sum
-the recurrence enumerates the positive $f_x$, subject to
-$\sum_x f_x=|E(K)|$, $f_x\le\delta$, $h_x+f_x\le h$,
-$h_x\le2a$ and $\sum_x h_x\le\min(ah,ac-\Pi)-h$.
-The vertex bound on the first side also limits the
-number of positive $f_x$ when $v$ is on that side. The
-new state has a strictly smaller Ore bound. The empty
-marked graph requires no further recursion. Section~3 of
-\path{delta7_parallel_reduction.md} gives the state bounds
-and \path{d7_bipartite_ore_coupled.py} implements the
-recurrence. For both values of $q$ it gives
-$m_\times\le48$ when $\sigma=13$ and
-$m_\times\le41$ when $\sigma=12$.
-
-By \eqref{eq:multi-seven-counts} and $m_\times\le48$,
-we have $p\le7$ for $q=10$ and $p\le3$ for $q=9$.
-When $q=10$, all ten spokes are single and the roots have
-disjoint neighborhoods outside the root pair. When $q=9$,
-either there are nine single spokes, ten single spokes with
-one common neighbor, or ten spoke copies with one marked
-double spoke and disjoint root neighborhoods. Fix each
-possible configuration of the marked and unmarked spokes
-up to permutation of equivalent neighbors, and add isolated
-vertices so that $|W|=16$. The enumeration gives 34 Boolean
-formulas for $q=9$ and 17 for $q=10$.
+\input{figures/finite_seven_shared}
 
 In each formula the variables $E_{xy},M_{xy},J_{xy}$
 indicate, respectively, that $x,y$ are adjacent in the host,
@@ -209,17 +70,14 @@ pair of disjoint candidate marked edges $uv,xy$, impose
 Thus two disjoint marked edges require a host edge between their
 endpoint sets. Such a joining edge may be unmarked. The
 formulas also impose the degree bounds and the capacity and
-Ore inequalities above, using Boolean variables that
+Ore-degree inequalities proved in the main paper, using Boolean variables that
 indicate whether the relevant counts exceed fixed
-thresholds. For example, if $m_\times\ge42$, there is a marked edge
-between $A$ and $W$ whose endpoints have total degree $13$ in the
-host after deleting $u$ and $v$. By \eqref{eq:multi-root-pair-budget},
-the endpoints of any double pair have at least nine
-distinct neighbors other than one another. For each
-configuration, the lexicographically largest assignment
-to the variables in the upper triangle of the adjacency
-matrix satisfies the comparisons with the assignments
-obtained by swapping consecutive interchangeable labels.
+thresholds.
+For each arrangement of spokes the program permits an ordering of the
+remaining vertices whose adjacency data are lexicographically maximal
+under permutations of interchangeable vertices. This justifies the
+symmetry conditions comparing the assignment with each transposition
+of two successive interchangeable labels.
 
 The generator \path{d7_parallel_sat.py} and the replay
 script \path{d7_verify_parallel.py} reconstruct the
@@ -235,291 +93,124 @@ contradiction by unit propagation. Each replay derives
 the empty clause, excluding the corresponding spoke
 configuration.
 
-\subsubsection{Degree Nine}\label{app:multi-nine}
+\subsubsection{Maximum Degree Nine}\label{app:multi-nine}
 
-Here $m=98$. We show that $2\le b\le17$, that the host has at
-least 24 vertices, and that every induced cycle of five marked
-edges has slack $R\ge11$, where $R$ is defined in
-\textbf{Section~\ref{sec:exact}}. We also give the properties
-of marked triangles used in the degree-nine certificate.
-The proof index in \path{reproducibility/multigraph/REPLAY.md}
-locates the counting arguments, generators and refutations
-cited below.
+The proof index in \path{reproducibility/multigraph/REPLAY.md} gives
+the mathematical reductions on which the degree-nine checks depend.
+In the main paper, the initial degree-nine reduction refers to
+\path{delta9_parallel_reduction.md}. For the step $q\geq13$, see
+Sections~1, 2 and 4--12 of \path{delta9_parallel_reduction.md}.
+Sections~12 and 14--17 give the bounds on the components of the
+graph of double pairs and the restrictions on their incident edges.
+The entry \emph{Degree nine, multiplicities and repeated roots} in
+the index lists the separate argument for the three component
+counts when $b=18$. Section~18 of the initial reduction excludes
+$n=22$ in the marked-triangle case.
+The index also gives the equality check for 97 distinct marked
+pairs, the five-cycle inequality when $b=1$ and there is no marked
+triangle, and the reductions for a host of order 23. Sections~2
+and~3 of the initial reduction give the marked-triangle degree counts.
+The proofs linked from the entries for slack seven and nine also
+give the lower bound on the number of endpoints of unmarked edges
+when the marked graph is triangle-free.
+For the endpoints $u,v$ of a marked pair of multiplicity $k$, let
+$l,c,r$ count their exterior neighbors adjacent only to $u$, to both
+roots, and only to $v$, respectively. Interchange the roots if needed
+so that $l\leq r$. Put $q=l+c+r$. The degree bound gives
+$l+c,r+c\leq9-k$. \textbf{Figure~\ref{fig:nine-root-profiles}}
+lists all triples for $11\leq q\leq14$ and $k=2,3$.
+The thick segment is the repeated pair. A thin segment records
+adjacency to a root. The edges among exterior vertices remain
+unspecified.
+\input{figures/nine_root_templates}
 
-\paragraph{Multiplicity and Number of Vertices}
+For $q=14$ with all spokes marked, the two roots have disjoint
+sets $X,Y$ of seven exterior neighbors each. Write $J$ for the
+host edges between $X$ and $Y$, and let $B_0$ be the bipartite graph
+on the same parts whose edges are the pairs missing from $J$. Let
+$U$ count unmarked edges joining $X\cup Y$ to vertices outside the
+two roots and their neighborhoods. If $B_0$ is connected, the
+program \path{d9_q14_connected_spokes.py} tests 102 pairs $(U,J)$.
+\textbf{Figures~\ref{fig:nine-qfourteen-connected}
+and~\ref{fig:nine-qfourteen-connected-last}} give the 67 distinct
+matrices up to permutations within $X,Y$ and interchange of the
+parts. A shaded square is an edge of $J$ and a white square
+is a nonedge. The numbers below a matrix are the budgets $U$.
+A superscript $[h]$ means that the program tests $h$ labelings
+at that budget. An entry without a superscript is tested once.
 
-By \eqref{eq:multi-root-pair-budget}, every marked pair has
-multiplicity at most three. Sections~1, 2 and 4--12 of
-\path{delta9_parallel_reduction.md} use the spoke capacity
-counts and the Ore recurrence after deleting the endpoints
-of a repeated pair. They give $q\ge13$. Since $q\le2(9-k)$,
-every repeated pair has multiplicity two. By Section~12 of
-the same proof, the simple graph consisting of the double
-pairs has at most 18 edges, and each component is a single
-edge or a two-edge path. The endpoints of a double pair
-in a two-edge path have host degree nine and have no common
-host neighbor. By Sections~14--17, each double pair lies in
-no marked triangle and has an unmarked spoke at one of its
-endpoints.
+If $B_0$ is disconnected and every component has order at most
+nine, write $(x_j,y_j)$ for the numbers of vertices of its $j$th
+component in $X$ and $Y$. Every cross pair joining different
+components is then a host edge, so at least
+$C=49-\sum_j x_jy_j$ entries of $J$ are forced. The degree count
+gives $C+U\leq30$. \textbf{Figure~\ref{fig:nine-qfourteen-split}}
+shows every component profile kept by \path{d9_q14_split_spokes.py}.
+Shaded cells are the forced host edges between components. A white
+cell is in a component and is left unspecified. Labels give the full
+integer range $0\leq U\leq30-C$. A superscript $[2]$ means that
+both orders of the two sides occur in the program. The 33 profiles
+give 58 when the sides are ordered and 174 tests when $U$ is included.
+\input{figures/nine_qfourteen_templates}
 
-For the stronger bound on $b$, let $p$ count the two-edge
-path components, let $a$ count the single-edge components,
-and let $T$ be the union of their vertex sets. Let $E$ count the
-unordered pairs of adjacent vertices in $T$ that belong to different
-components of the graph of double pairs. Of these pairs, let $x$
-count those with both endpoints at path centers and let $y$ count
-those with exactly one endpoint at a path center.
-Counting degrees at the centers and joining edges between
-marked edges of distinct components gives
-\[
- 2x+y\le5p,\qquad
- E\ge4\binom{p}{2}+2ap+\binom{a}{2}-3x-y.
-\]
-For instance, if two path centers are nonadjacent and are
-adjacent to $u$ and $v$ leaves of the other path, respectively,
-then for $(2-u)(2-v)$ pairs of marked edges the only possible
-joining edge has a leaf of each path as its endpoints. The vertices of $T$ have
-total capacity at most $19p+14a-2E$ for edges leaving $T$.
-If $b=18$, the only feasible component counts are
-$(a,p)=(4,7),(2,8),(0,9)$. In these cases, counting the
-possible witnesses at the centers gives at most $2,60,54$
-marks other than the double pairs, respectively. Each bound
-is less than the required $98-36=62$. The three counts are
-given under \emph{Degree nine, multiplicities and repeated
-roots} in \path{REPLAY.md}. Therefore $b\le17$.
+\textbf{Figure~\ref{fig:nine-double-components}} shows the graph of
+double pairs when $b=18$. Each label $(a,p)$ counts the components
+on two and on three vertices, respectively. Other edges of the host
+can join distinct components.
+\input{figures/nine_double_components}
 
-Let $n=|V(G)|$. The degree sum $9n\ge2m=196$ gives $n\ge22$.
-If $n=22$, the total marked degree deficiency is two. Each
-double pair has an unmarked spoke, so the host is 9-regular
-and has exactly one unmarked edge $uv$. Every double pair
-meets $\{u,v\}$. A vertex of $C=V(G)\setminus\{u,v\}$ cannot
-have double pairs to both $u$ and $v$, because the pairs
-would form a path whose edge from $C$ to $u$ has a common
-host neighbor $v$. Thus every vertex of $C$ sends at most
-three marked copies to $\{u,v\}$. The graph $G[C]$ is
-simple, has minimum degree at least six, and all its edges
-are marked. In particular, it has no induced $2K_2$.
+For a marked triangle, write $t$ for the number of exterior vertices
+with two neighbors on the triangle. \textbf{Figure~\ref{fig:nine-triangle-neighbors}}
+shows the four possibilities for $0\leq t\leq2$, up to permuting
+the vertices of the triangle. When $t=2$, the exterior vertices
+see either the same pair or two different pairs.
+\input{figures/nine_triangle_neighbors}
 
-Suppose first that $G[C]$ is triangle-free. Any shortest odd
-cycle of length at least seven would contain an induced
-$2K_2$. If $G[C]$ were bipartite, it would have a single
-component, since it has no isolated vertices and no induced
-$2K_2$. The neighborhoods on either side would be nested
-under inclusion, giving a vertex adjacent to the entire
-other side. The degree bound would then give $|C|\le18$.
-Therefore $G[C]$ contains an induced cycle of five marked
-edges. Use the vertices of this cycle as the anchors for
-the sets $U_i$ in \textbf{Section~\ref{sec:exact}}.
-A vertex of $C$ cannot have one anchor neighbor or two
-consecutive anchor neighbors, since a marked edge to an
-anchor would lack a witness to the opposite cycle edge.
-If it has no anchor neighbor, the anchor neighbors of
-each of its marked neighbors must cover the five cycle
-edges, so there must be at least three. Only $u,v$ can
-have three anchor neighbors, since $G[C]$ is triangle-free.
-They cannot account for the marked degree nine of a vertex
-of $C$. Consequently $C\subseteq B=\bigcup_i U_i$.
+The order-23 inputs specify the graph of unmarked edges on their
+endpoint set $Q$, the sizes $a,c$ of the two parts of the chain on
+the other vertices, and the number $i$ of isolated vertices outside
+$Q$ in that induced subgraph. For configurations containing a marked triangle the generator
+\path{d9_blue_ferrers_sat.py} uses the nested adjacency matrix of the
+chain, the degree bounds, and \eqref{eq:multi-sat-witness}. The 112 fixed
+formulas in \path{chain_n23_broad} correspond to the templates in
+\textbf{Figures~\ref{fig:nine-chain-1}--\ref{fig:nine-chain-6}}.
+Each panel shows the unmarked graph and the $a$-by-$c$ chain
+matrix. A shaded cell gives a required marked edge. A white cell
+may be filled only if every cell above it in its column and every
+cell to its left in its row is also filled. The formula determines
+the possible edges incident with $Q$ that are not shown in the panel.
+The LRAT refutations of the 112 formulas contain 8,183,267 clause
+additions in total. An LRAT file lists clauses and
+gives hints for checking them by unit propagation. The 18 instances
+with no marked triangle are generated by \path{d9_order23_blue_chain_sat.py}.
+Each occurs at a starred panel among the same 112 templates. Their
+refutations have 3,657,159 clause additions. The auxiliary
+checks \path{n23_t2_same} and \path{n23_t2_distinct} treat the two ways
+in which two exterior vertices can each have two neighbors on the
+marked triangle.
+\input{figures/nine_chain_templates}
 
-Each vertex of $\{u,v\}\setminus B$ has at least three
-anchor neighbors. Indeed, it has marked degree eight.
-With no anchor neighbor it has no possible marked neighbor
-in $C$, and with one neighbor or two consecutive neighbors
-one of its marked anchor edges would lack a witness to the
-opposite cycle edge. Two nonconsecutive anchor neighbors would
-place the vertex in one of the $U_i$, as $uv$ is the only unmarked
-edge and neither endpoint is an anchor. If both $u,v$ are outside
-$B$, their anchor incidences exceed the slack $R\le45-2\cdot20=5$. If
-exactly one is outside, the three units of slack occur at
-distinct anchors, so every vertex in $B$ has at most one
-unit beyond its required degree to the neighboring classes.
-The exterior vertex cannot have a double pair to $B$.
-The endpoint of $uv$ in $B$ spends its only unit on $uv$
-and cannot have a double pair either. If both $u,v$ lie in
-$B$, then $R=1$. A double pair between consecutive classes
-would require positive slack in both classes, and a double
-pair otherwise would require two units at each end. These
-cases give $b=0$, a contradiction.
+When $b=1$ and there is no marked triangle, 33 of the 60 possible
+slack vectors with $R=1,3,5,7$ are excluded by the capacity bounds.
+The 27 other cases are covered by \path{d9_anchor_cases.py} and
+\path{d9_b1_anchor_proofs}, with 1,726,943 clause additions in total.
+When there is a marked triangle the remaining vector is $(1,1,2,1,2)$.
+The program \path{d9_pentagon.py} checks the refutation
+\path{d9_b1_triangle/s11212}, with 211,080 clause additions.
 
-If $G[C]$ contains a marked triangle, Section~18 of
-\path{delta9_parallel_reduction.md} excludes $n=22$.
-It shows that the triangle dominates the host and has
-at most two exterior vertices with two triangle neighbors.
-It then bounds the marked edges between the three sets
-of vertices having exactly one triangle neighbor, using
-their Ore degrees after deletion of the triangle and the
-vertices with two triangle neighbors.
-
-For $n=23$, let $\beta$ count unmarked edges, let $Q$ be
-their set of endpoints and put $C=V(G)\setminus Q$.
-Counting marked and unmarked degrees gives
-\[
- 11=9\cdot23-196=\sum_v(9-d_G(v))+2\beta.
-\]
-Thus $1\le\beta\le5$, and $k=|Q|\le2\beta$. Every edge
-of $G[C]$ is marked and simple, since every double pair
-meets $Q$. There are at least $98-9k+2\beta>0$ such
-edges, and $G[C]$ has no induced $2K_2$.
-
-The order-23 proof indexed in \path{REPLAY.md} shows that
-every marked triangle dominates the host, that at most one
-exterior vertex sees two triangle vertices, and that no
-exterior vertex sees all three. It also shows that among
-the edges from the triangle to its complement, one to three
-are unmarked. These facts follow from the degree counts
-at vertices with no neighbor on the triangle, the fixed
-checks \path{n23_t2_same} and \path{n23_t2_distinct} for
-the remaining configurations with two vertices seeing two
-triangle vertices, and the count of unmarked edges leaving
-the triangle. In particular $G[C]$ has no triangle. The
-same proof excludes an induced five-cycle in $G[C]$ by
-counting the degrees of its anchors. A shortest odd cycle
-of length at least seven would contain an induced $2K_2$.
-Hence $G[C]$ is bipartite with a single nontrivial component.
-Two incomparable neighborhoods on one side would yield an
-induced $2K_2$, so this component is a chain graph. Its two
-sides have sizes $a\le c\le9$. Write $i=23-k-a-c$ for the
-number of isolated vertices of $G[C]$.
-
-If the host has a marked triangle, we enumerate the simple
-unmarked graph on $Q$ by connected components with at most
-five edges in total. For each unmarked graph we enumerate
-the parameters $a,c,i$ with $ac\ge B_0=98-9k+2\beta$.
-The neighbors in the chain of a vertex in $Q$ marked to
-a clean isolate must cover all chain edges. Let $\tau_0$
-be the minimum of $a,c$ and the values $r+t$ with
-$1\le r<a$, $1\le t<c$ and $ac-(a-r)(c-t)\ge B_0$.
-A cover containing $r$ and $t$ vertices on the respective
-sides leaves $(a-r)(c-t)$ pairs unavailable, so every cover
-has size at least $\tau_0$. A vertex in $Q$ of unmarked
-degree $d_0$ can contribute at most
-$\max(0,\min(9-d_0-\tau_0,2i,i+2))$ marks to the isolates.
-The bounds $2i$ and $i+2$ use the double multiplicity cap
-and the component structure of the double pairs,
-respectively. There are at least $9i-(11-2\beta)$ marks
-to these isolates, by the degree deficiency bound above.
-The inequalities leave $0,0,4,21,87$ configurations for
-$\beta=1,\ldots,5$, respectively.
-
-Encode the chain graph by its bipartite adjacency matrix
-with nested rows and columns, both ordered by decreasing
-size. The first row and first column consist of ones,
-because the chain graph is connected and nontrivial.
-The formulas add weighted degree constraints and the
-clauses \eqref{eq:multi-sat-witness} for disjoint marked edges, as well as
-the constraints on marked triangles, repeated root
-neighborhoods, and deletion of two vertices recorded in
-the order-23 proof. The generator \path{d9_blue_ferrers_sat.py}
-and the directory \path{chain_n23_broad} give 112 fixed
-CNF and LRAT pairs with 8,183,267 checked clause additions.
-An LRAT file lists the added or deleted clauses and the
-hints used to justify additions by unit propagation in
-these proofs.
-
-If the host has no marked triangle, a marked neighbor
-in $Q$ of a clean isolate meets all edges of the chain.
-Its chain neighbors form an independent set since every
-edge incident with a vertex of $C$ is marked. An
-independent vertex cover of a connected bipartite graph
-is a part of its bipartition. These constraints and the
-degree bounds give the list in \path{d9_order23_blue_chain}.
-For each member of the list, the generator
-\path{d9_order23_blue_chain_sat.py} fixes the unmarked
-graph and uses the chain matrix and isolated vertices
-described above. The 18 refutations use 3,657,159 clause
-additions. Both sets of refutations rule out $n=23$,
-so $n\ge24$.
-
-\paragraph{One Repeated Pair}
-
-If $b=1$, the simple support has exactly 97 marked pairs.
-The simple-graph equality check indexed in \path{REPLAY.md}
-leaves the extremal five-cycle blow-up or a remaining
-configuration that contains an induced cycle of five
-marked edges. In the blow-up, every marked pair meets a
-vertex of simple degree nine, so another copy cannot be
-added.
-
-In the case with no marked triangle, use a cycle of five
-marked edges with the smallest total slack $R$. The
-triangle-free pentagon moment inequality applied to the
-simple support and the deficit $\frac{5}{4}-\frac{97}{81}$
-would give a contradiction if all these cycles had
-$R\ge9$. Thus $R\le7$. The inequality is given under
-\emph{Degree nine, one or two repeated pairs and
-triangle-free marks} in \path{REPLAY.md}. The slack
-vectors with $R=1,3,5,7$ give 60 configurations up to
-rotations and reflections of the cycle. Counting the
-capacity available to the endpoints of each anchor edge
-excludes 33. The script \path{d9_anchor_cases.py} checks
-the 27 remaining refutations in \path{d9_b1_anchor_proofs},
-with 1,726,943 clause additions.
-
-When the host has a marked triangle, the simple-graph
-equality check leaves the slack vector $(1,1,2,1,2)$.
-The marked triangle restrictions bound the number of
-vertices by 25, so the possibilities are 24 and 25.
-The script \path{d9_pentagon.py} checks the fixed refutation
-\path{d9_b1_triangle/s11212}, with 211,080 clause
-additions. This excludes $b=1$.
-
-\paragraph{Small Slack at an Induced Five-Cycle}
-
-The bound holds vacuously when there is no induced five-cycle with
-all five edges marked. Otherwise choose such a cycle minimizing
-$R=\sum_i s_i=45-2|B|$, where $B=\bigcup_i U_i$ and
-$s_i=9-|U_{i-1}|-|U_{i+1}|$. Solving the five slack
-equations gives $a_i=|U_i|=\frac{9-R}{2}+s_{i+2}+s_{i+3}$,
-with indices taken modulo five. The bounds in
-\textbf{Appendix~\ref{app:multi-half}} exclude $R\le5$.
-For $R=7,9$ the finite checks enumerate the nonnegative
-integer vectors $(s_i)_{i=0}^4$ with all $a_i>0$, up to
-rotations and reflections of the cycle. For $R=7$, there
-are 38 vectors. The bounds on marks compared with each
-anchor edge exclude 19, and the capacity bounds for
-vectors with all $s_i>0$ exclude another three. For
-$R=9$ the corresponding counts are 54 and ten exclusions.
-Thus we examine 16 vectors for $R=7$ and 44 for $R=9$,
-in each case with and without a marked triangle.
-
-The signature of an exterior vertex is its set of
-neighbors among the five anchors. Any vertex with
-nonempty signature uses at least one of the $R$ anchor
-incidences available outside $B$. For every marked
-exterior edge, the union of the signatures of its
-endpoints covers the cycle edges. An exterior vertex
-with empty signature can therefore be marked only to
-a vertex with at least three anchor neighbors. Such a
-marked edge cannot meet $B$, where every vertex has
-exactly two anchor neighbors. A vertex with $t\ge3$
-anchor neighbors accounts for at most $9-t$ vertices with
-empty signature and itself uses $t$ anchor incidences.
-Compared with counting one vertex per incidence, the
-increase is at most $(9-t)+1-t=10-2t\le4$. Hence there
-are at most $R+4\lfloor\frac{R}{3}\rfloor$ exterior
-vertices, and unused positions can be filled by isolated
-vertices. In the marked triangle case the host has at
-most 25 vertices. In the triangle-free case at least
-seven vertices are incident to unmarked edges, and the
-remaining vertices induce a bipartite graph. The latter
-two restrictions are proved in the order-23 notes indexed
-in \path{REPLAY.md} and in the fixed proofs for slack seven
-and nine.
-
-The formulas use the three Boolean variables for each
-pair and the clauses \eqref{eq:multi-sat-witness} for disjoint marked edges.
-They impose the anchor signatures, host adjacency
-between consecutive classes, degree and total mark bounds,
-the range of $b$, and the necessary inequalities from
-the fixed proof notes. For example, let $z_i$ count the
-vertices in $U_i$ adjacent to neither endpoint of a
-marked exterior edge. Then all $\sum_i z_i z_{i+1}$
-pairs joining such vertices in consecutive classes must
-be unmarked. Otherwise a marked edge in those classes would have no joining
-edge to the exterior marked edge. For each cycle edge the formulas
-also bound the number of marks that can belong to the same strong clique,
-and require that replacing one anchor cannot yield a
-larger set $B$ while preserving an induced cycle of
-five marked edges.
+For the minimum-slack test, rotate and reflect each vector
+$(s_0,\ldots,s_4)$ and keep one copy of each orbit for which all five
+part sizes are positive. There are 38 vectors for $R=7$. The bounds
+at the cycle edges exclude 19 and the bounds with all $s_i>0$
+exclude another three. The corresponding counts for $R=9$ are 54
+initial vectors and ten exclusions. Each remaining vector gives two
+instances, according as the marked edges contain a triangle or not.
+\textbf{Figures~\ref{fig:finite-simple-slack-seven}
+and~\ref{fig:finite-nine-slack-nine}} list the vectors for the two values of $R$.
+\input{figures/finite_nine_slack}
+The formulas impose the anchor signatures, the adjacencies between
+successive parts, the mark and degree constraints, the range of
+$b$ and the conditions for minimum slack in the main paper.
 
 The generator \path{d9_pentagon.py} reconstructs the CNF
 for each slack vector and choice of whether a marked
@@ -529,218 +220,7 @@ refutations with 17,817,224 clause additions. The fixed
 directories have prefixes \path{d9_r7_zero_triangle}
 and \path{d9_r9_triangle}. The replay compares the
 uncompressed CNF and LRAT hashes with the archived
-values. The refutations give $R\ge11$ for a cycle of
-minimum slack, so the same bound holds for every induced
-cycle of five marked edges. Together with $s=98-b\le96$,
-$2\le b\le17$ and $n\ge24$, this gives the input
-restrictions for the degree-nine flag calculation.
-
-\paragraph{Marked Triangle Restrictions}
-
-We use the triangle analysis in Sections~2 and 3 of
-\path{delta9_parallel_reduction.md} and the checks
-indexed in \path{REPLAY.md} under \emph{Finite marked
-clique and profile rows}. For any marked triangle, the
-host degree of each of its three vertices is nine and
-every edge from the triangle to its complement is single.
-There is at most one exterior vertex adjacent to two
-triangle vertices. If such a vertex exists, one of the
-two edges is unmarked. No exterior vertex sees three
-triangle vertices. Also $n\in\{24,25\}$ and $n=24$ if
-no exterior vertex has two neighbors in the triangle.
-Let $t\in\{0,1\}$ count the exterior vertices with two
-triangle neighbors. The signature of an exterior vertex
-for this argument is the set of its triangle neighbors.
-Completing the host to a 9-regular multigraph, as in
-\textbf{Subsection~\ref{sec:weighted-counts}}, adds no edges
-at the triangle vertices. The total marked degree
-deficiency on the original vertices is $9n-196$.
-Each unmarked pair between exterior vertices with
-nonempty signature accounts for two units of this
-deficiency. Since $n\le24+t$, there are at most
-$10+4t$ such pairs.
-
-Let $p$ count unmarked edges from the triangle to its
-complement and let $r_0$ count marked edges having an
-exterior endpoint of empty signature. Every such marked
-edge meets a vertex with at least two triangle neighbors,
-since its endpoint signatures must cover the triangle
-edges. Hence $r_0=0$ if $t=0$. The three triangle vertices
-are incident with $24-p$ marked edges, leaving $74+p$
-marked edges outside the triangle. After deleting the
-triangle and the vertices with empty signature, the
-maximum degree is at most eight, so
-$74+p-r_0\le80$ by \textbf{Lemma~\ref{prop:multi-uniform}}.
-
-If $t=0$ and $p=6$, equality would hold in this bound.
-The host after deletion would have maximum degree eight by
-\textbf{Lemma~\ref{prop:multi-uniform}}.
-By \textbf{Lemma~\ref{lem:multi-even-equality}}, the 80 marked
-edges form the balanced five-cycle blow-up on their endpoints.
-The three sets of vertices with
-exactly one triangle neighbor, grouped by that
-neighbor, have seven vertices each and form three
-independent sets in the marked graph. Each part of the
-balanced blow-up has size four. If a part uses two
-colors, both adjacent parts use the third color. If
-each part uses a single color, two parts share a color.
-Both cases give at least eight vertices of the same
-color, a contradiction. Thus $p\le5+t+r_0$.
-
-Next consider two of the groups with single, distinct
-triangle neighbors, and let $p_i$ be the number of
-marked spokes to the third group. For a marked edge joining the
-first two groups, there must be a joining edge to each of those $p_i$
-spokes. Its two endpoints therefore use at least $p_i$
-units of host degree outside the two groups, so the sum of its
-endpoint degrees in their induced host is at most $16-p_i$.
-Each group has at most seven vertices, and
-each marked pair has multiplicity at most two. The
-recurrence above with both host degree bounds set to
-eight gives the bounds $22,28,34,40,46,52,56,56$ for
-Ore bounds $9$ through $16$, respectively. Each is at
-most $6(16-p_i)-32$. If $t=0$, the three groups account
-for all exterior marked edges. Summing the bounds over
-the three pairs of groups gives $74+p\le192-6(21-p)$,
-hence $p\ge2$. If $t=1$, at least one spoke is unmarked,
-so $p+t\ge2$ also holds. The flag calculation counts
-extensions of a fixed triangle with these restrictions,
-allowing repeated images of flag positions when their
-colors permit them.
-
-\subsubsection{Excluding a Marked Four-Clique}\label{app:multi-no-k4}
-
-Suppose $D\le23$ is odd and $m=f(D)+1$. Let $A$ be the
-vertex set of a copy of $K_4$ whose six pairs are marked. In particular,
-$D\ge3$.
-Complete the host to degree $D$ by adding unmarked edges
-as in \textbf{Subsection~\ref{sec:weighted-counts}}. For each vertex $v$ put
-$q_v=|N_G(v)\cap A|$ and $h_v=d_H(v)$. Let $J_A$ be
-the sum, over the vertices of $A$, of the difference
-between host degree and simple host degree. Let $m_A$
-be the number of marked edges with both endpoints in
-$A$. For $v\notin A$, let $r_v$ and $c_v$ count the
-marked and unmarked edges from $v$ to $A$, respectively.
-Then $r_v+c_v\ge q_v$ and $\sum_v q_v=4D-J_A$.
-
-For a marked edge with both endpoints outside $A$, the
-union of their neighborhoods in $A$ is a vertex cover of the
-$K_4$ on $A$ and therefore has size at least three. For a
-marked edge with exactly one endpoint in $A$, the sum
-of $q_v$ over its endpoints is $3+q_v$, where $v$ is its
-endpoint outside $A$. For a marked edge inside $A$ this
-sum is six. Adding over all marked edges gives
-\[
- 3m+\sum_{a\in A}h_a+m_A+
- \sum_{v\notin A}(q_v-1)r_v\le\sum_v q_vh_v.
-\]
-Likewise, summing the endpoint values of $q_v$ over
-unmarked edges gives
-\[
- \sum_{a\in A}(D-h_a)+\sum_{v\notin A}(q_v-1)c_v
- \le\sum_v q_v(D-h_v).
-\]
-Here all edges inside $A$ are marked. An unmarked edge
-from $A$ to $v\notin A$ contributes $3+q_v$ on the right
-and $q_v$ on the left, and any unmarked edge with both
-endpoints outside $A$ contributes only on the right.
-Adding the two inequalities and using $m_A\ge6$ gives
-\begin{equation}\label{eq:multi-k4-loss}
- 3m\le4D(D-1)-6-DJ_A-\sum_{v\notin A}q_v(q_v-1).
-\end{equation}
-
-Put $W=\{v\notin A:q_v\ge2\}$. Every marked edge
-avoiding $A$ meets $W$, and each vertex of $W$ has at
-most $D-2$ incident edges avoiding $A$. There are at
-most $4D-6$ marks meeting $A$. Thus
-\[
- |W|\le\left\lfloor\frac{4D(D-1)-6-3m}{2}\right\rfloor,
- \qquad m\le4D-6+(D-2)|W|.
-\]
-The first bound is negative for odd $D\le11$. For odd
-$13\le D\le21$, substituting the first bound into the
-second gives $m\le m_{\rm up}$, with values
-\[
-\begin{array}{c|rrrrr}
- D&13&15&17&19&21\\ \hline
- m&206&275&354&443&542\\
- m_{\rm up}&46&106&212&342&534.
-\end{array}
-\]
-In each column $m_{\rm up}<m$.
-
-For $D=23$, let $n_i$ count the vertices outside $A$
-with $q_v=i$, for $1\le i\le4$, and put
-$g=65-2n_2-6n_3-12n_4$. By \eqref{eq:multi-k4-loss},
-$g\ge0$. The difference $g$ bounds the number of marks
-inside $W$, since each contributes at least four to the
-sum of its endpoint values of $q_v$ and is charged only
-three in the marked-edge inequality. The same difference
-bounds the number of unmarked edges from vertices with
-$q_v=0$ to vertices outside $A$ with $q_v>0$, since each
-contributes at least one to the right of the unmarked-edge
-inequality.
-
-At least $651-(4\cdot23-6)=565$ marks avoid $A$.
-Counting them at $W$ gives $21n_2+20n_3+19n_4\ge565$.
-Every such mark either meets a vertex with $q_v=1$ or
-$q_v\ge3$, or has both endpoints in $W$. Thus
-$22n_1+20n_3+19n_4+g\ge565$. At most 20 distinct
-neighbors outside $A$ meet each anchor, so
-$n_1+2n_2+3n_3+4n_4\le80$. The nonnegative integer
-solutions of these inequalities are
-\[
- (n_1,n_2,n_3,n_4,g)\in
- \{(26,27,0,0,11),(25,26,1,0,7),(24,25,2,0,3)\}.
-\]
-In each case every vertex of $A$ has 20 distinct neighbors outside
-$A$, so every edge meeting $A$ is single.
-The total capacity of $W$ for edges avoiding $A$ is
-$567-n_3$. If $p$ counts marks within $W$, then
-$p\le2-n_3$, because these marks are counted twice in
-the capacity sum. There are at most $567-n_3$ marks
-avoiding $A$, so at least $78+n_3$ of the 80 spokes at
-$A$ are marked.
-
-If $n_3$ is positive, there are at least $565-22n_1-p$
-marks between vertices with $q_v=0$ and vertices with
-$q_v=3$. This gives at least 14 marks when $n_3=1$ and
-37 when $n_3=2$. As each vertex with $q_v=3$ has at
-most 20 units of host degree outside $A$, it has at
-most six or three units left for other exterior edges,
-respectively. Choose one of these marked edges $xw$
-with $q_x=0$ and $q_w=3$, and let $c$ be the unique vertex of
-$A$ nonadjacent to $w$. For every marked spoke $cu$, its endpoint
-$u$ must be adjacent to $x$ or $w$. Apart from $w$,
-at most $n_3-1$ marked neighbors of $x$ have positive
-$q_v$, and at most $g$ unmarked neighbors of $x$ have
-positive $q_v$. The available degree at $w$ gives at
-most six or three further neighbors with positive $q_v$.
-Thus there are at most 13 or seven possible endpoints
-of these spokes, respectively. But $c$ has at least
-$18+n_3$ marked spokes, a contradiction.
-
-If $n_3=0$, retain the host on the vertices with $q_v=1$
-or $q_v=2$, keeping the marks only on edges between the
-two sets. There are at least $565-p\ge563$ marked
-edges. The sum of the endpoint degrees of each such edge in this
-host is at most $22+21=43$.
-On the side with $q_v=2$, the total degree available
-outside $A$ is 567. At least 565 units are used to
-count each exterior mark once. The $p$ marks internal
-to the side use $p$ more units, and each unmarked
-internal pair uses two units. Thus there are at most
-$p+\lfloor\frac{2-p}{2}\rfloor\le2$ internal host pairs
-on this side. On the other side the capacity is
-$26\cdot22=572$ and at least 563 units are used for
-crossing marks, leaving at most four internal host
-pairs. The Ore bound in equation~(4) of the companion
-note on bipartite marked graphs, linked from the
-four-clique exclusion in \path{REPLAY.md}, gives at
-most $\frac{\sigma^2}{4}+\sigma\sqrt{E}$ marks when
-the Ore-degree of the marked subgraph in the host is at most $\sigma$
-and there are
-at most $E$ internal host pairs on each side. Here
-$\sigma=43$ and $E=4$, so the bound is $548.25<563$.
-This excludes a marked four-clique for all odd
-$D\le23$.
+values.
+The resulting empty clauses exclude every remaining instance at $R=7,9$.
+The file \path{reproducibility/multigraph/REPLAY.md} indexes the
+generators, parameters, fixed instances and refutations.

@@ -1,0 +1,17 @@
+% The last argument is the index of the singleton neighbor, or -1.
+\providecommand{\cycleanchorneighbors}[4]{%
+  \begin{tikzpicture}[x=1cm,y=1cm,baseline=(current bounding box.center)]
+    \path[use as bounding box] (-1.38,-1.38) rectangle (1.38,1.4);
+    \foreach \i in {0,...,4}
+      \coordinate (c\i) at ({90-72*\i}:.83cm);
+    \draw[marked edge] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+    \foreach \i in {#2} \draw[black!75,line width=.6pt] (0,0)--(c\i);
+    \node[fill=white,inner sep=1pt,font=\small] at (0,0) {$#1$};
+    \ifnum#4>-1\relax
+      \coordinate (outside) at ({90-72*(#4)}:1.27cm);
+      \draw[black!75,line width=.6pt] (c#4)--(outside);
+      \node[fill=white,inner sep=1pt,font=\small] at (outside) {$#3$};
+    \fi
+    \foreach \i in {0,...,4}
+      \node[fill=white,inner sep=1pt,font=\scriptsize] at (c\i) {$\i$};
+  \end{tikzpicture}}

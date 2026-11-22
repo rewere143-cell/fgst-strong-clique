@@ -1,0 +1,256 @@
+Apply the simple-graph five-cycle counts to the red edges of
+$G_{\rm s}$. Completing the simple support to a $D$-regular simple
+graph adds only blue edges. All vertices of a red five-cycle and of
+its five parts are incident with red edges. They therefore belong
+to the old graph, which is induced in the completion. Thus the
+completion preserves both the red five-cycles and their five
+parts. Write $q_C$ for the number of ordered induced red five-cycles
+divided by $2sD^3$ and $L_R$ for the sum of $\frac RD$ over these
+cycles divided by the same quantity. If each such cycle satisfies
+$R\geq\alpha D$, then summing this inequality gives $L_R\geq\alpha q_C$.
+
+Applying the simple-graph certificate inequality to four choices
+of objective gives
+\begin{equation}\label{eq:support-projection-four}
+\begin{aligned}
+ S-0.99999q_C
+   &\le \frac{5}{4}-\frac{0.99999}{8}+2\cdot10^{-9},\\
+ S+0.5682L_R
+   &\le \frac{5}{4}+10^{-9},\\
+ S+0.4897(L_R-0.32q_C)
+   &\le \frac{5}{4}-\frac{0.4897\cdot0.32}{8}+2\cdot10^{-9},\\
+ S+0.45119\left(L_R-\frac{q_C}{2}\right)
+   &\le \frac{5}{4}-\frac{0.45119}{16}+2\cdot10^{-9}.
+\end{aligned}
+\end{equation}
+The coefficients and the error allowances in
+\eqref{eq:support-projection-four} are rational.
+Section~G.1 of the supplement~\cite{FGSTSupplement} specifies the
+four certificate checks. To see why the displayed coefficients
+suffice, write each certified inequality as $S+\gamma Y\leq
+\frac54+\varepsilon$, moving the multiple of $\frac18$ to the left.
+For $Y\geq0$, replacing $\gamma$ by a smaller nonnegative coefficient
+preserves the inequality. For $Y<0$ the bound follows from
+$S\leq\frac54$.
+
+For a given $\alpha>0$, substitute $L_R\geq\alpha q_C$ in
+\eqref{eq:support-projection-four}. Each of the four inequalities
+now has the form $S\leq a_i-b_iq_C$. Include $S\leq\frac54$ as
+a fifth inequality, with $a_5=\frac54$ and $b_5=0$. Thus
+\[
+ S\leq S_{\max}(\alpha):=
+ \max_{x\geq0}\min_{1\leq i\leq5}(a_i-b_ix),
+ \qquad e\geq1-\frac{S_{\max}(\alpha)}{M}.
+\]
+The second line of \eqref{eq:support-projection-four} has
+$b_2=0.5682\alpha>0$. The minimum of the five lines is continuous
+and piecewise linear and tends to $-\infty$ as $x$ tends to infinity.
+Its maximum is therefore attained at zero or at the nonnegative
+intersection of two lines with different slopes. This gives a finite
+rational calculation for $S_{\max}(\alpha)$.
+
+These inequalities can also be imposed directly on $X$. Multiplying
+each simple-graph inequality by $1-e=\frac{s}{m}$ changes the cycle
+normalization from $2sD^3$ to $2mD^3$. Its term $(1-e)S$ is $O_0$,
+and the same factor changes $L_R$ to the corresponding weighted
+coordinate sum. All terms of the resulting inequality are linear
+in the weighted counts.
+
+Let $k\geq3$ and let $K$ be the vertex set of a red $K_k$ in the weighted host.
+For each vertex $v$ put $a_v=|N_{G_{\rm s}}(v)\cap K|$ and let
+$h_v$ and $d_{\rm blue}(v)$ count the marked and the unmarked edges
+incident with $v$, respectively. Let $m_K$ count the marked edges with
+both endpoints in $K$, with multiplicity, and put
+$J_K=\sum_{v\in K}j_v$. For a marked edge $uv$, the set
+$(N_{G_{\rm s}}(u)\cup N_{G_{\rm s}}(v))\cap K$ meets every edge
+of the red clique. Indeed, a disjoint red edge in $K$ must have an
+endpoint adjacent to $u$ or $v$, and the same holds when the red
+edge shares an endpoint with $uv$. Every vertex cover of $K_k$ has
+size at least $k-1$, so $a_u+a_v\geq k-1$. If $u\in K$, then
+$a_u=k-1$ and $a_v\geq1$. If both endpoints lie in $K$, then
+$a_u+a_v=2(k-1)$. Summing over all marked edges with multiplicity gives
+\[
+ (k-1)m+\sum_{v\in K}h_v+(k-3)m_K
+ \le\sum_v a_vh_v
+ \le D(kD-J_K)-\sum_{v\in K}d_{\rm blue}(v).
+\]
+For the upper bound, $\sum_v a_v=\sum_{v\in K}(D-j_v)=kD-J_K$
+in the regular completion. Moreover, $a_vd_{\rm blue}(v)$ is at
+least the number of blue neighbors of $v$ in $K$. Summing this
+last inequality counts each blue incidence at $K$ and gives the
+upper bound on $\sum_v a_vh_v$, since $h_v=D-d_{\rm blue}(v)$.
+Using $\sum_{v\in K}(h_v+d_{\rm blue}(v))=kD$ now gives
+\[
+ (k-1)m\le kD(D-1)-DJ_K-(k-3)m_K.
+\]
+For $k=5$, the right side is at most $5D(D-1)-20$. Thus $4m\leq5D(D-1)-20$ if a red $K_5$ exists.
+This is impossible when $m\geq\frac54D^2$. For odd $D$ it is also
+impossible when $m=f(D)+1$, since then $4m=5D^2-2D+5$.
+The coordinates of every pattern containing a red $K_5$ are
+therefore zero in either case.
+
+Fix a red edge $xy$. Let $U=N_{G_{\rm s}}(x)\setminus (N_{G_{\rm s}}(y)\cup\{y\})$
+and let $W$ be the vertices adjacent to neither $x$ nor $y$. In the
+host induced on $U\cup W$, mark only the previously marked edges
+between $U$ and $W$. Edges within a part can still join endpoints of
+these marked edges. For each marked edge $uv$ between $U$ and $W$, and
+each red neighbor $z$ of $y$, the strong clique condition for $uv$
+and $yz$ forces $uz$ or $vz$ to be a host edge. All such vertices $z$ lie
+outside $U\cup W$, and different $z$ give different edges incident
+with $u$ or $v$ that are absent from the induced host. Hence the Ore-degree $\sigma$ of the bipartite
+marked subgraph in this induced host is at most $2D$ minus the
+number of red neighbors of $y$.
+
+If there is a marked edge between $U$ and $W$, the corresponding
+upper bounds are
+\[
+ \frac{2973}{10000}\sigma^2\quad\text{for all copies},\qquad
+ \frac{273323}{10^6}\sigma^2\quad\text{for base copies},\qquad
+ \frac14\sigma^2\quad\text{for extra copies}.
+\]
+We give the counts that yield these bounds. In the induced host
+let $H$ be the bipartite graph of marked edges between $U$ and $W$,
+with their multiplicities. Suppose $H$ is nonempty, put $h=\Delta(H)$, and take
+a vertex $v$ of marked degree $h$. Let $A=N_H(v)$,
+$B'=V\setminus N[v]$ (where $V$ and $N[v]$ refer to the induced
+host), $p=|A|$ and $\ell=\sigma-d(v)$, with $d(v)$ the degree in
+the host. Every $a\in A$ has host degree at most $\ell$ since $va$
+is marked. Let $T$ be the number of marked edges meeting $A$,
+$P$ the number of unmarked edges from $A$ to $B'$, and
+$F=H[B']$. Write $f=|E(F)|$ and $u=\Delta(F)$, with $u=0$ if
+$F$ is edgeless. Every marked edge omitted by the counts $T$ and
+$f$ has an endpoint in $N(v)\setminus A$. This set has at most
+$d(v)-h$ vertices. Consequently
+\[
+ |E(H)|\leq h(\sigma-h)-h\ell+T+f,\qquad T+P\leq p\ell .
+\]
+For each $a\in A$, its neighbors in $B'$ meet every edge of $F$.
+Since neither endpoint of that edge is adjacent to $v$, one must
+be adjacent to $a$ to join the edge to $va$. Thus $f\leq u\ell$.
+The same observation shows that the Ore-degree of the marked edges
+in the host induced on $B'$ is at most $\sigma-p$. Indeed, for
+each of the $p$ vertices of $A$, at least one edge to an endpoint
+of the marked edge is lost when the host is restricted to $B'$.
+
+First count all marked copies. On each pair joined by a marked
+edge, remove the unmarked copies. On every other adjacent pair
+retain one unmarked edge. This preserves all marked edges and all
+adjacencies, and $\sigma$ still bounds the degree sum on each marked
+edge. Use the counts above for this reduced host. Let $X'$ comprise the vertices of
+$B'$ in the same part of $H$ as $v$. For $x\in X'$, let $h_x$
+count the marked edges from $x$ to $A$, with multiplicity, and put
+$f_x=d_F(x)$.
+Each marked edge of $F$ has one endpoint in $X'$. For every
+$a\in A$ it has an endpoint adjacent to $a$. The adjacency to $a$
+either has an unmarked copy or is marked and meets the endpoint
+in $X'$. Counting these possibilities yields
+\[
+ pf\leq uP+\sum_{x\in X'} h_xf_x .
+\]
+If $T,f>0$, let $\alpha=\frac{T}{T+f}$ and $\gamma=\frac{f}{T+f}$.
+The identity
+$(h_x+f_x)(\gamma^2h_x+\alpha^2 f_x)-h_x f_x
+=(\gamma h_x-\alpha f_x)^2$ and the bound $h_x+f_x\leq h$
+give $\sum_{x\in X'} h_xf_x\leq h(\gamma^2T+\alpha^2 f)
+=\frac{hTf}{T+f}$. Substituting the resulting lower bound for
+$P$ in $T+P\leq p\ell$ gives
+\[
+ |E(H)|\leq h(\sigma-h)+\left(1-\frac hp\right)T
+       +\left(1-\frac hu\right)f
+       +\frac{h^2Tf}{pu(T+f)} .
+\]
+If $f=0$, the previous counts give $|E(H)|\leq h(\sigma-h)$.
+The induced host on $B'$ has fewer marked edges, since it omits
+all marked edges at $v$. Applying bounds for this smaller graph with
+Ore-degree at most $\sigma-p$ gives upper bounds for $f$.
+The proof notes~\cite{FGSTSupplement} give further necessary
+inequalities by comparing the marked neighborhoods in $A$ of
+two vertices of $X'$. For example, if $x,x'\in X'$ are nonadjacent,
+every vertex of $N_H(x)\cap A$ that is not adjacent to $x'$ must
+be adjacent to every vertex of $N_H(x')\cap A$ that is not adjacent
+to $x$. Otherwise two marked edges would have no edge joining their
+endpoints. The rational interval check in Section~B.3 of the supplement
+uses these neighborhood inequalities and the bounds for the smaller
+graph. It excludes $|E(H)|>\frac{2973}{10000}\sigma^2$ over the full
+range of $\frac{h}{\sigma},\frac ph,\frac uh,\frac{T}{\sigma^2}$
+and $\frac{f}{\sigma^2}$.
+
+For the base copies, pass to the simple support, mark one edge on
+each marked pair, and take the host induced on their endpoints.
+This preserves every adjacency that joins two disjoint marked edges.
+Let $s'$ be the number of marked edges in this simple host and let
+$\sigma'\leq\sigma$ be their Ore-degree. Every vertex has a marked
+neighbor, so its degree is at most $\sigma'-1$. For a connected
+pattern $P$ on $k$ positions rooted at an ordered marked edge,
+normalize its map count by $2s'(\sigma')^{k-2}$. The resulting
+coordinate $q_P$ lies in $[0,1]$ by the spanning-tree bound and
+vanishes if the marked edges of $P$ contain an odd cycle.
+The count of two ordered marked edges in \eqref{eq:objective-value}
+now gives the objective $\frac{s'}{(\sigma')^2}$.
+The extension sum at one position is at most $q_P$. If $ij$ is a
+marked edge of $P$, the two extension sums at $i$ and $j$ together
+are at most $q_P$, since the sum of the two image degrees is at
+most $\sigma'$. The moment matrices remain positive semidefinite
+by \textbf{Lemma~\ref{lem:moment}}. The rational certificate in
+Section~B.3 of the supplement combines the extension inequalities
+with nonnegative multipliers and the moment matrices with
+positive semidefinite matrices. Each negative residual coefficient
+is charged its absolute value, using $0\leq q_P\leq1$. The resulting
+upper bound on $\frac{s'}{(\sigma')^2}$ is
+$\frac{27332270490572378277}{10^{20}}<\frac{273323}{10^6}$.
+This proves the asserted bound for base copies.
+
+Finally, mark only the extra copies between $U$ and $W$, reserving
+one base copy on each originally marked pair as an unmarked edge.
+Every adjacent pair of vertices now has an unmarked edge joining it.
+Apply the same counts with $H$ the graph of these extra copies.
+The result is immediate if $H$ is empty. Otherwise, for
+every pair consisting of $a\in A$ and an edge of $F$, the
+joining adjacency has an unmarked copy, and each such copy serves
+at most $u$ edges of $F$. Therefore $pf\leq uP$.
+If $f=0$, the first two inequalities give $|E(H)|\leq
+h(\sigma-h)$ because $p\leq h$. If $f>0$, then $u>0$, and
+\[
+ |E(H)|\leq h(\sigma-h)-(h-p)\ell+
+          \left(1-\frac pu\right)f
+ \leq h(\sigma-h)+\left(1-\frac hu\right)f
+ \leq h(\sigma-h).
+\]
+Here the second inequality uses $f\leq u\ell$ and $p\leq h$,
+and the last uses $u\leq h$. Finally $h(\sigma-h)\leq
+\frac{\sigma^2}{4}$.
+
+Multiplying any of the three bounds by the nonnegative forest
+weight of the root and summing over root maps gives a linear
+inequality for $X$. Expanding a neighbor count uses one further
+position, and expanding its square or counting another edge uses
+two.
+
+Write $AX=(1,0,\ldots,0)^{\mathsf T}$ for the degree and sampling
+equations, $NX\le0$ for the linear inequalities, and $G_i(X)\succeq0$
+for the matrix inequalities. To bound $M$, take a vector
+$\lambda$ with first entry $\lambda_0$, a nonnegative vector $\rho$, and matrices $P_i$
+given as nonnegative sums of rational rank-one outer products.
+Let $G_i^*$ be the adjoint defined by
+$(G_i^*(P_i))^{\mathsf T}X=\tr(P_iG_i(X))$. The constraints give $\rho^{\mathsf T}NX\leq0$ and
+$\tr(P_iG_i(X))\geq0$. Thus, for every feasible $X$,
+\[
+ \left(A^{\mathsf T}\lambda+N^{\mathsf T}\rho
+        -\sum_iG_i^*(P_i)\right)^{\mathsf T}X
+ \le\lambda_0 .
+\]
+Let $r$ be the coefficient vector on the left minus the coefficient
+vector of $M$. If $0\le X_j\le U_j$ for each coordinate $j$, then
+$M\le\lambda_0+\sum_{j:r_j<0}(-r_j)U_j$. For a coordinate $X(P,T)$,
+an upper bound is
+$\frac{1-e}{|\operatorname{Aut}(P,T)|}$ for $T=\varnothing$ and
+$\frac{e}{|\operatorname{Aut}(P,T)|}$ otherwise. To obtain it, start at
+a red edge, in $T$ if $T$ is nonempty, and extend along a
+spanning tree containing $T$. Each new position contributes at
+most $D$ in support count or extra multiplicity. The certificates
+also use bounds on sums of coordinates of equal order and
+equal forest size, obtained by counting all labeled spanning
+trees containing the specified red root. Positive residuals
+can be dropped since the coordinates are nonnegative. With these bounds the total correction is affine in $e$, so
+its maximum over the allowed interval is attained at an endpoint. For an infeasibility certificate, the objective
+is zero and the compensated right side is negative.

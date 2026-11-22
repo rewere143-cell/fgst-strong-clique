@@ -1,0 +1,489 @@
+Since no vertex sends a positive contribution, we may keep the actual
+contribution $h_x-b_x$ of each vertex of signature size one in
+\eqref{eq:multi-loss-budget}. Put $\delta=9-K$ and
+let $a$ count the vertices of signature size one. For an outside
+vertex $x$, write $e_x$ for its marked degree outside the core under
+consideration, counted with multiplicity. A vertex with $k_x=1$ and a marked
+neighbor in $B$ or a marked neighbor of signature size two has loss
+\[
+ \ell_x=-\frac{1}{2}+2(b_x-3)+(13-h_x-b_x).
+\]
+Indeed $b_x\ge3$ by the comparison preceding
+\eqref{eq:multi-rough-discharge}. For a marked edge from $x$ to
+$U_i$, write $\{j\}$ for its signature, reflecting so that $j=i+2$.
+That comparison gives at least $a_j-s_i+1=3+s_{j+2}$ blue neighbors
+in $U_j$. Consequently, if $b_x=3$, all three blue neighbors lie in
+$U_j$, and the other possible part $U_{j+2}$ for a marked neighbor
+has $s_{j+2}=0$. It cannot receive a marked edge from $x$. A vertex
+of signature size one with no such marked neighbor can send marked
+edges only to the unique vertex $z$ of signature size at least three.
+In this case $h_x\le Q_x-q=b_x-q$, and its loss is at least
+$\frac{13}{2}+q$.
+
+Enlarge the core by the vertices of signature size two with $b_x=1$.
+The two signature positions must be nonadjacent: at adjacent positions
+both anchor pairs would be blue. One of the two anchor pairs is red.
+Comparison with the marked edges of the other anchor star forces
+complete adjacency to its part. If a vertex in the first part were
+missed, at most the remaining degree at that vertex could be used
+for marked neighbors in the second part. By
+\eqref{eq:multi-core-identities}, this would leave at least two blue
+neighbors there. Thus these vertices enter the common neighboring part in the enlargement.
+Let $n$ count the vertices of signature size two left outside.
+If $b_y=2$ and $y$ has a marked neighbor in $B$, then for $L\le2$
+the two signature positions cannot be adjacent. To see this, put them
+at $0,1$. Both anchor pairs are blue. A marked edge into $U_2$ or
+$U_4$ forces at least three blue neighbors, by the opposite anchor
+star. For a marked edge $yu$ with $u\in U_3$, at least
+$a_i-(s_3-1)-1\ge2$ vertices of each of $U_i$, $i=0,1$, are
+adjacent to neither $y$ nor $u$. All pairs between the two omitted
+sets must be blue, giving $L\ge4$.
+
+We record the cover bounds needed for the enlarged core. Suppose
+$k$ vertices have entered the five parts. Each original vertex has
+at most $L+k$ blue neighbors in the two neighboring enlarged parts.
+For each new vertex the bound is $k$, since its old blue degree was
+one. Let $X$ be independent in the marked graph on $B'$. If the
+occupied parts include an adjacent pair and form a connected set of
+indices, the spanning tree argument for \eqref{eq:multi-small-cover}
+gives $|X|\le L'+1$. Otherwise, if there is an adjacent occupied
+pair, its two parts have $x,y$ vertices of $X$ and the remaining
+occupied part is isolated. We have $x,y\le L+k$, $xy\le L'$.
+If no two occupied parts are adjacent, $|X|\le13$. These observations
+give the following upper bounds, with $a_i'=|U_i'|$:
+\[
+\begin{array}{rrrrrrr}
+R'&k&L\ {\rm at\ most}&L'\ {\rm at\ most}&
+ \max_i a_i'\ {\rm at\ most}&x+y\ {\rm at\ most}& |X|\ {\rm at\ most}\\
+3&3&0&4&8&4&13\\
+5&2&2&6&9&5&14\\
+7&1&1&3&10&3&13\\
+5&2&0&3&8&3&13\\
+7&1&2&5&10&4&14
+\end{array}
+\]
+In the fourth row at least three $s_i'$ are positive, because a
+vertex of signature size three remains outside, so
+$a_i'=\frac{13-R'}{2}+s_{i-2}'+s_{i+2}'\le8$. In that row an independent
+set of size 13 consists of two entire nonadjacent parts. This also
+holds if $L'\le1$ and $\max_i a_i'\le10$, since an independent set
+using an adjacent pair then contains at most $10+1+1$ vertices.
+The same argument applies to $B$ with $L\le1$ and a vertex of
+signature size three. In each of these situations, if $xy$ is marked
+outside and $k_x+k_y\ge4$, then
+\begin{equation}\label{eq:d13-improved-cover}
+ e_x+e_y\le 26-(|B'|-13)-1.
+\end{equation}
+Indeed equality in the ordinary cover bound would force the two core
+neighborhoods to be disjoint and their complement to be an independent
+set of size 13. Their union would then be contained in three parts,
+whereas disjoint neighborhoods contain $k_x+k_y$ distinct anchors.
+
+Suppose $k_x=1$, $b_x=3$, and $x$ has a marked neighbor in $B$.
+Rotate and reflect so that its signature is $\{3\}$ and its only part
+for marked neighbors is $U_0$. It follows that $s_1=0$. If $xy$ is marked and
+$k_y=2$, its two positions must be $\{0,2\}$: the other possibilities
+$\{0,1\},\{1,4\}$ giving a cover with $3$ use position 1.
+The marked stars from the two omitted anchors require $x,y$ together
+to see $U_0,U_2,U_3$. Hence $y$ sees all of $U_2$, and misses a
+vertex of $U_0$ because $a_0+a_2=13$ and $xy$ uses one degree.
+Comparison with the marked spoke at the missed vertex bounds the
+number of red neighbors in $U_2$ by $s_0$. Writing $Q_y(U)=
+|N_{G_{\rm s}}(y)\cap U|$, we obtain
+\begin{equation}\label{eq:d13-two-positions}
+ |\,\{u\in U_2:yu\text{ is blue}\}\,|\ge2+s_4,\qquad
+ Q_y(U_3)\ge a_3-3=s_0-1.
+\end{equation}
+If $b_y=2$ then $s_4=0$ and both blue neighbors lie in $U_2$.
+For $s_0\ge2$ there is a red neighbor in $U_3$. Comparison of this
+edge with the marked star from $c_1$ to $U_0$ gives
+$Q_y(U_0)\ge a_0-s_3+1=3+s_2$. Summing the three part counts gives
+\begin{equation}\label{eq:d13-outside-degree}
+ b_y=2,\ s_0\ge2\quad\Longrightarrow\quad e_y\le9-2s_0-s_2 .
+\end{equation}
+If instead $xz$ is marked with $k_z=3$, the possible signatures
+of $z$ are $\{0,2,3\}$ and $\{0,2,4\}$. Both omit position 1.
+Panels (a) and (b) of \textbf{Figure~\ref{fig:degree-thirteen-signatures}}
+show the two possibilities.
+The star from $c_1$ forces $z$ to see every vertex of $U_2$, as
+well as two anchors outside that part. Thus $Q_z\ge a_2+2$.
+In particular the signature of such a $z$ is itself a cover of the cycle.
+
+Suppose first that all outside vertices have at most two positions.
+There is no vertex of signature size zero. The losses of the $a$
+vertices with one position and the $\frac{9-\delta-a}{2}$ vertices with
+two positions are at least $-\frac{1}{2}$ and 2 per vertex, respectively.
+Subtracting these amounts from \eqref{eq:multi-loss-budget} gives
+the following upper bound on $2L$ plus all excess losses:
+\[
+ T=\frac{3}{2}+\frac{3a}{2}-\frac{11\delta}{2}.
+\]
+Each remaining vertex with two positions costs at least
+$2(b_x-1)\ge2$ beyond its minimum, and a vertex with one position
+costs at least $2(b_x-3)$. When $n=0$ there is no outside marked
+edge. If $a\ge2$ then $L_{\rm cut}\ge6$, and
+\eqref{eq:multi-extra-capacity} contradicts $\mu\le\frac{21}{4}$. If $a=1$
+with $\delta=0$, the base count for $R'=1$ applies.
+For $\delta=2$ the budget forces $a=7$, $n=0$.
+For $\delta=1$, $a=4,6,8$. When $a=8$ we have $n=0$. When $a=6$
+we have $n\le1$ and $F_{\rm out}\le13$. If $n=1$, the cut
+has at least $18+2$ blue pairs. When $a=4$, $T=2$ and $n\le1$.
+If $n=1$ the other vertex with two positions was absorbed, $L\le1$,
+and the old cover number is at least 15. Equation
+\eqref{eq:multi-center-cut} gives $F_{\rm out}\le8$, against
+$L_{\rm cut}\ge12+2$.
+
+It remains in this case to take $\delta=0$ and $a$ odd. If $a\ge7$,
+then $n\le1$, $F_{\rm out}\le13$, and $L_{\rm cut}\ge21$.
+If $a=1$, then $T=3$ and $n\le1$. For $n=1$, write $x,y$ for the
+vertices with one and two positions. We have $L=0$, $b_x=3$,
+$h_x\ge9$, $b_y=2$, $h_y\ge10$, and the other three vertices
+with two positions entered the core. The first row of the cover table
+gives a cover of size at least 18, so $F_{\rm out}\le4$. If
+$F_{\rm out}=0$, then $L'\ge3$ and $L_{\rm cut}\ge5$ suffice.
+Otherwise both vertices have marked neighbors in $B'$. Their three
+positions form a cover, say $\{0,2,3\}$, with remaining degree one
+at each position. Compare the stars at the omitted anchors as in the $R'=3$ case
+for degrees 11 and 15, now with $d=6$. If $x$ uses position 0, it gives
+$\mu\ge13-2w_0$, where the number $w_0$ of blue edges of the
+chosen star is at most three, one per added vertex. If $x$ uses a
+leaf position and has a marked neighbor carrying the required red
+spoke, it gives $\mu\ge12-F_{\rm out}$. In the other case every
+marked copy from $x$ to $B'$ uses a distinct blue spoke and
+$\mu\ge h_x+b_x+b_y-2F_{\rm out}\ge6$.
+
+For $a=3$ the budget is $T=6$. If $n=1$, then $R'=5$, $L\le2$,
+$L'\le6$. The second row gives a cover of size at least 16, so
+$F_{\rm out}\le7$ and $L'+L_{\rm cut}-F_{\rm out}\ge2+9+2-7=6$.
+If $n=2$, then $R'=7$, $L\le1$, $L'\le3$ and the third row gives
+a cover of size at least 16. If the two remaining vertices with two
+positions are joined by $w\ge1$ marked copies, their outside degrees
+sum to $F_{\rm out}+w\le10$. The only way
+$L'+L_{\rm cut}-F_{\rm out}<6$ is $F_{\rm out}=9$, $L'=1$,
+$L_{\rm cut}=13$. Then $w=1$ contradicts
+\eqref{eq:d13-improved-cover}. Otherwise all outside marked edges
+join a vertex with one position to a vertex with two. At least one
+of the latter vertices has blue degree two. If none of blue degree
+two is joined by a mark to a vertex of blue degree three with one
+position, all outside marks meet one vertex. Indeed if both blue
+degrees are two, at most one vertex with one position has blue
+degree greater than three. If one blue degree is three, the two
+vertices use the entire budget and all vertices with one position
+have blue degree three. Equation \eqref{eq:multi-center-cut} gives
+$F_{\rm out}\le7$ in either case.
+
+Thus let $y$ have $k_y=b_y=2$ and a marked neighbor $x$ with
+$k_x=1,b_x=3$. Here $h_x\ge8$. If $x$ had no marked neighbor in
+$B$, it could receive at most one marked copy from each outside
+neighbor, by $q=2$ and $Q_x=3$, which is impossible. By
+\eqref{eq:d13-two-positions} we may take $y$ at $\{0,2\}$ and
+$s_1=s_4=0$. The absorbed vertex with two positions must use 0.
+If the other remaining vertex $y'$ has a marked neighbor with one
+position and blue degree three, its positions are also nonadjacent
+and include 0. Hence $s_0\ge3$, and \eqref{eq:d13-outside-degree}
+gives $e_y\le2$. If $b_{y'}=2$ the same bound gives $e_{y'}\le2$.
+If $b_{y'}=3$, the star bound with three possible outside neighbors
+gives $e_{y'}\le7$, and the cut includes an additional blue pair.
+If $y'$ has no such marked neighbor and has positive outside marked
+degree, both blue degrees are two. At most one vertex with one position
+has blue degree greater than three, so $e_{y'}\le5$. Both vertices
+have old core marks since $q=2$ excludes purely outside marks at
+blue degree two, and both have nonadjacent positions. Again $s_0\ge3$.
+It follows throughout that $F_{\rm out}\le8$, or that
+$F_{\rm out}\le9$ and $L_{\rm cut}\ge14$.
+\eqref{eq:multi-extra-capacity} now gives $\mu\ge6$.
+
+If $a=3,n=3$, then $L=0$. Each vertex with one position has
+$(b_x,h_x)=(3,10)$ and each with two has $(2,11)$. Each of the
+latter has an old core mark and nonadjacent positions.
+Whenever an outside mark meets a vertex with one position,
+\eqref{eq:d13-two-positions} permits only positions $0,2,3$ after
+rotation and reflection, so all three vertices with two positions
+use 0. Each one joined by a mark to a vertex with one position
+has outside degree at most two by \eqref{eq:d13-outside-degree}.
+If there is just one such vertex, the other two share at most five
+marks, giving $F_{\rm out}\le7$. If there are at least two, all
+outside marks meet these vertices, giving $F_{\rm out}\le6$. If
+there are none, the outside marks lie on three vertices. On a triangle,
+summing the three degree-sum bounds gives $4F_{\rm out}\le33$.
+For a star the degree bound gives $F_{\rm out}\le7$. In all cases
+$F_{\rm out}\le8$ and $L_{\rm cut}\ge15$.
+
+For $a=5$ we have $T=9$ and originally two vertices with two
+positions. If $n\le1$ every outside mark meets a single such vertex.
+Since $L\le4$, the old cover number is at least 14. The star bound
+with five possible neighbors gives $F_{\rm out}\le10$. If $n=1$,
+the absorbed vertex gives $L'\ge1$ and $L_{\rm cut}\ge17$.
+Take $n=2$. Now $L\le2$, the old cover number is at least 15,
+and $L_{\rm cut}\ge19$. If the two remaining vertices share a mark,
+$F_{\rm out}\le10$. Otherwise the outside marks form a bipartite
+graph between these two vertices and the five vertices with one
+position. The outside marked degrees at the ends of each mark sum
+to at most 11.
+
+If every vertex with one position incident with an outside mark has
+blue degree at least four, the budget allows at most two such vertices.
+For two disjoint outside marks, their degree sums yield
+$2F_{\rm out}\le22$. Otherwise the outside marks form a star with
+at most two neighbors and $F_{\rm out}\le7$. Now suppose a vertex
+$x$ with $k_x=1,b_x=3$ meets an outside mark. It must have an old
+core mark since $h_x\ge5$ by the budget, whereas $Q_x=3$ would
+allow at most two outside marked copies in the absence of a core mark.
+If a neighbor $y$ with $k_y=2$ has $b_y=2$, take its positions to
+be $\{0,2\}$ with $s_1=s_4=0$ as in \eqref{eq:d13-two-positions}.
+The other vertex $y'$ with two positions, if these are adjacent, must
+use $\{2,3\}$ and have $b_{y'}\ge3$. It can meet outside marks only
+at vertices with blue degree greater than three, so it has at most
+one such neighbor, and $e_{y'}\le5$. Also $e_y\le9$, since $y$
+sees $U_2$ and $c_0$. When $e_{y'}>0$ the cut has at least 21
+blue pairs. When $e_{y'}=0$, $F_{\rm out}\le9$. If instead the positions
+of $y'$ are nonadjacent, both $y$ and $y'$ use 0, giving $e_y\le4$
+by \eqref{eq:d13-outside-degree}. Since $e_{y'}\le10$, cut size
+20 suffices. At size 19 both blue degrees are two and all five vertices
+with one position have blue degree three, so $e_{y'}\le4$ as well.
+
+If vertices with one position and blue degree three meet outside marks
+only at the vertex of blue degree at least three, the other vertex $y'$
+of signature size two has blue degree two. It has at most one possible
+marked neighbor outside the core, so $e_{y'}\le5$. When its degree is positive the cut has at least 21 blue
+pairs and $F_{\rm out}\le15$. When its degree is zero, $F_{\rm out}\le10$.
+The only case left has both blue degrees at least three. The budget
+forces both to be three, $L=0$, and blue degree three for all five
+vertices with one position. If $F_{\rm out}\ge16$, one vertex $y$
+with two positions has $e_y\ge8$ and the other also has a marked
+outside neighbor. From \eqref{eq:d13-two-positions} applied at $y$,
+we have $s_1=0$, $s_4\le1$ and $Q_y\le5$. The whole part $U_2$,
+the vertex $c_0$, and the $s_0-1$ or more neighbors in $U_3$ give
+$Q_y\ge2+2s_0+s_4$, so $s_0=1$. The other vertex with two positions
+must have nonadjacent positions if it meets a vertex with one
+position and blue degree three, by the same signature comparison.
+It cannot use 0 or 1 and hence uses $\{2,4\}$. The comparison then
+requires $s_3=0$, whereas $y$ already has a neighbor of signature
+$\{3\}$. Thus $F_{\rm out}\le15$ and the 21 blue pairs suffice.
+
+We next consider the case of a unique outside vertex $z$ of signature
+size at least three. Write $n_2$ for the number with two positions
+before enlargement. From $k_z+a+2n_2=9-\delta$ and
+\eqref{eq:multi-loss-budget}, the amount left for $2L$ and the
+losses above their respective lower bounds is at most
+\[
+ \frac{21}{2}-\frac{13\delta}{2}
+ -13\left(\frac{k_z}{2}-1\right)+\frac{a}{2}-2n_2 .
+\]
+The nonnegative possibilities are
+\[
+\begin{array}{rrrrr}
+ \delta& k_z&a&n_2&\text{remaining amount}\\
+ 1&3&5&0&0\\
+ 0&4&5&0&0\\
+ 0&3&2&2&1\\
+ 0&3&4&1&4\\
+ 0&3&6&0&7
+\end{array}
+\]
+Every vertex of signature size one has an old core mark or a marked
+neighbor of signature size two, since otherwise its loss exceeds its
+lower bound by at least $7+q\ge8$. In particular $b_x\ge3$ for
+every such vertex. When $n_2=0$, every outside mark meets $z$.
+An outside neighbor with signature zero has only blue neighbors in
+the core and at least $e_z+q$ of them by the cover bound. These
+already pay for all $F_{\rm out}=e_z$ marks and there remain the
+blue cut pairs of the vertices with one position. If there is
+no such neighbor, then $a=5$, $L=0$ gives a cover of size at least
+15 and hence $F_{\rm out}\le9$, while $a=6$ gives $e_z\le10$ since
+$z$ sees at least three anchors. The cut has at least $3a$ blue pairs.
+
+For $a=2$, both vertices with two positions have blue degree one
+and enter the core. Thus $R'=5$, $L=0$, $L'\le3$. The two vertices
+with one position have blue degree three and combined marked degree at
+least 19. Both have old core marks, since otherwise either could have
+at most three outside marks, against marked degree at least nine.
+The fourth row of the cover table gives $\tau'\ge17$. A marked
+neighbor of $z$ with signature zero uses at least $e_z+4$ blue
+cut pairs. Together with the six supplied by the two vertices with
+one position, these suffice. Otherwise the only possible neighbors
+of $z$ outside are the two vertices with one position.
+Equation \eqref{eq:d13-improved-cover} gives outside degree sum at
+most eight for each such pair, whence $F_{\rm out}\le5$ by the star
+bound. At a vertex $x$ with one position $j$, a mark to its sole
+possible part $U_i'$ forces at least
+$a_j'-s_i'+1-h=5-h$ blue neighbors, where $h$ counts the blue pairs
+in the opposite anchor star into $U_j'$. This is the same comparison
+used in the case $D=11,15$: at most $s_i'-1$ neighbors can be
+supplied by the other end of the mark, and only the $h$ blue
+pairs can fail to impose an adjacency. The other possible marked
+part has old and new remaining degree zero. If both vertices used
+the same star they would have the same signature and the same marked
+part $U_i'$ with $s_i'\le1$. Since $a_i'\le8$, this part cannot
+supply their required $19-F_{\rm out}\ge14$ marks. Distinct stars
+have disjoint sets of blue pairs, so $L'+L_{\rm cut}\ge10$.
+
+By \eqref{eq:multi-extra-capacity}, the only possibility left is
+$F_{\rm out}=5$ and
+$\frac{R'^2}{4}-\sum_i s_i's_{i+2}'=\frac{1}{4}$. Thus $\sum_i s_i's_{i+2}'=6$.
+The five entries sum to five, and at least three are positive.
+Five positive entries give sum of products five. With four, their
+support in the graph with edges $\{i,i+2\}$ is a path with one entry
+two, again giving at most five. With three, reaching six requires a
+two-edge star with center weight two or three. Put its center at 0
+and its leaves at 2 and 3. The two choices of weights give
+$(0,1,2,0,2)$ and $(0,1,1,0,3)$ up to rotation and reflection. Both
+appear in the $R=5$ group of \textbf{Figure~\ref{fig:finite-simple-slack-low}}.
+The three positions of $z$ are exactly
+these. Neither of the vertices with one position can use 0, since
+both its possible marked parts then have positive remaining degree.
+Only $z$ can use 0, so $s_0'=1$ because $R'=K'$. This contradicts
+the center weight.
+
+Suppose $a=4$ and the single vertex with two positions enters the
+core. Then $R'=7$, $L\le2$, $L'\le5$, and the final row of the
+table gives $\tau'\ge15$. A marked neighbor of $z$ of signature
+zero again supplies at least $e_z+2$ blue cut pairs. Otherwise
+$F_{\rm out}\le8$ by the star bound. Since $L'\ge1$ and
+$L_{\rm cut}\ge12$, only $F_{\rm out}=8$, $L'=1$, $L_{\rm cut}=12$
+can have $\mu<6$. All four vertices with one position have blue
+degree three, and all have an old core mark. Indeed, the old cover
+is at least 15 and in the absence of an old mark they can receive
+at most two copies outside, against $h_x\ge6$ from the loss bound.
+The preceding anchor comparison gives blue degree at least $4-h$
+for each, so all four must use the unique missing edge in the same
+star. Their sole marked part has size at most ten and remaining degree
+at most one. It would have to supply at least $4\cdot10-4-8=28$
+marked copies, using the total excess loss at most four. This is
+impossible.
+
+Finally let $a=4$ with $z$ of signature size three and $y$ of
+signature size two still outside. There was no enlargement. Here
+$\delta=0$, $b_y\ge2$, $L\le1$, and the cover number is at least
+15. The improved cover bound gives $e_z+e_x\le10$ whenever $zx$
+is marked outside and $k_x>0$. Each vertex with one position and
+blue degree three has an old core mark, since $h_x\ge8$, whereas
+without a core mark it could have at most two outside copies.
+The five vertices with positive signature other than $z$ supply
+at least $12+2=14$ blue cut pairs. If $z$ has a marked neighbor with
+signature zero, its blue degree is at least $e_z+2$. The outside
+marks not meeting $z$ form a star at $y$ with at most four neighbors.
+There are at most $\lfloor\frac{4\cdot11}{5}\rfloor=8$ such copies, using
+the ordinary cover bound for their endpoints. Thus $\mu\ge14+2-8$.
+We may now assume there is no marked neighbor with signature zero and
+hence no vertex of signature zero in the reduced host.
+
+If $z,y$ are joined by $w\ge1$ marked copies, then
+$F_{\rm out}=e_y+e_z-w\le9$. Only $L=0$, $L_{\rm cut}=14$,
+$F_{\rm out}=9$ needs consideration. Thus $b_y=2$, and all four
+vertices with one position have blue degree three. If $y$ has such a
+marked neighbor, take its signature to be $\{0,2\}$ by
+\eqref{eq:d13-two-positions}. Then $s_1=s_4=0$, $z$ uses $\{0,2,3\}$,
+and the four vertices can only use 2 or 3 and mark into $U_0$.
+All remaining degree of the old anchors comes from outside signatures
+since $K=R$. Consequently $s_0=2$. The capacity of $U_0$ is
+$s_0a_0=s_0(11-s_0)=18$, whereas these vertices need at least
+$4\cdot10-2-9=29$ core marks. If $y$ has no such marked neighbor,
+all outside marks meet $z$, so $e_z=9$ and each of its at most five
+neighbors has outside degree at most one. This too is impossible.
+
+Suppose $y,z$ have no marked edge between them. The outside marks
+are then bipartite between $\{y,z\}$ and the four vertices with one
+position, giving $F_{\rm out}=e_y+e_z$. The budget excludes $b_y>3$.
+If $b_y=3$, then $L=0$ and each of the four vertices has blue degree
+three and marked degree ten. We need only exclude $F_{\rm out}\ge10$.
+If either $e_y$ or $e_z$ is zero, the star bound gives
+$F_{\rm out}\le8$. Otherwise both have a marked neighbor with one
+position and blue degree three. By the three-position comparison
+following \eqref{eq:d13-outside-degree}, rotate the signature of $z$
+to $\{0,2,3\}$, with $s_1=0$ or $s_4=0$. If both vanish, all four
+vertices with one position use 2 or 3 and mark into $U_0$.
+Vertex $y$ has positions $\{0,2\}$ or $\{0,3\}$. Thus $s_0=2$
+and the capacity 18 of $U_0$ is smaller than $40-e_y-e_z$, since
+$e_y\le10$ and $e_z\le9$.
+
+Otherwise reflect to make $s_1=0$ and $s_4>0$. The four signatures
+are 3 or 4, giving marks to $U_0$ or $U_2$, respectively. Vertex
+$y$ must use $\{0,2\}$, and $s_0=s_2=2$. If $y$ has a marked neighbor
+of signature $\{3\}$, \eqref{eq:d13-two-positions} gives $s_4\le1$,
+so $s_4=1$. Its three blue neighbors all lie in $U_2$ and it has a
+marked neighbor in $U_3$. Comparison with the star from $c_1$
+therefore gives $Q_y(U_0)\ge3+s_2=5$. We also have $Q_y(U_2)=5$ and
+$Q_y(U_3)\ge1$. Hence $e_y\le2$. For a neighbor of signature
+$\{4\}$ interchange $0,2$ and $3,4$ to get the same bound.
+A marked neighbor of $z$ with one position forces $z$ to see a
+whole part $U_0$ or $U_2$ of size at least five, and two additional
+anchors. Thus $e_z\le6$, contradicting $F_{\rm out}\ge10$.
+
+We are left with $b_y=2$. There is at most one vertex $x_0$ with
+one position and blue degree greater than three. When it exists,
+$b_{x_0}=4$, $h_{x_0}=9$, $L=0$, and the other three vertices have
+blue degree three and marked degree ten. Here $F_{\rm out}\ge10$
+is necessary. First suppose $y$ has a marked neighbor of blue degree
+three with one position. By \eqref{eq:d13-two-positions}, $s_1=s_4=0$
+and $y,z$ have
+signatures $\{0,2\}$ and $\{0,2,3\}$. Every vertex with one position
+and blue degree three marks into $U_0$. If $x_0$ does not exist,
+$s_0=2$, $e_y\le3$ by \eqref{eq:d13-outside-degree}, and
+$e_z\le7$ because it sees a whole part of size at least four as
+well as two other anchors whenever it meets an outside mark.
+The required $40-2-10=28$ or more core marks exceed the capacity
+18 of $U_0$. If $x_0$ exists and $z$ has no other marked neighbor,
+$e_z\le5$ by $e_z+e_{x_0}\le10$, so $F_{\rm out}\le8$.
+Otherwise $e_z\le7$. If $x_0$ does not use 0, then $s_0=2$ and
+the other three vertices need at least $30-10=20$ core marks in
+$U_0$. If $x_0$ uses 0 then $s_0=3$ and
+\eqref{eq:d13-outside-degree} gives $e_y\le1$. Either possibility
+is excluded.
+
+It remains that $y$ has no marked neighbor of blue degree three
+with one position. If there is no $x_0$, every outside mark meets
+$z$ and $F_{\rm out}\le8$. Otherwise only $yx_0$ can contribute
+to $e_y$, and its multiplicity $w$ satisfies $2w\le11$. If $zx_0$
+is marked, then $e_z+w\le9$ by the improved bound and the copy on
+$zx_0$. If it is unmarked, $z$ can meet only the other three vertices,
+so $e_z\le\lfloor\frac{3\cdot10}{4}\rfloor=7$. To have $F_{\rm out}\ge10$
+requires $w\ge3$. Now $h_y=11$ and $h_y-w\ge6$ copies go to $B$.
+The positions of $y$ are nonadjacent because $L=0$ and $b_y=2$.
+By the comparison following \eqref{eq:d13-outside-degree}, rotate
+and reflect so that $z$ has signature $\{0,2,3\}$ with
+$s_1=0$ or $s_4=0$. If both vanish, all three vertices of blue
+degree three send their old core marks to $U_0$. The required
+capacity is at least $30-e_z\ge23$, hence $s_0(11-s_0)\ge23$
+forces $s_0\ge3$. Only $y,z,x_0$ can use 0. Thus both $y$ and
+$x_0$ use it, so their signatures together have at most two positions
+and cannot cover the cycle.
+
+If just one of $s_1,s_4$ is zero, take $s_1=0$ by reflection.
+The three vertices of blue degree three use 3 or 4 and mark into
+$U_0$ or $U_2$, respectively. We have $F_{\rm out}=e_z+w\le12$.
+There are just three possible nonadjacent pairs of positions for $y$.
+Together with the position of $x_0$, they give the four cases in
+\textbf{Figure~\ref{fig:degree-thirteen-signatures}}(c)--(f).
+
+\input{figures/degree_thirteen_signatures}
+
+If $y$ uses $\{0,2\}$, $x_0$ must use 3 or 4. Here $s_0=s_2=2$.
+Suppose $x_0$ uses 3. Its only possible core marks go to $U_0$:
+a mark into $U_1$ is excluded by $s_1=0$. It has at least three
+blue neighbors in $U_3$ and at most one in other parts. Since the
+marked edge $yx_0$ must meet or have adjacent ends to each edge of
+the omitted anchor stars, $y$ misses at most one point of $U_2$.
+It cannot see all of $U_0$, for then $Q_y\ge a_0+a_2-1=12$,
+contrary to $w\ge3$. Comparison with a missed point in $U_0$
+bounds its distinct marked neighbors in $U_2$ by $s_0=2$, and it
+has only two blue neighbors. Thus $a_2\le5$, forcing $s_4=1$.
+Two of the three vertices of blue degree three use 3 and one uses 4.
+Together the two vertices using 3 and $x_0$ need at least
+$29-F_{\rm out}\ge17$ marks into $U_0$, whose capacity is
+$s_0a_0=2(4+4)=16$. If $x_0$ uses 4, the reflected comparison
+gives $s_3\le1$. Position 3 already occurs at $z$. Thus all three
+vertices use 4 and at least $39-F_{\rm out}$ marks must go to $U_2$,
+again of capacity 16.
+
+If $y$ uses $\{0,3\}$, then $x_0$ uses 2 to cover the cycle with
+$y$. Since $s_0=2$, a mark from $x_0$ to $U_4$ would force
+$b_{x_0}\ge3+s_0=5$. It can mark only into $U_0$, and the same
+star comparison gives $s_4\le1$. Thus $s_4=1$, $s_2=2$, $s_3=4$,
+and two of the three vertices of blue degree three use 3. Again
+at least $29-F_{\rm out}$ marks must enter $U_0$ of capacity 16.
+If $y$ uses $\{2,4\}$, $x_0$ uses 0. Now $s_2=2$ forces its
+core marks into $U_2$ and $s_3\le1$. All three vertices of blue
+degree three use 4 and $s_0=2$, $s_4=4$. At least $39-F_{\rm out}$
+marks must enter $U_2$ of capacity 16. These contradictions exhaust
+the possibilities for $(D,R)=(13,9)$.

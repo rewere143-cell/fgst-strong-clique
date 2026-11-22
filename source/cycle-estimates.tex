@@ -1,172 +1,23 @@
-\subsection{Five-Cycle Counts in the Simple Support}
+\subsection{Certificates for Marked Five-Cycles}
 \label{app:cycle-estimates}\label{sec:odd}
 
-The estimates in this subsection relate the number of marked edges to
-the number of induced five-cycles with five marked edges and to the
-degrees available at the vertices of those cycles. We use them for
-the simple support in \textbf{Sections~\ref{sec:uniform} and~\ref{sec:exact}}.
-Let $G$ be a simple graph with maximum degree at most a positive
-integer $D$, and let $m>0$ of its edges form a strong clique.
-Mark these $m$ edges. Write $t=\frac{D}{2}$ and
-$\mu=\frac54 D^2-m$. By \textbf{Lemma~\ref{prop:quadratic-bound}},
-$\mu\geq0$. When $D$ is odd, $f(D)=5t^2-t+\frac14$. A counterexample
-with $m>f(D)$ therefore satisfies
-\begin{equation}\label{eq:odd-counterexample}
- \mu\leq t-\frac54.
-\end{equation}
-
-By \textbf{Lemma~\ref{lem:regularization}}, there is a $D$-regular
-simple graph $\widehat G$ containing $G$ as an induced subgraph.
-Only the original clique edges are marked. In particular every vertex
-incident with a marked edge belongs to $G$.
-\textbf{Lemma~\ref{lem:finite-encoding}} supplies the normalized
-counts for $\widehat G$.
-
-A marked induced five-cycle is an induced cycle of length five in
-$\widehat G$ whose five edges are marked. Let $q_C$ be the normalized
-count for the pattern with marked cycle $0,1,2,3,4,0$ and root $01$.
-Every color-preserving map of this pattern is injective. Adjacent
-positions have different images, and given two nonadjacent positions,
-there is a third position adjacent to exactly one of them.
-In the balanced blow-up with $b$ vertices in each part and all
-edges marked, there are $10b^5$ such maps, from the ten cyclic
-orderings and the choice of one vertex per part. Hence
-$q_C=\frac{10b^5}{2(5b^2)(2b)^3}=\frac{1}{8}$ in that example.
-
-Fix an ordered image $c_0,\ldots,c_4$ of the cycle, taking indices
-modulo five. Let $U_i$ consist of the vertices whose neighbors on
-the cycle are exactly $c_{i-1},c_{i+1}$ and whose edges to both
-cycle vertices are marked. The sets $U_i$ are pairwise disjoint,
-contain $c_i$ in $U_i$, and lie in $V(G)$ since every vertex in
-them is incident with a marked edge.
-\textbf{Figure~\ref{fig:odd-cycle-parts}} illustrates $U_0$. Define
-\begin{equation}\label{eq:odd-core-defs}
- a_i=|U_i|,\qquad B=\bigcup_{i=0}^4 U_i,\qquad
- s_i=D-a_{i-1}-a_{i+1},\qquad R=\sum_{i=0}^4 s_i.
-\end{equation}
-By the definitions of the five sets, the neighbors of $c_i$ in $B$
-are exactly $U_{i-1}\cup U_{i+1}$. Since $\widehat G$ is $D$-regular,
-$s_i=|N_{\widehat G}(c_i)\setminus B|$. Summing over the five cycle
-vertices gives $R=\sum_i|N_{\widehat G}(c_i)\setminus B|$, an upper
-bound on the number of edges of $G$ from the cycle to $V(G)\setminus B$.
-
-\input{figures/odd_cycle_parts}
-
-To express $R$ in terms of the counts, let $L_R$ be the following
-linear form in the six-position coordinates. The restriction to the
-first five positions is the marked induced cycle. The coefficient
-of a labeled extension is the number of neighbors of the sixth
-position on the cycle if that position either has an unmarked edge
-to the cycle or is adjacent to two consecutive cycle positions.
-All other extensions have coefficient zero. A vertex outside $B$
-with a cycle neighbor satisfies at least one of these two tests.
-Indeed, if it fails both, it has at most two cycle neighbors and
-all edges to them are marked. With only one such neighbor $c_i$,
-its marked edge to $c_i$ has no endpoint in common with the
-opposite cycle edge $c_{i+2}c_{i+3}$ and no edge joins their endpoints.
-With two nonconsecutive marked neighbors, it belongs to one of
-the sets $U_i$. Conversely, vertices of $B$ fail both tests.
-
-Thus the sum over the sixth position is $R$ for each ordered
-cycle. The denominators in \eqref{eq:q-definition} for five and
-six positions differ by a factor of $D$. If $q_C>0$, this gives
-$L_R=\frac{q_C}{D}\mathbb E[R]$, where the expectation is over a
-uniformly chosen color-preserving map of the cycle pattern. If $q_C=0$,
-there is no such map and $L_R=0$.
-
-The five-cycle certificates give
-\begin{equation}\label{eq:odd-moment-bounds}
- \frac{\mu}{D^2}\geq\gamma_C\Bigl(\frac{1}{8}-q_C\Bigr)-\epsilon_C,
- \qquad
- \frac{\mu}{D^2}\geq\gamma_R L_R-\epsilon_R.
-\end{equation}
-Both errors $\epsilon_C$ and $\epsilon_R$ are nonnegative. For the
-first inequality we use either
-$\gamma_C\geq\frac{99999}{100000}$ and $\epsilon_C\leq2\cdot10^{-9}$,
-or $\gamma_C\geq\frac{6449}{10000}$ and $\epsilon_C\leq10^{-9}$.
-For the second we use $\gamma_R\geq\frac{56425}{100000}$ and
-$\epsilon_R\leq10^{-9}$. The files and checks are specified in
+The simple-graph calculation uses two objectives. With the notation of
+the paper, $q_C$ is the normalized count of ordered induced five-cycles
+whose five edges are marked, and $L_R$ is the normalized sum of
+$\frac{R}{D}$ over those cycles. The input to the first check specifies
+$\gamma_C$ and $\epsilon_C$. Its output verifies
+$\frac{m}{D^2}-\gamma_Cq_C\leq\frac{5}{4}-\frac{\gamma_C}{8}+\epsilon_C$.
+The second check verifies
+$\frac{m}{D^2}+\gamma_RL_R\leq\frac{5}{4}+\epsilon_R$.
+The three input files and the command for checking them appear in
 \textbf{Appendix~\ref{app:reproduction}}.
 
-The verifiers apply \textbf{Lemma~\ref{prop:certificate-principle}}
-with objective $\frac{m}{D^2}-\gamma_C q_C$ or
-$\frac{m}{D^2}+\gamma_R L_R$. They compute the residuals from
-the degree and moment coefficients and check that all rank-one
-weights are nonnegative. Since $q\in[0,1]^N$, they add
+For these checks the verifier applies \textbf{Lemma~\ref{prop:certificate-principle}}
+with the objective $\frac{m}{D^2}-\gamma_C q_C$ or
+$\frac{m}{D^2}+\gamma_R L_R$. The program computes the residuals from
+the degree and moment coefficients and checks that all rank-one
+weights are nonnegative. Since $q\in[0,1]^N$, it adds
 $\sum_{j:r_j<0}|r_j|$ to the constant from the certificate before
 comparing the corrected bound with
 $\frac{5}{4}-\frac{\gamma_C}{8}+\epsilon_C$ and
 $\frac{5}{4}+\epsilon_R$, respectively.
-
-Suppose that $\mu\leq\mu_*$, $\gamma_C\geq g_C>0$ and
-$\gamma_R\geq g_R>0$. Put
-$q_*=\frac{1}{8}-\frac{\mu_*+\epsilon_C D^2}{g_C D^2}$.
-The first inequality in \eqref{eq:odd-moment-bounds} gives
-$q_C\geq q_*$ when $q_C<\frac{1}{8}$, and the bound holds directly
-when $q_C\geq\frac{1}{8}$ because $q_*\leq\frac{1}{8}$. If $q_*>0$,
-using the second inequality and $L_R=\frac{q_C}{D}\mathbb E[R]$
-gives a cycle with $R\leq\mathbb E[R]$ and hence
-\begin{equation}\label{eq:odd-choose-anchor}
- R\leq\frac{\mu_*+\epsilon_R D^2}{g_R Dq_*}.
-\end{equation}
-Verified upper bounds on either error can be used in this estimate.
-
-\subsubsection{The Five Parts and Their Remaining Degrees}
-
-For every $x\in U_i$ and $y\in U_{i+1}$ we have $xy\in E(G)$. The
-marked edges $xc_{i-1}$ and $yc_{i+2}$ are disjoint. The
-definitions of the parts exclude $xc_{i+2}$ and $yc_{i-1}$, and
-$c_{i-1}c_{i+2}$ is excluded because the cycle is induced. Since
-the marked edges form a clique in $L(G)^2$, we must have
-$xy\in E(G)$. Thus a vertex of $U_i$ has at most $s_i$ neighbors
-outside $U_{i-1}\cup U_{i+1}$.
-
-The sum $A=\sum_i a_i s_i$ bounds the number of incidences at vertices
-of $B$ after excluding the edges between $U_i$ and $U_{i+1}$ for all
-$i$. Each remaining edge with both ends in $B$ contributes two
-incidences. Put $e_0=\sum_i a_i a_{i+1}$, the number of edges between
-parts $U_i$ and $U_{i+1}$.
-Solving \eqref{eq:odd-core-defs} gives
-\begin{equation}\label{eq:odd-core-sums}
- a_i=t-\frac{R}{2}+s_{i-2}+s_{i+2},\qquad
- |B|=\frac{5D-R}{2}.
-\end{equation}
-Summing the five equations for $s_i$ gives the formula for $|B|$.
-For $a_i$, the two disjoint pairs of indices
-$\{i-2,i+1\}$ and $\{i-1,i+2\}$ are the neighbor pairs of
-$i+2$ and $i-2$, respectively. Subtracting their sizes from $|B|$
-gives $a_i=|B|-2D+s_{i-2}+s_{i+2}$.
-
-By substituting \eqref{eq:odd-core-sums} into $\sum_i a_i s_i$
-and using $2e_0=\sum_i a_i(D-s_i)$, we obtain
-\begin{equation}\label{eq:odd-core-capacity}
- A=tR-\frac{R^2}{2}+2\sum_i s_i s_{i+2},
- \qquad
- e_0=5t^2-\frac{Rt+A}{2}.
-\end{equation}
-When $D$ is odd, $R=5D-2|B|$ is odd as well. To bound $\sum_i s_i s_{i+2}$,
-consider the cycle on the indices with edges $i,i+2$. If two
-nonadjacent vertices have positive weights, move their combined
-weight onto the vertex with the higher sum of neighboring weights.
-With the other weights fixed, the sum of products does not decrease.
-Repeating leaves positive weights on a clique of size at most two.
-The sum of products is then at most $\frac{R^2}{4}$. When $D$ is odd, integrality reduces this bound to $\frac{R^2-1}{4}$, so
-\eqref{eq:odd-core-capacity} gives $A\leq tR-\frac{1}{2}$.
-
-\begin{lemma}\label{lem:odd-unit-slack}
-If an induced five-cycle with five marked edges has $R=1$, then $D$ is odd and $m\leq f(D)$.
-\end{lemma}
-
-\begin{proof}
-Let $i$ be the unique index with $s_i=1$. Every vertex of the other
-four parts has degree $D$ from the consecutive pairs alone. Thus a
-marked edge outside the consecutive pairs has both ends in
-$U_i\cup(V(G)\setminus B)$. The marked edge $c_{i+2}c_{i+3}$ has both
-ends in parts whose consecutive neighbors are outside $U_i$. Both
-vertices already have degree $D$ from those pairs, so neither is
-an endpoint of, or adjacent to an endpoint of, the proposed marked
-edge. This contradicts the clique property. Hence $m\leq e_0$.
-For $R=1$, \eqref{eq:odd-core-capacity} gives
-$A=t-\frac{1}{2}$ and $e_0=5t^2-t+\frac{1}{4}=f(D)$.
-\end{proof}
-

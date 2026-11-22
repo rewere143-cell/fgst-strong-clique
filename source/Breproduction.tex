@@ -1,9 +1,10 @@
 \subsection{Reproducing the Computation}\label{app:reproduction}
 
-Download the verification programs and all files named
-\path{fgst-verification-data-*.zip} from the
-\href{https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0}{version 1.0.0 release}
-that accompanies the paper. Extract the source archive, open its root
+Download the repository archive labeled \emph{Source code (zip)}
+on the GitHub release page cited in the paper. The three files named \path{fgst-verification-data-*.zip}
+are archived in the
+\href{https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0}{version 1.0.0 data release}.
+Extract the source archive, open its root
 directory, and run \texttt{python restore\_data.py} followed by the
 path to the directory containing the downloaded ZIP files. The
 programs and their inputs are then in \path{reproducibility/}.
@@ -46,6 +47,56 @@ Direct map counts on six finite graphs\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+We verify the index tables before using them to compute
+\eqref{eq:integer-residual}. The index programs enumerate all labeled
+patterns on three through six positions with pair $01$ marked and
+test each pattern for connectivity and admissibility. For a
+representative of each stored class, the programs apply all
+permutations of the positions, retaining the relabelings with pair
+$01$ marked. The programs compare the resulting orbit with the
+patterns assigned to the class. The lower-order checker also verifies
+that every degree row specifies a connected admissible base pattern
+and a position of that pattern. For each listed type and flag order,
+the checker verifies that the flag list contains one representative
+from every orbit under permutations fixing the type positions.
+
+The program \path{check_reverse.c} starts with the stored
+coefficients and subtracts the contributions to them from
+\eqref{eq:degree-extension} and \eqref{eq:moment-expansion}. For a
+degree row $(F,u)$ with $F$ of order greater than two, it first
+adds $1$ to the coefficient of the orbit of $F$, accounting for
+$-q_F$ on the left side of the equation. It then enumerates the
+connected admissible patterns in the verified tables. A pattern
+extending $F$ at $u$ as in \eqref{eq:degree-extension} subtracts
+$1$ from the coefficient of its orbit in that row. For a moment
+entry, a pattern on three through six positions subtracts $1$
+from the coefficient of its orbit if the restrictions to the two
+position sets in the proof of \textbf{Lemma~\ref{lem:moment}} are
+the prescribed flags. There are $2{,}116{,}783$ such moment
+contributions. The program requires every updated key to be in
+the table and all remainders to be zero. This checks the
+$433{,}899$ stored degree coefficients, the $1{,}895{,}405$ stored
+moment coefficients and the zeros at all omitted keys.
+
+The program \path{check_certificate.py} checks the denominators,
+the vector lengths and the nonnegativity of the weights. It computes
+$B_\ell$ using \eqref{eq:integral-Q}. To reconstruct $o$, the program
+counts the labeled patterns of order four with pair $23$ marked and
+adds $\frac{1}{2}$ to the corresponding coordinate for each such
+pattern, as in \eqref{eq:objective-vector}. It uses integer arithmetic
+by scaling these contributions by $\Lambda$, which is even. The
+program also accounts for the constant contribution from $E_\star$.
+In each block whose type has order two, it includes the first
+diagonal entry of $B_\ell$ in \eqref{eq:integer-constant}, since
+$(K_\ell)_{11}=1$ and all other entries of $K_\ell$ are zero.
+For larger types, $K_\ell=0$.
+
+With the verified coefficients, the program evaluates every entry of
+$\rho$ and the constant in \eqref{eq:integer-constant}. Of the
+$23{,}789$ entries of $\rho$, $23{,}590$ are positive and $199$ are
+zero. The largest is $899{,}382{,}275{,}568$. The constant equals
+$3{,}000{,}000{,}000$.
 
 The runner verifies both certificates in \path{data/} separately.
 It also checks that the integer verifier rejects two altered versions
@@ -97,8 +148,11 @@ The runner also executes \path{verify_odd_simple.py}. Its small-degree
 calculation calls \path{check_anchored_odd_small.py} with the rational
 parameters in \textbf{Appendix~\ref{app:odd-small}}. The four cases
 used for \textbf{Lemma~\ref{lem:simple-small-support}} can be replayed
-independently. With the fixed archive extracted, execute the following
-Python statements from the directory containing the verifiers.
+independently.
+
+\noindent\begin{minipage}{\linewidth}
+With the fixed archive extracted, execute the following Python statements
+from the directory containing the verifiers.
 \begin{verbatim}
 from fractions import Fraction as F
 from check_anchored_odd_small import one_degree
@@ -108,6 +162,7 @@ for D in (3, 5, 7, 9):
                         step=1, relax=True)
     assert not failed, (D, failed)
 \end{verbatim}
+\end{minipage}\par
 Here \verb|step=1| checks the upper bound for a counterexample with
 $f(D)+1$ edges. The full runner repeats the certificate and finite
 checks from the original odd-degree archive. It records
@@ -156,15 +211,41 @@ python -X utf8 -B check_induced_five_cycle.py
 
 The bound with coefficient $\frac{2973}{10000}$ uses induction on the
 number of marked edges in a loopless multigraph whose marked graph is
-bipartite. The companion proof on witness deficits and neighborhood
-differences gives the inequalities defining the interval check. In the
+bipartite. The companion
+\href{https://github.com/rewere143-cell/fgst-strong-clique/blob/v1.0.0/reproducibility/multigraph/\%E4\%B8\%80\%E8\%88\%AC\%E6\%97\%A0\%E7\%8E\%AF\%E5\%A4\%9A\%E9\%87\%8D\%E5\%9B\%BE\%E7\%9A\%84\%E6\%8E\%A8\%E5\%B9\%BF/\%E4\%BA\%8C\%E9\%83\%A8\%E6\%A0\%87\%E8\%AE\%B0\%E8\%A7\%81\%E8\%AF\%81\%E4\%BA\%8F\%E6\%8D\%9F\%E4\%B8\%8E\%E9\%82\%BB\%E5\%9F\%9F\%E5\%B7\%AE.md}{proof on neighborhood differences}
+derives the inequalities for the interval check. Equations~(1)--(6)
+of that proof give the count of edges joining endpoints of disjoint
+marked edges and the two estimates for the number of adjacent pairs
+in the root's part. The penultimate section derives the one-sided
+weighted inequalities used by the option \verb|--tight|. The last
+section gives the commands for the coefficient $\frac{2973}{10000}$.
+In the
 multigraph proof directory, \path{check_multigraph_bipartite_coupled.py}
 checks the initial coefficient $\frac{2989}{10000}$.
 \path{check_multigraph_recursive_ore.py} then verifies the coefficient
 $\frac{1489}{5000}$ and writes a table of conditional bounds.
 \path{refine_recursive_ore_child_ratio.py} refines this table in four
-rounds. With the refined table, \path{check_bipartite_neighborhood_slack.py}
-verifies the coefficient $\frac{2973}{10000}$ using the four-part subdivision
-and the tightened inequalities in the companion proof. All endpoints
-and comparisons are rational. The final check completes after $73{,}919$
-subdivisions with no unresolved boxes.
+rounds, with each round using the bounds from the preceding round.
+For the final run, \path{check_bipartite_neighborhood_slack.py} takes
+the refined table through \verb|--conditional-table| and uses
+\verb|--prior-beta 1489/5000|, \verb|--beta 2973/10000|,
+\verb|--parts 4| and \verb|--tight|. All interval comparisons use
+rational endpoints. The final check completes after $73{,}919$
+subdivisions with no unresolved boxes. The output is in
+\path{verification/ore_final.log}.
+
+The coefficient $\frac{273323}{10^6}$ for the base copies comes
+from a separate certificate for a simple host with bipartite marked
+edge set. In the simple-graph snapshot indexed by
+\path{reproducibility/multigraph/REPLAY.md}, open
+\path{source_snapshot/ore_simple/}. The file
+\path{ore_certificate_proof.md} gives the normalization, the
+marked-edge degree inequalities and the exact dual identity.
+From that directory run \texttt{python -B verify\_ore\_certificate.py}
+with two arguments, the input \path{ore_plain_repaired_certificate.json}
+and a new output path, in that order.
+The certified system has $12{,}772$ coordinates, $3{,}120$ inequalities
+and $47$ moment matrices. The reference report
+\path{verification/simple_ore.json} records the checks on the
+nonnegative multipliers and positive semidefinite factors, and gives
+the corrected rational bound.

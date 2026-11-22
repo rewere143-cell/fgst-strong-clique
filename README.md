@@ -2,17 +2,17 @@
 
 Zhijun Lu, Chengshuo Qiao, Qirui Ying and Huimin Song.
 
-[Paper](fgst_conjecture.pdf) · [Supplementary Proofs](supplementary.pdf) · [Verification data, version 1.0.0](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0)
+[Paper](fgst_conjecture.pdf) · [Supplementary Proofs](supplementary.pdf) · [Manuscript release](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.1.0) · [Verification data](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0)
 
-The supplementary PDF gives the combinatorial reductions and certificate checks used in the paper. The [proof index](PROOF_NOTES.md) identifies the supporting calculations, and the [verification record](VERIFICATION.md) gives their reference results.
+The paper derives the bounds for induced five-cycles and the restrictions used at small odd degrees. The supplementary PDF illustrates the individual configurations, gives the case analyses and identifies the inputs for the certificate checks. The [figure scripts](reproducibility/figure_sources/) reconstruct the indicated groups of drawings from the archived inputs. The [proof index](PROOF_NOTES.md) identifies the supporting calculations, and the [verification record](VERIFICATION.md) gives their reference results.
 
 ## Compile the paper and supplement
 
-The [paper](source/main.tex) and [supplement](source/supplementary.tex) have separate LaTeX entry points. In the `source` directory, compile `main.tex` with pdfLaTeX, run `bibtex main`, and run pdfLaTeX twice more. Compile `supplementary.tex` three times with pdfLaTeX. Name the resulting PDFs `fgst_conjecture.pdf` and `supplementary.pdf` and keep them together for the links from the supplement to the main paper.
+The [paper](source/main.tex) and [supplement](source/supplementary.tex) have separate LaTeX entry points. In the `source` directory, compile `main.tex` with pdfLaTeX, run `bibtex main`, and run pdfLaTeX twice more. Compile `supplementary.tex` three times with pdfLaTeX. If an edit changes numbering, run `python refresh_crossrefs.py` after compiling both documents, then compile both again. Name the PDFs `fgst_conjecture.pdf` and `supplementary.pdf` and keep them together for links in both directions.
 
 ## Restore the verification data
 
-Download the three files named `fgst-verification-data-01.zip`, `fgst-verification-data-02.zip` and `fgst-verification-data-03.zip` from the release linked above. From the root of a checkout of version 1.0.0, run the following command with Python 3.11 or later. Replace `DOWNLOADS` with the directory containing the three files.
+Download the three files named `fgst-verification-data-01.zip`, `fgst-verification-data-02.zip` and `fgst-verification-data-03.zip` from the [v1.0.0 data release](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0). From the repository root, run the following command with Python 3.11 or later. Replace `DOWNLOADS` with the directory containing the three files.
 
 ```console
 python -B restore_data.py DOWNLOADS

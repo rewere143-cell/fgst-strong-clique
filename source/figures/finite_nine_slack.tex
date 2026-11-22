@@ -1,0 +1,79 @@
+\begin{figure}[htbp]
+\centering
+\begingroup
+\newcommand{\drawnineslack}[2]{%
+  \begin{tikzpicture}[baseline=(current bounding box.center)]
+    \foreach \i in {0,...,4}
+      \coordinate (c\i) at ({90-72*\i}:0.53cm);
+    \draw[black!75,line width=.55pt] (c0)--(c1)--(c2)--(c3)--(c4)--cycle;
+    \foreach \digit [count=\i from 0] in {#1}
+      \node[fill=white,inner sep=.55pt,font=\scriptsize] at (c\i) {$\digit$};
+    \ifnum#2=1\relax
+      \node[font=\scriptsize,inner sep=0pt] at (0,0) {$\times$};
+    \fi
+  \end{tikzpicture}}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}*{8}{c}@{}}
+\drawnineslack{0,1,0,1,7}{1} &
+\drawnineslack{0,1,0,2,6}{1} &
+\drawnineslack{0,1,0,3,5}{1} &
+\drawnineslack{0,1,0,4,4}{1} &
+\drawnineslack{0,1,1,0,7}{0} &
+\drawnineslack{0,1,1,1,6}{0} &
+\drawnineslack{0,1,1,2,5}{0} &
+\drawnineslack{0,1,1,3,4}{0} \\[3pt]
+\drawnineslack{0,1,1,4,3}{1} &
+\drawnineslack{0,1,1,5,2}{1} &
+\drawnineslack{0,1,1,6,1}{1} &
+\drawnineslack{0,1,2,0,6}{0} &
+\drawnineslack{0,1,2,1,5}{0} &
+\drawnineslack{0,1,2,2,4}{0} &
+\drawnineslack{0,1,2,3,3}{0} &
+\drawnineslack{0,1,2,4,2}{1} \\[3pt]
+\drawnineslack{0,1,2,5,1}{1} &
+\drawnineslack{0,1,3,0,5}{0} &
+\drawnineslack{0,1,3,1,4}{0} &
+\drawnineslack{0,1,3,2,3}{0} &
+\drawnineslack{0,1,3,3,2}{0} &
+\drawnineslack{0,1,3,4,1}{1} &
+\drawnineslack{0,1,4,0,4}{0} &
+\drawnineslack{0,1,4,1,3}{0} \\[3pt]
+\drawnineslack{0,1,4,2,2}{0} &
+\drawnineslack{0,1,5,0,3}{0} &
+\drawnineslack{0,1,5,1,2}{0} &
+\drawnineslack{0,1,6,0,2}{0} &
+\drawnineslack{0,2,0,2,5}{0} &
+\drawnineslack{0,2,0,3,4}{0} &
+\drawnineslack{0,2,1,1,5}{0} &
+\drawnineslack{0,2,1,2,4}{0} \\[3pt]
+\drawnineslack{0,2,1,3,3}{0} &
+\drawnineslack{0,2,1,4,2}{0} &
+\drawnineslack{0,2,2,0,5}{0} &
+\drawnineslack{0,2,2,1,4}{0} &
+\drawnineslack{0,2,2,2,3}{0} &
+\drawnineslack{0,2,2,3,2}{0} &
+\drawnineslack{0,2,3,0,4}{0} &
+\drawnineslack{0,2,3,1,3}{0} \\[3pt]
+\drawnineslack{0,2,4,0,3}{0} &
+\drawnineslack{0,3,0,3,3}{0} &
+\drawnineslack{0,3,1,1,4}{0} &
+\drawnineslack{0,3,1,2,3}{0} &
+\drawnineslack{1,1,1,1,5}{0} &
+\drawnineslack{1,1,1,2,4}{0} &
+\drawnineslack{1,1,1,3,3}{0} &
+\drawnineslack{1,1,2,1,4}{0} \\[3pt]
+\drawnineslack{1,1,2,2,3}{0} &
+\drawnineslack{1,1,2,3,2}{0} &
+\drawnineslack{1,1,3,1,3}{0} &
+\drawnineslack{1,2,1,2,3}{0} &
+\drawnineslack{1,2,2,1,3}{0} &
+\drawnineslack{1,2,2,2,2}{0}
+\end{tabular}
+\endgroup
+\caption{The 54 possible slack vectors for \(D=R=9\), up to rotation
+and reflection. Read \(s_0,\ldots,s_4\) clockwise from the top.
+The ten cycles marked \(\times\) are excluded by counting at
+adjacent anchors. Each of the other 44 is checked both with and
+without a marked triangle.}
+\label{fig:finite-nine-slack-nine}
+\end{figure}

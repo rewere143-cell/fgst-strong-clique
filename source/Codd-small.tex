@@ -1,35 +1,17 @@
 \subsection{Finite Verification in the Simple Support}\label{app:odd-small}
 
-For $D\in\{3,5,7,9\}$, \textbf{Lemma~\ref{lem:simple-small-support}}
-of the main paper reduces the case $m=f(D)+1$ to a finite search.
-For the cycle and slack inequalities we take
-$g_C=\frac{99999}{100000}$ and $g_R=\frac{56425}{100000}$, with error
-bounds $2\cdot10^{-9}$ and $10^{-9}$, respectively. For $D=3,5,7,9$,
-these give upper bounds $1,5,7,7$, respectively, on the total slack
-$R$. For each odd $R$ in the corresponding range, consider
-the nonnegative integer tuples $(s_0,\ldots,s_4)$ with sum $R$, up
-to rotations and reflections of the cycle. Discard a tuple if any
-of the five part sizes $a_i=\frac{D-R}{2}+s_{i-2}+s_{i+2}$ is less
-than one. Across the four degrees there are $1,5,16,38$ different
-tuples at $R=1,3,5,7$, respectively. The proof for $R=1$ is given
-by \textbf{Lemma~\ref{lem:odd-unit-slack}} of the main paper.
-In \textbf{Figures~\ref{fig:finite-simple-slack-low}
-and~\ref{fig:finite-simple-slack-seven}}, each tuple is drawn on its
-five-cycle, under the degrees that admit it.
-
-\input{figures/finite_simple_slack_low}
-\input{figures/finite_simple_slack_seven}
-
-For an exterior vertex $x$, write $S(x)=\{i:xc_i\in E(G)\}$, where
-$c_0,\ldots,c_4$ are the cycle vertices in cyclic order.
-\textbf{Figure~\ref{fig:finite-simple-signatures}} gives the eight
-possibilities for the set $S(x)$ of a single vertex, up to rotations
-and reflections of the cycle. When the slack vector is fixed, the
-program retains the actual indices of its neighbors, since the
-degree available at $c_i$ depends on $s_i$. When there are several
-exterior vertices, their signatures all use the same cyclic ordering.
-
-\input{figures/finite_simple_signatures}
+In the verification of \textbf{Lemma~\ref{lem:simple-small-support}},
+the input for degree $D\in\{3,5,7,9\}$ is $m=f(D)+1$.
+With the rational parameters of the lemma, the code evaluates
+\eqref{eq:odd-choose-anchor} and tests each odd $R$ up to the resulting
+bound. It lists the nonnegative integer tuples with sum $R$, keeps the
+lexicographically least among the rotations and reflections of each tuple,
+and requires $\frac{D-R}{2}+s_{i-2}+s_{i+2}\geq1$ at each of the
+five positions $i$. These conditions give the vectors in
+\textbf{Figures~\ref{fig:finite-simple-slack-low}
+and~\ref{fig:finite-simple-slack-seven}}. With a vector fixed, the
+program keeps the actual indices of the vertices in each signature
+$S(x)$ to check the five incidence bounds separately.
 
 We use the notation of the proof of \textbf{Lemma~\ref{lem:simple-small-support}}
 for the original parts $U_i$ and the enlarged parts $U'_i$. In particular,

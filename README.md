@@ -2,13 +2,13 @@
 
 Zhijun Lu, Chengshuo Qiao, Qirui Ying and Huimin Song.
 
-[Paper](fgst_conjecture.pdf) · [Supplementary Proofs](supplementary.pdf) · [Manuscript release](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.1.0) · [Verification data](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0)
+[Paper with appendix](fgst_conjecture.pdf) · [Manuscript release](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.2.0) · [Verification data](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0)
 
-The paper derives the bounds for induced five-cycles and the restrictions used at small odd degrees. The supplementary PDF illustrates the individual configurations, gives the case analyses and identifies the inputs for the certificate checks. The [figure scripts](reproducibility/figure_sources/) reconstruct the indicated groups of drawings from the archived inputs. The [proof index](PROOF_NOTES.md) identifies the supporting calculations, and the [verification record](VERIFICATION.md) gives their reference results.
+Section 6 states the restrictions on a counterexample for odd maximum degree and illustrates the configurations considered in each case. The appendix gives the numerical comparisons, certificate checks and replay commands. The [figure scripts](reproducibility/figure_sources/) reconstruct the indicated groups of drawings from the archived inputs. The [proof index](PROOF_NOTES.md) identifies the supporting calculations, and the [verification record](VERIFICATION.md) gives their reference results.
 
-## Compile the paper and supplement
+## Compile the paper
 
-The [paper](source/main.tex) and [supplement](source/supplementary.tex) have separate LaTeX entry points. In the `source` directory, compile `main.tex` with pdfLaTeX, run `bibtex main`, and run pdfLaTeX twice more. Compile `supplementary.tex` three times with pdfLaTeX. If an edit changes numbering, run `python refresh_crossrefs.py` after compiling both documents, then compile both again. Name the PDFs `fgst_conjecture.pdf` and `supplementary.pdf` and keep them together for links in both directions.
+The [main source](source/main.tex) includes both the proof and its appendix. From the source directory, compile main.tex with pdfLaTeX, run BibTeX on main, then run pdfLaTeX twice more. The expanded main_without_appendix.tex in the same directory is a separate editing copy with all the figures from the proof.
 
 ## Restore the verification data
 

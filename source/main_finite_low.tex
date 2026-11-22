@@ -17,8 +17,10 @@ Indeed, every vertex in $A$ has degree at most five, and
 the equality follows from \eqref{eq:multi-root-pair-budget}.
 Up to permuting the neighbors of each root and interchanging the
 roots, this inequality leaves 21 possibilities for the marked and
-unmarked edges on $A\cup\{u,v\}$, listed in
-\textbf{Figure~\ref{fig:finite-five-spokes}} of the supplementary material.
+unmarked edges on $A\cup\{u,v\}$. Each unmarked spoke or marked edge
+within $A$ uses one of the two available units in the inequality,
+and each unmarked edge within $A$ uses both.
+\textbf{Figure~\ref{fig:finite-five-spokes}} shows all 21 configurations.
 
 For each such choice write $A=\{a_1,\ldots,a_6\}$ and
 $c_i=4-d_{G[A]}(a_i)$. For $x\in W$, let $z_i$ be the
@@ -36,8 +38,13 @@ coordinatewise. Each step strictly decreases the sum of
 the capacities, so the recurrence terminates. The recurrence
 only uses necessary conditions on the edges from $W$ to $A$.
 For each of the 21 choices, the number of fixed marked edges plus
-$V(c)$ is at most 27 by the computation in~\cite[Section~F.1]{FGSTSupplement}.
-This is less than $f(5)+1=30$.
+$V(c)$ gives the upper bound printed below the corresponding
+configuration. The largest is $27< f(5)+1=30$.
+\textbf{Appendix~\ref{app:multi-low-degree}} identifies the program
+that evaluates the recurrence.
+
+\input{figures/finite_five_spokes}
+\FloatBarrier
 
 At $D=7$, we have $m=59$. Equation
 \eqref{eq:multi-root-pair-budget} excludes $k\ge4$. If
@@ -103,15 +110,36 @@ Applying the recurrence based on \eqref{eq:finite-bipartite-root-count}
 gives $m_\times\le48$ for Ore-degree at most 13 and
 $m_\times\le41$ for Ore-degree at most 12.
 
-By \eqref{eq:multi-seven-counts} and $m_\times\le48$,
-we have $p\le7$ for $q=10$ and $p\le3$ for $q=9$.
-Each root has at most five incidences available for spokes. Together
-with the bounds on $p$ and $q$, this leaves 51 configurations of
-the marked and unmarked spokes, up to relabeling the neighbors
-and interchanging the roots. These are listed in
-\textbf{Figures~\ref{fig:finite-seven-disjoint},
-\ref{fig:finite-seven-separate} and~\ref{fig:finite-seven-shared}}
-of the supplementary material. For each configuration, fix the
+From \eqref{eq:multi-seven-counts} we have $i_m\leq7q-57-p$ and hence
+$m_\times\geq114-T-7q+2p$. Since $T\leq10$ and $m_\times\leq48$, this
+gives $p\le7$ at $q=10$ and $p\le3$ at $q=9$. At $q=10$ both roots
+have five distinct neighbors outside $\{u,v\}$, and their two neighbor
+sets are disjoint. All ten spokes are single. The numbers of marked
+spokes at the roots determine the configuration up to interchanging
+the roots and permuting their neighbors.
+\textbf{Figure~\ref{fig:finite-seven-disjoint}} shows the 17 possibilities.
+
+\input{figures/finite_seven_disjoint}
+
+At $q=9$, first suppose the two neighbor sets outside $\{u,v\}$ are
+disjoint. There are either nine single spokes, or one marked double
+spoke and eight single spokes. For each of these two cases the
+bound $p\leq3$ leaves ten configurations, shown in
+\textbf{Figure~\ref{fig:finite-seven-separate}}.
+
+\input{figures/finite_seven_nine_separate}
+
+If the roots share a neighbor outside $\{u,v\}$, the nine neighbors
+require at least ten spokes. Thus all ten spokes are single and each
+root has four neighbors that are nonadjacent to the other root.
+The choices of marked spokes to those vertices and the
+two spokes to the common neighbor give the fourteen configurations in
+\textbf{Figure~\ref{fig:finite-seven-shared}}.
+
+\input{figures/finite_seven_shared}
+\FloatBarrier
+
+For each of the $17+10+10+14=51$ configurations, fix the
 edges incident with the roots and add isolated vertices so that $|W|=16$.
 Every counterexample therefore gives an assignment on one of these
 fixed vertex sets. The variables record the adjacency of each pair
@@ -121,6 +149,7 @@ in the host with the roots deleted, since a sum of at most 12 on
 every such edge would give $m_\times\leq41$. Also, the endpoints
 of every double marked pair have at least nine distinct neighbors
 other than one another by \eqref{eq:multi-root-pair-budget}.
-The Boolean formulas tested in~\cite[Section~F.1]{FGSTSupplement}
-impose these conditions, the degree bounds and the strong clique
-condition. Every formula is unsatisfiable, which excludes $D=7$.
+The Boolean formula for each configuration imposes these conditions,
+the degree bounds and the strong clique condition.
+\textbf{Appendix~\ref{app:multi-low-degree}} gives the encoding and
+the verification of the 51 refutations. This excludes $D=7$.

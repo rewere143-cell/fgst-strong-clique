@@ -49,23 +49,12 @@ indices, the spanning tree argument for \eqref{eq:multi-small-cover}
 gives $|X|\le L'+1$. Otherwise, if there is an adjacent occupied
 pair, its two parts have $x,y$ vertices of $X$ and the remaining
 occupied part is isolated. We have $x,y\le L+k$, $xy\le L'$.
-If no two occupied parts are adjacent, $|X|\le13$. These observations
-give the following upper bounds, with $a_i'=|U_i'|$:
-\[
-\begin{array}{rrrrrrr}
-R'&k&L\ {\rm at\ most}&L'\ {\rm at\ most}&
- \max_i a_i'\ {\rm at\ most}&x+y\ {\rm at\ most}& |X|\ {\rm at\ most}\\
-3&3&0&4&8&4&13\\
-5&2&2&6&9&5&14\\
-7&1&1&3&10&3&13\\
-5&2&0&3&8&3&13\\
-7&1&2&5&10&4&14
-\end{array}
-\]
-In the fourth row at least three $s_i'$ are positive, because a
-vertex of signature size three remains outside, so
-$a_i'=\frac{13-R'}{2}+s_{i-2}'+s_{i+2}'\le8$. In that row an independent
-set of size 13 consists of two entire nonadjacent parts. This also
+If no two occupied parts are adjacent, then $|X|\le13$.
+The five bounds on $|X|$ used below follow by substituting
+the values of $R',k,L,L'$ in these inequalities. They are listed in
+\textbf{Table~\ref{tab:thirteen-cover-check}} in Appendix~\ref{app:multi-structure}.
+In the fourth row an independent set of size 13 consists of two entire
+nonadjacent parts. This also
 holds if $L'\le1$ and $\max_i a_i'\le10$, since an independent set
 using an adjacent pair then contains at most $10+1+1$ vertices.
 The same argument applies to $B$ with $L\le1$ and a vertex of
@@ -138,7 +127,7 @@ then $n\le1$, $F_{\rm out}\le13$, and $L_{\rm cut}\ge21$.
 If $a=1$, then $T=3$ and $n\le1$. For $n=1$, write $x,y$ for the
 vertices with one and two positions. We have $L=0$, $b_x=3$,
 $h_x\ge9$, $b_y=2$, $h_y\ge10$, and the other three vertices
-with two positions entered the core. The first row of the cover table
+with two positions entered the core. The first row of \textbf{Table~\ref{tab:thirteen-cover-check}}
 gives a cover of size at least 18, so $F_{\rm out}\le4$. If
 $F_{\rm out}=0$, then $L'\ge3$ and $L_{\rm cut}\ge5$ suffice.
 Otherwise both vertices have marked neighbors in $B'$. Their three
@@ -298,7 +287,7 @@ and enter the core. Thus $R'=5$, $L=0$, $L'\le3$. The two vertices
 with one position have blue degree three and combined marked degree at
 least 19. Both have old core marks, since otherwise either could have
 at most three outside marks, against marked degree at least nine.
-The fourth row of the cover table gives $\tau'\ge17$. A marked
+The fourth row of \textbf{Table~\ref{tab:thirteen-cover-check}} gives $\tau'\ge17$. A marked
 neighbor of $z$ with signature zero uses at least $e_z+4$ blue
 cut pairs. Together with the six supplied by the two vertices with
 one position, these suffice. Otherwise the only possible neighbors
@@ -336,8 +325,8 @@ Only $z$ can use 0, so $s_0'=1$ because $R'=K'$. This contradicts
 the center weight.
 
 Suppose $a=4$ and the single vertex with two positions enters the
-core. Then $R'=7$, $L\le2$, $L'\le5$, and the final row of the
-table gives $\tau'\ge15$. A marked neighbor of $z$ of signature
+core. Then $R'=7$, $L\le2$, $L'\le5$, and the final row of
+\textbf{Table~\ref{tab:thirteen-cover-check}} gives $\tau'\ge15$. A marked neighbor of $z$ of signature
 zero again supplies at least $e_z+2$ blue cut pairs. Otherwise
 $F_{\rm out}\le8$ by the star bound. Since $L'\ge1$ and
 $L_{\rm cut}\ge12$, only $F_{\rm out}=8$, $L'=1$, $L_{\rm cut}=12$

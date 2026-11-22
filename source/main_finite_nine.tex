@@ -25,8 +25,15 @@ count all spokes from the roots to $A$. Counting all $98$ marked
 edges gives $M_\times=98-k-h+p_0-i_m$. Since $h\leq18-2k$,
 the displayed bound gives $M_\times\geq178-9q+2p_0$.
 The root bound \eqref{eq:multi-root-pair-budget} gives $q\geq11$.
-The possible neighborhoods of the two roots are shown in
-\textbf{Figure~\ref{fig:nine-root-profiles}} of the supplement~\cite{FGSTSupplement}.
+Let $\ell,c,r$ count the vertices of $A$ adjacent only to the first
+root, to both roots, and only to the second root, respectively.
+Interchanging the roots if necessary, we may take $\ell\le r$.
+Then $\ell+c+r=q$ and $\ell+c,r+c\leq9-k$.
+\textbf{Figure~\ref{fig:nine-root-profiles}} gives all triples
+satisfying these inequalities. Each thin segment represents a required
+adjacency to a root. The edges among the vertices of $A$ are still
+unspecified.
+\input{figures/nine_root_templates}
 After deleting the roots the host degrees on the two sides of the
 marked bipartite graph are at most eight and nine. With Ore-degree
 at most 17, the recurrence \eqref{eq:finite-bipartite-root-count}
@@ -35,8 +42,8 @@ Thus only $p_0=0,1,2$ for $q=11$, or $0\leq p_0\leq7$ for $q=12$,
 can occur. The case analysis for these values counts the joining edges
 required between the two sets of marked spokes and the edges from $A$
 to $W$. It excludes $q=11$ and $q=12$
-in Sections~2 and~4--11, respectively, of the initial degree-nine
-reduction indexed in~\cite[Section~F.2]{FGSTSupplement}. Hence $q\geq13$.
+by the counts indexed in \textbf{Appendix~\ref{app:multi-nine}}.
+Hence $q\geq13$.
 Since $q\leq2(9-k)$, each repeated pair has multiplicity two.
 At each endpoint let $j_x$ count the number of marked copies beyond
 the first on each pair incident with $x$. Its number of distinct
@@ -48,9 +55,60 @@ one. Each component is therefore a single edge or a two-edge path.
 Equality holds in the bound on $q$ for each edge of a path component.
 Both endpoints of such a pair have host degree nine and have no
 common host neighbor. A double pair has either 13 or 14 neighbors
-outside its roots. Sections~14--17 of the same reduction exclude a
-marked triangle through the roots and, for both possible neighborhood
-sizes, exclude the case in which all their spokes are marked.
+outside its roots. The counts in \textbf{Appendix~\ref{app:multi-nine}}
+exclude a marked triangle through a repeated pair and exclude the
+case $q=13$ with all spokes marked.
+
+Suppose that $q=14$ and all spokes are marked. Each root then has
+seven distinct neighbors outside the root pair, and the two sets of
+neighbors, say $X$ and $Y$, are disjoint. Write $J$ for the bipartite
+graph of host adjacencies between $X$ and $Y$, and $B_0$ for its
+complement in $K_{7,7}$. Let $U$ be the number of unmarked edges
+between $A=X\cup Y$ and $W$. The 14 spokes and the two copies of the
+root pair leave $82$ marks, so $M_\times=82-i_m$. The vertices of
+$A$ have at most $14\cdot 8=112$ incidences available after the spokes.
+Hence $2(i_m+i_u)+M_\times+U\le112$, giving
+\[
+ M_\times\geq52+U,\qquad |E(J)|\le i_m+i_u\leq30-U .
+\]
+These two bounds restrict both the possible matrices of $J$ and the
+marked edges that can meet $W$.
+
+For $z\in W$, let $S$ consist of its marked neighbors in $A$.
+If $x\in S$ and $xy$ is an edge of $B_0$, then $z$ must be adjacent
+to $y$. Indeed, $zx$ and the marked spoke at $y$ need a joining
+edge. The root incident with that spoke is adjacent to neither $z$
+nor $x$, and $xy$ is absent in the host. Thus the joining edge must
+be $zy$, giving $S\cup N_{B_0}(S)\subseteq N_G(z)$.
+If $B_0$ is connected and $S\ne\varnothing$, its order 14 exceeds
+$d_G(z)$, so there is an unmarked edge from $z$ to $A$. Summing over
+$z$ shows that at least one vertex has a ratio of marked to unmarked
+edges into $A$ of at least $\frac{52+U}{U}$. The adjacency condition
+at that vertex and $|E(J)|\leq30-U$ give the 67 matrices in
+\textbf{Figures~\ref{fig:nine-qfourteen-connected}
+and~\ref{fig:nine-qfourteen-connected-last}}, up to permutations within
+each part and interchange of the parts. A shaded cell is an edge of
+$J$ and a white cell is a nonedge. The numbers below the matrix give
+the possible values of $U$. A superscript $[h]$ records $h$ tests
+at that value, and a value without a superscript occurs once.
+
+If $B_0$ is disconnected, let its components have $x_j$ vertices of
+$X$ and $y_j$ vertices of $Y$. Each cross pair whose endpoints belong
+to different components is an edge of $J$, so
+$C_0=49-\sum_jx_jy_j$ edges of $J$ are already forced.
+If each component has order at most nine,
+\textbf{Figure~\ref{fig:nine-qfourteen-split}} lists the 33 possible
+component profiles with $C_0+U\leq30$. Here a shaded cell joins two
+components and a white cell lies within one component, where its
+adjacency remains unspecified. Each profile lists its range of $U$.
+The superscript $[2]$ indicates that both orders of the parts occur in
+the count. A larger component contains between 10 and 13 vertices.
+In that case the same neighbor condition restricts the marked edges
+from $W$ to that component. \textbf{Appendix~\ref{app:multi-nine}}
+gives the checks for all three cases. None permits $M_\times\geq52+U$.
+Consequently every repeated pair has an unmarked spoke.
+\input{figures/nine_qfourteen_templates}
+\FloatBarrier
 
 For the stronger bound on $b$, let $p$ count the two-edge
 path components, let $a$ count the single-edge components,
@@ -82,12 +140,15 @@ $2E\leq19p+14a$ gives $p\leq8,7,5,2$, respectively, for
 $c=10,11,12,13$. For $c\leq9$, $b=c+p\leq18$. Thus $b\leq18$.
 If $b=18$, the only feasible component counts are
 $(a,p)=(4,7),(2,8),(0,9)$, as shown in
-\textbf{Figure~\ref{fig:nine-double-components}} of the supplement.
-In these cases, counting the
+\textbf{Figure~\ref{fig:nine-double-components}}. The figure shows
+only double pairs. Vertices in distinct components may still be
+adjacent in the host. In these cases, counting the
 possible witnesses at the centers gives at most $2,60,54$
 marks other than the double pairs, respectively. Each bound
-is less than the required $98-36=62$. The calculation for each of the three component counts is identified
-in~\cite[Section~F.2]{FGSTSupplement}. Therefore $b\leq17$.
+is less than the required $98-36=62$.
+\textbf{Appendix~\ref{app:multi-nine}} identifies the calculation
+for each component count. Therefore $b\leq17$.
+\input{figures/nine_double_components}
 
 Let $n=|V(G)|$. The degree sum $9n\ge2m=196$ gives $n\ge22$.
 If $n=22$, the total marked degree deficiency is two. Each
@@ -142,11 +203,15 @@ pair otherwise would require two units at each end. These
 cases give $b=0$, a contradiction.
 
 If $G[C]$ contains a triangle, all three edges are marked. The
-order-22 count in Section~18 of the initial degree-nine reduction
+order-22 count indexed in \textbf{Appendix~\ref{app:multi-nine}}
 shows that the triangle dominates the host, that no exterior vertex
 has three triangle neighbors, and that at most two have two
-triangle neighbors; see \textbf{Figure~\ref{fig:nine-triangle-neighbors}}
-of the supplement.
+triangle neighbors. Write $t$ for the number with two such neighbors.
+\textbf{Figure~\ref{fig:nine-triangle-neighbors}} shows the four
+possibilities, up to a permutation of the triangle vertices. At
+$t=2$, the two vertices can meet the same pair of triangle vertices
+or two different pairs.
+\input{figures/nine_triangle_neighbors}
 Group the vertices with exactly one triangle
 neighbor according to that neighbor. A marked edge between two
 of the groups must have a joining edge to every marked spoke in
@@ -156,9 +221,7 @@ If zero or one vertex has two triangle neighbors, the bounds for
 all three pairs of groups sum to at most 70 or 65, respectively,
 while at least 74 or 67 marks are needed. With two such vertices,
 each pair of groups needs 20 marks and has Ore-degree at most nine.
-Section~18 treats separately the cases in which these two vertices
-miss the same triangle vertex or different triangle vertices and
-excludes equality in both cases~\cite[Section~F.2]{FGSTSupplement}.
+The order-22 count excludes equality in both cases with $t=2$.
 
 For $n=23$, let $\beta$ count unmarked edges, let $Q$ be
 their set of endpoints and put $C=V(G)\setminus Q$.
@@ -176,8 +239,8 @@ vertices with no triangle neighbor show that the triangle dominates
 the host. No exterior vertex has three triangle neighbors. If two
 vertices each have two triangle neighbors, their sets of triangle
 neighbors coincide or differ. The two Boolean checks
-in~\cite[Section~F.2]{FGSTSupplement} exclude the last two diagrams
-in \textbf{Figure~\ref{fig:nine-triangle-neighbors}} of the supplement.
+in \textbf{Appendix~\ref{app:multi-nine}} exclude the last two diagrams
+in \textbf{Figure~\ref{fig:nine-triangle-neighbors}}.
 The count of unmarked edges leaving the triangle gives at least one
 and at most three such edges. Thus a triangle cannot lie in $G[C]$,
 as none of its vertices would be incident with an unmarked edge.
@@ -201,10 +264,25 @@ Each of the $h$ vertices forms a marked triangle with two cycle
 vertices and therefore sees all $z$ vertices, since that triangle
 dominates the host. In particular $z\leq6$. The order-23 reduction
 excludes the resulting pairs $(z,h)$ by applying the same degree
-constraints to these triangles~\cite[Section~F.2]{FGSTSupplement}.
-A shortest odd cycle
-of length at least seven would contain an induced $2K_2$.
-Hence $G[C]$ is bipartite with a single nontrivial component.
+constraints to these triangles, as detailed in the calculation
+indexed in \textbf{Appendix~\ref{app:multi-nine}}.
+
+If the host has no marked triangle, then $G[C]$ is triangle-free.
+Suppose that it contains an induced five-cycle. Every edge incident
+with one of the five cycle vertices is marked, by the definition of
+$C$. A vertex with three neighbors on the cycle therefore belongs to
+a marked triangle. A vertex with just one cycle neighbor has a marked
+spoke with no joining edge to the opposite cycle edge. A vertex with
+no cycle neighbor cannot be a marked endpoint, since its partner on
+a marked edge would need neighbors covering all five cycle edges,
+and such a cover has size at least three. Every vertex of the reduced
+host is a marked endpoint. Thus each of its 23 vertices, including
+the five cycle vertices, has exactly two cycle neighbors. The five
+cycle vertices would then have total degree at least $2\cdot23>45$.
+
+In either case $G[C]$ has no triangle or induced five-cycle, and
+a shortest odd cycle of length at least seven would contain an
+induced $2K_2$. Hence $G[C]$ is bipartite with a single nontrivial component.
 Two incomparable neighborhoods on one side would yield an
 induced $2K_2$, so this component is a chain graph. Its two
 sides have sizes $a\le c\le9$. Write $i=23-k-a-c$ for the
@@ -239,8 +317,7 @@ The formulas add weighted degree constraints and the
 requirement that each two disjoint marked edges have adjacent endpoints, as well as
 the constraints on marked triangles, repeated root
 neighborhoods, and deletion of two vertices recorded in
-the order-23 reduction. All resulting formulas are unsatisfiable
-by~\cite[Section~F.2]{FGSTSupplement}.
+the order-23 reduction.
 
 If the host has no marked triangle, let $x\in Q$ have a marked neighbor
 that is isolated in $G[C]$. Its neighbors in the chain cover every
@@ -249,17 +326,28 @@ with a vertex of $C$ is marked. An
 independent vertex cover of a connected bipartite graph
 is a part of its bipartition. These constraints and the
 degree bounds give the remaining finite list for the triangle-free
-case. Each of the 18 formulas uses the unmarked graph and chain
-dimensions of a template already considered for the marked-triangle
-case. The supplement lists both families in
-\textbf{Figures~\ref{fig:nine-chain-1}--\ref{fig:nine-chain-6}}.
-Every formula on this list is also unsatisfiable
-by~\cite[Section~F.2]{FGSTSupplement}. Thus $n\geq24$.
+case. Each of these 18 formulas has the same unmarked graph and
+chain dimensions as one of the 112 marked-triangle cases.
+
+\textbf{Figures~\ref{fig:nine-chain-1}--\ref{fig:nine-chain-6}}
+show the 112 configurations. The graph on the left of each panel
+gives every unmarked edge on $Q$. The $a$-by-$c$ matrix on the right
+specifies the chain on the other nonisolated vertices. A filled cell
+is a required marked edge. An open cell may be filled only if every
+cell above it in its column and to its left in its row is also filled.
+The label $(a,c,i)$ gives the part sizes and the number of isolated
+vertices of $G[C]$. A star identifies a configuration also tested
+under the hypothesis that the host has no marked triangle.
+The constraints above determine which additional edges may join
+$Q$ to $C$. All 112 formulas for the marked-triangle case and all
+18 for the triangle-free case are unsatisfiable, as verified in
+\textbf{Appendix~\ref{app:multi-nine}}. Thus $n\geq24$.
+\input{figures/nine_chain_templates}
 
 It remains to exclude $b=1$ and to bound the minimum slack.
 
 If $b=1$, the simple support has exactly 97 marked pairs.
-The simple-graph equality check in~\cite[Section~F.2]{FGSTSupplement}
+The simple-graph equality check in \textbf{Lemma~\ref{lem:supp-simple-equality}}
 leaves the extremal five-cycle blow-up or a remaining
 configuration that contains an induced cycle of five
 marked edges. In the blow-up, every marked pair meets a
@@ -275,26 +363,27 @@ certificate and the rooted cycle count give
  \qquad q_C\leq\frac{992}{5625},
 \]
 with $\gamma>\frac{485}{1000}$ and $0<\varepsilon<\frac{2}{10^6}$
-in the one-pair calculation~\cite[Section~F.2]{FGSTSupplement}.
+in the one-pair calculation indexed in \textbf{Appendix~\ref{app:multi-nine}}.
 If every such cycle has $R\ge9$, then $L_R\geq q_C$, so the
 right-hand side is at least
 $\gamma(\frac5{32}-\frac{248}{5625})-\varepsilon>
 \frac{17}{324}=\frac54-\frac{97}{81}$.
 The minimum slack is odd and therefore at most seven. The slack
 vectors with $R=1,3,5,7$ give 60 configurations up to
-rotations and reflections of the cycle. The supplement lists them in
-\textbf{Figures~\ref{fig:finite-simple-slack-low}
+rotations and reflections of the cycle. The same vectors occur in the
+simple-support calculation in \textbf{Subsection~\ref{subsec:exact-small-degree}}
+and are listed there in \textbf{Figures~\ref{fig:finite-simple-slack-low}
 and~\ref{fig:finite-simple-slack-seven}}. Counting the
 capacity available to the endpoints of each anchor edge
 excludes 33. The remaining configurations are excluded by the
-refutations in~\cite[Section~F.2]{FGSTSupplement}.
+27 refutations in \textbf{Appendix~\ref{app:multi-nine}}.
 
 When the host has a marked triangle, the simple-graph
 equality check leaves the slack vector $(1,1,2,1,2)$.
 The marked triangle restrictions bound the number of
 vertices by 25, so the possibilities are 24 and 25.
 The Boolean formula for this vector permits both orders. Its
-refutation~\cite[Section~F.2]{FGSTSupplement} excludes $b=1$.
+refutation in \textbf{Appendix~\ref{app:multi-nine}} excludes $b=1$.
 
 We now bound the slack.
 
@@ -309,9 +398,14 @@ For $R=7,9$ the finite checks enumerate the nonnegative
 integer vectors $(s_i)_{i=0}^4$ with all $a_i>0$, up to
 rotations and reflections of the cycle.
 \textbf{Figures~\ref{fig:finite-simple-slack-seven}
-and~\ref{fig:finite-nine-slack-nine}} of the supplement list the vectors for $R=7$ and
-$R=9$, respectively. For each vector left by the degree counts,
-we distinguish whether the marked edges contain a triangle.
+and~\ref{fig:finite-nine-slack-nine}} list the 38 vectors for $R=7$
+and the 54 vectors for $R=9$, respectively. At $R=7$ the degree
+bounds at the cycle edges exclude 19 vectors, and the bounds when
+all $s_i>0$ exclude three more. At $R=9$ the count at adjacent
+anchors excludes the ten vectors marked $\times$ in the figure.
+For each of the remaining 16 or 44 vectors, respectively, we
+distinguish whether the marked edges contain a triangle.
+\input{figures/finite_nine_slack}
 
 The signature of an exterior vertex is its set of
 neighbors among the five anchors. Any vertex with
@@ -342,7 +436,7 @@ contain an induced $2K_2$. Writing $Q$ for the endpoints of the
 unmarked edges, the degree count for the isolated vertices of this
 bipartite graph gives
 $|Q|\geq\min\{n-2D+1,\frac{D+5}{2}\}$ in the triangle-free
-reduction indexed in~\cite[Section~F.2]{FGSTSupplement}.
+reduction indexed in \textbf{Appendix~\ref{app:multi-nine}}.
 Since $n\geq24$ and $D=9$, at least seven vertices lie in $Q$.
 
 For an additional necessary condition, let $z_i$ count the
@@ -357,7 +451,7 @@ larger set $B$ while preserving an induced cycle of
 five marked edges.
 Every counterexample of minimum slack 7 or 9 would therefore
 supply a satisfying assignment for one of the instances verified
-in~\cite[Section~F.2]{FGSTSupplement}. The refutations exclude both
+in \textbf{Appendix~\ref{app:multi-nine}}. The refutations exclude both
 values. Thus $R\geq11$ on every induced five-cycle with all five
 edges marked, $2\leq b\leq17$, and $n\geq24$.
 
@@ -373,8 +467,8 @@ least two triangle neighbors. Together the endpoints must also see
 at least one endpoint of every marked edge joining vertices with
 exactly one triangle neighbor. Counting the degree used for these two
 requirements gives the following restrictions for $n\geq24$ in
-Section~3 of the initial degree-nine reduction indexed
-in~\cite[Section~F.2]{FGSTSupplement}. Each triangle vertex has host
+the degree-nine reduction indexed in
+\textbf{Appendix~\ref{app:multi-nine}}. Each triangle vertex has host
 degree nine and is incident only with single edges. No exterior
 vertex has three triangle neighbors, and at most one has two.
 If a vertex has two triangle neighbors, at least one of these edges

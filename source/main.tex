@@ -1,7 +1,11 @@
 \documentclass[preprint,11pt,numbers]{elsarticle-arxiv}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath,amsthm,mathtools}
-\usepackage{booktabs,enumitem,indentfirst,etoolbox,url}
+\usepackage{booktabs,enumitem,indentfirst,etoolbox,float,url}
+\makeatletter
+\IfFileExists{placeins.sty}{\usepackage{placeins}}{%
+  \newcommand{\FloatBarrier}{\par\ifx\@deferlist\@empty\else\clearpage\fi}}
+\makeatother
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \tikzset{
@@ -35,7 +39,6 @@
   {\par\medskip\ignorespaces}
   {}{\PackageError{manuscript}{Could not apply abstract indentation}{}}
 
-\input{main-supplement-labels}
 \begin{document}
 \bibliographystyle{alpha}
 \begin{frontmatter}
@@ -76,6 +79,7 @@ small degrees are handled separately, thereby completing the proof.
 
 \thispagestyle{plain}
 \tableofcontents
+\clearpage
 \input{introduction}
 \input{sketch}
 \input{earlier-work}
@@ -83,10 +87,12 @@ small degrees are handled separately, thereby completing the proof.
 \input{proof_uniform}
 \input{proof_exact}
 \input{declarations}
+\input{appendices}
 \begingroup
 \small
 \setlength{\bibsep}{3pt plus .3pt minus .3pt}
 \phantomsection
+\addcontentsline{toc}{section}{\refname}
 \bibliography{refs}
 \endgroup
 \end{document}

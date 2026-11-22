@@ -1,7 +1,8 @@
 \subsection{Reproducing the Computation}\label{app:reproduction}
 
 Download the repository archive labeled \emph{Source code (zip)}
-on the GitHub release page cited in the paper. The three files named \path{fgst-verification-data-*.zip}
+on the GitHub release page for the verification programs~\cite{FGSTCode}.
+The three files named \path{fgst-verification-data-*.zip}
 are archived in the
 \href{https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0}{version 1.0.0 data release}.
 Extract the source archive, open its root
@@ -174,9 +175,9 @@ checks from the original odd-degree archive. It records
 The multigraph verifiers and their inputs are in
 \path{reproducibility/multigraph/}.
 Its \path{REPLAY.md} indexes the supporting proofs and the fixed
-inputs. The source package also includes \path{PROOF_NOTES.md},
-which identifies the arguments cited in the appendices. From the
-companion directory, with Python assertions enabled, run
+inputs. The file \path{PROOF_NOTES.md} at the repository root
+indexes the supporting arguments. From \path{reproducibility/multigraph/},
+with Python assertions enabled, run
 \begin{verbatim}
 python -X utf8 -B verify.py hashes
 python -X utf8 -B verify.py flags
@@ -211,7 +212,7 @@ python -X utf8 -B check_induced_five_cycle.py
 
 The bound with coefficient $\frac{2973}{10000}$ uses induction on the
 number of marked edges in a loopless multigraph whose marked graph is
-bipartite. The companion
+bipartite. The
 \href{https://github.com/rewere143-cell/fgst-strong-clique/blob/v1.0.0/reproducibility/multigraph/\%E4\%B8\%80\%E8\%88\%AC\%E6\%97\%A0\%E7\%8E\%AF\%E5\%A4\%9A\%E9\%87\%8D\%E5\%9B\%BE\%E7\%9A\%84\%E6\%8E\%A8\%E5\%B9\%BF/\%E4\%BA\%8C\%E9\%83\%A8\%E6\%A0\%87\%E8\%AE\%B0\%E8\%A7\%81\%E8\%AF\%81\%E4\%BA\%8F\%E6\%8D\%9F\%E4\%B8\%8E\%E9\%82\%BB\%E5\%9F\%9F\%E5\%B7\%AE.md}{proof on neighborhood differences}
 derives the inequalities for the interval check. Equations~(1)--(6)
 of that proof give the count of edges joining endpoints of disjoint

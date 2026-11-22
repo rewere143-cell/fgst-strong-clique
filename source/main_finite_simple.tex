@@ -9,14 +9,13 @@ Suppose that $m=f(D)+1$ marked edges form a strong clique. Any larger clique con
 We can restrict the host to the endpoints of the marked edges, since
 a joining edge for two disjoint marked edges has both endpoints in
 the restriction. Write $t=\frac D2$, $r=\frac{D-1}{2}$ and
-$\mu=5t^2-m=t-\frac54$. We use $\mu_* = t-\frac54$ in the cycle estimate \eqref{eq:odd-choose-anchor}.
-The argument below bounds the number of marked edges once a suitable
-marked induced five-cycle is fixed. All part indices are taken modulo five.
-
-Among the induced five-cycles with all five edges marked, choose
-one minimizing $R$ in \eqref{eq:odd-core-defs}. The bounds from
-\eqref{eq:odd-choose-anchor}, evaluated below for each degree, ensure
-that at least one such cycle exists. Denote its vertices in cyclic
+$\mu=5t^2-m=t-\frac54$. In \eqref{eq:odd-choose-anchor}, take
+$\mu_*=\mu$, $g_C=\frac{99999}{100000}$ and $g_R=\frac{56425}{100000}$.
+With the respective error bounds $2\cdot10^{-9}$ and $10^{-9}$ from
+\eqref{eq:odd-moment-bounds}, we have $q_*>0$ for each of the four
+degrees. Thus there is an induced five-cycle with all five edges marked.
+Choose such a cycle minimizing $R$ in \eqref{eq:odd-core-defs}.
+Denote its vertices in cyclic
 order by $c_0,\ldots,c_4$ and call them the anchors. We call the
 associated sets $U_0,\ldots,U_4$ the old parts. Each $U_i$ consists of the vertices whose
 only neighbors on the cycle are $c_{i-1}$ and $c_{i+1}$ and whose two
@@ -38,13 +37,35 @@ and \eqref{eq:odd-core-capacity},
  A\leq tR-\frac{1}{2}.
 \]
 
+Since $R=5D-2|B|$ is odd, \eqref{eq:odd-choose-anchor} gives
+$R\leq1,5,7,7$ for $D=3,5,7,9$, respectively.
+For each allowed value of $R$, the five slacks form a nonnegative
+integer vector $(s_0,\ldots,s_4)$ with sum $R$. Each part contains
+its anchor, so we retain a vector only if \eqref{eq:odd-core-sums}
+gives $a_i\geq1$ for every $i$. Up to rotation and reflection,
+the four degrees together give $1,5,16,38$ vectors for
+$R=1,3,5,7$, respectively.
+\textbf{Figures~\ref{fig:finite-simple-slack-low}
+and~\ref{fig:finite-simple-slack-seven}} list the vectors and the degrees
+that admit each one. The case $R=1$ is excluded by
+\textbf{Lemma~\ref{lem:odd-unit-slack}}. For the remaining vectors we
+count the marked edges on old template pairs and bound the number
+of other marked edges.
+
+\input{figures/finite_simple_slack_low}
+\input{figures/finite_simple_slack_seven}
+
 Let $\nu$ count the unmarked old template edges and let $J$ count the
 marked edges with both endpoints outside $B$. For $x\notin B$, write
 $S(x)=\{i:xc_i\in E(G)\}$ for its set of neighbors on the cycle,
 represented by their indices. We call $S(x)$ the signature of $x$.
-All signatures are taken with respect to the same ordering of the cycle
-vertices. The possibilities for one vertex are shown in
-\textbf{Figure~\ref{fig:finite-simple-signatures}} of the supplementary material.
+For a single vertex there are eight possibilities up to rotation and
+reflection, as shown in \textbf{Figure~\ref{fig:finite-simple-signatures}}.
+Once $(s_0,\ldots,s_4)$ is fixed, a neighbor at $c_i$ uses one of the
+$s_i$ available incidences there. We therefore keep the actual index of
+each neighbor and use the same cyclic ordering for all exterior vertices.
+
+\input{figures/finite_simple_signatures}
 
 If $xy$ is a marked edge outside $B$, then $S(x)\cup S(y)$ covers
 the edges of the cycle. A vertex cover of a five-cycle has at least
@@ -303,22 +324,15 @@ verify $2X\leq (R'-2)D+3$, which gives $\mu\geq t-\frac{3}{4}>\mu_*$.
 For $R'=1$, the estimate above reduces the bound $m\leq f(D)$ to 
 $E\leq\nu+V$. An added vertex can use at most one additional anchor
 incidence, since there is only one available. The count for the possible
-choices of this incidence and its missing template pairs is given
-in~\cite[Section~D]{FGSTSupplement}.
+choices of this incidence and the missing template pairs at its endpoint
+is given in \textbf{Appendix~\ref{app:odd-small}}.
 
-Use \eqref{eq:odd-moment-bounds} with $g_C=\frac{99999}{100000}$,
-$g_R=\frac{56425}{100000}$, and error bounds $2\cdot10^{-9}$ and
-$10^{-9}$, respectively. Substituting $\mu_*=\frac{D}{2}-\frac54$
-in \eqref{eq:odd-choose-anchor} gives $R\leq1,5,7,7$ for
-$D=3,5,7,9$, respectively. The case $R=1$ follows from
-\textbf{Lemma~\ref{lem:odd-unit-slack}}. For each admissible odd $R\geq3$,
-it suffices to consider the nonnegative integer vectors $(s_0,\ldots,s_4)$
-with sum $R$ and all $a_i\geq1$, up to rotation and reflection.
-\textbf{Figures~\ref{fig:finite-simple-slack-low} and~\ref{fig:finite-simple-slack-seven}}
-of the supplementary material list these vectors by degree.
-For a fixed $D$, the entries $s_i$ determine the part sizes by
-\eqref{eq:odd-core-sums}, hence also $A=\sum_i a_i s_i$.
-We use this value of $A$ in the remaining capacity bounds.
+We now apply the preceding bounds to each slack vector in
+\textbf{Figures~\ref{fig:finite-simple-slack-low}
+and~\ref{fig:finite-simple-slack-seven}} with $R\geq3$.
+At a fixed degree, \eqref{eq:odd-core-sums} determines all the
+$a_i$ from the vector, so we can use the exact value of
+$A=\sum_i a_is_i$ in the remaining estimates.
 
 Put $I=\{i:s_i>0\}$. Exterior signatures lie in $I$. If $I$ does
 not cover the cycle then $J=0$. Any non-template mark meeting $B$
@@ -400,8 +414,9 @@ bounds on the degrees of the exterior vertices in those parts.
 For an enlarged core with $R'=3$ and $E=0$, all of its template
 pairs are present. The additional count distinguishes which of the
 three available anchor incidences occur at the same exterior vertex.
-The restrictions used for these two tests are given
-in~\cite[Section~D]{FGSTSupplement}.
+The bounds for the two positions of the parts and the possible
+anchor neighborhoods at $R'=3$ are derived in
+\textbf{Appendix~\ref{app:odd-small}}.
 
 A second bound on the number of marked edges uses the original set $B$.
 For $x\notin B$ with nonempty signature $S=S(x)$, put
@@ -424,7 +439,7 @@ of the corresponding anchor edges is unmarked, since $x\notin B$.
 For a part with a single available incidence, replacing its anchor by
 a marked neighbor of $x$ cannot enlarge $B$, by the choice of the
 cycle. The verification uses this condition with each possible choice
-of the unmarked anchor edges~\cite[Section~D]{FGSTSupplement}.
+of the unmarked anchor edges as detailed in \textbf{Appendix~\ref{app:odd-small}}.
 
 For a marked edge $xy$ outside $B$, the set $S(x)\cup S(y)$
 covers the five cycle edges, and the cover bound gives
@@ -451,6 +466,6 @@ for a counterexample. Each exterior vertex with a nonempty signature
 uses at least one of the $R$ incidences at the anchors. Thus only
 finitely many multisets of nonempty signatures are possible. For
 $D=3,5,7,9$, the finite verification described
-in~\cite[Section~D]{FGSTSupplement} excludes every admissible distribution
+in \textbf{Appendix~\ref{app:odd-small}} excludes every admissible distribution
 of $(s_0,\ldots,s_4)$ at $m=f(D)+1$. This proves the lemma.
 \end{proof}

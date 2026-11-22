@@ -2,7 +2,9 @@
 
 The mathematical reductions, certificates, Boolean instances and verification programs supporting the manuscript are listed in the [proof index](reproducibility/multigraph/REPLAY.md). See the [release instructions](README.md) for the proof data archives.
 
-## Checks in the current manuscript
+The [version 1.2.0 build record](verification/manuscript_build_v1_2.json) identifies the complete PDF and the editing copy. Its checks cover the figure locations, internal links, page numbering and bibliography. The proof computations recorded below were run for earlier editions and use the same certificate data.
+
+## Archived proof computations
 
 After editing the proof and combining lemmas, we reran the [simple-graph certificate](verification/simple_uniform.json), the [weighted flag calculations](verification/multigraph_flags.log) and both [input-manifest checks](verification/multigraph_hashes.log). For the structural implication now used in Section 6, we also reran the [certificate for the absence of an induced red five-cycle](verification/absence_cycle.json). On the putative range $M\geq98/81$, the 7,692 coefficient rows give the upper bound $14802480264533669793521/12250000000000000000000<98/81$ after the 412 negative residuals are accounted for. The [verification program](reproducibility/multigraph/check_induced_five_cycle.py) tests the strict inequality using rational arithmetic. A full finite replay and the auxiliary interval checks for the previously compiled manuscript are recorded below.
 

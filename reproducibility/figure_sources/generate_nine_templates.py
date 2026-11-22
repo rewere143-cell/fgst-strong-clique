@@ -248,7 +248,11 @@ def main():
     for index,group in enumerate(groups,1):
         beta = group[0][1][0]
         assert all(data[0] == beta for key,data in group)
-        output += [r"\begin{figure}[!htbp]",r"\centering",
+        placement = "[!htbp]"
+        if index == len(groups):
+            output.append(r"\FloatBarrier")
+            placement = "[H]"
+        output += [r"\begin{figure}" + placement,r"\centering",
                    r"\begin{tabular}{@{}c@{\hspace{2.5mm}}c@{\hspace{2.5mm}}c@{\hspace{2.5mm}}c@{}}"]
         for i in range(0,len(group),4):
             row = [panel(key,data[2]) for key,data in group[i:i+4]]

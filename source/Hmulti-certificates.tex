@@ -27,28 +27,18 @@ The odd-degree cases through degree $23$ also exclude a red $K_4$.
 For these cases the verifier includes the rooted neighborhood
 inequalities with weights $1,b_{vx},1+b_{vx}$.
 
-For the degree-$23$ case of \textbf{Lemma~\ref{lem:finite-k4}}, fix the
-four vertices of a marked $K_4$. If an outside vertex $v$ has $q_v$
-neighbors among the four vertices, write $n_i$ for the number of
-outside vertices with $q_v=i$. Substituting $g=65-2n_2-6n_3-12n_4$
-in the degree bounds of the lemma leaves the three rows in
-\textbf{Figure~\ref{fig:finite-k4-neighborhoods}}. Each row has $n_4=0$.
-The number beside each drawing gives the number of outside vertices
-with that neighborhood size.
-\input{figures/k4-neighborhoods}
-
-\subsubsection{Finite Constraints and Residual Checks}
+\subsubsection{Finite Constraints and Residual Checks}\label{app:profile-verification}
 
 The program \path{finite_triangle_profiles.py} generates the
 linear inequalities for rooted triangle counts at degrees $13$
 and $15$ from the integer triples in
-\textbf{Figure~\ref{fig:finite-triangle-profiles}}. Here $t$ counts
-outside vertices with at least two neighbors in the triangle, $q$
-counts those with three, and $E$ is the sum of the three degree
-deficits and the incident extra marked degrees at the triangle.
-For example, at $D=13$ the entry for $(t,q)=(1,1)$ gives
-$E=0,1,2$. The figure specifies 53 triples at $D=13$ and 123 at $D=15$.
-\input{figures/triangle-profiles}
+\textbf{Figure~\ref{fig:finite-triangle-profiles}}. It retains 53 triples
+$(E,t,q)$ at $D=13$ and 123 at $D=15$. For each three affinely independent
+triples, the program computes a normal vector to their plane by taking
+the cross product of the two difference vectors. It retains the plane
+if all the triples lie in one of its closed half-spaces. Dividing the
+integer normal by the greatest common divisor of its entries gives the
+coefficients of the corresponding inequality.
 When the program counts the outside vertices adjacent to at least
 two vertices of a red triangle, it subtracts the three assignments of the fourth
 position to a root. At degree nine, adding the two root images
@@ -63,7 +53,7 @@ residual it computes the correction using a coordinate bound or
 the bound on the sum of coordinates of the same order and forest
 size. The final comparison is carried out in rational arithmetic.
 
-\subsubsection{Verification of the Quadratic and Odd-Degree Bounds}
+\subsubsection{Verification of the Quadratic and Odd-Degree Bounds}\label{app:weighted-final-checks}
 
 The initial five-position certificates give $M<1.28746$ and
 $e<\frac{421}{2000}$ in the branch $M>\frac54$.

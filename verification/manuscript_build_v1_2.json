@@ -1,0 +1,17 @@
+{
+  "full": {
+    "file": "fgst_conjecture.pdf",
+    "pages": 87,
+    "sha256": "4048740723ff0bbc933d010bf3082d51d1d67c91749991cc327918b1f6fc74ee",
+    "externalDestinations": 0
+  },
+  "body": {
+    "file": "fgst_conjecture_without_appendix.pdf",
+    "pages": 76,
+    "sha256": "cd104b3f6dd97dfd889a43cf3c1714d4b8a12b43c5a699b3249190b31d10f4eb",
+    "externalDestinations": 15
+  },
+  "bodyFigures": 30,
+  "introductionPage": 3,
+  "appendixPage": 75
+}

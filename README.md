@@ -2,11 +2,26 @@
 
 Zhijun Lu, Chengshuo Qiao, Qirui Ying and Huimin Song.
 
-[Paper with appendix](fgst_conjecture.pdf) · [Manuscript release](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.2.0) · [Verification data](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0)
+[Revised paper](manuscript/FGST-Conjecture.pdf) | [Supplementary Proofs and Computational Verification](manuscript/Supplementary-Proofs-and-Computational-Verification.pdf)
 
-Section 6 states the restrictions on a counterexample for odd maximum degree and illustrates the configurations considered in each case. The appendix gives the numerical comparisons, certificate checks and replay commands. The [figure scripts](reproducibility/figure_sources/) reconstruct the indicated groups of drawings from the archived inputs. The [proof index](PROOF_NOTES.md) identifies the supporting calculations, and the [verification record](VERIFICATION.md) gives their reference results.
+The supplement gives the detailed proofs, finite checks and rational computations cited in the revised paper. The paper gives the relevant section, lemma, equation, figure, or table numbers, and its bibliography links to the supplement on GitHub.
 
-## Compile the paper
+The [sources](manuscript/) share the bibliography and class file. Each document can be compiled independently from that directory. Run pdfLaTeX on the chosen `.tex` file, run BibTeX on its base name, and run pdfLaTeX again until the references stabilize.
+
+## Lean formalization of Section 2
+
+The [Lean project](formalization/lean/) gives the correspondence between its declarations and the results in Section 2 of the revised paper. From that directory, use the pinned Lean 4.33.1 toolchain to run:
+
+~~~console
+lake build
+lake env lean CheckWeightedFlagAlgebra.lean
+~~~
+
+## Compile the archived manuscript
+
+[Archived paper with appendix](fgst_conjecture.pdf) · [Archived manuscript release](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.2.0) · [Verification data](https://github.com/rewere143-cell/fgst-strong-clique/releases/tag/v1.0.0)
+
+In the archived paper, Section 6 states the restrictions on a counterexample for odd maximum degree and illustrates the configurations considered in each case. The appendix gives the numerical comparisons, certificate checks and replay commands. The [figure scripts](reproducibility/figure_sources/) reconstruct the indicated groups of drawings from the archived inputs. The [proof index](PROOF_NOTES.md) identifies the supporting calculations, and the [verification record](VERIFICATION.md) gives their reference results.
 
 The [main source](source/main.tex) includes both the proof and its appendix. From the source directory, compile main.tex with pdfLaTeX, run BibTeX on main, then run pdfLaTeX twice more. The expanded main_without_appendix.tex in the same directory is a separate editing copy with all the figures from the proof.
 

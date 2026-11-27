@@ -1,0 +1,6 @@
+name = "fgst-weighted-flag-algebra"
+version = "0.1.0"
+defaultTargets = ["WeightedFlagAlgebra"]
+
+[[lean_lib]]
+name = "WeightedFlagAlgebra"
